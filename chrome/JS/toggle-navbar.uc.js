@@ -79,19 +79,66 @@
             e.preventDefault();
             e.stopPropagation();
             hideNavbar();
+        } else if (e.ctrlKey && e.key === 't') {
+            // Ctrl+T - nuova scheda
+            console.log('Ctrl+T detected, showing navbar');
+            setTimeout(() => {
+                showNavbar();
+                // Focus sulla urlbar
+                setTimeout(() => {
+                    if (urlbar) {
+                        urlbar.focus();
+                    }
+                }, 150);
+            }, 50);
         }
     }, true);
 
-        // Listener per click nell'area contenuto browser
-    const browser = document.getElementById('browser');
-    if (browser) {
-        browser.addEventListener('click', (e) => {
-            if (isVisible) {
+    // Listener per click fuori dalla toolbar
+    document.addEventListener('click', (e) => {
+        if (isVisible) {
+            // Controlla se il click è FUORI dal toolbox
+            if (!toolbox.contains(e.target)) {
                 hideNavbar();
             }
-        }, true);
-    }
+        }
+    }, true);
 
-    console.log('Toggle Navbar script loaded - Press F2 to toggle, click outside to close');
+    // Prova alternativa: usa MutationObserver per monitorare nuove tab
+    setTimeout(() => {
+        try {
+            const tabBrowser = document.getElementById('tabbrowser-tabs');
+            if (tabBrowser) {
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.addedNodes.length > 0) {
+                            mutation.addedNodes.forEach((node) => {
+                                if (node.nodeName === 'tab') {
+                                    console.log('New tab detected via MutationObserver, showing navbar');
+                                    showNavbar();
+                                    setTimeout(() => {
+                                        if (urlbar) {
+                                            urlbar.focus();
+                                        }
+                                    }, 100);
+                                }
+                            });
+                        }
+                    });
+                });
+                
+                observer.observe(tabBrowser, {
+                    childList: true,
+                    subtree: true
+                });
+                
+                console.log('Tab observer initialized');
+            }
+        } catch (e) {
+            console.error('Error setting up tab observer:', e);
+        }
+    }, 1000);
+
+    console.log('Toggle Navbar script loaded - Press F2 to toggle, Esc or click outside to close');
 
 })();
