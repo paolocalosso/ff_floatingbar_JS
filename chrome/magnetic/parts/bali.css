@@ -1,0 +1,442 @@
+
+@-moz-document url(about:newtab), url("about:home") {
+    .search-wrapper {margin-top: 10px !important}
+    .search-handoff-button { 
+        border-radius: 40px 40px 40px 0px  !important;
+        border-color: transparent /*#83A598*/ !important;
+        background-color: rgb(40,40,40,0.65) !important;
+        transition: background-color 2s ease !important;
+        transition: width 0.5s ease !important;
+        border-bottom: 1px solid transparent !important;
+        /*transition: border-bottom 0.5s ease !important;*/
+        color: #fff !important;
+        font: menu !important;
+        /*box-shadow: 0 0 0 1px transparent; !important;*/
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+        backdrop-filter: blur(10px) !important;
+        display-inline: flex !important;
+        width: 50% !important;
+        /*transition: width 2s;*/
+        margin-left: auto !important;
+        margin-right: auto !important;
+        /*background-color: #83A598 !important;
+        color: transparent !important;
+        border-color: transparent !important;
+        border: 5px #E7E9CE !important;
+        border-radius: 50px !important;
+        display-inline: flex !important;
+        width: 75% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        --newtab-search-icon: none !important;*/
+    }
+    .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
+        border-radius: 40px 40px 40px 0px  !important;
+        /*border-color: #83A598 !important;*/
+        /*background-color: #28282885 !important;
+        border: 1px solid transparent !important;*/
+        background-color: rgb(231, 233, 206, 0.51) /*rgb(90,90,90,0.65)*/ !important;
+        border: 1px solid transparent !important;
+        transition: border-bottom 2s ease !important;
+        border-top: 1px solid  transparent !important;
+        border-left: 1px solid  transparent !important;
+        border-right: 1px solid  transparent !important;
+        backdrop-filter: blur(10px) !important;
+        color: transparent !important;
+        font: menu !important;
+        /*box-shadow: 0 0 0 1px transparent !important;*/
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+        display-inline: flex !important;
+        width: 75% !important;
+        transition: width 0.5s ease !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        /*transform: translateY(-20px);*/
+        /*transform: translateX(1);
+        transition: transform 250ms ease-in-out;*/
+    }
+    .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button:hover {
+        background-color: rgb(231, 233, 206, 0.51) /*rgb(90,90,90,0.65)*/ !important;
+        border: 1px solid #83A598 !important;
+        transition: background-color 1s ease !important;
+        transition: border-bottom 2s ease !important;
+        width: 75% !important;
+        backdrop-filter: blur(10px) !important;
+        transition: width 0.5s ease !important;
+        color: #111111 !important;
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+    }
+    
+    /*.wordmark {
+        height: 0px !important;
+        width: 0px !important;
+        visibility: hidden !important;
+    }*/
+    .logo-and-wordmark{
+        display: none !important;
+        /*flex-direction: row-reverse !important;
+        visibility: hidden !important;*/
+    }
+
+
+/********Bali10050 code for newtab and devtools********/
+body,html{overflow-y: auto}
+
+/*  Newtab  */
+@-moz-document url("about:home"), url("about:newtab"){
+.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 0% !important; inset-inline-start: 48px !important;}
+.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; inset-inline-start: 50% !important; /*display-inline: flex !important;*/ }
+.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
+.outer-wrapper.ds-outer-wrapper-breakpoint-override.only-search.visible-logo{display: flex !important; padding-top: 0px !important;vertical-align: middle}
+.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
+.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
+.outer-wrapper .search-wrapper{padding: 0px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; align-content: space-around !important; gap: 20px 10px !important}
+.search-wrapper .logo-and-wordmark .logo{background-size: 60px !important; height: 60px !important; width: 60px !important}
+.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
+.customize-menu{border-radius: 10px 0 0 10px !important}
+#root > div{align-items: center; display: flex}}}
+
+/*  Cool animation on tab/bookmark icons  */
+.tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image ,.bookmark-item .toolbarbutton-icon{opacity: 0!important; transition: .15s !important; width: 0!important; padding-left: 16px!important}
+.tabbrowser-tab:not([pinned]):hover .tab-icon-image,.bookmark-item:hover .toolbarbutton-icon{opacity: 100!important; transition: .15s !important; display: inline-block!important; width: 16px!important; padding-left: 0!important}
+.tabbrowser-tab:not([hover]) .tab-icon-image,.bookmark-item:not([hover]) .toolbarbutton-icon{padding-left: 0!important}
+
+
+/*  Devtools tabs  */
+#toolbox-container{margin-top: 10px !important; background: -moz-Dialog !important}  /*  Makes rounded corners with userchrome look better  */
+.devtools-tabbar{background: -moz-Dialog !important; border: none !important}
+#toolbox-container .customize-animate-enter-done, #toolbox-container .customize-menu, #toolbox-container .top-site-outer:hover, #toolbox-container button{background-color: -moz-Dialog!important}
+.devtools-toolbar{height: 35px !important; border: none !important; background-color: -moz-Dialog !important}  /*  Has effect on all toolbars  */
+.toolbox-panel-iframe{border-radius: 8px 8px 0 0 !important}
+#toolbox-toolbar-mount{ background: -moz-Dialog !important;}
+.toolbox-panel.theme-toolbar{ background: -moz-Dialog !important;}
+
+@-moz-document url-prefix(chrome:){
+
+
+/*  Notification fix*/
+#toolbox-notificationbox  .notification{ background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; border: none !important; padding: 3px !important; }
+
+/*  Checkbox background fix  */
+.accordion input:not([type="checkbox"]) {border: none !important}
+#browser-style-checkbox:not(:checked):hover, #devtools-cache-checkbox:not(:checked):hover, #record-allocation-stacks-checkbox:not(:checked):hover, .accordion input[type="checkbox"]:not(:checked):hover, #devtools-display-tabbing-order-checkbox:not(:checked):hover{appearance: Dialog !important; border: 2px solid currentColor !important; border-radius: 2px !important;background-color: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important}
+#browser-style-checkbox:not(:checked), #devtools-cache-checkbox:not(:checked), #record-allocation-stacks-checkbox:not(:checked), .accordion input[type="checkbox"]:not(:checked), #devtools-display-tabbing-order-checkbox:not(:checked){appearance: Dialog !important; border: 2px solid currentColor !important; border-radius: 2px !important}
+
+:root{scrollbar-color: color-mix(in srgb, FieldText 35%, -moz-Dialog) transparent !important;}  /*  Removes scrollbar backround  */
+
+/*  Inspector  */
+#markup-box{background-color: -moz-Dialog !important}
+#markup-box iframe{border-radius: 15px !important;background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; margin-left: 10px !important; width: 97.5% !important}
+.tag-state{border-radius: 6px !important; width: auto !important; left: -16px !important; right: 10px !important;}
+.tag-hover{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; z-index: 0 !important; opacity: 30%}
+html.theme-dark body.theme-body.devtools-monospace div#root-wrapper div#root{ padding: 6px 0 6px 10px !important; }
+#inspector-breadcrumbs{top: auto; !important}
+#inspector-breadcrumbs-toolbar{height: 24px !important;}
+#inspector-eyedropper-toggle{margin-right: 2px !important;}
+.theme-body{background: transparent !important}
+#ruleview-toolbar{ flex-wrap: nowrap !important; }
+#sidebar-panel-changes{ border-radius: 10px !important; background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; }
+.computed-property-view{ background: transparent !important;}
+.computed-property-view.row-striped{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+#computed-property-container{background-color: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+#computed-container-focusable, #sidebar-panel-computedview{background: -moz-Dialog !important}
+#computed-container{border-radius: 10px !important;}
+
+/*  Console  */
+.webconsole-filteringbar-wrapper.wide{margin-bottom: 8px !important;}
+.devtools-tab-line{border-radius: 0 0 5px 5px !important; height: 2px !important}
+.tabs-menu-item{background-color: transparent !important}
+.message{margin: 0 1px 2px 1px !important; border-radius: 10px !important; padding: 5px !important; border-bottom: -6px !important; width: 98% !important; left: 50%; transform: translate(-50%, 0);}
+.jsterm-input-container{border-radius: 8px 8px 0 0 !important; border: none !important}
+.webconsole-app{background-color: -moz-Dialog !important}
+#mount .sidebar-item{border-radius: 10px !important; padding: 10px 0 10px 5px !important; margin-bottom: 4px !important;}
+#mount .js-sidebar{padding: 0 5px 0px 7px !important; background: -moz-Dialog !important; border: none !important}
+#mount > main{background: -moz-Dialog;}
+#mount .app-page{border-radius: 10px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+html#devtools-webconsole.theme-dark body.theme-sidebar main#app-wrapper.theme-body div.webconsole-app.jsterm-editor.eager-evaluation div.flexible-output-input div.jsterm-input-container.devtools-input{ margin-top: 8px !important; }
+
+/*  Input/searchboxes  */
+.devtools-filterinput{ background-color: -moz-Dialog !important; vertical-align: center !important; border-radius: 8px !important; }
+.sources-panel .devtools-filterinput{background: color-mix(in srgb, currentColor 5%, -moz-Dialog)  !important;}
+#font-preview-input-container { border: none !important; background: -moz-Dialog !important;  border-radius: 8px !important;  height: auto !important; }
+#font-preview-input-container .devtools-searchinput{ background: none !important; }
+.font-value-input{ border-radius: 10px !important; border: none !important; padding: 3px 10px 3px 3px !important; }
+#font-preview-input-container .devtools-searchinput{ height: 31px !important; border-radius: 10px !important; margin: -8px 0 -8px 0; }
+.input-expression, .xhr-input-url, .event-search-input{background:  color-mix(in srgb, currentColor 3%, -moz-Dialog) !important; appearance: none !important;  margin: 5px 2px 5px 8px !important; border-radius: 8px !important; width: 97% !important;}
+.exclude-patterns-field.small input{ border-radius: 8px !important; border: none !important; padding: 18px 5px 18px 10px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; appearance: inherit !important; }
+.devtools-searchbox{height: auto !important; border-radius: 8px !important;}
+
+/*  Font editor  */
+#font-editor{ background: -moz-Dialog !important; }
+#font-container > .accordion{border: none !important}
+.font-value-select{ background: auto !important; padding: 4px !important; border-radius: 3px !important; border: none !important; text-align: center; background-image: none !important }
+
+/*  Debugger  */
+.source-outline-panel .tree-node{border-radius: 8px !important; padding: 5px !important; width: 96% !important; margin: 0 0 2px 2px}
+.perf-onboarding{display: none !important}
+.source-outline-tabs .tab::before, .source-tab::before{border-radius: 0 0 2px 2px !important; background-image: none !important}
+.source-outline-tabs .tab:not(.active){background: color-mix(in srgb, currentColor 5%, -moz-Dialog)  !important; width: 90%; color: inherit !important}
+.source-tab:hover{background: transparent !important;}
+.source-tab:not(.active) > .img{display: none !important}
+.exclude-patterns-field.small{background: -moz-Dialog !important; border: none !important}
+.exclude-patterns-field.small > *{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+.project-text-search{margin-top: 9px !important;}
+.project-text-search .search-outline{ width: 94%; margin-left: 8px; border: none !important; }
+.project-text-search .search-outline .search-field.small{ background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; padding: 5px; border-radius: 8px; border: none !important; margin-bottom: 5px !important; margin-top: 1px !important; }
+.exclude-patterns-field.small > label{display: contents;}
+.search-modifiers{background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+.source-outline-tabs{width: 98% !important}
+.source-outline-tabs > .tab{background-color:  color-mix(in srgb, currentColor 3%, -moz-Dialog) !important;}
+.source-outline-tabs > .tab:first-child{border-radius: 8px 0 0 8px !important}
+.source-outline-tabs > .tab:last-child{border-radius: 0 8px 8px 0 !important}
+.tab.sources-tab.active{background-color:  color-mix(in srgb, currentColor 3%, -moz-Dialog) !important;}
+.source-footer, .source-header{background: -moz-Dialog !important; border: none !important}
+.editor-wrapper > *{background: -moz-Dialog !important; border: none !important}
+.editor-wrapper > * > *, .welcomebox{border-radius: 8px !important;background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; z-index: 2 !important;}
+.outline-footer{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 8px !important; border: none !important;}
+.outline-footer > button {width: -moz-available !important; border-radius: 8px !important; }
+.outline-footer > button:hover {width: -moz-available !important; border-radius: 8px !important; background: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;}
+.secondary-panes-wrapper > *{background: -moz-Dialog !important;}
+.command-bar{border: none !important;}
+.source-outline-panel{margin-top: -8px !important;padding: 8px !important;}
+
+/*  Memory  */
+.snapshot-list-item{ border-radius: 10px !important; border: none !important; margin-bottom: 5px !important; }
+.snapshot-list-item:not(.selected){background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+#shortest-paths > div{border-radius: 10px !important; background: -moz-Dialog !important;}
+#shortest-paths{background: -moz-Dialog !important;}
+#heap-view .h-split-box{border-radius: 10px !important;}
+.heap-view-panel > .tree{ border-radius: 10px 10px 0 0!important; }
+.heap-view-panel > .header{background: -moz-Dialog !important; border: none !important}
+.heap-view-panel{background: -moz-Dialog !important}
+#memory-tool-container > ul{ padding: 5px !important; padding-top: 5px; background: -moz-Dialog !important; border: none !important; padding-top: 2px !important; }
+.tree-map-container{ border-radius: 10px !important; }
+.toolbar-group, #record-allocation-stacks-label{border-inline-end: none !important;}
+#record-allocation-stacks-label{margin-inline-end: 10px !important;}
+
+/*  Stylesheet editor/Console  */
+.devtools-invisible-splitter, .splitview-nav{background-color: -moz-Dialog !important}
+.splitview-controller{padding: 0 15px 0 5px !important; background-color: -moz-Dialog !important;}
+.theme-body.devtools-monospace .CodeMirror-gutters{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+.theme-body.devtools-monospace .CodeMirror-scroll{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+
+/*  Tabs  */
+.outline-filter{border: none !important;}
+.tabs, .sources-panel{background-color: -moz-Dialog !important}
+.tabs-navigation, .source-outline-tabs{background-color: color-mix(in srgb, currentColor 3%, -moz-Dialog) !important; border: none !important; padding: 0 10px 0 5px; border-radius: 10px !important; margin: 3px !important}
+.all-tabs-menu{right: 10px !important; background-color: transparent !important; border: none !important;}
+.panels{background-color: -moz-Dialog !important}
+pre{margin-right: 20px;}
+
+/*  Network  */
+.request-list-container{background: -moz-Dialog !important;}
+.request-list-empty-notice, .requests-list-scroll{border-radius: 10px !important; background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important}
+
+/*  Probably the console  */
+#mount .sidebar-item{border-radius: 10px !important; padding: 10px 0 10px 5px !important; margin-bottom: 4px !important;}
+#mount .js-sidebar{padding: 0 5px 0px 7px !important; background: -moz-Dialog !important; border: none !important}
+#mount > main{background: -moz-Dialog;}
+#mount .app-page{border-radius: 10px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+
+/*  Storage  */
+#storage-table{background: -moz-Dialog !important;}
+#storage-tree{background: -moz-Dialog !important;border-radius: 10px !important; padding-top: 3px !important}
+
+/*  Fixes for sidebar version  */
+.horz{background-color: -moz-Dialog !important}
+.horz .splitter{flex: 0 0 10px !important; margin: auto 2px auto 2px !important; height: 80%; justify-content: center; opacity: 100%; border-radius: 4px !important;}
+.horz #ruleview-container{  margin-top: 15px;}
+
+/*  Fix for light mode  */
+.theme-light .tree-widget-item.theme-selected{color: #000 !important;}
+
+/*  ?  */
+.devtools-toolbar-select{ background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 4px !important; border: none !important; padding: 4px !important; appearance: dialog !important; }
+#toolbox-deck{border-radius: 10px !important;}
+.theme-dark{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important}
+.theme-dark body{background-color: color-mix(in srgb, currentColor 7%, -moz-Dialog) !important}
+#ruleview-container, .layout-container, .devtools-sidebar-tabs .panels{border-radius: 10px !important; background-color: -moz-Dialog; padding: 0 5px 0 5px;}
+.splitter{flex: 0 0 10px !important; margin: 30px -9px 30px -6px !important; justify-content: center; opacity: 0;}
+.devtools-inspector-tab-panel{background-color: -moz-Dialog !important}
+.compatibility-app__container{background-color: -moz-Dialog !important}
+.compatibility-footer{border: none !important;}
+.devtools-separator{display: none !important;}
+
+/*  Acessability  */
+window.theme-dark box.devtools-responsive-container.theme-body vbox#storage-tree ul.tree-widget-container li ul.tree-widget-children li div.tree-widget-item{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 8px !important; margin-bottom: 2px !important; padding: 5px !important; width: 85% !important; margin-left: 12px !important;  margin-right: 5px !important}
+.tree-widget-item:not(window.theme-dark box.devtools-responsive-container.theme-body vbox#storage-tree ul.tree-widget-container li ul.tree-widget-children li div.tree-widget-item){ border-radius: 8px !important; margin-bottom: 2px !important; padding: 5px !important; width: 90% !important; margin-left: 2px !important; margin-right: 5px !important}
+.devtools-side-splitter{opacity: 0% !important}
+.devtools-responsive-container.theme-body{background: -moz-Dialog !important;}
+.devtools-toolbar{position: sticky; top: 0px}
+
+/*  Stylesheet editor  */
+#style-editor-chrome .devtools-invisible-splitter{border-radius: 10px 0 0 10px !important; background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; !important; width: 10px; margin-left: -10px !important; opacity: 100% !important}
+.editor-pane .CodeMirror-gutters{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+.editor-pane .CodeMirror-scroll{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+.at-rule-label{ border: none !important; padding: 5px !important; background: aliceblue; border-radius: 8px !important; margin: 0 0 3px 5px !important; width: 92% !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; }
+window#style-editor-chrome-window box#style-editor-chrome.devtools-responsive-container.theme-body box.splitview-side-details.devtools-main-content box.splitview-details.splitview-active hbox.stylesheet-details-container vbox.stylesheet-sidebar.theme-sidebar toolbar.devtools-toolbar, .stylesheet-at-rules-container{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+.splitview-nav{border-radius: 10px !important;}
+.splitview-nav > *{border-radius: 8px !important; border: none !important; margin-bottom: 5px !important; padding: 3px !important; background-image: none !important}
+.splitview-nav > *:not(:hover, .splitview-active){background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important}
+#splitview-resizer-target{background-color: -moz-Dialog !important}
+.splitview-main > toolbar, .loading .splitview-nav-container{border-inline-end: none !important} /*  Removes line while loading  */
+.splitview-side-details.devtools-main-content{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important;}
+window#style-editor-chrome-window.theme-dark box#style-editor-chrome.devtools-responsive-container.theme-body box.splitview-side-details.devtools-main-content box.splitview-details.splitview-active hbox.stylesheet-details-container box.stylesheet-editor-input.textbox iframe{ border-radius: 10px !important; }
+
+/*  Accordions  */
+body main#mount.theme-body div.debugger div.A11y-mouse div.split-box.vert div.controlled div.secondary-panes-wrapper div.secondary-panes div ul.accordion *:not([type="checkbox"]) {border: none !important}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert div.uncontrolled{border-radius: 10px !important}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert{background: -moz-Dialog !important}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert div.controlled div.right-sidebar{margin-left: 10px !important;}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert div.controlled div.right-sidebar ul.accordion{width: 95% !important; padding-right: 10px !important;}
+#sidebar-panel-ruleview, .accordion{background-color: -moz-Dialog !important}
+.accordion li h2:not(.accordion-header){background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; margin: 5px 2px 5px 8px !important; border-radius: 8px !important; width: 97% !important}
+.ruleview-rule, .accordion-content{border-radius: 8px !important; padding: 5px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-bottom: none !important; margin-bottom: 4px !important;}
+.ruleview-header, .accordion-header{background-color: -moz-Dialog !important; border-bottom: none !important}
+
+/*  Cahnges tab  */
+#sidebar-panel-changes .source .href{background: -moz-Dialog !important; border: none !important}
+#sidebar-panel-changes .changes__rule{border-radius: 10px !important}
+
+}
+
+
+
+/*settings pages*/
+@-moz-document url-prefix("about:preferences") {
+    h1 {
+        font-size: 1.5em!important;
+        font-weight: 900 !important;
+    }
+    .main-content {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .sticky-container {
+        background-color: #282828 !important;
+    }
+    #categories>.category[selected], #categories>.category.selected {
+        color: var( --highlighted-font-color) !important;
+    }
+    html, h1, #categories {
+        color: var(--primary-font-color) !important;
+    }
+    .navigation, #handersView, #engineShown, #engineName, #engineKeyword, #translations-manage-install-list, .dialogTitleBar {
+        background-color: rgb(27,29,28) !important;
+        color: var(--primary-font-color) !important;
+    }
+    #searchInput {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+        border-color: transparent !important;
+        border: 5px #E7E9CE !important;
+        border-radius: 40px !important;
+        border-color: #E7E9CE !important;
+        box-shadow: 0 0 0 2px #E7E9CE !important;        
+    }
+    #migrationWizardDialog {
+        background-color: #1B1D1C !important;       
+    }
+    #filter {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #downloadFolder {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #typeColumn {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #actionColumn {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #handlersView {
+        background-color: rgb(27,29,28) !important;
+        color: var(--primary-font-color) !important;
+    }
+    #applicationsGroup listheader {
+        background-color: var(--search-box) !important;
+    }
+    #contentBlockingOptionStandard, #contentBlockingOptionStrict, #contentBlockingOptionCustom {
+        background-color: rgb(27,29,28) !important;
+        color: var(--primary-font-color) !important;
+        border: 0px  !important;
+    }
+    description {
+        color: var(--primary-font-color) !important;
+    }
+    #engineChildren {
+        background-color: rgb(27,29,28) !important;
+        color: var(--primary-font-color) !important;
+    }
+    .content-blocking-warning {
+        background: var( --in-content-box-background-alt) !important;
+    }
+    .checkbox-check, input[type="checkbox"] {
+        border: 1px dashed #E7E9CE  !important;
+        background-color: transparent  !important;
+        -moz-appearance: none  !important;
+        opacity: 0.7 !important;
+    }
+    .checkbox-check[checked] {
+        opacity: 1 !important;
+    }
+    input[type="checkbox"] {
+        border: 1px dashed #E7E9CE  !important;
+        background-color: transparent  !important;
+        -moz-appearance: none  !important;
+    }
+    .radio-check {
+        background-color: transparent  !important;
+    }
+}
+
+@-moz-document url-prefix("about:addons") {
+    #sidebar {
+        background-color: rgb(27,29,28) !important;
+    }
+    #main-content {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .sticky-container {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .main-search {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .main-heading {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    #full {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .card {
+        background-color: #1B1D1C !important;
+        color: var(--primary-font-color) !important;
+    }
+}
+
+/*custom fullscreen warning*/
+#fullscreen-warning{
+    background-color: #282828 !important;
+    border-color: #83A598 !important;
+    max-width: 800px !important;
+    max-height: 55px !important;
+    border-radius: 55px !important;
+    font-size: 12px !important;
+}
+
+.pointerlockfswarning-generic-text,
+.pointerlockfswarning-domain-text{
+    font-size: 15px !important;
+    color: rgb(200,200,200) !important;
+    text-shadow: none !important;
+}

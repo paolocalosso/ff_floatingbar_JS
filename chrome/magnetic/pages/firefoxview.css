@@ -1,0 +1,97 @@
+/* about:firefoxview */
+
+@-moz-document url("about:firefoxview") {
+    background-color:  #1B1D1C !important;
+    button:hover {border-radius: 40px !important;}
+    button[selected] {font: menu !important; background-color: #83A598 !important; color: #1B1D1C !important; border-radius: 40px !important; border-left: solid 3px #E7E9CE !important;}
+    button:hover {font: menu !important; border-radius: 40px !important; background-color: #E7E9CE80 !important;}
+    button {font: menu !important; border-radius: 40px !important;}
+    body {font: menu !important; --fxview-background-color: #1B1D1C; background-color: #1B1D1C !important;}
+    .card-container {
+      padding: 8px;
+      border-radius: 40px;
+      background-color: #83A598 !important;
+      margin-block-end: 24px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    .view-all-link {
+      color: #E7E9CE !important;
+      float: inline-end;
+      outline-offset: 6px;
+      border-radius: 1px;
+      width: 12%;
+      text-align: end;
+      padding: 6px;
+      padding-inline-start: 0;
+    }
+    .blackbox {
+      border: 1px solid #E7E9CE !important;
+      text-align: center;
+      height: 70px;
+      border-radius: 50px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .category-icon {
+      background-color: initial;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 20px;
+      width: 20px;
+      -moz-context-properties: fill;
+      /*fill: #E7E9CE !important;*/
+    }
+    button[role="tab"]::before {
+      display: none !important;
+    }
+    
+    [part="container"]  {
+      border-radius: 50px !important;
+      border: none !important;
+      background-color: white !important;
+    }
+    [part="input"] {
+      border: none !important;
+      background-color: #83a598 !important;
+      border-radius: 50px !important;
+    }
+    /*.search-container {border: 1px solid #1B1D1C !important; --fxview-border: #E7E9CE80 !important; box-shadow: 0 0 0 2px #1B1D1C !important; --newtab-background-color: #1b1d1c !important; --fxview-sidebar-width: 500px !important; --fxview-element-background-hover: #1b1d1c !important; --fxview-element-background-active: #83A598 !important; border-radius: 40px !important; color: var(--fxview-text-primary-color); display: inline-flex !important; overflow: hidden; position: auto !important; &:focus-within { overflow: hidden; }}*/
+}
+
+@-moz-document url("about:preferences") {
+    background-color:  #1B1D1C !important;
+    button:hover {border-radius: 40px !important;}
+    button[selected] {font: menu !important; background-color: #83A598 !important; color: #1B1D1C !important; border-radius: 40px !important; border-left: solid 3px #E7E9CE !important;}
+    button:hover {font: menu !important; border-radius: 40px !important; background-color: #E7E9CE80 !important;}
+    button {font: menu !important; border-radius: 40px !important;}
+    body {font: menu !important; background-color: #1B1D1C !important;}
+}
+
+/*
+body {
+  /* align the base font-size on root element with that of <body>
+     so rem-based layout widths and break-points behave predictably */
+  /*font: menu !important;*/
+  /* override --in-content-page-background from common-shared.css */
+  /*background-color: transparent;
+  --fxview-background-color: #1B1D1C;
+  --fxview-element-background-hover: color-mix(in srgb, var(--fxview-background-color) 90%, currentColor);
+  --fxview-element-background-active: color-mix(in srgb, var(--fxview-background-color) 80%, currentColor);
+  --fxview-text-primary-color: var(--newtab-text-primary-color, var(--in-content-page-color));
+  --fxview-text-color-hover: var(--newtab-text-primary-color);
+  --fxview-contrast-border: color-mix(in hsl, currentColor 45%, transparent);
+  --fxview-extra-contrast-border: color-mix(in hsl, currentColor 85%, transparent);
+  --in-content-zap-gradient: linear-gradient(var(--fxview-extra-contrast-border), var(--fxview-extra-contrast-border));
+  --card-border-zap-gradient: var(--in-content-zap-gradient);
+  --fxview-text-secondary-color: color-mix(in srgb, currentColor 70%, transparent);
+  --newtab-background-color-secondary: #FFF;
+
+  --in-content-button-background-hover: var(--fxview-element-background-hover);
+  --in-content-button-background-active: var(--fxview-element-background-active);
+  --in-content-button-text-color-hover: var(--fxview-text-color-hover);
+}
+*/
+

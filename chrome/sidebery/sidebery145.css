@@ -1,0 +1,258 @@
+#root.root {--tabs-activated-bg: #83A598;}
+#root.root {--tabs-progress-bg: rgb(131, 165, 152);}
+#root.root {--tabs-normal-fg: #ffffff;}
+#root.root {--tabs-activated-fg: #000000;}
+/*#root.root {--frame-bg: rgb(27,29,28);}*/
+#root.root {--ctx-menu-fg: #ffffffff;}
+#root.root {--ctx-menu-border-radius: 25px;}
+#root.root {--tabs-pinned-height: 64px;}
+#root.root {--tabs-pinned-width: 64px;}
+#root.root {--bookmarks-bookmark-font: 0.9375rem 3270 IBM;}
+#root.root {--bookmarks-folder-font: 0.9375rem 3270 IBM;}
+#root.root {--tabs-font: 0.9375rem 3270 IBM;}
+#root.root {--tabs-count-font: 0.5625rem 3270 IBM;}
+#root.root {--ctx-menu-font: 0.875rem 3270 IBM;}
+#root.root {--general-border-radius: 25px;}
+#root.root {
+    /*--tabs-font: 10pt sans-serif;
+    --tabs-count-font: .625rem Segoe UI;
+    --bookmarks-bookmark-font: .875rem Segoe UI;
+    --bookmarks-folder-font: 9pt Segoe UI;*/
+    --nav-btn-width: 48px;
+    --nav-btn-height: 48px;
+    --nav-btn-width: 38px;
+    --nav-btn-height: 42px;
+    --tabs-height: 42px;
+    --tabs-inner-gap: 8px;
+    --tabs-pinned-width: 38px;
+    --tabs-pinned-height: 38px;
+    --search-height: 36px;
+    --search-icon-width: 42px;
+        --fav-size: 16px !important;
+}
+/*
+@media (prefers-color-scheme:light) {
+    #root {
+        --tabs-activated-bg: white !important;
+        --tabs-bg-active: var(--tabs-activated-bg) !important;
+        --tabs-selected-fg: var(--tabs-activated-fg) !important;
+        --tabs-selected-bg: var(--tabs-activated-bg) !important;
+        --bg: #f9f9fb !important;
+        --badge-bg: rgb(255 255 255 / 0.85);
+        --border: #606060 !important;
+        --ctx-menu-separator: rgb(204 204 204);
+    }
+}
+*/
+@media (prefers-color-scheme:dark) {
+    #root {
+        --tabs-activated-bg: rgb(131, 165, 152, .9) !important;
+        --tabs-bg-active: var(--tabs-activated-bg) !important;
+        --tabs-selected-fg: var(--tabs-activated-fg) !important;
+        --tabs-selected-bg: var(--tabs-activated-bg) !important;
+/*        --bg: rgb(27, 29, 28, 0.3) !important;*/
+        --badge-bg: rgb(30 30 30 / 0.85);
+        --border: #c0c0c0 !important;
+	      /*--ctx-menu-separator: rgb(27, 29, 28, 0.3) !important;
+        --tabs-bg-hover: rgb(27, 29, 28, 0.3) !important;*/
+    }
+}
+.NavigationBar {
+    background: transparent;
+    border-bottom: 1px solid var(--ctx-menu-separator);
+}
+.NavigationBar[data-layout="wrap"] .main-items {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+padding-top: 100px !important;
+}
+.NavigationBar[data-layout="inline"] .main-items .nav-item[data-index="-1"][data-active="true"] {
+    opacity: 1;
+    z-index: 100;
+    transform: scale(1, 1);
+}
+.NavigationBar .static-btns {
+    transition: opacity 0.5s linear;
+}
+#root:not(:hover) .NavigationBar[data-layout="inline"] .static-btns {
+    opacity: 0;
+    z-index: -1;
+    transform: scale(0, 0);;
+}
+#root:not(:hover) .TabsPanel {
+    --tabs-indent: 0px;
+}
+#root:not(:hover)[data-tabs-tree-lvl-marks="true"] .Tab[data-pin="false"]:not([data-lvl="0"]) .body:after {
+    display: none;
+}
+.Tab  {
+    /*margin-top: 25px !important;*/
+    margin-bottom: 5px !important;
+}
+.Tab .body:hover {
+    /*background-color: rgb(231, 233, 206, 0.3) !important;*/
+		background: linear-gradient(to right, #1b1d1c, rgb(227, 226, 190, .3)) !important;		
+		/*background: linear-gradient(to right, #1b1d1c , transparent, rgb(227, 226, 190, .3)) !important;*/
+}
+.Tab[data-active="true"] .body:hover {
+	background: rgb(131, 165, 152, .5) !important;
+}
+.Tab .close {
+    margin: 0 5px;
+}
+.Tab .audio {
+    position: absolute;
+    top: unset !important;
+    bottom: -2px;
+    right: -2px;
+    height: 16px !important;
+    width: 16px !important;
+    background: rgb(231, 233, 206, 0.85) im !important;
+    border-radius: 100px;
+    box-shadow: var(--nav-btn-active-shadow);
+}
+.Tab[data-active="true"] .audio {
+    background-color: #E7E9CE !important;
+    fill: #1b1d1c !important;
+}
+.Tab:hover .audio {
+        background-color: #83A598 !important;
+}
+.Tab .t-box {
+    --audio-btn-offset: 0;
+}
+
+
+/*custom button badge*/
+.button__badge {
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: white;
+  padding: 1px 3px;
+  font-size: 8px;
+  position: absolute; /* Position the badge within the relatively positioned button */
+  top: 0;
+  left: 0;
+}
+.tab-close-button, .close-icon {
+  border-radius: 500px !important;
+  margin-right: 3.5px !important;
+  background-color: rgb(27, 29, 28, .7) !important ;
+  transition: all 0.3s;
+}
+.tab-close-button:hover,
+.close-icon:hover {
+  background-color: rgb(27, 29, 28, 0.3) !important;
+  transform: rotate(180deg) !important;
+  transition: transform ease-in-out .5s !important;
+}
+.Tab[data-active="true"] .close {
+/*    background-color: #E7E9CE !important;*/
+    background-color: #1b1d1c20 !important;
+}
+.Tab[data-active="true"] .close-icon {
+        fill: #E7E9CE !important;
+}
+.Tab[data-active="true"] .close-icon:hover {
+    background-color: #E7E9CE !important;
+        fill: #1b1d1c !important;
+}
+.Tab:hover .fav,
+.Tab:hover .t-box,
+.Tab:hover .audio  {
+  transform: translateX(16px);
+  transition: transform .3s ease-in-out;
+}
+.Tab:hover .tab-close-button,
+.Tab:hover .close-icon {
+        background-color: #1b1d1c !important;
+}
+
+.new-tab-btns {
+    /*opacity: 50% !important;*/
+		position: relative !important;
+    margin: auto !important;
+    margin-top: 25px !important;
+    /*transition: all 0.3s;
+    width: 100% !important;
+    transition: width 0.3s ease-in-out;*/
+    width: 100% !important;
+		height: 32px !important;
+    opacity: 70%;
+		background: linear-gradient(to right, #1b1d1c, rgb(227, 226, 190, .3)) !important;
+		border-radius: 50px !important;
+    transform: translateX(-124px);
+    transition: width .4s ease-in-out, opacity .4s ease-in-out, transform 1s ease-in-out;
+}
+.new-tab-btns:hover {
+    width: 70% !important;
+        margin-left: 15% !important;
+        margin-right: 15% !important;
+    /*transition: width .3s !important;
+    opacity: 100% !important;*/
+    opacity: 1;
+    transform: translateX(0px);
+    border-radius: 500px !important;
+    /*background: rgb(227, 226, 190, .5) !important;*/
+		background:linear-gradient(to right, rgb(227, 226, 190, .3), #1b1d1c) !important;
+		transition: background .4s ease-in-out, transform .4s ease-in-out;
+}
+.AnimatedTabList {
+    padding-top: 5px !important;
+}
+.dnd-layer {
+		background: transparent !important;		
+}
+.dnd-layer::after {
+		display: none !important;
+}
+/*
+.new-tab-btn {
+    /*opacity: 50% !important;*/
+		position: relative !important;
+    margin: auto !important;
+    margin-top: 25px !important;
+    /*transition: all 0.3s;
+    width: 100% !important;
+    transition: width 0.3s ease-in-out;*/
+    width: 100% !important;
+    opacity: 70%;
+		background: linear-gradient(to right, #1b1d1c, rgb(227, 226, 190, .3)) !important;
+		border-radius: 50px !important;
+    transform: translateX(-124px);
+    transition:  background .1s ease-in-out, transform .1s ease-in-out;
+}
+.new-tab-btn:hover {
+    width: 70% !important;
+        margin-left: 15% !important;
+        margin-right: 15% !important;
+    /*transition: width .3s !important;
+    opacity: 100% !important;*/
+    opacity: 1;
+    transform: translateX(0px);
+    border-radius: 500px !important;
+    /*background: rgb(227, 226, 190, .5) !important;*/
+		background:linear-gradient(to right, rgb(227, 226, 190, .3), #1b1d1c) !important;
+		transition: background .1s ease-in-out, transform .1s ease-in-out;
+}
+*/
+
+
+#root:not(:hover) .SearchBar::before {
+    background: transparent;
+}
+#root:not(:hover) .SearchBar .placeholder,
+#root:not(:hover) .SearchBar .input {
+    opacity: 0;
+}
+#root:not(:hover) .SearchBar .clear-btn {
+    display: none;
+}
+#root:not(:hover) .PanelPlaceholder {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+.BottomBar .tool-btn {
+    min-width: var(--tabs-pinned-width);
+}

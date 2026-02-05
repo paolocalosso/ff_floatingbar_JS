@@ -1,0 +1,148 @@
+#urlbar, .searchbar-textbox{
+    border-radius: 2em !important;
+}
+.tabbrowser-tab .tab-stack {
+    border-radius: 30px;
+    overflow: hidden;
+}
+.toolbaritem-combined-buttons,
+.unified-extensions-item,
+.chromeclass-toolbar-additional {
+    border-radius: 100em !important;
+    overflow: hidden;
+}
+#identity-box[pageproxystate="valid"].certUserOverridden > #identity-icon,
+.drm-icon {
+  /*display: none !important;*/ 
+  margin-right: 5px !important;
+  height: 28px !important;
+  width: 28px !important;
+}
+
+/*hide unsorted bookmarks*/
+#menu_unsortedBookmarks {
+    display: none !important;
+}
+#BMB_unsortedBookmarks {
+    display: none !important;
+}
+
+
+
+/*@supports not -moz-bool-pref("firefoxone.style_without_rightsidebar") {*/
+
+
+@-moz-document url(chrome://browser/content/browser.xhtml){
+
+  :root:not([inDOMFullscreen]){
+    --uc-vertical-toolbar-width: 0px !important;
+  }
+    
+  #navigator-toolbox{ position: relative }
+  #PersonalToolbar{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px /*100%*/;
+    right: -14px;
+    margin-bottom: 4px;
+    border-radius: 20px;
+    width: 288px !important;
+    transition: all 600ms cubic-bezier(0.77, 0, 0.18, 1);
+    box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    /*width: var(--uc-vertical-toolbar-width,0);*/
+    min-width: unset !important;
+    /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
+    height: 93.5vh; /*92.55vh;*/
+    max-height: 93.5vh /*92.55vh*/ !important; 
+    /*padding-bottom: 15% !important;*/
+    /*padding-top: 15% !important;*/
+    padding-inline: 0px !important;
+    background-color: rgb(27,29,28,0.75)/*#83A598*/ /*#E7E9CE*/!important;
+    backdrop-filter: blur(10px) !important; 
+    box-shadow: rgba(0, 0, 0, 0.55) -5px 0 15px !important;
+    }
+    
+  #PersonalToolbar .toolbarbutton-1{
+    /*min-width: var(--uc-vertical-toolbar-width) !important;*/
+    --toolbarbutton-inner-padding: 8px !important;
+    --toolbarbutton-border-radius: 7px !important;
+  }    
+    
+  #PersonalToolbar #PlacesChevron{
+    display: none;
+  }
+    
+  #PersonalToolbar > #personal-bookmarks{
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: 100vh;
+  }
+  
+  #PlacesToolbar,
+  #PlacesToolbarDropIndicatorHolder{
+    -moz-box-orient: vertical !important; /* Can be removed with Firefox 112 */
+    flex-direction: column;
+  }
+  
+  #PersonalToolbar #PlacesToolbarItems{
+    display: flex !important;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+    
+  #PersonalToolbar > toolbaritem{
+    justify-content: center !important;
+  }
+
+/*autohide*/
+  #PersonalToolbar{
+  z-index: 1;
+  transition: transform 100ms ease-out 230ms, opacity 20ms linear 250ms !important;
+  transform: scaleX(0.2);
+  transform-origin: right;
+  opacity: 0;
+  width: 20px /*180px*/ !important;
+  }
+  #PersonalToolbar:hover{
+  opacity: 1;
+  transform: scaleX(1);
+  transition-delay: 230ms,220ms !important;
+  width: 288px /*250px*/ !important;
+  }
+  
+  #browser,
+  #browser-bottombox,
+  #main-window > body::after,
+  #customization-container{
+    padding-right: calc(var(--uc-vertical-toolbar-width,0) + 0px);
+  }
+
+  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser,
+  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser-bottombox,
+  #main-window:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body::after,
+  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
+    padding-right: 0;
+  }
+    
+  /* You should probably disable this if you have Firefox < 113 */
+  #PersonalToolbar #PlacesToolbarItems{
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+  }
+  
+  #personal-bookmarks .bookmark-item{
+    margin: 2.5px 5px /*5px 12px*/ !important;
+    padding-left: 15px !important;
+    height: /*42px*/ 38px !important;
+    min-width: 278px /*240px*/ !important;
+    }
+  #personal-bookmarks .bookmark-item:hover{
+    background-color: #83A598 !important;
+    }
+  #personal-bookmarks .bookmark-item>.toolbarbutton-text, #import-button>.toolbarbutton-text {
+    margin-left: 5px !important;
+    /*display: none !important;*/
+  }   
+}

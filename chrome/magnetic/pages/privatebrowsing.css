@@ -1,0 +1,31 @@
+/* about:privatebrowsing */
+
+@-moz-document url("about:privatebrowsing") {
+    html.private {
+        --in-content-page-background: var(--gnome-private-in-content-page-background) !important;
+
+        /* Used by headings in promo boxes Firefox shows (like an ad for Firefox Focus) */
+        --in-content-text-color: var(--gnome-private-text-primary-color) !important;
+    }
+    
+    .search-handoff-button { 
+        border: 0px solid #ffffff  !important;
+        box-shadow: 0 0 0 2px #ffffff !important;
+        border-radius: 50px !important;
+        background-color:  #8000D7 !important;
+    }
+    .fake-textbox {
+        color: #ffffff !important;
+        opacity: 1 !important;
+    }
+
+    .wordmark {
+        height: 0px !important;
+        width: 0px !important;
+        visibility: hidden !important;
+    }
+    
+    .logo-and-wordmark{ flex-direction: row-reverse !important; }
+    .info {display: none !important;}
+
+}

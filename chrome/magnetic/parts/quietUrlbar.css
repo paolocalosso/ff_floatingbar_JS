@@ -1,0 +1,119 @@
+.urlbar-icon, #userContext-indicator, #userContext-label {
+    visibility: hidden !important;
+    color: var(--transparent-color) !important;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#urlbar:hover .urlbar-icon,
+#urlbar:active .urlbar-icon, 
+#urlbar[focused] .urlbar-icon {
+    visibility: visible !important;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#urlbar[focused] #pageAction-urlbar-_testpilot-containers{
+    opacity:1 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar[focused] #userContext-icons{
+    opacity:1 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar:not(focused) #tracking-protection-icon-container{
+    opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar:not(focused) #tracking-protection-icon-container[open]{
+    opacity: 1 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar[focused] #tracking-protection-icon-container{
+    opacity: 1 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar:not(focused) #identity-box{
+    opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar:not(focused) #searchmode-switcher-icon {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar:not(focused) #searchmode-switcher-dropmarker {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar:not(focused) #identity-box:has(.identity-box-button[open]){
+    opacity: 1 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar[focused] #identity-box{
+    opacity: 1 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#userContext-icons{
+  opacity:0;
+  margin:auto 3px!important;
+  padding:0 2px 0 5px!important;
+  transition: var(--hovering-speed) all !important;
+}
+#urlbar:hover #userContext-icons {
+    opacity:1;
+    -moz-transition: var(--animation-speed) !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#urlbar:hover #pageAction-urlbar-_testpilot-containers{
+    opacity:1;
+    -moz-transition: var(--animation-speed) !important;
+    transition: all var(--hovering-speed) !important;
+}
+#urlbar:hover #tracking-protection-icon-container{
+    opacity: 1 !important;
+    -moz-transition: var(--animation-speed) !important;
+    transition: all var(--hovering-speed) !important;
+}
+#urlbar:hover #identity-box{
+    opacity: 1 !important;
+    -moz-transition: var(--animation-speed) !important;
+    transition: all var(--hovering-speed) !important;
+}
+#urlbar:hover #searchmode-switcher-icon {
+    opacity: 1 !important;
+    -moz-transition: var(--animation-speed) !important;
+    transition: all var(--hovering-speed) !important;
+}
+#urlbar:hover #searchmode-switcher-dropmarker {
+    opacity: 1 !important;
+    -moz-transition: var(--animation-speed) !important;
+    transition: all var(--hovering-speed) !important;
+}
+#pageAction-urlbar-_testpilot-containers{
+    opacity:0;
+    -moz-transition: var(--animation-speed) !important;
+    transition: opacity 0.5s ease-in-out;
+}
+#pageAction-urlbar-_testpilot-containers:hover{
+    opacity:1;
+    transition: opacity 0.5s ease-in-out;
+}
+#pageAction-urlbar-_testpilot-containers.urlbar-page-action[focused]{
+    opacity:1 !important;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#userContext-icons:hover{
+  opacity:1;
+  background:var(--identity-tab-color)!important;
+  -moz-transition: var(--animation-speed) !important;  
+  transition: opacity 0.5s ease-in-out;
+}
+.urlbar-input-container:hover{
+    opacity:1;
+    -moz-transition:var(--animation-speed) !important;
+    transition: opacity 0.5s ease-in-out;
+}

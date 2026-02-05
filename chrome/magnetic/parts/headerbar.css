@@ -1,0 +1,35 @@
+/* Header bar */
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+
+
+/* Headerbar */
+#nav-bar {
+  padding: 6px 3px !important;
+  border-radius: 50px !important;  /* Completamente tondo */
+}
+
+/* Headerbar CSD colors - GLASSMORPHISM SCURO */
+:root[customtitlebar] #nav-bar {
+  background: rgba(27, 29, 28, 0.75) !important;  /* Il tuo #1b1d1c con trasparenza */
+  backdrop-filter: blur(25px) saturate(150%) !important;
+  border: 1px solid rgba(131, 165, 152, 0.25) !important;  /* Bordo sottile verde/azzurro */
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 25px, 
+              0 0 15px rgba(27, 29, 28, 0.5) !important;
+  border-radius: 50px !important;
+  overflow: visible !important;
+}
+
+:root[customtitlebar] #nav-bar:-moz-window-inactive {
+  background: rgba(27, 29, 28, 0.65) !important;
+  border: 1px solid rgba(131, 165, 152, 0.15) !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px !important;
+}
+
+/* Assicura bordi arrotondati in tutti gli stati */
+:root[customtitlebar][sizemode="maximized"] #nav-bar {
+  border-radius: 50px !important;
+}
+
+
+

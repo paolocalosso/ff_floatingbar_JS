@@ -1,0 +1,85 @@
+@import "magnetic/colors/light.css";
+@import "magnetic/colors/dark.css";
+
+@import "magnetic/pages/newtab.css";
+@import "magnetic/pages/privatebrowsing.css";
+@import "magnetic/pages/firefoxview.css";
+
+@import "magnetic/parts/video-player.css";
+@import "magnetic/parts/bali.css";
+@import "magnetic/parts/sidebar-tabs.css";
+
+
+@-moz-document url-prefix("about:") {
+	* { font-size: 13px !important; }
+	body { background-color: #1b1d1c; }
+	.toggle-button[aria-pressed="true"] {background: #83A598 !important;}
+	#categories > .category[selected], #categories > .category.selected {
+    	    color: #83A598 !important;
+    	    background-color: #83a598;
+    	    border-radius: 25px !important;
+	}
+	#categories:active {
+    	    color: #83A598 !important;
+    	    background-color: #83a598;
+    	    border-radius: 25px !important;
+	}
+	checkbox:not([disabled="true"]):hover > .checkbox-check, input[type="checkbox"]:not(:disabled):hover {
+    	    color: #83A598 !important;
+    	    border-color: #83A598 !important;
+	}
+	checkbox[checked="true"] {
+		color: #83A598 !important;
+    	border-color: #83A598 !important;
+    	fill: #83A598 !important;
+	}
+	radio [checked="true"] {
+		fill: #83A598 !important;
+	}
+	radio:not([disabled="true"]):hover > .radio-check {
+    	    color: #83A598 !important;
+    	    border-color: #83A598 !important;
+	}
+	.text-link {
+    	    color: #83A598 !important;
+	}
+	.content-blocking-category.selected {
+    	    border: 1px solid #83A598 !important;
+	    	background-color: #83A598 !important;
+	}
+	checkbox-check{
+		fill: #83A598 !important;
+	}
+	radio-check{
+		fill: #83A598 !important;
+	}
+	font: menu;
+}
+
+/* Background image for new tab page */
+@-moz-document url(about:newtab), url(about:home) {
+    .outer-wrapper {
+        background-image: url(wallpaper.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.card {
+  border: 0px !important;
+  border-radius: 50px !important;
+  margin-bottom: 30px !important;
+}
+#input {
+  border: solid 1px #83a598 !important;
+  border-radius: 50px !important;
+  /*background-color: #1b1d1c !important;*/
+}
+
+
+/*
+@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html") {
+	body { background-color: #1b1d1c; }
+	font: menu;
+	.toggle-button[aria-pressed="true"] {background: #83A598 !important;}
+}

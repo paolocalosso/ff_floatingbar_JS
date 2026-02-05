@@ -1,0 +1,408 @@
+/* Header bar's URL bar */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+#urlbar {
+	--urlbar-height: 34.00px;
+	--urlbar-container-height: 34.00px !important;
+	margin: auto;
+  display: block;
+}
+
+#urlbar-container {
+	--urlbar-container-height: 34px !important;
+}
+
+/* Center the URL bar */
+toolbarspring {
+	max-width: 10000px !important;
+}
+
+/* URL bar */
+#urlbar {
+	box-shadow: none !important;
+}
+#urlbar-background {
+	box-shadow: none !important;
+	border: 0 !important;
+	background: transparent !important;
+}
+.urlbar-background {
+	box-shadow: none !important;
+	border-radius: 100px !important;
+	border: 0px !important;
+	background-color: transparent !important;
+	outline: none !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+	width: var(--urlbar-width) !important;
+	/*max-width: 70vw !important;*/
+/*	left: 0 !important;
+	top: 0 !important;
+	width: 100% !important;
+	z-index: 5 !important;*/
+}
+
+#urlbar .urlbar-input-container {
+	padding: 0 !important;
+}
+
+/* URL bar results */
+/*.urlbarView {
+		background: var(--gnome-menu-background) !important;
+		color: var(--gnome-toolbar-color) !important;
+		margin: 6px 0 0 0 !important;
+	position: absolute !important;
+	border-radius: 12px !important;
+	border: 1px solid #1B1D1C;
+		width: 100%;	
+}*/
+
+@media (prefers-color-scheme: dark) {
+	.urlbarView {
+		border: 0px solid rgba(62, 62, 62, 0.8) !important;
+	}
+}
+/* Search bar result */
+#PopupSearchAutoComplete {
+	margin-top: 7px !important;
+}
+
+.urlbarView-body-outer {
+	--item-padding-start: 0 !important;
+	--item-padding-end: 0 !important;
+	background: none !important;
+	overflow-x: auto;
+	padding: 2px 6px !important;
+	border-radius: 8px 8px 0 0 !important;
+	border: none !important;
+}
+
+.urlbarView-body-inner {
+	border: 0 !important;
+}
+
+
+.urlbarView-row-inner, .urlbarView-no-wrap  {
+	align-items: center !important;
+}
+.urlbarView-row-inner {
+	padding-block: 5px !important;
+	border-radius: 5px !important;
+}
+
+
+.urlbarView-row-inner, .urlbarView-no-wrap  {
+	align-items: center !important;
+	flex-basis: auto !important;
+}
+.urlbarView-results[wrap] > .urlbarView-row > .urlbarView-row-inner {
+    flex-wrap: nowrap !important;
+}
+.urlbarView-row {
+	/*flex-wrap: nowrap !important;*/
+	border-radius: 50px !important;
+}
+.urlbarView-action {
+	font-size: 100% !important;
+	color: #E7E9CE /*#83A598 #E7E9CE*/ !important;
+}
+/*end customizing*/
+
+.urlbarView-row:hover {
+border-radius: 50px !important;
+}
+
+.urlbarView-row[selected] .urlbarView-row-inner {
+	background: var(--gnome-accent-bg) !important;
+	border-radius: 50px !important;
+	color: white !important;
+}
+.urlbarView-row:not([selected]):hover .urlbarView-row-inner {
+	background: var(--gnome-menu-button-hover-background) !important;
+	border-radius: 50px !important;
+}
+
+.urlbarView-action {
+	background: transparent !important;
+}
+
+/* Fix items overflow */
+.urlbarView[actionoverride] .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-no-wrap,
+.urlbarView-row[has-url]:not([type$="tab"]) > .urlbarView-row-inner > .urlbarView-no-wrap, .urlbarView-row[has-url]:is([type="remotetab"],
+[sponsored]):is(:hover, [selected]) > .urlbarView-row-inner > .urlbarView-no-wrap {
+	max-width: calc(96% - 2 * (var(--urlbarView-favicon-width) + (6px + 2px))) !important;
+}
+
+/* Search engines buttons */
+.search-one-offs {
+	padding: 8px !important;
+	background: var(--gnome-entry-background) !important;
+	border-top: 1px solid var(--gnome-menu-separator-color) !important;
+	border-radius: 0 0 8px 8px !important;
+}
+
+.search-one-offs[is_searchbar="true"] {
+	margin-bottom: -8px !important;
+}
+
+/* URL bar and Search bar */
+#urlbar[focused] .urlbar-textbox-container {
+	margin: -1px !important;
+}
+#searchbar > .searchbar-textbox[focused] .searchbar-search-button {
+	margin-left: -1px !important;
+}
+#searchbar > .searchbar-textbox[focused] .search-go-button {
+	margin-right: -1px !important;
+}
+
+/* URL bar and Search bar's icons */
+.urlbar-icon:hover,
+.urlbar-icon-wrapper:hover,
+.urlbar-icon[open],
+.urlbar-icon-wrapper[open],
+.urlbar-icon:hover:active,
+.urlbar-icon-wrapper:hover:active,
+.searchbar-search-button:hover .searchbar-search-icon,
+.searchbar-search-button[open] .searchbar-search-icon,
+.searchbar-search-button:hover:active .searchbar-search-icon {
+	background-color: transparent !important;
+	fill-opacity: 1 !important;
+}
+
+#urlbar .urlbar-icon {
+	margin: 0 !important;
+	height: 100%  !important;
+}
+#notification-popup-box {
+	height: 100%  !important;
+}
+
+@media (-moz-bool-pref: "browser.urlbar.richSuggestions.featureGate") {
+	#urlbar:not(.searchButton) > .urlbar-input-container > #identity-box[pageproxystate="invalid"] > .identity-box-button {
+		margin-inline-start: 2px;
+	}
+}
+
+/* Search mode indicator */
+#urlbar-search-mode-indicator,
+#urlbar-label-box,
+#urlbar-zoom-button {
+	background: var(--gnome-button-background) !important;
+	border: 0 !important;
+	border-radius: 26px !important;
+	outline: 0 !important;
+	margin: 4px 0;
+}
+#urlbar-search-mode-indicator {
+	padding-right: 0 !important;
+}
+#urlbar-search-mode-indicator-title {
+	color: var(--gnome-toolbar-color);
+	padding-inline: 4px !important;
+}
+#urlbar-search-mode-indicator-close {
+	background-size: 16px !important;
+	background-position: center;
+	border-radius: 26px !important;
+	padding: 5px !important;
+}
+#urlbar-search-mode-indicator-close:hover {
+	background-color: var(--gnome-button-hover-background) !important;
+}
+#urlbar-zoom-button {
+	opacity: 0.8;
+}
+#urlbar-zoom-button:hover {
+	opacity: 1;
+}
+
+/* Firefox identity box */
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button,
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button,
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button,
+#urlbar-label-box {
+	background-color: transparent !important;
+}
+
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:not([open]),
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:not([open]),
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:not([open]) {
+	background-color: hsla(0,0%,70%,.2) !important;
+}
+
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button[open=true],
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button[open=true],
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button[open=true] {
+	background-color: hsla(0,0%,70%,.3) !important;
+}
+
+@media (-moz-bool-pref: "browser.urlbar.richSuggestions.featureGate") {
+	#identity-box[pageproxystate="invalid"] > .identity-box-button {
+		padding-inline:  var(--urlbar-icon-padding) !important;
+	}
+}
+
+/*experiments*/
+/*text centerd and results wide*/
+#urlbar:not([focused]) #urlbar-input, /* ID for Firefox 70 */
+#urlbar:not([focused]) .urlbar-input{ text-align: center !important; }
+#urlbar #urlbar-input, /* ID for Firefox 70 */
+#urlbar .urlbar-input{ text-align: center !important; }
+:root{
+  --toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
+  --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus,Field);
+}
+:root:-moz-lwtheme{
+  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
+}
+.urlbarView-row-inner{
+   /* This sets how far the dropdown-items are from window edge */
+  padding-inline-start: 6px !important;
+}
+
+
+/* Move back/forward and home buttons inside the URL bar */
+/*
+#nav-bar {
+	position: relative;
+}
+#nav-bar toolbarbutton#back-button, 
+#nav-bar toolbarbutton#forward-button,
+#nav-bar toolbarbutton#stop-button,
+#nav-bar toolbarbutton#reload-button,
+#nav-bar toolbarbutton#home-button,
+#nav-bar toolbarbutton#firefox-view-button {
+  position: absolute;
+  border: none;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+#nav-bar toolbarbutton#back-button {
+  left: 10px;
+}
+#nav-bar toolbarbutton#forward-button {
+  left: 45px;
+}
+#nav-bar toolbarbutton#stop-button {
+  left: 80px;
+}
+#nav-bar toolbarbutton#reload-button {
+  left: 80px;
+}
+#nav-bar toolbarbutton#home-button {
+	left: 115px;
+}
+#nav-bar toolbarbutton#firefox-view-button {
+	left: 150px;
+}
+*/
+
+
+/*
+#urlbar-container,
+#urlbar{
+  position: static !important;
+  display: flex !important;
+}
+#urlbar{
+  height: auto !important;
+  width: auto !important;
+  box-shadow: inset 0 0 0 1px var(--toolbar-field-border-color, hsla(240,5%,5%,.25));
+  background-color: var(--toolbar-field-background-color, hsla(0,0%,100%,.8));
+  border-radius: var(--toolbarbutton-border-radius);
+  --uc-urlbar-min-width: none;
+  transition: background-color 0.25s ease !important;
+}
+#urlbar[focused]{
+	box-shadow: inset 0 0 0 1px var(--toolbar-field-focus-border-color, highlight);
+}
+*/
+
+
+#nav-bar toolbarspring {
+    min-width: 5vw !important;
+    max-width: 5vw !important;
+}
+
+.urlbarView {
+	position: absolute !important;
+  left: -21.5% !important;
+  width: 150% !important;
+  /*border-width: 1px 0;*/
+  border-radius: 25px !important;
+  top: var(--urlbar-container-height);
+  color: white !important;
+  background-color: var(--toolbar-field-focus-background-color, inherit);
+  z-index: 4;
+  backdrop-filter: blur(10px) !important;
+  filter: contrast(110%) brightness(90%);
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+  animation: fade .5s forwards ease-in-out;
+  animation: slide .5s forwards ease-in-out;
+  animation-delay: 0s;
+  animation-duration: .5s !important;
+}
+
+
+.urlbarView:not(:active):hover {
+	background-color: rgb(27,29,28,0.96) !important;
+	transition: background-color 1s ease !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
+.urlbarView:not(:active) {
+	background-color: rgb(27,29,28,0.85) !important;
+	transition: background-color 1s ease !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
+
+
+
+@keyframes slide {
+    100% { top: 100px; }
+}
+@keyframes fade {
+	from {
+    transform: translateY(-10%);
+  }
+  to {
+    transform: translateY(-25%);
+  }
+    /*0% { opacity: 0; }
+   	100% { opacity: 1; }*/
+}
+
+#urlbar-input::selection {
+color: white !important; /* text */ 
+background-color: #1b1d1c !important; /* background (green) */
+}
+.urlbarView-row[selected] .urlbarView-row-inner,
+.urlbarView-row:hover .urlbarView-row-inner { 
+ background-color: #83A598 /*#E7E9CE*/ !important; 
+}
+
+#urlbar > #urlbar-input-container{ padding: 0px !important; width: auto !important; height: auto !important; }
+#urlbar > #urlbar-background{ display: none !important; }
+
+
+
+/* Makes the window draggable from urlbar when urlbar is not focused. This means you can't click the urlbar text to activate it normally. But right-click works to activate urlbar. */
+.urlbar-input-box,.urlbar-input,#urlbar-scheme,#urlbar-container{
+  -moz-window-dragging: drag;
+  cursor: default;
+}
+.urlbar-input-container > box,
+#page-action-buttons,
+#urlbar-container:focus-within,
+#urlbar-container:focus-within :is(.urlbar-input-box,.urlbar-input,#urlbar-scheme,#urlbar-container){
+  -moz-window-dragging: no-drag;
+  cursor: auto;
+}

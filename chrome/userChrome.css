@@ -1,0 +1,199 @@
+
+/* Import theme */
+@import "magnetic/theme.css";
+
+/* Import a custom stylesheet
+ * Everything you add in your customChrome.css file (it doesn't exist by
+ * default) will be included here and preserved between updates. 
+ * You can apply your own custom styles in that file. */
+@import "customChrome.css";
+@import "magnetic/parts/tabcenter.css";
+@import "magnetic/parts/bookmarks_toolbar.css";
+@import "magnetic/parts/extensions-menu.css";
+/*@import "magnetic/parts/sidebar-support.css";*/
+@import "magnetic/parts/quietUrlbar.css";
+/*@import "magnetic/parts/bali.css" */
+
+/*.menupopup-arrowscrollbox *{
+display: grid;
+grid-auto-flow: column;
+grid-template-rows: repeat(35, auto);
+}
+*/
+
+/* look at parts > popups.css
+menupopup > menuitem,
+menupopup > menu{
+  min-width: 120px !important;
+}*/
+/*
+#navigator-toolbox:not(:hover) #nav-bar {
+    visibility: collapse !important;
+}
+#navigator-toolbox:not(:hover) {
+    border-bottom: none !important;
+}
+*/
+
+.titlebar-button{
+  list-style-image: none !important;
+  appearance: auto !important;
+}
+
+.titlebar-min {
+  -moz-default-appearance: -moz-window-button-minimize !important;
+}
+.titlebar-max {
+  -moz-default-appearance: -moz-window-button-maximize !important;
+}
+.titlebar-restore {
+  -moz-default-appearance: -moz-window-button-restore !important;
+}
+.titlebar-close {
+  -moz-default-appearance: -moz-window-button-close !important;
+}
+
+:root[customtitlebar] #titlebar:-moz-window-inactive { opacity: 100 !important; }
+
+
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/loading_indicator_bouncing_line.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Shows a left-right bouncing line at the top of the content area during navigation */
+
+@keyframes statusline-anim{from{background-position-x: left}to{background-position-x: right}}
+#statuspanel[type="status"]::after{
+  position: fixed;
+  display: block;
+  height: 2px;
+  width: 100vw;
+  top: 0;
+  left:0;
+  content: "";
+  pointer-events: none;
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to left,transparent,rgb(231, 233, 206),transparent);
+  animation: statusline-anim 400ms alternate infinite ease-in-out;
+}
+
+@media (min-width: 1000px){ #statuspanel[type="status"]::after{ animation-duration: 460ms } }
+@media (min-width: 1400px){ #statuspanel[type="status"]::after{ animation-duration: 520ms } }
+@media (min-width: 1700px){ #statuspanel[type="status"]::after{ background-size: 15%; animation-duration: 550ms } }
+@media (min-width: 2200px){ #statuspanel[type="status"]::after{ animation-duration: 600ms } }
+.browserContainer{ transform: translate(0) }
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tab_line_loading_indicator.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Hide the normal loading indicator (just show tab-icon instead) and make the top tab-line bounce left-to-right */
+
+@keyframes tab-loading-line-anim{from{background-position-x: left}to{background-position-x: right}}
+.tabbrowser-tab[busy] > .tab-stack >  .tab-background::before,
+.tab-background[selected]::before{
+  content: "";
+  display: flex;
+  height: 2px;
+  background-color:transparent;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: background-size 80ms linear;
+}
+
+.tabbrowser-tab[busy] > .tab-stack > .tab-background::before{
+  background-size: 10%;
+  background-image: linear-gradient(currentColor,currentColor);
+  opacity: 0.7;
+  animation: tab-loading-line-anim 400ms alternate infinite ease-in-out;
+}
+
+.tab-throbber{ display: none }
+.tab-icon-image[src]{ display: block }
+
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/button_effect_scale_onclick.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Effect */
+.urlbar-icon,
+.toolbarbutton-icon,
+.menuitem-iconic .menu-iconic-icon{
+  transition: transform 83ms linear !important;
+}
+
+toolbar .toolbarbutton-1 > .toolbarbutton-icon{
+  transition: padding 83ms linear !important;
+}
+
+toolbarbutton#scrollbutton-up:active > .toolbarbutton-icon,
+toolbarbutton:not(.toolbarbutton-1):active > .toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-badge-stack > .toolbarbutton-icon,
+.menuitem-iconic:active .menu-iconic-icon,
+.urlbar-page-action:active > .urlbar-icon{
+  transform: scale(0.6) !important;
+}
+toolbarbutton#scrollbutton-down:active > .toolbarbutton-icon{ transform: scale(-0.6) !important; }
+
+toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
+  padding: calc(var(--toolbarbutton-inner-padding) + 3px) !important;
+}
+
+
+
+
+/*centered statuspanel*/
+#statuspanel:not([hidden]){
+  display: flex !important;
+  justify-self: center !important;
+  padding-top: 0 !important;
+  inset-inline: auto !important;
+  min-width: unset !important;
+}
+#statuspanel-label{
+  color: #1b1d1c !important;
+  /*border-width: 1px 1px 0px 1px !important;*/
+  border-radius: 25px /*25px 0 0*/ !important;
+  border: #83A59870  0px solid !important;
+  margin-inline: auto !important;
+  padding: 4px 15px !important;
+  background-color: #83A59890 !important;
+}
+/* Set this pref to true in about:config to make statuspanel show at top instead */
+@media (-moz-bool-pref: "userchrome.centered-statuspanel.on-top.enabled"){
+  #statuspanel:not([hidden]){
+    inset-block: 0 auto !important;
+  }
+  #statuspanel-label{
+    border-width: 0 1px 1px 1px !important;
+  }
+}
+@supports -moz-bool-pref("userchrome.centered-statuspanel.on-top.enabled"){
+  #statuspanel:not([hidden]){
+    inset-block: 0 auto !important;
+  }
+  #statuspanel-label{
+    border-width: 0 1px 1px 1px !important;
+  }
+}
+
+.identity-box-button {
+  border-radius: 500px !important;
+}
+.identity-box-button:hover {
+  background-color: #83A598 !important;
+}
+
+
+
+
+#nav-bar,
+#urlbar[focused] > #urlbar-background,
+#searchbar:focus-within,
+tooltip {
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 10px !important;
+}
+
+menupopup,
+panel
+  --panel-shadow: rgba(0, 0, 0, 0.55) 0px 5px 10px !important;

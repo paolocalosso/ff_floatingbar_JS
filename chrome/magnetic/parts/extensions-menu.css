@@ -1,0 +1,266 @@
+/*  ultratight extensions menu with only icons*/
+/*
+#unified-extensions-panel #unified-extensions-view {
+    width: 100% !important;
+}
+#unified-extensions-view{
+    --uei-icon-size: 34px;
+    --firefoxcss-number-of-extensions-in-a-row: 4;
+}
+#unified-extensions-view .panel-header,
+#unified-extensions-view .panel-header + toolbarseparator,
+#unified-extensions-view .panel-subview-body + toolbarseparator,
+#unified-extensions-view #unified-extensions-manage-extensions,
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
+#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents{
+    display:none !important;
+}
+#unified-extensions-view .panel-subview-body {
+    padding:4px !important;
+}
+#unified-extensions-view .unified-extensions-item .unified-extensions-item-icon, 
+#unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack {
+    margin-inline-end: 0px !important;
+}
+#unified-extensions-view #overflowed-extensions-list,
+#unified-extensions-view #unified-extensions-area,
+#unified-extensions-view .unified-extensions-list {
+    display: grid !important;
+    grid-template-columns: repeat(var(--firefoxcss-number-of-extensions-in-a-row),auto);
+    justify-items:left !important;
+    align-items:left !important;
+}
+#unified-extensions-view .unified-extensions-list .unified-extensions-item,
+#unified-extensions-view .unified-extensions-list{
+     max-width: max-content;
+}
+#unified-extensions-view #unified-extensions-area {
+    padding-bottom: 3px !important;
+    border-bottom: 1px solid #aeaeae33 !important;
+}
+#unified-extensions-view .unified-extensions-list {
+
+}
+#wrapper-edit-controls:is([place="palette"], 
+[place="panel"]) > #edit-controls, #wrapper-zoom-controls:is([place="palette"], 
+[place="panel"]) > #zoom-controls, :is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
+  margin: 0px !important;
+}
+*/
+
+/*compact addons menu*/
+/*
+#unified-extensions-panel #unified-extensions-view {
+    width: 400px !important;
+}
+#unified-extensions-view{
+  --uei-icon-size: 16px;
+}
+.unified-extensions-item-menu-button.subviewbutton{
+  list-style-image: url("chrome://global/skin/icons/more.svg") !important;
+  padding: 0px !important;
+  margin-inline-end: 0 !important;
+}
+.unified-extensions-item-menu-button.subviewbutton > .toolbarbutton-icon{
+  padding: 2px !important;
+}
+.unified-extensions-item {
+  margin-left: 2px !important;
+  position: relative !important;
+}
+.unified-extensions-item-message-deck{
+  display: none;
+}
+#unified-extensions-view > .panel-header {
+  display: none !important;
+}
+#unified-extensions-view > vbox > vbox > .unified-extensions-item{
+  padding-block: 0px !important;
+}
+#unified-extensions-panel .unified-extensions-item{
+  margin-block: 0 !important;
+  width: 100%; !important; 
+}
+#unified-extensions-panel .unified-extensions-item-contents  {
+    margin: auto !important;
+}
+#unified-extensions-panel .unified-extensions-item-name {
+  position: absolute;
+  vertical-align: middle !important;
+  left: 0px;
+  margin-left: 35px !important;
+  bottom: 0px;
+  margin-bottom: 8px !important;
+}
+/*#unified-extensions-panel .unified-extensions-item-message {
+  font-size: 75% !important;
+}*/
+/*
+.unified-extensions-item-action-button[enabled] > .unified-extensions-item-icon {
+  display:none !important;
+}
+.unified-extensions-item-action-button[disabled] > .unified-extensions-item-icon{
+  display: none;
+}
+
+
+
+/*columns addons menu*/
+/*
+#unified-extensions-view {
+  width: unset !important;
+}*/
+#unified-extensions-panel #unified-extensions-view {
+    width: 650px !important;
+}
+#unified-extensions-button {
+  list-style-image: url("../icons/library-symbolic-teal.svg") !important;
+}
+
+#unified-extensions-manage-extensions,
+.subviewbutton,
+.panel-subview-footer-button {
+  /*display: none !important;*/
+  text-align-last: start !important;
+}
+
+#overflowed-extensions-list,
+#unified-extensions-area,
+.unified-extensions-list
+{
+  margin-inline: var(--panel-separator-margin) !important;
+  display: block !important;
+  column-gap: 0 !important;
+  column-count: 2 !important;
+}
+#unified-extensions-view .panel-header,
+#unified-extensions-view toolbarseparator
+{
+  display: none !important;
+}
+#unified-extensions-panel #unified-extensions-view,
+#unified-extensions-manage-extensions
+{
+  margin-top: 0px !important;
+}
+#unified-extensions-panel vbox#overflowed-extensions-list:not(:empty),
+#unified-extensions-panel vbox#unified-extensions-area:not(:empty),
+#unified-extensions-panel vbox.unified-extensions-list:not(:empty)
+{
+  /*border-bottom: 1px solid #83A598 /*color-mix(in srgb, currentColor 40%, transparent)*/;
+  border-bottom: 0px solid #83A598 /*color-mix(in srgb, currentColor 40%, transparent)*/;
+}
+#overflowed-extensions-list .toolbarbutton-icon,
+#unified-extensions-panel .toolbarbutton-icon,
+.unified-extensions-item-icon
+{
+  --uei-icon-size: 16px;
+}
+/*#unified-extensions-panel .subviewbutton {
+  padding: 2px !important;
+}*/
+/*
+.unified-extensions-item-menu-button.subviewbutton{
+  list-style-image: url("chrome://global/skin/icons/more.svg") !important;
+  padding: 0px !important;
+  margin-inline-end: 0px !important;
+  height: 32px !important;
+  width: 32px !important;
+  margin: 5px 0px !important;
+  border-radius: 50% !important;
+}
+*/
+.unified-extensions-item-menu-button.subviewbutton > .toolbarbutton-icon{
+  padding: 0px !important;
+}
+
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton{
+    visibility: hidden !important;
+    transition: all var(--animation-speed) !important;
+    -moz-margin-end: -3.2em !important;
+}
+#unified-extensions-view:hover 
+.unified-extensions-item-menu-button.subviewbutton{ 
+    visibility: visible !important;
+    transition: var(--hovering-speed) !important;
+    -moz-margin-end: initial !important;
+    -moz-margin-start: -7px !important;
+    margin-left: 2px !important;
+    background: #1b1d1c50 !important;
+    opacity: 0.9 !important;
+}
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton:not(:hover)
+{
+  opacity: 0.5 !important;
+}
+
+
+#unified-extensions-view > vbox > vbox > .unified-extensions-item {
+  padding-block: 0px !important;
+  margin-block: 0px !important;
+}
+#unified-extensions-view .unified-extensions-item-menu-button {
+  margin-inline-end: 0 !important;
+}
+#unified-extensions-view .toolbarbutton-icon {
+  padding: 0 !important;
+}
+.unified-extensions-list .unified-extensions-item-menu-button {
+ /* margin-inline-end:0px !important;*/
+}
+.unified-extensions-item-contents {
+  /*line-height: 1 !important;*/
+  /*white-space: nowrap !important;*/
+  margin: auto !important;
+  margin-left: 0px !important;
+}
+.unified-extensions-item-name {
+  position: inline !important;
+  left: 0 !important;
+  font-size: 100% !important;
+  margin-left: 5px !important;
+  width: 225px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+ }
+.unified-extensions-item-message {
+  font-size: 0% !important;
+  /*margin-left: 5px !important;*/ }
+.unified-extensions-item-icon {
+  /*position: absolute !important;
+  left: 0px !important;
+  margin-left: 15px !important; */}
+
+
+#unified-extensions-panel
+  :where(toolbaritem,unified-extensions-item)[attention]
+  .unified-extensions-item-action-button
+/*{
+  box-shadow:
+    1px 1px var(--uei-button-attention-dot-color) inset,
+    -1px -1px var(--uei-button-attention-dot-color) inset !important;
+}
+/**/
+/* keep button to the right of pinned extension buttons */
+/*
+#unified-extensions-button { order: 1 !important; }
+/**/
+/* to style disabled extension buttons */
+/*
+#unified-extensions-panel
+  :where(toolbaritem,unified-extensions-item)
+  .unified-extensions-item-action-button[disabled] {
+    
+  }
+/**/
+/* to hide the gear icons */
+/*
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton
+  { display: none !important; }
+/**/
+/* to hide the button text (not advised) */
+/*
+#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents
+  { width: 0 !important; visibility: hidden !important; }
+/**/

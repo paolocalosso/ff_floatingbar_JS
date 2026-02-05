@@ -1,0 +1,188 @@
+/* Sidebar */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+:root {
+  --background-color: transparent !important;
+  /* Also modify the following custom variables if necessary
+  --background-hover-color:
+  --background-hover-shadow:
+  --background-selection-hover-color:
+  */
+  /* Or like this
+  --background-hover-color: var(--background-hover-shadow);
+  --background-selection-hover-color: var(--background-hover-shadow);
+  */
+}
+/* This can be removed after the fix */
+html, body, main {
+  background-color: var(--background-color);
+}
+
+
+#sidebar-main {
+	background-color: transparent !important;
+}
+
+#sidebar-box, .sidebar-panel {
+	background-color: transparent !important;
+	border-radius: 25px !important;
+	/*padding-top: 10px !important;*/
+1}
+#sidebar-box:-moz-window-inactive, .sidebar-panel:-moz-window-inactive {
+	background-color: transparent !important;
+	/*background-color: var(--gnome-inactive-sidebar-background) !important;*/
+}
+#sidebar-box:-moz-window-inactive label, #sidebar-box:-moz-window-inactive image,
+.sidebar-panel:-moz-window-inactive label, .sidebar-panel:-moz-window-inactive image,
+.sidebar-placesTreechildren:-moz-window-inactive {
+	opacity: 0.7 !important;
+}
+#sidebar-splitter {
+	background-color: transparent !important;
+	/*background-color: var(--gnome-toolbar-background) !important;*/
+	border: 0 !important;
+	border-right: 0px solid #1B1D1C /*var(--gnome-toolbar-border-color)*/ !important;
+	width: 0 !important;
+}
+#sidebar-splitter:-moz-window-inactive {
+	background-color: transparent !important;
+	/*background-color: var(--gnome-inactive-toolbar-background) !important;*/
+	border-color: var(--gnome-inactive-toolbar-border-color) !important;
+}
+
+#sidebar-header {
+	padding: 6px !important;
+	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
+}
+#sidebar-search-container {
+	padding: 6px !important;
+}
+
+
+/* New sidebar */
+@media (-moz-bool-pref: "sidebar.revamp") {
+    #tabbrowser-tabbox {
+		--chrome-content-separator-color: var(--gnome-toolbar-border-color);
+		box-shadow: none !important;
+    }
+	#sidebar-splitter {
+		border-color: var(--gnome-toolbar-border-color) !important;
+		margin: 0 !important;
+	}
+	
+
+}
+
+
+
+
+
+/*ex_sidebar_support.css*/
+#sidebar-box {
+	position: fixed;
+	z-index: 3;
+	left: -288px;
+	top: 50px;
+	opacity: 0;
+	bottom: 4px;
+	border-radius: 20px;
+	width: 288px !important;
+	transition: all 600ms cubic-bezier(0.77, 0, 0.18, 1);
+	box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+#sidebar-box:hover {
+	left: 4px;
+	opacity: 1;
+}
+
+#sidebar-box::after {
+	content: "";
+	background-color: transparent;
+	width: 16px;
+	top: 42px;
+	bottom: 0;
+	right: -12px;
+	position: absolute;
+}
+
+#sidebar-box::before {
+	content: "";
+	background-color: transparent;
+	width: 12px;
+	top: 0;
+	bottom: 0;
+	left: -12px;
+	position: absolute;
+}
+
+#sidebar {
+	border-radius: 25px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	background-color: transparent !important;
+}
+
+#sidebar::after {
+	content: "";
+	top: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	left: 0;
+	border: 1px solid #1b1d1c;
+	border-radius: 25px;
+	z-index: 0;
+	outline: #1b1d1c solid;
+	outline-width: 1px;
+}
+
+#titlebar {
+	height: 0;
+}
+
+.titlebar-buttonbox-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 38px;
+}
+
+#PanelUI-menu-button {
+	padding-inline-end: 134px !important;
+}
+/*
+#firefox-view-button {
+	position: absolute;
+	top: 0;
+	left: 4;
+	z-index: 1;
+	height: 38px;
+}
+*/
+#nav-bar-customization-target {
+	padding-left: 34px !important;
+}
+
+#TabsToolbar #TabsToolbar-customization-target> :not(#tabbrowser-tabs) {
+	margin: 0 !important;
+}
+
+#TabsToolbar #firefox-view-button[open]>.toolbarbutton-icon {
+	box-shadow: none !important;
+}
+
+/* Disable extension dot bug*/
+#unified-extensions-button[attention]>.toolbarbutton-icon {
+	background-image: none !important;
+}
+
+#sidebar-header {
+	display: none !important;
+}
+
+.sidebar-splitter {
+  display: none !important;
+}

@@ -1,0 +1,216 @@
+/* about:newtab */
+
+@-moz-document url("about:newtab"), url("about:home") {
+    body {
+        /*background: url("../walls/ubuntu-gruvbox.jpg") !important ; background-size: cover !important ;*/
+        --newtab-background-color: #282828 /*#83A598*/ /*#282828*/ /*var(--gnome-browser-before-load-background)*/ !important;
+        --newtab-background-color-secondary: var(--gnome-menu-background) !important;
+        --newtab-primary-action-background: var(--gnome-accent) !important;
+    }
+    .personalize-button {
+        /*margin-top: 31px !important;
+        margin- right: 31px !important;*/
+        width: 37px !important;
+        min-width: 37px !important;
+        border-radius: 500px !important;
+        background-color: #1b1d1c !important;
+        transition: transform 1.5s ease;
+    }
+    .personalize-button > div > img {
+        width: 75% !important;
+    }
+
+    .personalize-button:hover {
+        width: fit-content !important;
+        min-width: var(--button-full-width) !important;
+        background-color: #83A598 !important;
+    }
+    .context-menu-button {
+        border-radius: 25px !important;
+        border-color: #1b1d1c !important;
+        background-color: #1b1d1c !important;
+        /*transform: scaleX(1);*/
+        transition-delay: 500ms,500ms !important;
+    }
+    .context-menu-button:hover {
+        border-radius: 25px !important;
+        background-color: #83a598 !important;
+        border-color: #83a598 !important;
+    }
+    .section-top-bar {
+        display: hidden !important;
+        margin-top: 0px !important;
+    }
+    .section-title {
+        display: none !important;
+    }
+    .ds-top-sites {
+        margin-top: 75px !important;
+    }
+    .ds-highlights {
+        border-top: 1px solid #E7E9CE  !important;
+    }
+    .card {
+        border-radius: 25px !important;
+    }
+    .card-outer {
+        border-radius: 25px !important;
+        transition: all .5s ease !important;
+    }
+    .card-outer:hover {
+        z-index: 15 !important;
+        border-radius: 25px !important;
+        transform: scale(0.95) !important;
+    }
+    .card-preview-image-outer {
+        border-radius: 25px 25px 0 0  !important;
+    }
+    /*.card-preview-image {
+        border-radius: 25px 25px 0 0 !important;
+    }*/
+    .tile {
+        border-radius: 50px 50px 50px 0 !important;
+        background-color: rgb(27,29,28,0.70) /*rgb(131, 165, 152, 0.7)*/ !important;
+        backdrop-filter: blur(10px) !important;
+        transition: transform .5s ease;
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+    }
+    .tile:hover {
+        transform: scale(0.95) !important;
+        background-color: #83A598 /*rgb(27,29,28,0.70)*/ !important;
+        box-shadow: 0 0 0 10px #1b1d1c85 /*#83a59885*/ !important;
+    }
+    .title-label {
+        border-radius: 500px !important;
+        /*color: #83A598  !important;*/
+        font-weight: bold;
+        font-size: 1.0em  !important;
+    }
+
+    .top-site-icon {
+        border-radius: 50% !important;
+        transition: transform .5s ease;
+    }
+    .top-site-icon:hover {
+        border-radius: 50% !important;
+        transform: rotate(360deg) !important;
+    }
+    .top-site-outer:hover {
+        border-radius: 20px !important;
+        background-color: /*rgb(27,29,28,0.25)*/ rgb(231, 233, 206, 0.15) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    /*.rich-icon*/
+    .context-menu {
+        -moz-appearance: none !important;
+        border-radius: 15px !important;
+        color: var(--gnome-toolbar-color) !important;
+        font: menu !important;
+        min-width: 120px !important;
+        padding: 4px 4px !important;
+        min-height: 32px !important;
+        background-color: rgba(27,29,28, .95);
+    }
+    .menuitem {
+        border-radius: 30px !important;
+        color: var(--gnome-toolbar-color) !important;
+        font: menu !important;
+        min-width: 120px !important;
+        padding: 4px 4px !important;
+        min-height: 32px !important;
+        background-color: #E7E9CE !important;
+    }
+    /*.context-menu-item {
+        border-radius: 30px !important;
+        color: var(--gnome-toolbar-color) !important;
+        font: menu !important;
+        min-width: 120px !important;
+        padding: 4px 4px !important;
+        min-height: 32px !important;
+        background-color: transparent!important;
+    }
+    .context-menu-item:hover {
+        border-radius: 30px !important;
+        color: var(--gnome-toolbar-color) !important;
+        font: menu !important;
+        min-width: 120px !important;
+        padding: 4px 4px !important;
+        min-height: 32px !important;
+        background-color: #83A598 !important;
+    }*/
+    [role="menuitem"] {
+        border-radius: 30px !important;
+        color: var(--gnome-toolbar-color) !important;
+        font: menu !important;
+        font-size: 50% !important;
+        min-width: 270px !important;
+        padding: 4px 10px !important;
+        min-height: 32px !important;
+        background-color: transparent !important;
+    }
+    [role="menuitem"]:hover {
+        border-radius: 30px !important;
+        transition: .35s !important;
+        padding-left: 16px!important;
+        min-height: 32px !important;
+        background-color: #83A598 !important;
+    }
+    .separator {
+        display: none !important;
+    }
+    .close-button-wrapper {
+        background-color: #212320  !important;
+    }
+    .icon-pin-small {
+        fill: #E7E9CE !important;
+        /*border: solid 1px #83A598  !important;
+        border-radius: 50% !important;*/
+    }
+    .top-site-outer:hover .icon-pin-small {
+        fill: #1b1d1c !important;
+        /*border: solid 1px #E7E9CE !important;*/
+    }
+
+}
+
+@-moz-document url("about:home"),
+               url("about:newtab")
+{
+  :root[lwt-newtab-brighttext] {
+    --newtab-primary-action-background: transparent !important;
+  }
+}
+
+
+@-moz-document url("about:home"), url("about:newtab"){
+  .search-wrapper input,
+  .top-site-outer .tile{
+    outline: none !important;
+  }
+}
+
+/*increase shortcuts columns*/
+/*
+@-moz-document url("about:home"), url("about:newtab"){
+  @media (min-width: 1378px) {
+    .ds-outer-wrapper-breakpoint-override main {
+      width: 1226px !important;
+    }
+  }
+  @media (min-width: 1636px) {
+    .ds-outer-wrapper-breakpoint-override main {
+      width: 1466px !important;
+    }
+  }
+  @media (min-width: 1892px) {
+    .ds-outer-wrapper-breakpoint-override main {
+      width: 1726px !important;
+    }
+  }
+  @media (min-width: 2148px) {
+    .ds-outer-wrapper-breakpoint-override main {
+      width: 1966px !important;
+    }
+  }
+}
+*/

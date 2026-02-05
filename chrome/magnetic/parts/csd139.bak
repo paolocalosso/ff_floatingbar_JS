@@ -1,0 +1,243 @@
+/* GNOME CSD styles for headerbar on Firefox [customtitlebar] */
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#main-window {
+	appearance: -moz-window-titlebar !important;
+}
+
+/* Headerbar top border corners rounded */
+:root[customtitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) #nav-bar {
+	border-radius: env(-moz-gtk-csd-titlebar-radius) env(-moz-gtk-csd-titlebar-radius) 0 0 !important;
+}
+
+
+/* Window buttons: at least 1 button */
+@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+	:root[customtitlebar]:not([inFullscreen]) #nav-bar {
+		padding-right: 50px !important;
+	}
+}
+/* Window buttons: at least 2 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+       (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+       (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+	:root[customtitlebar]:not([inFullscreen]) #nav-bar {
+		padding-right: 90px !important;
+	}
+}
+/* Window buttons: 3 buttons */
+@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+	:root[customtitlebar]:not([inFullscreen]) #nav-bar {
+		padding-right: 130px !important;
+	}
+}
+
+/* Left window buttons */
+@media (-moz-gtk-csd-reversed-placement) {
+	:root[customtitlebar]:not([inFullscreen]) #nav-bar {
+		padding-right: 3px !important;
+	}
+	
+	/* Window buttons box */
+	:root[customtitlebar]  .titlebar-buttonbox-container {
+		left: 0;
+		right: auto !important;
+	}
+
+	/* Window controls: at least 1 button */
+	@media (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-close-button) {
+		:root[customtitlebar]:not([inFullscreen]) #nav-bar {
+			padding-left: 50px !important;
+		}
+	}
+	/* Window controls: at least 2 buttons */
+	@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+				 (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+				 (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+		:root[customtitlebar]:not([inFullscreen]) #nav-bar {
+			padding-left: 90px !important;
+		}
+	}
+	/* Window controls: 3 buttons */
+	@media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+		:root[customtitlebar]:not([inFullscreen]) #nav-bar {
+			padding-left: 130px !important;
+		}
+	} 
+}
+
+/* Fullscreen headerbar padding for 1 button */
+:root[customtitlebar][inFullscreen] #nav-bar {
+	padding-right: 50px !important;
+}
+
+/* Remove close and minimize buttons from fullscreen buttons */
+:root[customtitlebar][inFullscreen] #window-controls #close-button,
+:root[customtitlebar][inFullscreen] #window-controls #minimize-button,
+:root[customtitlebar][inFullscreen]  .titlebar-buttonbox-container {
+	display: none !important;
+}
+
+/* Remove tabsbar titlebar blank spaces */
+:root[customtitlebar] #TabsToolbar .titlebar-placeholder {
+	display: none !important;
+}
+
+/* Prevent menubar from breaking */
+:root[customtitlebar] #toolbar-menubar:not([inactive=true]) {
+	height: 30px !important;
+	margin-bottom: 8px;
+}
+
+/* Remove default style of titlebar */
+:root[customtitlebar]  {
+	appearance: none !important;
+	z-index: 101 !important;
+}
+
+/* Fix the issue when dragging tabs */
+:root[customtitlebar] #navigator-toolbox[movingtab] #TabsToolbar {
+	padding-bottom: 0 !important;
+}
+
+/* Window buttons box */
+:root[customtitlebar]  .titlebar-buttonbox-container,
+:root[customtitlebar] #titlebar-buttonbox-container,
+:root[customtitlebar][inFullscreen] #window-controls {
+	appearance: none !important;
+	padding: 8px 10px 6px 0;
+	position: absolute !important;
+	right: 0;
+	top: 0;
+	display: block !important;
+}
+:root[customtitlebar]  .titlebar-buttonbox {
+	appearance: none !important;
+}
+
+/* Window buttons style */
+:root[customtitlebar]  .titlebar-button,
+:root[customtitlebar][inFullscreen] #window-controls toolbarbutton {
+	appearance: none !important;
+	padding: 0 !important;
+}
+
+:root[customtitlebar]  .titlebar-button {
+	border-radius: 100% !important;
+	height: 16px !important;
+	margin: 10px 7px !important;
+	width: 16px !important;
+}
+
+:root[customtitlebar][inFullscreen] #window-controls toolbarbutton {
+	border-radius: 6px !important;
+	height: 32px;
+	margin: 0 4px !important;
+	width: 32px;
+}
+
+:root[customtitlebar]  .titlebar-button > .toolbarbutton-icon {
+	padding: 0 !important;
+	stroke: none !important;
+	-moz-context-properties: fill, fill-opacity !important;
+}
+
+:root[customtitlebar]  .titlebar-button > .toolbarbutton-icon {
+	appearance: none !important;
+	width: 16px;
+}
+:root[customtitlebar] #titlebar:-moz-window-inactive .titlebar-button,
+:root[customtitlebar][inFullscreen] #window-controls:-moz-window-inactive toolbarbutton {
+	opacity: .3 !important;
+}
+
+
+:root[customtitlebar]  .titlebar-min,
+:root[customtitlebar]  #titlebar-min {
+	background: transparent !important;
+	background-size: 16px;
+}
+
+:root[customtitlebar]  .titlebar-restore,
+:root[customtitlebar]  .titlebar-max,
+:root[customtitlebar]  #titlebar-max {
+	background: transparent !important;
+	background-size: 16px;
+}
+
+:root[customtitlebar]  .titlebar-close,
+:root[customtitlebar]  #titlebar-close {
+	background: transparent !important;
+	background-size: 16px;
+}
+
+
+:root[customtitlebar]  .titlebar-min:hover,
+:root[customtitlebar]  #titlebar-min:hover {
+	background: #83A598 !important;
+	/*transform: scale(1.2) !important;*/
+	padding: 2px !important;
+	margin: 6px 4px 4px !important;
+	width: 22px !important;
+	height: 22px !important;
+}
+
+:root[customtitlebar]  .titlebar-restore:hover,
+:root[customtitlebar]  .titlebar-max:hover,
+:root[customtitlebar]  #titlebar-max:hover {
+	background: #83A598 !important;
+	/*transform: scale(1.2) !important;*/
+	padding: 2px !important;
+	margin: 6px 4px 4px !important;
+	width: 22px !important;
+	height: 22px !important;
+}
+
+:root[customtitlebar]  .titlebar-close:hover,
+:root[customtitlebar]  #titlebar-close:hover {
+	background: #E7E9CE !important;
+	/*transform: scale(1.2) !important;*/
+	padding: 2px !important;
+	margin: 6px 4px 4px !important;
+	width: 22px !important;
+	height: 22px !important;
+}
+
+
+/* Restore button (fullscreen) */
+:root[customtitlebar][inFullscreen]  .titlebar-buttonbox-container {
+	padding: 0 !important;
+}
+
+:root[customtitlebar][inFullscreen]  .titlebar-button {
+	border-radius: 6px !important;
+	height: 34px !important;
+	width: 34px !important;
+	transition: background .3s;
+}
+
+
+:root[customtitlebar]  .titlebar-close:hover .toolbarbutton-icon,
+:root[customtitlebar]  .titlebar-close:active .toolbarbutton-icon {
+	filter: invert(0%) brightness(100%) !important;
+
+}
+
+:root[customtitlebar]  .titlebar-min:hover .toolbarbutton-icon,
+:root[customtitlebar]  .titlebar-min:active .toolbarbutton-icon {
+	filter: invert(100%) brightness(100%) !important;
+
+}
+
+:root[customtitlebar]  .titlebar-max:hover .toolbarbutton-icon,
+:root[customtitlebar]  .titlebar-max:active .toolbarbutton-icon {
+	filter: invert(100%) brightness(100%) !important;
+
+}
+
+:root[customtitlebar]  .titlebar-restore:hover .toolbarbutton-icon,
+:root[customtitlebar]  .titlebar-restore:active .toolbarbutton-icon {
+	filter: invert(100%) brightness(100%) !important;
+
+}
