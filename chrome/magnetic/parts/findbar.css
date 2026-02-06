@@ -11,7 +11,7 @@ findbar{
   /*width: auto !important;*/
   min-width: 1500px !important;
   max-width: 1920px !important;
-  
+
   /* Stile floating con glassmorphism */
   background: rgba(27, 29, 28, 0.75) !important;
   backdrop-filter: blur(25px) saturate(150%) !important;
@@ -27,6 +27,22 @@ findbar{
   white-space: nowrap;
   
   border-image: none !important;
+}
+
+/* Findbar per schermi più piccoli (1366x768 e simili) */
+@media (max-width: 1400px){
+  findbar{
+    min-width: 1000px !important;
+    max-width: 1366px !important;
+  }
+}
+
+/* Sicurezza: evita overflow su finestre molto strette */
+@media (max-width: 1100px){
+  findbar{
+    min-width: 90vw !important;
+    max-width: 95vw !important;
+  }
 }
 
 findbar[hidden]{ 
@@ -56,4 +72,6 @@ input.findbar-textbox {
   background: linear-gradient(135deg, 
               rgba(231, 233, 206, 0.15),
               rgba(27, 29, 28, 0.7)) !important;
-  border: 1px solid rgba(231, 233, 206, 0.25) !import
+  border: 1px solid rgba(231, 233, 206, 0.25) !important;
+  /* continua qui con il resto del tuo CSS... */
+}
