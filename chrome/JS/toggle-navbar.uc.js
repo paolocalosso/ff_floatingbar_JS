@@ -94,15 +94,45 @@
         }
     }, true);
 
-    // Listener per click fuori dalla toolbar
+    // Listener per click fuori dalla toolbar - versione "safe"
     document.addEventListener('click', (e) => {
         if (isVisible) {
-            // Controlla se il click è FUORI dal toolbox
-            if (!toolbox.contains(e.target)) {
-                hideNavbar();
+            let target = e.target;
+            let isInPopupOrExtension = false;
+            
+            // Controlla se siamo in toolbox o in qualsiasi popup/panel
+            while (target && target !== document.documentElement) {
+                // Toolbox stesso
+                if (target === toolbox) {
+                    return; // Non fare nulla
+                }
+                
+                // Qualsiasi panel o popup
+                if (target.tagName && (
+                    target.tagName.toLowerCase() === 'panel' ||
+                    target.tagName.toLowerCase() === 'panelview' ||
+                    target.tagName.toLowerCase() === 'menupopup' ||
+                    target.tagName.toLowerCase() === 'tooltip' ||
+                    target.tagName.toLowerCase() === 'popupset'
+                )) {
+                    isInPopupOrExtension = true;
+                    break;
+                }
+                
+                target = target.parentElement;
+            }
+            
+            // Chiudi solo se click è sulla PAGINA (browser content)
+            if (!isInPopupOrExtension && !toolbox.contains(e.target)) {
+                // Verifica che sia davvero nel content della pagina
+                const browserContainer = document.getElementById('browser');
+                if (browserContainer && browserContainer.contains(e.target)) {
+                    hideNavbar();
+                }
             }
         }
     }, true);
+
 
     // Prova alternativa: usa MutationObserver per monitorare nuove tab
     setTimeout(() => {
