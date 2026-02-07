@@ -9,7 +9,7 @@
     
     const toolbox = document.getElementById('navigator-toolbox');
     const urlbar = document.getElementById('urlbar');
-    let isVisible = false;
+    let isVisible = true;  // Inizia visibile
 
     function showNavbar() {
         isVisible = true;
@@ -61,13 +61,10 @@
         }
     }
 
-    // Nascondi urlbar all'avvio
-    if (urlbar) {
-        urlbar.style.setProperty('transition', 'none', 'important');
-        urlbar.style.setProperty('transform', 'rotateX(89.9deg)', 'important');
-        urlbar.style.setProperty('opacity', '0', 'important');
-        urlbar.style.setProperty('pointer-events', 'none', 'important');
-    }
+    // Mostra esplicitamente all'avvio
+    setTimeout(() => {
+        showNavbar();
+    }, 100);
 
     // Listener per F2 ed Esc
     window.addEventListener('keydown', (e) => {
@@ -94,47 +91,55 @@
         }
     }, true);
 
-    // Listener per click fuori dalla toolbar - versione "safe"
+    // Listener per click fuori dalla toolbar (con esclusione popup addon)
     document.addEventListener('click', (e) => {
         if (isVisible) {
             let target = e.target;
-            let isInPopupOrExtension = false;
+            let isInPopup = false;
             
-            // Controlla se siamo in toolbox o in qualsiasi popup/panel
+            // Risali l'albero DOM per vedere se siamo in un elemento da ignorare
             while (target && target !== document.documentElement) {
-                // Toolbox stesso
-                if (target === toolbox) {
-                    return; // Non fare nulla
+                // Popup estensioni (hanno questi attributi)
+                if (target.id && (
+                    target.id.includes('webextension') ||
+                    target.id.includes('addon') ||
+                    target.id.includes('extension')
+                )) {
+                    isInPopup = true;
+                    break;
                 }
                 
-                // Qualsiasi panel o popup
+                // Panel view/popup delle estensioni
                 if (target.tagName && (
                     target.tagName.toLowerCase() === 'panel' ||
                     target.tagName.toLowerCase() === 'panelview' ||
-                    target.tagName.toLowerCase() === 'menupopup' ||
-                    target.tagName.toLowerCase() === 'tooltip' ||
-                    target.tagName.toLowerCase() === 'popupset'
+                    target.tagName.toLowerCase() === 'menupopup'
                 )) {
-                    isInPopupOrExtension = true;
+                    isInPopup = true;
+                    break;
+                }
+                
+                // Class che indica popup estensione
+                if (target.classList && (
+                    target.classList.contains('panel-subview-body') ||
+                    target.classList.contains('webextension-popup-browser') ||
+                    target.classList.contains('webextension-popup-stack')
+                )) {
+                    isInPopup = true;
                     break;
                 }
                 
                 target = target.parentElement;
             }
             
-            // Chiudi solo se click è sulla PAGINA (browser content)
-            if (!isInPopupOrExtension && !toolbox.contains(e.target)) {
-                // Verifica che sia davvero nel content della pagina
-                const browserContainer = document.getElementById('browser');
-                if (browserContainer && browserContainer.contains(e.target)) {
-                    hideNavbar();
-                }
+            // Chiudi solo se NON sei in un popup E NON sei nel toolbox
+            if (!isInPopup && !toolbox.contains(e.target)) {
+                hideNavbar();
             }
         }
     }, true);
 
-
-    // Prova alternativa: usa MutationObserver per monitorare nuove tab
+    // MutationObserver per nuove tab
     setTimeout(() => {
         try {
             const tabBrowser = document.getElementById('tabbrowser-tabs');
@@ -169,6 +174,6 @@
         }
     }, 1000);
 
-    console.log('Toggle Navbar script loaded - Press F2 to toggle, Esc or click outside to close');
+    console.log('Toggle Navbar script loaded - Navbar visible at startup, press F2 to toggle, Esc or click outside to close');
 
 })();
