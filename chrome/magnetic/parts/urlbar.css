@@ -275,6 +275,7 @@ border-radius: 50px !important;
   /*width: 78vw !important;
   /*border-width: 1px 0;*/
   border-radius: 25px !important;
+  border: solid 2px #83a598 !important;
   top: var(--urlbar-container-height);
   color: white !important;
   background-color: var(--toolbar-field-focus-background-color, inherit);
