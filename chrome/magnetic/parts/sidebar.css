@@ -186,3 +186,11 @@ html, body, main {
 .sidebar-splitter {
   display: none !important;
 }
+
+/* Forza sidebar visibile durante drag tab o lock manuale */
+:root[tab-dragging="true"] #sidebar-box,
+:root[sidebar-locked="true"] #sidebar-box {
+  left: 4px !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
