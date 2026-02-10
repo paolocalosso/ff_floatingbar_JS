@@ -1,0 +1,96 @@
+// ==UserScript==
+// @name           Lock Sidebar on Drag
+// @description    F3 per bloccare/sbloccare sidebar durante drag tab
+// @author         Paolo
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    
+    const sidebarBox = document.getElementById('sidebar-box');
+    let isLocked = false;
+    let isDragging = false;
+
+    function lockSidebar() {
+        if (!sidebarBox) return;
+        
+        isLocked = true;
+        
+        // Forza sidebar visibile e bloccata
+        sidebarBox.style.setProperty('left', '4px', 'important');
+        sidebarBox.style.setProperty('opacity', '1', 'important');
+        sidebarBox.style.setProperty('pointer-events', 'auto', 'important');
+        
+        console.log('Sidebar locked');
+    }
+
+    function unlockSidebar() {
+        if (!sidebarBox) return;
+        
+        isLocked = false;
+        
+        // Rimuovi override, torna al CSS normale (hover-based)
+        sidebarBox.style.removeProperty('left');
+        sidebarBox.style.removeProperty('opacity');
+        sidebarBox.style.removeProperty('pointer-events');
+        
+        console.log('Sidebar unlocked');
+    }
+
+    function toggleLock() {
+        if (isLocked) {
+            unlockSidebar();
+        } else {
+            lockSidebar();
+        }
+    }
+
+    // Listener per F3 (toggle manuale)
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'F3') {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleLock();
+        }
+    }, true);
+
+    // Rileva quando inizi a trascinare un tab
+    const tabContainer = gBrowser.tabContainer;
+    
+    tabContainer.addEventListener('dragstart', (e) => {
+        if (e.target.classList.contains('tabbrowser-tab')) {
+            isDragging = true;
+            lockSidebar();
+            console.log('Tab drag started, sidebar locked');
+        }
+    });
+
+    // Rileva quando finisci di trascinare
+    tabContainer.addEventListener('dragend', (e) => {
+        if (isDragging) {
+            isDragging = false;
+            // Aspetta un momento prima di sbloccare (per evitare "flash")
+            setTimeout(() => {
+                if (!isLocked) {
+                    unlockSidebar();
+                }
+            }, 300);
+            console.log('Tab drag ended');
+        }
+    });
+
+    // Sblocca anche se il drop avviene fuori Firefox
+    window.addEventListener('drop', () => {
+        if (isDragging) {
+            isDragging = false;
+            setTimeout(() => {
+                if (!isLocked) {
+                    unlockSidebar();
+                }
+            }, 300);
+        }
+    }, true);
+
+    console.log('Sidebar lock script loaded - F3 to toggle lock, auto-lock during tab drag');
+
+})();
