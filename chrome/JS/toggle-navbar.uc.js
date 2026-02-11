@@ -174,6 +174,16 @@
         }
     }, 1000);
 
+        // Mostra navbar quando inizi a scrivere nella urlbar (anche da newtab)
+    if (urlbar) {
+        urlbar.addEventListener('focus', () => {
+            if (!isVisible) {
+                console.log('Urlbar focused, showing navbar');
+                showNavbar();
+            }
+        }, true);
+    }
+
     console.log('Toggle Navbar script loaded - Navbar visible at startup, press F2 to toggle, Esc or click outside to close');
 
 })();
