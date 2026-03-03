@@ -5,8 +5,8 @@
 /* Style menus - GLASSMORPHISM */
 menupopup {
 	background-color: transparent !important;
-	backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;
+	/*backdrop-filter: blur(25px) saturate(150%) !important;
+	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
 	padding: 8px !important;
 	margin: -8px !important;
 	min-width: 30em !important;
@@ -19,8 +19,8 @@ menu menupopup {
 .menupopup-arrowscrollbox {
 	-moz-appearance: none !important;
 	background-color: rgba(27, 29, 28, 0.75) !important;
-	backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;
+	/*backdrop-filter: blur(25px) saturate(150%) !important;
+	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
 	border: 2px solid #83A598 !important;
 	border-radius: 25px !important;
 	box-shadow: none !important;
@@ -70,8 +70,8 @@ panel:not([remote]) {
 	--panel-item-hover-bgcolor: rgba(231, 233, 206, 0.15) !important;
 	box-shadow: none !important;
 	-moz-box-shadow: none !important;
-	backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;
+	/*backdrop-filter: blur(25px) saturate(150%) !important;
+	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
 }
 
 panel {
@@ -157,8 +157,8 @@ panelview {
 /* Panel arrow - GLASSMORPHISM */
 .panel-arrowcontent {
 	background: rgba(27, 29, 28, 0.75) !important;
-	backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;
+	/*backdrop-filter: blur(25px) saturate(150%) !important;
+	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
 	border: 2px solid #83A598 !important;
 	border-radius: 25px !important;
 	color: white !important;
@@ -223,7 +223,7 @@ menuitem, menupopup menu,
 .identity-popup-content-blocking-category,
 #downloadsPanel-mainView .download-state {
 	-moz-appearance: none !important;
-	border-radius: 8px !important;
+	border-radius: 25px !important;
 	color: rgba(231, 233, 206, 0.95) !important;
 	font: menu !important;
 	padding: 6px 10px !important;
@@ -233,7 +233,7 @@ menuitem, menupopup menu,
 
 #PlacesToolbar .bookmark-item {
 	-moz-appearance: none !important;
-	border-radius: 8px !important;
+	border-radius: 25px !important;
 	color: rgba(231, 233, 206, 0.95) !important;
 	padding: 4px 10px !important;
 	min-height: 28px !important;
@@ -448,11 +448,11 @@ menuseparator {
 
 /* Tooltip - GLASSMORPHISM */
 tooltip {
-  background: rgba(27, 29, 28, 0.90) !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  border: 2px solid #83A598 !important;
-  border-radius: 8px !important;
+  background: rgb(27,29,28) !important;
+  /*backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;*/
+  border: 2px solid #83a598  !important;
+  border-radius: 25px 0px 0px 0px  !important;
   color: rgba(231, 233, 206, 0.95) !important;
   padding: 6px 10px !important;
   box-shadow: none !important;
