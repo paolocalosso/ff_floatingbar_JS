@@ -1,0 +1,660 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"trans",
+				"transparent"
+			],
+			[
+				"urlba",
+				"urlbar-background"
+			],
+			[
+				"background-c",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"push",
+				"git: push"
+			],
+			[
+				"commit",
+				"git: commit"
+			],
+			[
+				"pus",
+				"git: push"
+			],
+			[
+				"add",
+				"Git: Add All"
+			],
+			[
+				"puhs",
+				"git: push"
+			],
+			[
+				"sftp",
+				"SFTP: Browse Remote…"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"terminal",
+				"Terminality: Browse Commands..."
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ssh ",
+				"SFTP: Show Panel"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssh",
+				"SFTP: Show Panel"
+			],
+			[
+				"sshub",
+				"SSHubl: Connect to server (interactively)"
+			],
+			[
+				"SSHubl",
+				"Preferences: SSHubl Settings"
+			],
+			[
+				"",
+				"Arithmetic"
+			],
+			[
+				"commi",
+				"git: commit"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"git",
+				"git: commit"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"commit ",
+				"git: commit"
+			],
+			[
+				"add ",
+				"Git: Add All"
+			],
+			[
+				"git: add",
+				"Git: Add All"
+			],
+			[
+				"pull",
+				"git: pull"
+			],
+			[
+				"comm",
+				"git: commit"
+			],
+			[
+				"git ",
+				"git: commit"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"the",
+				"UI: Select Theme"
+			],
+			[
+				"terminus se",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"terminus",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"terminus ",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"termi",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"tint ",
+				"Tint: New Terminal in Tab"
+			],
+			[
+				"openai",
+				"OpenAI: Chat Select Mode"
+			],
+			[
+				"ask p",
+				"Ask Perplexity"
+			],
+			[
+				"ask",
+				"Ask Perplexity"
+			],
+			[
+				"perplex",
+				"Ask Perplexity"
+			],
+			[
+				"git c",
+				"git: commit"
+			],
+			[
+				"linter",
+				"SublimeLint: Error Report (Open Files)"
+			],
+			[
+				"lin",
+				"SublimeLint: Next Error"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/paolo/study_projects/dotfiles_dotfolders/.config/sublime-text/Packages/User/git_auto_pull.py",
+		"/home/paolo/study_projects/dotfiles_dotfolders/.config/sublime-text/Packages/User/git_auto_pull.sublime-commands",
+		"/home/paolo/.profile",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/docker-composes/mediaserver/docker-compose.yml",
+		"/home/paolo/Documents/projects/html/end/index.html",
+		"/home/paolo/Documents/projects/html/end/project.html",
+		"/home/paolo/pCloudDrive/lavoro/clienti/proxima/credenziali.txt",
+		"/home/paolo/Documents/projects/html/end/projects.html",
+		"/home/paolo/study_projects/dotfiles_dotfolders/.config/spicetify/Themes/Dribbblish/color.ini",
+		"/home/paolo/study_projects/dotfiles_dotfolders/.config/spicetify/Themes/Dribbblish/user.css",
+		"/home/paolo/.config/spicetify/Themes/Dribbblish/user.css",
+		"/home/paolo/Documents/projects/html/end/sftp-config.json",
+		"/home/paolo/Documents/projects/html/end/assets/js/main.js",
+		"/home/paolo/Documents/projects/html/end/assets/css/style.css",
+		"/home/paolo/Documents/projects/html/oprtorino/css/style.css",
+		"/home/paolo/Documents/projects/html/oprtorino/sftp-config.json",
+		"/home/paolo/Documents/projects/html/oprtorino/privacy.html",
+		"/home/paolo/Documents/projects/html/oprtorino/index.html",
+		"/home/paolo/Documents/projects/html/oprtorino/js/main.js",
+		"/home/paolo/pCloudDrive/lavoro/clienti/pcube/credenziali_admin.txt",
+		"/run/user/1000/gvfs/sftp:host=infopcube/home/infopcube/scripts/pcloud-sync.sh",
+		"/run/user/1000/gvfs/sftp:host=infopcube/home/infopcube/scripts/pcube_usb.sh",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/magnetic/parts/popups.css",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/magnetic/parts/bali.css",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/userContent.css",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/JS/newtab-fixes.uc.js",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/magnetic/parts/urlbar.css",
+		"/home/paolo/Documents/projects/html/sansebastiano/custom_child_fnctions.php",
+		"/home/paolo/Documents/projects/html/sansebastiano/form.html",
+		"/home/paolo/Documents/projects/css/fire-ferdium/chrome/userChrome.css",
+		"/home/paolo/Documents/projects/css/fire-ferdium/chrome/sidebery_style.css",
+		"/home/paolo/Desktop/rpp_fazio_errori.txt",
+		"/home/paolo/Documents/projects/html/sansebastiano/functions_ok_multilang_clientscopy.php",
+		"/home/paolo/.mozilla/firefox/5sfai7tl.beta/chrome/userChrome.css",
+		"/home/paolo/Documents/projects/css/firefox_magnetic_sidebar_133/chrome/magnetic/parts/tabsbar.css",
+		"/home/paolo/.mozilla/firefox/5sfai7tl.beta/userChrome.css",
+		"/home/paolo/Documents/projects/css/firefox_magnetic_sidebar_133/chrome/userChrome.css",
+		"/home/paolo/Documents/projects/css/firefox_magnetic_sidebar_133/chrome/magnetic/parts/headerbar.css",
+		"/home/paolo/Documents/projects/css/ff_chat/chrome/sidebery-data-10-2024.json",
+		"/home/paolo/.local/share/applications/firefox-workspace.desktop",
+		"/home/paolo/pCloudDrive/lavoro/clienti/casapoint/credenziali.txt",
+		"/run/user/1000/gvfs/sftp:host=pve_opr/root/.config/rclone/rclone.conf",
+		"/home/paolo/Documents/projects/html/sansebastiano/functions_ok.php",
+		"/home/paolo/Documents/projects/html/sansebastiano/<style>.html",
+		"/home/paolo/Documents/projects/html/danielebergese/css/style.css",
+		"/home/paolo/Documents/projects/html/danielebergese/js/main.js",
+		"/home/paolo/Documents/projects/html/danielebergese/.gitignore",
+		"/home/paolo/Documents/projects/html/danielebergese/index.html",
+		"/home/paolo/Documents/projects/html/danielebergese/sftp-config.json",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/docker-composes/apache-server-bergese/docker-compose.yml",
+		"/home/paolo/.config/spicetify/Themes/Dribbblish/color.ini",
+		"/home/paolo/Documents/projects/html/danielebergese/app.js",
+		"/home/paolo/Documents/projects/html/danielebergese/style.css",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/data/docker-volumes/html_test/style.css",
+		"/home/paolo/.zshrc",
+		"/home/paolo/.ssh/config",
+		"/home/paolo/Documents/projects/html/sansebastiano/funtions_ok_txt.php",
+		"/home/paolo/Documents/projects/html/oprtorino/turnsite.json",
+		"/home/paolo/Documents/projects/html/oprtorino/test.html",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/docker-composes/apache-server-test/docker-compose.yml",
+		"/home/paolo/pCloudDrive/lavoro/oprsrv/docker-stacks/oprsrv.xyz/oprsrvpve/oprsrvpve_apacheserver_docker_compose.yml",
+		"/home/paolo/Documents/projects/html/oprtorino/.gitignore",
+		"/home/paolo/study_projects/dotfiles_dotfolders/.config/sublime-text/Packages/SSH-Panel/CHANGELOG.md",
+		"/home/paolo/pCloudDrive/lavoro/clienti/pcube/imapsync.sh",
+		"/home/paolo/pCloudDrive/lavoro/clienti/pcube/imapsync_commands",
+		"/home/paolo/Documents/projects/html/sansebastiano/functions6.php",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet_test.md",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet_test2.md",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet_test3.md",
+		"/home/paolo/Documents/projects/html/oprtorino/robots.txt",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet5.md",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet6.md",
+		"/home/paolo/Documents/projects/html/sansebastiano/functions4.php",
+		"/home/paolo/pCloudDrive/lavoro/clienti/campingsansebastiano.com/sansebastiano_code/snippet1",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet1",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet3",
+		"/home/paolo/Documents/projects/html/sansebastiano/snippet4",
+		"/home/paolo/Documents/projects/html/sansebastiano/functions3.php",
+		"/home/paolo/Documents/projects/html/sansebastiano/functions1.php",
+		"/home/paolo/Documents/projects/html/oprtorino/index.bak",
+		"/run/user/1000/gvfs/sftp:host=ik_root_debian/root/scripts/oprtorino_backup.sh",
+		"/run/user/1000/gvfs/sftp:host=ik_opr_debian/home/debian/scripts/pcloud-koofr.sh",
+		"/home/paolo/.ssh/oprsrvpve",
+		"/home/paolo/.local/share/Cryptomator/mnt/rclone/pve_opr-rclone.conf",
+		"/home/paolo/Documents/projects/html/oprtorino/js/main.bak",
+		"/home/paolo/Documents/projects/html/oprtorino/sitemap.xml",
+		"/home/paolo/Documents/projects/html/oprtorino/assets/images/site.webmanifest",
+		"/home/paolo/Documents/projects/html/oprtorino/my-css.css",
+		"/home/paolo/Documents/projects/html/oprtorino/cloudflare_purge_cache_command",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/JS/toggle-navbar.uc.js",
+		"/home/paolo/pCloudDrive/lavoro/clienti/rpp/credenziali.txt",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/JS/lock-sidebar.uc.js",
+		"/home/paolo/.ssh/ik_root_debian.pub",
+		"/home/paolo/pCloudDrive/lavoro/oprsrv/docker-stacks/oprsrv.xyz/oprsrvpve/ik_cloudflaretunnel_docker_compose.yml",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/magnetic/parts/sidebar.css",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/JS/lock-sidebar.uc.bak",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/magnetic/parts/tabsbar.css",
+		"/home/paolo/Documents/projects/html/sftp-config.json",
+		"/home/paolo/Documents/projects/html/cloudflare_purge_cache_command",
+		"/home/paolo/study_projects/dotfiles_dotfolders/.config/sublime-text/Packages/User/sftp_servers/sftp-config.json",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/data/docker-volumes/html_website/css/style.css",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/data/docker-volumes/html_website/js/main.js",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/data/docker-volumes/html_website/index.html",
+		"oprsrvpve/data/docker-volumes/html_website",
+		"oprsrvpve@oprsrvpve/data/docker-volumes/html_website",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/.gitconfig",
+		"/home/paolo/.gitconfig",
+		"/run/user/1000/gvfs/sftp:host=oprsrvpve/home/oprsrvpve/data/docker-volumes/html_website/cloudflare_purge_cache_command",
+		"/media/paolo/opr_nvme/clienti/battista/Drivers/installDriverHelper.ps1",
+		"/home/paolo/study_projects/dotfiles_dotfolders/.ssh/soseishi",
+		"/home/paolo/Documents/projects/css/ff_floatingbar_JS/chrome/magnetic/parts/findbar.css",
+		"/home/paolo/pCloudDrive/lavoro/clienti/tallonesport/credenziali.txt",
+		"/home/paolo/.keychain/opr-fish",
+		"/home/paolo/pCloudDrive/lavoro/clienti/soseishi/credenziali.txt",
+		"/home/paolo/pCloudDrive/lavoro/clienti/soseishi/smb.conf",
+		"/run/user/1000/gvfs/sftp:host=soseishi/etc/samba/smb.conf",
+		"/home/paolo/pCloudDrive/lavoro/clienti/tallonesport/tallonesport",
+		"/home/paolo/.local/bin/firefox-toggle-navbar.sh",
+		"/home/paolo/Documents/projects/css/firefox_floating_toolbar/chrome/userChrome.css",
+		"/home/paolo/Documents/projects/css/firefox_floating_toolbar/chrome/userContent.css",
+		"/run/user/1000/gvfs/sftp:host=proxima-debian/home/opr/rclone_logs/pcloud_scancopy.log",
+		"/home/paolo/Documents/cantieri_protetti_check.txt",
+		"/home/paolo/Documents/projects/js/desktop-folder-widget@calosso.eu/.gitignore",
+		"/home/paolo/Documents/projects/css/firefox_floating_toolbar/chrome/magnetic/pages/newtab.css",
+		"/home/paolo/Documents/projects/css/firefox_floating_toolbar/chrome/magnetic/parts/popups.css",
+		"/home/paolo/pCloudDrive/lavoro/clienti/campingsansebastiano.com/style.css",
+		"/home/paolo/Documents/projects/css/firefox_floating_toolbar/chrome/magnetic/parts/headerbar.css",
+		"/home/paolo/Documents/projects/css/firefox_floating_toolbar/chrome/magnetic/parts/toolbox_hide.css"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"--corner-radius",
+			".Root__right-sidebar ",
+			"border-radius",
+			"h1",
+			"backdrop-filter",
+			"backdrop",
+			"border-radius: 8px",
+			"border-radius",
+			"@-moz-document url(\"about:newtab\"), url(\"about:home\")",
+			".search-wrapper",
+			"handoff",
+			"#urlbar-background",
+			"'it' => 'Italian',\n        'en' => 'English',",
+			"Englisch",
+			"TabsPanel",
+			"20px",
+			"sidebar-box",
+			"width",
+			"Motorhome/Caravan Lenght (meters)",
+			"Size",
+			"renderTabs",
+			".nav-btn",
+			"<button class=\"nav-btn\" aria-controls=\"nav\" aria-expanded=\"false\">Menu</button>",
+			".nav-btn { di",
+			".nav-btn { display: non",
+			".nav-btn { display: none; background:",
+			"max-width: 800px",
+			"max-width: 800p",
+			"responsive",
+			"const navBtn   = document.querySelector(\".nav-btn\");",
+			"/* ── Menu mobile fullscreen ───────────────────────── */",
+			"}\n",
+			"/* ── Menu mobile fullscreen ───────────────────────── */",
+			"@media(max-width:800px)",
+			"K",
+			"HEADERS",
+			"let revealEls = [",
+			"const htmlEl = document.documentElement;\nconst savedTheme = localStorage.getItem(\"theme\") || \"dark\";",
+			"console.log('privacy-page ha .reveal?', ...);",
+			"location.reload()",
+			"<a href=\"\" id=\"resetConsent\">Gestisci cookie</a>",
+			"overflow",
+			"reveal",
+			"revealObserver.observe(el)",
+			"DOMContentLoaded",
+			"const revealEls = [",
+			"<section class=\"section privacy-page\">",
+			"<section class=\"section privacy-page\">\n",
+			"section",
+			"infoWindow.open(map, marker)",
+			"const marker = new google.maps.Marker({",
+			"src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSy...&callback=initMap&loading=async\"",
+			"div id=\"map-wrapper",
+			"mappa",
+			"div id=\"map-wrapper",
+			"loadMap()",
+			"<iframe",
+			"id=\"map-wrapper\"",
+			"injectGA4",
+			"iframe src=\"https://www.google.com/maps",
+			"<button onclick=\"acceptAndLoadMap()\" class=\"cta-button\" ...>",
+			"on(acceptBtn, \"click\", () => {",
+			"injectGA4()",
+			"loadMap(",
+			"function loadMap() {",
+			"cf_clearance",
+			"leaflet",
+			"hero",
+			"hero-subti",
+			"prettebb",
+			"prette",
+			"cookie-banner",
+			"cookieConsent",
+			"localStorage.getItem('cookieConsent'",
+			"const form = document.getElementById('campingQuoteForm');",
+			"//IT",
+			"// IT",
+			"tent_size\"",
+			"CONDIZIONALE: Car mode",
+			"opr@ike",
+			"script",
+			"cook",
+			"document.addEventListener(\"DOMContentLoaded\", ",
+			"=\"/",
+			"L.map",
+			"script",
+			"TUA_SECRET_KEY_QUI",
+			"TUA_SECRET_KEY",
+			"TUA_SITE_KEY",
+			"script",
+			"main.js",
+			";\n",
+			"contact",
+			"document.querySelectorAll('.service-accordion-header').forEach(header => ",
+			"contact-methods",
+			".contact-icon.phone",
+			"me.jpg",
+			"about-",
+			"about-card",
+			"re_MGu4ec3i_Ew2LRfLNqrfkg5QdkwcbuNSi",
+			"services",
+			"<div class=\"logo\">OPR</div>",
+			"[45.0703, 7.6869]",
+			"card-bg",
+			"--bg-primary",
+			"ff6b35",
+			"<form class=\"contact-form\" id=\"contactForm\">"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"border-radius: 25px",
+			"40px",
+			"<button class=\"nav-btn\" id=\"navBtn\" aria-controls=\"nav\" aria-expanded=\"false\" aria-label=\"Apri menu\">\n  <span></span><span></span><span></span>\n</button>",
+			"<section class=\"section privacy-page no-reveal\">",
+			"__cf_bm",
+			"6LdcHUArAAAAAKODctcNY9dgroyxsm4FF1NQy1bM",
+			"6LdcHUArAAAAAN8yKPqpSjy1bBsSJ8ANDngRzu2o",
+			"[45.053011, 7.668114]",
+			"ff7300",
+			"<form class=\"contact-form\" id=\"contactForm\">\n  <input name=\"name\" type=\"text\" placeholder=\"Nome\" required>\n  <input name=\"email\" type=\"email\" placeholder=\"Email\" required>\n  <textarea name=\"message\" placeholder=\"Messaggio\" rows=\"5\" required></textarea>\n\n  <!-- Turnstile Widget -->\n  <div class=\"cf-turnstile\" data-sitekey=\"0x4AAAAAACaLRFrQQ4RUrW-D\"></div>\n\n  <button type=\"submit\" class=\"submit-button\">Invia Messaggio</button>\n</form>\n\n<!-- Script Turnstile (aggiungi prima del tag </body>) -->\n<script src=\"https://challenges.cloudflare.com/turnstile/v0/api.js\" async defer></script>"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.565208265072,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.GitSavvy":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"output.SFTP":
+	{
+		"height": 187.0,
+		"history":
+		[
+		]
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.Terminus":
+	{
+		"height": 294.0,
+		"history":
+		[
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.git":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.ssh-panel":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "",
+	"project": "ff_floating_js.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 328.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 263.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
