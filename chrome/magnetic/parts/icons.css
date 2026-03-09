@@ -3,7 +3,7 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Icons color */
-.toolbarbutton-icon,
+.toolbarbutton-icon:not(#unified-extensions-panel .toolbarbutton-icon),
 menuitem:not([class*='identity']) .menu-iconic-left .menu-iconic-icon,
 .urlbar-page-action:not([readeractive]),
 .button-icon:not(#hack),
@@ -823,10 +823,6 @@ treechildren::-moz-tree-image {
 		list-style-image: url("../icons/preferences-system-time-symbolic-light.svg") !important;
 	}
 
-	/* Fix for extensions icons */
-	.webextension-browser-action {
-		list-style-image: var(--webextension-menupanel-image-light, inherit) !important;
-	}
 }
 
 
@@ -934,11 +930,28 @@ toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
 }
 
 
-/* === FIX: icone estensioni nel pannello === */
+
+
+
+/* ============================================================
+   FIX: icone native estensioni (toolbar + pannello)
+   Le icone delle estensioni non usano context-fill,
+   quindi il fill forzato le rende invisibili.
+   ============================================================ */
+
+/* Estensioni pinnate in toolbar */
+toolbar .webextension-browser-action .toolbarbutton-icon {
+  fill: unset !important;
+  fill-opacity: unset !important;
+  -moz-context-properties: unset !important;
+}
+
+/* Estensioni nel pannello */
+#unified-extensions-panel .unified-extensions-item-icon,
 #unified-extensions-panel .unified-extensions-item-action-button .toolbarbutton-icon,
-#unified-extensions-panel .unified-extensions-item-icon {
-  fill: revert !important;
-  fill-opacity: revert !important;
-  -moz-context-properties: revert !important;
-  list-style-image: revert !important;
+#unified-extensions-view .unified-extensions-item-icon,
+#unified-extensions-view .unified-extensions-item-action-button .toolbarbutton-icon {
+  fill: unset !important;
+  fill-opacity: unset !important;
+  -moz-context-properties: unset !important;
 }
