@@ -933,3 +933,12 @@ toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
   padding: var(--toolbarbutton-inner-padding) !important;
 }
 
+
+/* === FIX: icone estensioni nel pannello === */
+#unified-extensions-panel .unified-extensions-item-action-button .toolbarbutton-icon,
+#unified-extensions-panel .unified-extensions-item-icon {
+  fill: revert !important;
+  fill-opacity: revert !important;
+  -moz-context-properties: revert !important;
+  list-style-image: revert !important;
+}
