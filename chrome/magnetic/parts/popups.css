@@ -17,16 +17,17 @@ menu menupopup {
 }
 
 .menupopup-arrowscrollbox {
-	-moz-appearance: none !important;
-	background-color: rgba(27, 29, 28, 0.75) !important;
-	/*backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
-	border: 2px solid #83A598 !important;
-	border-radius: 25px !important;
-	box-shadow: none !important;
-	padding: 6px !important;
-	margin: 0 !important;
+  -moz-appearance: none !important;
+  background-color: rgba(27, 29, 28, 0.75) !important;
+  border: 2px solid transparent !important;
+  border-radius: 25px !important;
+  box-shadow:
+    0 0 0 2px #83A598,
+    0 0 8px 2px #E7E9CE !important;
+  padding: 6px !important;
+  margin: 0 !important;
 }
+
 
 menuitem[type="checkbox"] image, menuitem[type="radio"] image {
 	visibility: visible !important;
