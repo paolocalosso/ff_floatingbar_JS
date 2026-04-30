@@ -116,6 +116,10 @@ user_pref("dom.security.sanitizer.enabled", true);
 user_pref("browser.urlbar.trimHttps", true);
 user_pref("browser.urlbar.trimURLs", true);
 
+//fix blur in 150
+user_pref("gfx.webrender.compositor", true);
+user_pref("gfx.webrender.all", true);
+
 /****************************************************************************
  * SECTION: SECUREFOX                                                       *
 ****************************************************************************/

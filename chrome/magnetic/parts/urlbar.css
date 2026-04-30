@@ -271,9 +271,6 @@ border-radius: 50px !important;
 .urlbarView {
 	position: fixed !important;
   left: 0vw !important;
-  /*transform: translateX(-50%) !important;*/
-  /*width: 78vw !important;
-  /*border-width: 1px 0;*/
   border-radius: 25px !important;
   border: solid 2px transparent !important;
   box-shadow:
@@ -283,7 +280,7 @@ border-radius: 50px !important;
   color: white !important;
   background-color: var(--toolbar-field-focus-background-color, inherit);
   z-index: 4;
-  backdrop-filter: blur(10px) !important;
+  /* backdrop-filter: blur(10px) !important; FF150 broken */
   filter: contrast(110%) brightness(90%);
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
   animation: fade .5s forwards ease-in-out;
@@ -298,29 +295,29 @@ border-radius: 50px !important;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(27,29,28,0.3);
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
+  background: linear-gradient(rgba(40, 42, 41, 0.93), rgba(22, 24, 23, 0.93));
+  /* backdrop-filter: blur(15px) !important; FF150 broken */
   border-radius: 25px;
   z-index: -1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 :root[sizemode="maximized"] .urlbarView::before {
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  background: linear-gradient(rgba(45, 47, 46, 0.95), rgba(25, 27, 26, 0.95));
+  /* backdrop-filter: blur(20px) saturate(180%) !important; FF150 broken */
 }
 
 
 
 .urlbarView:not(:active):hover {
-	background-color: rgb(27,29,28,0.55) !important;
+	background-color: rgb(27,29,28,0.93) !important;
 	transition: background-color 1s ease !important;
-  backdrop-filter: blur(10px) !important;
+  /* backdrop-filter: blur(10px) !important; FF150 broken */
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
 }
 .urlbarView:not(:active) {
-	background-color: rgb(27,29,28,0.45) !important;
+	background-color: rgb(27,29,28,0.9) !important;
 	transition: background-color 1s ease !important;
-  backdrop-filter: blur(10px) !important;
+  /* backdrop-filter: blur(10px) !important; FF150 broken */
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
 }
 
