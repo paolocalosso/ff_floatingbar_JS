@@ -337,4 +337,75 @@
         background-color: #83A598 !important;
         border-color: #83A598 !important;
     }
+
+    /* ---------------------------------------------------------------
+       Bottone "Personalizza" (in basso a destra).
+       In nova è diventato un <moz-button class="open-customization-button">
+       che è un Web Component con shadow DOM. Il <button> interno espone
+       il part="button", quindi lo penetriamo con ::part(button).
+       Colori gruvbox del tema: #1b1d1c di base, #83A598 in hover. */
+    .personalizeButtonWrapper {
+        position: fixed !important;
+        bottom: 16px !important;
+        inset-inline-end: 16px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        z-index: 100 !important;
+    }
+
+    /* Variabili custom di moz-button — settarle sull'host propaga
+       i colori nello shadow DOM senza bisogno di ::part */
+    moz-button.open-customization-button {
+        --button-background-color: #1b1d1c !important;
+        --button-background-color-hover: #83A598 !important;
+        --button-background-color-active: #83A598 !important;
+        --button-text-color: #83A598 !important;
+        --button-text-color-hover: #1b1d1c !important;
+        --button-text-color-active: #1b1d1c !important;
+        --button-border-color: #83A598 !important;
+        --button-border-color-hover: #83A598 !important;
+        --button-border-radius: 500px !important;
+        /* svg.context-properties.content.enabled fa sì che fill
+           segua "color", così anche l'icona si tinge */
+        -moz-context-properties: fill !important;
+        fill: currentColor !important;
+        transition: transform .3s ease !important;
+    }
+
+    /* Fallback diretto sullo shadow part — alcune build di Firefox 151
+       non leggono ancora tutte le custom properties */
+    moz-button.open-customization-button::part(button) {
+        background-color: #1b1d1c !important;
+        color: #83A598 !important;
+        border: 1px solid #83A598 !important;
+        border-radius: 500px !important;
+        padding: 6px 16px !important;
+        font-weight: 600 !important;
+        transition: background-color .3s ease,
+                    color .3s ease,
+                    border-color .3s ease !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+    }
+
+    moz-button.open-customization-button:hover::part(button),
+    moz-button.open-customization-button:focus::part(button) {
+        background-color: #83A598 !important;
+        color: #1b1d1c !important;
+        border-color: #83A598 !important;
+    }
+
+    moz-button.open-customization-button:active::part(button) {
+        background-color: #83A598 !important;
+        color: #1b1d1c !important;
+        transform: scale(0.96) !important;
+    }
+
+    /* Effetto scale dell'host in hover, coerente con le tile */
+    moz-button.open-customization-button:hover {
+        transform: scale(1.05) !important;
+    }
 }
+.button-background {
+    border: 1px solid #83a598 !important;
+} 
