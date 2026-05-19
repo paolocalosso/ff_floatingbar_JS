@@ -56,12 +56,29 @@
 	font: menu;
 }
 
-/* Background image for new tab page */
+/* Background image for new tab page - Firefox 151 fix:
+   Firefox 151 ha rinominato/aggiunto wrapper sulla newtab, quindi applichiamo
+   lo sfondo su più candidati (body, root, outer-wrapper) per essere sicuri
+   che venga sempre visualizzato. */
 @-moz-document url(about:newtab), url(about:home) {
+    body,
+    html,
+    #root,
+    .newtab-wrapper,
     .outer-wrapper {
-        background-image: url(wallpaper.jpg);
-        background-size: cover;
-        background-position: center;
+        background-image: url(wallpaper.jpg) !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+    }
+    /* Forza la trasparenza dei container interni che altrimenti
+       coprirebbero la wallpaper */
+    main,
+    .newtab-wrapper,
+    .outer-wrapper,
+    .body-wrapper {
+        background-color: transparent !important;
     }
 }
 

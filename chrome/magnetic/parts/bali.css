@@ -95,7 +95,120 @@ body,html{overflow-y: auto}
 .search-wrapper .logo-and-wordmark .logo{background-size: 60px !important; height: 60px !important; width: 60px !important}
 .search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
 .customize-menu{border-radius: 10px 0 0 10px !important}
-#root > div{align-items: center; display: flex}}}
+/* Firefox 151 fix: nuovo DOM "nova" della newtab.
+   La struttura reale è:
+     body.activity-stream
+       #root
+         .nova-outer-wrapper
+           .container.nova-enabled.logo-in-content   <- GRID 3 colonne
+             aside.sidebar-inline-start              <- sidebar fantasma
+             aside.sidebar-inline-end                <- sidebar fantasma
+             main.content                            <- contenuto vero
+               h1.logo-and-wordmark-wrapper
+               div.search-wrapper                    <- grid subgrid
+               section.top-sites
+   Le due aside vuote prendono colonne nel grid e spingono
+   il contenuto fuori centro. Annulliamo il grid e nascondiamo
+   le sidebar. */
+html, body.activity-stream{
+    height: 100% !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+/* #root e nova-outer-wrapper devono occupare tutta l'altezza per
+   permettere il centraggio verticale del contenuto. */
+#root{
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.nova-outer-wrapper{
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+/* Container principale: forza una sola colonna e si centra
+   verticalmente all'interno del nova-outer-wrapper. */
+.container.nova-enabled,
+.container.nova-enabled.logo-in-content{
+    grid-template-columns: 1fr !important;
+    grid-template-areas: none !important;
+    grid-template-rows: auto !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-block: auto !important;
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+    justify-items: center !important;
+    place-items: center !important;
+}
+/* Nasconde le sidebar fantasma */
+aside.sidebar-inline-start,
+aside.sidebar-inline-end{
+    display: none !important;
+}
+/* main.content occupa l'intera riga e si centra */
+main.content{
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-inline: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+/* search-wrapper aveva display:grid + grid-template-columns:subgrid.
+   Trasformiamo in flex centrato. */
+.nova-enabled .search-wrapper,
+.search-wrapper{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-template-columns: none !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-inline: auto !important;
+}
+.search-inner-wrapper{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+/* section.top-sites — si centra ma NON deve diventare colonna:
+   la lista interna è una griglia orizzontale.
+   - La <section> esterna impila titolo + lista in verticale.
+   - I wrapper della lista NON vengono toccati su display/flex-direction,
+     così la griglia di scorciatoie torna a essere orizzontale. */
+section.top-sites,
+.top-sites{
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.top-sites-list-wrapper{
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    /* lasciato il display nativo */
+}
+.top-sites-list{
+    margin-inline: auto !important;
+    justify-content: center !important;
+    /* manteniamo il display grid/flex originale */
+}
+}}
 
 /*  Cool animation on tab/bookmark icons  */
 .tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image ,.bookmark-item .toolbarbutton-icon{opacity: 0!important; transition: .15s !important; width: 0!important; padding-left: 16px!important}

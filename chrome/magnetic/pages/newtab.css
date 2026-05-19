@@ -214,3 +214,127 @@
   }
 }
 */
+
+/* ===========================================================================
+   Firefox 151 — "nova" design integration per i top-sites.
+   ---------------------------------------------------------------------------
+   La nuova struttura è:
+     li.top-site-outer
+       div.top-site-inner               <- NUOVO wrapper
+         a.top-site-button              <- ora è un <a> con eventuale bg
+           div.tile
+             div.icon.icon-pin-small
+             div.title.has-icon.pinned
+         button.context-menu-button.icon
+   Firefox interno applica stili con selettore `.nova-enabled .xxx`
+   (specificità 0,2,0) — per vincere bisogna prefissare le nostre regole
+   con `.nova-enabled` (stessa o più alta specificità + !important).
+   =========================================================================== */
+@-moz-document url("about:newtab"), url("about:home") {
+
+    /* Il <li> esterno: trasparente, senza padding aggiuntivo */
+    .nova-enabled .top-site-outer,
+    .top-site-outer {
+        background-color: transparent !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Il nuovo wrapper interno introdotto da nova */
+    .nova-enabled .top-site-inner,
+    .top-site-inner {
+        background-color: transparent !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+
+    /* L'<a> top-site-button: di default in nova ha un background scuro
+       a forma di pillola/rettangolo che copre la tile sottostante.
+       Lo rendiamo trasparente così la .tile del tema torna a vedersi. */
+    .nova-enabled .top-site-button,
+    .top-site-button {
+        background-color: transparent !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        color: inherit !important;
+    }
+    .nova-enabled .top-site-button:hover,
+    .top-site-button:hover,
+    .nova-enabled .top-site-button:focus,
+    .top-site-button:focus,
+    .nova-enabled .top-site-button:active,
+    .top-site-button:active {
+        background-color: transparent !important;
+        background: transparent !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* .tile — bumpiamo specificità con .nova-enabled per vincere
+       sulle regole interne di Firefox 151. Stesso look del tema:
+       pillola asimmetrica con blur e ombra. */
+    .nova-enabled .top-site-outer .tile,
+    .top-site-outer .tile {
+        border-radius: 50px 50px 50px 0 !important;
+        background-color: rgb(27, 29, 28, 0.70) !important;
+        backdrop-filter: blur(10px) !important;
+        transition: transform .5s ease, background-color .5s ease !important;
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+        border: none !important;
+    }
+    .nova-enabled .top-site-outer:hover .tile,
+    .top-site-outer:hover .tile {
+        transform: scale(0.95) !important;
+        background-color: #83A598 !important;
+        box-shadow: 0 0 0 10px #1b1d1c85 !important;
+    }
+
+    /* L'icona dentro la tile resta tonda e ruota in hover */
+    .nova-enabled .top-site-outer .top-site-icon,
+    .top-site-outer .top-site-icon {
+        border-radius: 50% !important;
+        transition: transform .5s ease !important;
+    }
+    .nova-enabled .top-site-outer:hover .top-site-icon,
+    .top-site-outer:hover .top-site-icon {
+        transform: rotate(360deg) !important;
+    }
+
+    /* Titolo sotto la tile — coerente col resto del tema */
+    .nova-enabled .top-site-outer .title,
+    .top-site-outer .title {
+        color: rgba(231, 233, 206, 0.95) !important;
+        font-weight: bold !important;
+        font-size: 1.0em !important;
+        background: transparent !important;
+    }
+
+    /* Pin icon — coerente col tema (beige in normale, scuro in hover) */
+    .nova-enabled .icon-pin-small,
+    .icon-pin-small {
+        fill: #E7E9CE !important;
+    }
+    .nova-enabled .top-site-outer:hover .icon-pin-small,
+    .top-site-outer:hover .icon-pin-small {
+        fill: #1b1d1c !important;
+    }
+
+    /* Pulsante menu contestuale (•••) di ogni top-site */
+    .nova-enabled .top-site-outer .context-menu-button,
+    .top-site-outer .context-menu-button {
+        border-radius: 50% !important;
+        border-color: #1b1d1c !important;
+        background-color: #1b1d1c !important;
+        transition: background-color .35s ease, border-color .35s ease !important;
+    }
+    .nova-enabled .top-site-outer .context-menu-button:hover,
+    .top-site-outer .context-menu-button:hover {
+        background-color: #83A598 !important;
+        border-color: #83A598 !important;
+    }
+}

@@ -2,7 +2,19 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
-/* Style menus - GLASSMORPHISM */
+/* Style menus - GLASSMORPHISM
+   Firefox 151 fix: in Firefox recenti il rendering dei menupopup usa
+   le variabili --panel-* (definite a livello widget) invece del vecchio
+   .menupopup-arrowscrollbox. Le impostiamo sia su menupopup che su panel. */
+menupopup,
+panel {
+	--panel-background: rgba(27, 29, 28, 0.75) !important;
+	--panel-border-color: #83A598 !important;
+	--panel-border-radius: 25px !important;
+	--panel-color: rgba(231, 233, 206, 0.95) !important;
+	--panel-shadow-margin: 0 !important;
+}
+
 menupopup {
 	background-color: transparent !important;
 	/*backdrop-filter: blur(25px) saturate(150%) !important;
@@ -10,6 +22,8 @@ menupopup {
 	padding: 8px !important;
 	margin: -8px !important;
 	min-width: 30em !important;
+	/* Fallback diretto per versioni che non rispettano --panel-background */
+	border-radius: 25px !important;
 }
 
 menu menupopup {
@@ -384,49 +398,6 @@ toolbarseparator[orient="vertical"] {
 	margin: 0 6px !important;
 	width: 0 !important;
 	padding: 0 !important;
-}
-
-.panel-subview-body + toolbarseparator:not([orient="vertical"]) {
-	margin: 4px 8px !important;
-}
-
-panelvi
-
-
-/* Rimuovi ::before che crea linee duplicate */
-toolbarseparator::before,
-menuseparator::before {
-	display: none !important;
-	border: 0 !important;
-}
-
-/* Separator orizzontali con border diretto */
-#PlacesToolbar menupopup[placespopup="true"] menuseparator {
-	border-top: 1px solid rgba(231, 233, 206, 0.2) !important;
-	border-bottom: none !important;
-	padding: 0 !important;
-	margin: 4px 8px !important;
-	height: 0 !important;
-}
-
-toolbarseparator:not([orient="vertical"]), 
-menupopup menuseparator {
-	border-top: 1px solid rgba(231, 233, 206, 0.2) !important;
-	border-bottom: none !important;
-	border-left: none !important;
-	border-right: none !important;
-	margin: 4px 8px !important;
-	height: 0 !important;
-	padding: 0 !important;
-}
-
-toolbarseparator[orient="vertical"] {
-	border-left: 1px solid rgba(231, 233, 206, 0.2) !important;
-	border-right: none !important;
-	border-top: none !important;
-	border-bottom: none !important;
-	margin: 0 6px !important;
-	width: 0 !important;
 }
 
 .panel-subview-body + toolbarseparator:not([orient="vertical"]) {
