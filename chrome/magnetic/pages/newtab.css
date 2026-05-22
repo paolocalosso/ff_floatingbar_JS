@@ -409,3 +409,6 @@
 .button-background {
     border: 1px solid #83a598 !important;
 } 
+.nova-enabled .top-site-outer {
+    width: 95px !important;
+}
