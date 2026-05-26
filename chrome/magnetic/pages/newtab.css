@@ -243,12 +243,31 @@
 
     /* Il nuovo wrapper interno introdotto da nova */
     .nova-enabled .top-site-inner,
-    .top-site-inner {
+    .top-site-inner,
+    .nova-enabled .top-site-inner:is(:hover, :focus, :focus-within, :active),
+    .top-site-inner:is(:hover, :focus, :focus-within, :active) {
         background-color: transparent !important;
         background: transparent !important;
+        background-image: none !important;
         border: none !important;
         box-shadow: none !important;
         padding: 0 !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Annulla anche le variabili nova che potrebbero dipingere
+       un hover translucido su top-site-inner / top-site-button */
+    .nova-enabled .top-site-outer,
+    .nova-enabled .top-site-inner,
+    .nova-enabled .top-site-button {
+        --newtab-element-hover-color: transparent !important;
+        --newtab-element-active-color: transparent !important;
+        --newtab-button-background: transparent !important;
+        --newtab-button-hover-background: transparent !important;
+        --newtab-button-active-background: transparent !important;
+        --background-color-box: transparent !important;
+        --background-color-box-info: transparent !important;
     }
 
     /* L'<a> top-site-button: di default in nova ha un background scuro
@@ -275,6 +294,40 @@
         box-shadow: none !important;
     }
 
+    /* Firefox 151 nova mette un hover background CON backdrop-filter
+       direttamente sul .top-site-button usando un selettore tipo
+       `.nova-enabled .top-site-button:is(:hover, :focus-visible)`
+       (specificità 0,4,1). Per vincere usiamo lo stesso pattern :is()
+       più alta specificità + spegnimento esplicito del backdrop-filter. */
+    .nova-enabled .top-site-button:is(:hover, :focus, :focus-visible, :active),
+    .nova-enabled .top-site-inner:is(:hover, :focus-within),
+    .nova-enabled .top-site-outer:is(:hover, :focus-within) .top-site-button,
+    .nova-enabled .top-site-outer:is(:hover, :focus-within) .top-site-inner {
+        background-color: transparent !important;
+        background-image: none !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    /* Spegniamo eventuali pseudo-elementi ::before/::after che
+       nova potrebbe usare per disegnare il rettangolo blurrato */
+    .nova-enabled .top-site-button::before,
+    .nova-enabled .top-site-button::after,
+    .nova-enabled .top-site-inner::before,
+    .nova-enabled .top-site-inner::after,
+    .top-site-button::before,
+    .top-site-button::after {
+        background: transparent !important;
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+        content: none !important;
+    }
+
     /* .tile — bumpiamo specificità con .nova-enabled per vincere
        sulle regole interne di Firefox 151. Stesso look del tema:
        pillola asimmetrica con blur e ombra. */
@@ -288,9 +341,13 @@
         border: none !important;
     }
     .nova-enabled .top-site-outer:hover .tile,
-    .top-site-outer:hover .tile {
+    .top-site-outer:hover .tile,
+    /* alta specificità per battere `.nova-enabled .top-site-button:is(:hover, :focus-visible) .tile` */
+    .nova-enabled .top-site-button:is(:hover, :focus, :focus-visible, :active) .tile,
+    .nova-enabled .top-site-outer:is(:hover, :focus-within) .tile {
         transform: scale(0.95) !important;
         background-color: #83A598 !important;
+        backdrop-filter: blur(10px) !important;
         box-shadow: 0 0 0 10px #1b1d1c85 !important;
     }
 

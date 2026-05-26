@@ -26,6 +26,16 @@ menupopup {
 	border-radius: 25px !important;
 }
 
+/* I dropdown HTML <select> usano <menupopup> sotto <menulist>:
+   per loro NON vogliamo min-width: 30em forzato (devono dimensionarsi
+   sul contenuto / sulla width del select). */
+menulist > menupopup,
+menupopup[is="autocomplete-richlistbox-popup"],
+menupopup.in-menulist {
+	min-width: 0 !important;
+	max-width: 100vw !important;
+}
+
 menu menupopup {
 	margin-top: -6px !important;
 }
@@ -40,6 +50,26 @@ menu menupopup {
     0 0 8px 2px #E7E9CE !important;
   padding: 6px !important;
   margin: 0 !important;
+  /* Con -moz-appearance: none si perdono le frecce di scroll native
+     e il comportamento di scroll nativo del menupopup. Lo ripristiniamo
+     con CSS standard. */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: calc(100vh - 40px) !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #83A598 transparent !important;
+}
+
+/* Forziamo la visibilità delle scrollbutton e dello slot scrollbox
+   interno nelle build che le rendono ancora come elementi XUL */
+.menupopup-arrowscrollbox > .scrollbutton-up,
+.menupopup-arrowscrollbox > .scrollbutton-down {
+  display: none !important;
+}
+.menupopup-arrowscrollbox > .scrollbox,
+.menupopup-arrowscrollbox > [part="scrollbox"] {
+  overflow-y: auto !important;
+  max-height: calc(100vh - 60px) !important;
 }
 
 
