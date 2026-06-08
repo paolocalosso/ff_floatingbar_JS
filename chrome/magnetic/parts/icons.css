@@ -872,6 +872,9 @@ treechildren::-moz-tree-image {
 #clipper_obsidian_md-browser-action .toolbarbutton-icon {
     list-style-image: url("../ext-icons/obsidian.svg") !important;
 }
+[id*="proton"] .toolbarbutton-icon {
+    list-style-image: url("../ext-icons/protonpass.svg") !important;
+}
 
 /* toolbar icons effect */
 
