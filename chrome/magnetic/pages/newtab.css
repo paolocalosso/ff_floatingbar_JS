@@ -98,7 +98,9 @@
     .top-site-outer:hover {
         border-radius: 20px !important;
         background-color: /*rgb(27,29,28,0.25)*/ rgb(231, 233, 206, 0.15) !important;
-        backdrop-filter: blur(10px) !important;
+        /* backdrop-filter: blur(10px) !important; rimosso: niente blur intorno alle shortcut in hover */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
     /*.rich-icon*/
     .context-menu {
