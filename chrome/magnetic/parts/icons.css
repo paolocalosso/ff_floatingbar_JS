@@ -327,6 +327,18 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 .search-go-button {
 	list-style-image: url("../icons/go-next-symbolic.svg") !important;
 }
+/* Fix dimensione freccia "vai/invio" nella urlbar (FF update la rendeva troppo grande).
+   L'elemento è <img class="urlbar-icon urlbar-go-button">; va battuta la regola
+   `#urlbar .urlbar-icon { height:100% }` che la scalava all'altezza della barra. */
+#urlbar .urlbar-icon.urlbar-go-button,
+#urlbar .urlbar-go-button,
+.urlbar-go-button,
+.search-go-button {
+	width: 16px !important;
+	height: 16px !important;
+	min-width: 16px !important;
+	min-height: 16px !important;
+}
 /* Menu button */
 #PanelUI-menu-button {
 	list-style-image: url("../icons/open-menu-symbolic.svg") !important;
