@@ -339,6 +339,24 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 	min-width: 16px !important;
 	min-height: 16px !important;
 }
+/* FF152: home, freccia avanti ed estensioni hanno cambiato dimensione icona.
+   Le riportiamo a 16px come gli altri toolbar button.
+   NB: niente min-width/min-height, altrimenti si blocca l'animazione di hover. */
+#home-button .toolbarbutton-icon,
+#nav-bar #forward-button .toolbarbutton-icon,
+#unified-extensions-button .toolbarbutton-icon {
+	width: 16px !important;
+	height: 16px !important;
+}
+/* Ripristina l'effetto hover (scala 0.9 -> 1) come le altre icone della barra */
+#home-button .toolbarbutton-icon,
+#unified-extensions-button .toolbarbutton-icon {
+	transform: scale(0.9) !important;
+}
+#home-button:not([disabled]):hover .toolbarbutton-icon,
+#unified-extensions-button:not([disabled]):hover .toolbarbutton-icon {
+	transform: none !important;
+}
 /* Menu button */
 #PanelUI-menu-button {
 	list-style-image: url("../icons/open-menu-symbolic.svg") !important;
