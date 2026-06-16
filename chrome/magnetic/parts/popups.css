@@ -454,7 +454,7 @@ tooltip {
   /*backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;*/
   border: 2px solid #83a598  !important;
-  border-radius: 25px 0px 0px 0px  !important;
+  border-radius: 25px  !important;
   color: rgba(231, 233, 206, 0.95) !important;
   padding: 6px 10px !important;
   box-shadow: none !important;

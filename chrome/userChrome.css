@@ -189,8 +189,7 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
 
 #nav-bar,
 #urlbar[focused] > #urlbar-background,
-#searchbar:focus-within,
-tooltip {
+#searchbar:focus-within {
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 10px !important;
 }
 
