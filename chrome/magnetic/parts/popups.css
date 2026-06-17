@@ -112,6 +112,11 @@ panel[type=arrow] {
 /* Style popovers - GLASSMORPHISM */
 panel:not([remote]) {
 	--arrowpanel-background: rgba(27, 29, 28, 0.75) !important;
+	/* FF152: il contenuto del panel viene dipinto con --background-color-canvas,
+	   che deriva da --panel-background-color. È QUESTA la variabile giusta
+	   (non --panel-background / --arrowpanel-background). */
+	--panel-background-color: rgba(27, 29, 28, 0.75) !important;
+	--background-color-canvas: rgba(27, 29, 28, 0.75) !important;
 	--panel-item-hover-bgcolor: rgba(231, 233, 206, 0.15) !important;
 	box-shadow: none !important;
 	-moz-box-shadow: none !important;
@@ -215,6 +220,61 @@ panelview {
 	stroke: #83A598 !important;
 	stroke-width: 2px !important;
 	display: -moz-inline-box !important;
+}
+
+/* FF152: i pannelli della toolbar (PanelUI / appMenu / overflow / estensioni)
+   hanno perso la trasparenza. La vecchia .panel-arrowcontent non esiste più:
+   ora il panel è <panel> con shadow-root contenente <slot part="content"> e
+   dentro panelmultiview > .panel-viewcontainer > .panel-viewstack > panelview.
+   Mettiamo l'unico strato translucido su ::part(content) e rendiamo trasparenti
+   sia il panel host (che dipingeva l'opaco dietro) sia i contenitori interni. */
+panel#appMenu-popup,
+panel#PanelUI-popup,
+panel#widget-overflow,
+panel#unified-extensions-panel,
+panel#protections-popup,
+panel#identity-popup {
+	/* spegne l'appearance nativa che dipinge lo sfondo opaco di sistema */
+	appearance: none !important;
+	-moz-appearance: none !important;
+	-moz-default-appearance: none !important;
+	background: transparent !important;
+	background-color: transparent !important;
+	--panel-background: transparent !important;
+}
+panel::part(content),
+#appMenu-popup::part(content),
+#PanelUI-popup::part(content),
+#widget-overflow::part(content),
+#unified-extensions-panel::part(content),
+#protections-popup::part(content),
+#identity-popup::part(content) {
+	appearance: none !important;
+	-moz-appearance: none !important;
+	-moz-default-appearance: none !important;
+	background: rgba(27, 29, 28, 0.75) !important;
+	background-color: rgba(27, 29, 28, 0.75) !important;
+	border: 2px solid #83A598 !important;
+	border-radius: 25px !important;
+	box-shadow: none !important;
+}
+
+.panel-viewstack,
+.panel-viewcontainer,
+panelmultiview,
+.panelMultiView,
+panelview,
+.panelView,
+.PanelUI-subView,
+.panel-subview-body,
+#appMenu-multiView {
+	/* spegne anche qui l'appearance nativa opaca (nessun elemento aveva un
+	   background-color non trasparente: l'opacità è tutta nativa) */
+	appearance: none !important;
+	-moz-appearance: none !important;
+	-moz-default-appearance: none !important;
+	background: transparent !important;
+	background-color: transparent !important;
 }
 
 /* Panel header */
