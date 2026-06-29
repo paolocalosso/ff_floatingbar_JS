@@ -270,5 +270,5 @@
 
 /* Margine a destra del menu hamburger, per simmetria con la freccia indietro */
 :root[customtitlebar] #nav-bar #PanelUI-button {
-  margin-right: 30px !important;
+  margin-right: 35px !important;
 }
