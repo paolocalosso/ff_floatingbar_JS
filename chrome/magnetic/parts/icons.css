@@ -357,6 +357,18 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 #unified-extensions-button:not([disabled]):hover .toolbarbutton-icon {
 	transform: none !important;
 }
+/* FF153: la stella dei preferiti e le icone page-action delle estensioni
+   (es. bandierina localizzazione server) venivano scalate a tutta altezza
+   dalla regola `#urlbar .urlbar-icon { height:100% }`. Le riportiamo a 16px
+   come la freccia "vai". */
+#urlbar #star-button,
+#urlbar .urlbar-page-action > .urlbar-icon,
+#urlbar #page-action-buttons .urlbar-icon {
+	width: 16px !important;
+	height: 16px !important;
+	min-width: 16px !important;
+	min-height: 16px !important;
+}
 /* Menu button */
 #PanelUI-menu-button {
 	list-style-image: url("../icons/open-menu-symbolic.svg") !important;
