@@ -467,7 +467,19 @@
 }
 .button-background {
     border: 1px solid #83a598 !important;
-} 
+}
 .nova-enabled .top-site-outer {
     width: 95px !important;
+}
+
+/* ===========================================================================
+   FF153: la nova dispone la new tab con una griglia in cui `.content` occupa
+   una riga che lascia una grande fascia vuota sopra la barra di ricerca,
+   spingendo in basso barra + scorciatoie. Facendo partire `.content` dalla
+   prima riga (span 2) lo spazio sparisce e il contenuto risale in alto.
+   =========================================================================== */
+@-moz-document url("about:newtab"), url("about:home") {
+    .nova-enabled .content {
+        grid-row: 1 / span 2 !important;
+    }
 }
