@@ -295,30 +295,51 @@ border-radius: 50px !important;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(40, 42, 41, 0.93), rgba(22, 24, 23, 0.93));
+  /* trasparente: l'opacità la regola ora solo .urlbarView background-color */
+  background: transparent;
   /* backdrop-filter: blur(15px) !important; FF150 broken */
   border-radius: 25px;
   z-index: -1;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 :root[sizemode="maximized"] .urlbarView::before {
-  background: linear-gradient(rgba(45, 47, 46, 0.95), rgba(25, 27, 26, 0.95));
+  background: transparent;
   /* backdrop-filter: blur(20px) saturate(180%) !important; FF150 broken */
 }
 
 
 
 .urlbarView:not(:active):hover {
-	background-color: rgb(27,29,28,0.93) !important;
+	background-color: rgb(27,29,28,0.75) !important;
 	transition: background-color 1s ease !important;
   /* backdrop-filter: blur(10px) !important; FF150 broken */
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
 }
 .urlbarView:not(:active) {
-	background-color: rgb(27,29,28,0.9) !important;
+	background-color: rgb(27,29,28,0.7) !important;
 	transition: background-color 1s ease !important;
   /* backdrop-filter: blur(10px) !important; FF150 broken */
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
+
+/* FF153: il pannello risultati della urlbar torna opaco ma SOLO a finestra
+   attiva (a finestra inattiva resta translucido, come vogliamo). È la stessa
+   firma del bug FF152 sugli arrow panel (vedi popups.css): Firefox dipinge uno
+   strato opaco NATIVO dietro lo strato translucido del tema, e quello strato
+   viene disegnato solo quando la finestra è attiva. Lo spegniamo: appearance
+   nativa off + azzeriamo le variabili canvas/panel che lo colorano. Lo sfondo
+   scuro translucido resta perché lo dà il tema (.urlbarView + ::before). */
+.urlbarView,
+#urlbar-results,
+.urlbarView-body-outer,
+.urlbarView-body-inner {
+	appearance: none !important;
+	-moz-appearance: none !important;
+	-moz-default-appearance: none !important;
+	--panel-background-color: transparent !important;
+	--background-color-canvas: transparent !important;
+	--panel-background: transparent !important;
+	--arrowpanel-background: transparent !important;
 }
 
 
