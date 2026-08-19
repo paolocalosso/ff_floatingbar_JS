@@ -145,5 +145,35 @@
   #personal-bookmarks .bookmark-item>.toolbarbutton-text, #import-button>.toolbarbutton-text {
     margin-left: 5px !important;
     /*display: none !important;*/
-  }   
+  }
+
+  /* FF154: la UA stylesheet (xul.css) ora applica a TUTTI i toolbarbutton
+     `align-items: center; justify-content: center`. Nella barra verticale le
+     voci sono larghe 278px, quindi favicon + titolo finiscono centrati invece
+     che allineati a sinistra (prima il toolbarbutton era un box XUL che di
+     default impaccava a start). Riportiamo l'allineamento a sinistra. */
+  #personal-bookmarks .bookmark-item {
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: start !important;
+  }
+
+  /* Non basta il contenitore: la label .toolbarbutton-text ha
+     `text-align: center` dalla UA stylesheet (serve ai pulsanti con testo
+     sotto l'icona) e si espande a tutta larghezza, quindi il titolo resta
+     centrato. Allineiamo il testo a sinistra dentro la label. */
+  #personal-bookmarks .bookmark-item > .toolbarbutton-text {
+    text-align: start !important;
+    flex: 1 1 auto !important;
+  }
+
+  /* FF154 marca le voci con `style="visibility: hidden"` inline (logica di
+     overflow della barra segnalibri, che con il layout verticale calcola male
+     lo spazio disponibile): la favicon resta invisibile finché non passi col
+     mouse. Forziamo la visibilità di voce, icona e testo. */
+  #personal-bookmarks .bookmark-item,
+  #personal-bookmarks .bookmark-item > .toolbarbutton-icon,
+  #personal-bookmarks .bookmark-item > .toolbarbutton-text {
+    visibility: visible !important;
+  }
 }
