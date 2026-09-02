@@ -154,8 +154,13 @@ aside.sidebar-inline-start,
 aside.sidebar-inline-end{
     display: none !important;
 }
-/* main.content occupa l'intera riga e si centra */
-main.content{
+/* main.content occupa l'intera riga e si centra.
+   FF155: il <main> ha cambiato classe (content-main) ed e' display:contents,
+   quindi non e' piu' lui il grid item: lo diventa il <div class="content">
+   che sta al suo interno. Senza agganciarlo, veniva auto-piazzato in una
+   colonna implicita e finiva tutto spostato a destra. */
+main.content,
+main.content-main > .content{
     grid-column: 1 / -1 !important;
     width: 100% !important;
     max-width: 800px !important;

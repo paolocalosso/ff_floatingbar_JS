@@ -472,14 +472,8 @@
     width: 95px !important;
 }
 
-/* ===========================================================================
-   FF153: la nova dispone la new tab con una griglia in cui `.content` occupa
-   una riga che lascia una grande fascia vuota sopra la barra di ricerca,
-   spingendo in basso barra + scorciatoie. Facendo partire `.content` dalla
-   prima riga (span 2) lo spazio sparisce e il contenuto risale in alto.
-   =========================================================================== */
-@-moz-document url("about:newtab"), url("about:home") {
-    .nova-enabled .content {
-        grid-row: 1 / span 2 !important;
-    }
-}
+/* NB: fino a FF154 serviva qui un `grid-row: 1 / span 2` su `.nova-enabled
+   .content` per eliminare la fascia vuota sopra la barra di ricerca. Da FF155
+   non serve piu' (il posizionamento corretto e' gestito in bali.css, dove il
+   grid item e' diventato `main.content-main > .content`). Rimosso: se dovesse
+   riservire, e' recuperabile dalla storia git. */
