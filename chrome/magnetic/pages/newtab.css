@@ -477,3 +477,51 @@
    non serve piu' (il posizionamento corretto e' gestito in bali.css, dove il
    grid item e' diventato `main.content-main > .content`). Rimosso: se dovesse
    riservire, e' recuperabile dalla storia git. */
+
+/* ===========================================================================
+   FF155: il pulsante "Personalizza" e' tornato allo stile primary di default
+   (sfondo lilla). Le regole piu' sopra su `moz-button.open-customization-button`
+   non fanno piu' presa, quindi ridichiariamo i colori coprendo anche le
+   varianti di classe e le custom properties del tipo "primary".
+   =========================================================================== */
+@-moz-document url("about:newtab"), url("about:home") {
+
+    /* Vale per tutti i moz-button della new tab (Personalizza, "+" Aggiungi
+       scorciatoia, ecc.): le custom properties ereditano nello shadow DOM,
+       dove moz-button.css colora .button-background[type="primary"]. */
+    moz-button {
+        --button-background-color: #1b1d1c !important;
+        --button-background-color-hover: #83A598 !important;
+        --button-background-color-active: #83A598 !important;
+        --button-background-color-primary: #1b1d1c !important;
+        --button-background-color-primary-hover: #83A598 !important;
+        --button-background-color-primary-active: #83A598 !important;
+        --button-text-color: #83A598 !important;
+        --button-text-color-hover: #1b1d1c !important;
+        --button-text-color-active: #1b1d1c !important;
+        --button-text-color-primary: #83A598 !important;
+        --button-text-color-primary-hover: #1b1d1c !important;
+        --button-border-color: #83A598 !important;
+        --button-border-color-hover: #83A598 !important;
+        --button-border-radius: 500px !important;
+    }
+
+    /* Fallback diretto sullo shadow part, per le build che non leggono
+       tutte le custom properties qui sopra. NB: part="button" e' esposto
+       dallo <span class="button-background">, non dal <button> interno. */
+    moz-button::part(button) {
+        background-color: #1b1d1c !important;
+        background-image: none !important;
+        color: #83A598 !important;
+        border: 1px solid #83A598 !important;
+        border-radius: 500px !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+        transition: background-color .3s ease, color .3s ease !important;
+    }
+
+    moz-button:is(:hover, :focus)::part(button) {
+        background-color: #83A598 !important;
+        color: #1b1d1c !important;
+        border-color: #83A598 !important;
+    }
+}
