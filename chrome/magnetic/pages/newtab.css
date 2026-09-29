@@ -525,3 +525,23 @@
         border-color: #83A598 !important;
     }
 }
+
+/* ===========================================================================
+   FF157: il menu contestuale delle scorciatoie (pulsante "...") non e' piu'
+   un .context-menu ma un <panel-list> (web component con shadow DOM, aperto
+   come popover). Il suo stile sta in panel-list.css dentro lo shadow root e
+   lo sfondo risultava trasparente, quindi le regole .context-menu piu' sopra
+   non lo toccano piu'.
+   Coloriamo l'host dall'esterno: le custom properties ereditano nello shadow
+   DOM, e il background diretto sull'host batte le regole :host interne.
+   =========================================================================== */
+@-moz-document url("about:newtab"), url("about:home") {
+    panel-list {
+        --panel-background: rgba(27, 29, 28, 0.95) !important;
+        --panel-color: rgba(231, 233, 206, 0.95) !important;
+        --panel-border-color: #83A598 !important;
+        background-color: rgba(27, 29, 28, 0.95) !important;
+        color: rgba(231, 233, 206, 0.95) !important;
+        border-radius: 15px !important;
+    }
+}
