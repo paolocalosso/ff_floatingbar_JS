@@ -341,8 +341,11 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 }
 /* FF152: home, freccia avanti ed estensioni hanno cambiato dimensione icona.
    Le riportiamo a 16px come gli altri toolbar button.
+   Aggiunta anche la freccia indietro, rimasta fuori dal fix originale e quindi
+   alla dimensione di default di Firefox, visibilmente piu' grande.
    NB: niente min-width/min-height, altrimenti si blocca l'animazione di hover. */
 #home-button .toolbarbutton-icon,
+#nav-bar #back-button .toolbarbutton-icon,
 #nav-bar #forward-button .toolbarbutton-icon,
 #unified-extensions-button .toolbarbutton-icon {
 	width: 16px !important;
