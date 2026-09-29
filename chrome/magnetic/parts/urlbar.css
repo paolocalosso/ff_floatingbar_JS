@@ -288,6 +288,18 @@ border-radius: 50px !important;
   animation-delay: 0s;
   animation-duration: .5s !important;
 }
+/* FF157 / nova: e' stato introdotto .urlbarView-background, una superficie che
+   dipinge il PROPRIO sfondo dietro la view, piu' un'ombra viola presa da
+   --chrome-box-shadow. Risultato: due popup sovrapposti, con angoli e ombre
+   doppie. Lo rendiamo trasparente, cosi' resta solo lo strato del tema. */
+.urlbarView-background {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  --chrome-box-shadow: none !important;
+}
+
 .urlbarView::before {
   content: "";
   position: absolute;

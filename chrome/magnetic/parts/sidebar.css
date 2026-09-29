@@ -28,7 +28,34 @@ html, body, main {
 	background-color: transparent !important;
 	border-radius: 25px !important;
 	/*padding-top: 10px !important;*/
-1}
+}
+
+/* FF157 / design "nova": la sidebar non usa piu' un solo border-radius.
+   Nova definisce gli angoli con variabili logiche per singolo spigolo
+   (--sidebar-box-start-start-radius, --sidebar-box-start-end-radius) e ne
+   azzera alcune in certi stati, per far combaciare la sidebar con la barra
+   degli strumenti: da qui l'effetto "un po' tondo e un po' squadrato".
+   Noi la vogliamo flottante e staccata, quindi allineiamo TUTTI gli angoli
+   al raggio del tema. Ribadiamo anche le longhand logiche, che nelle regole
+   interne di Firefox battono la shorthand qui sopra.
+
+   Volutamente senza @media -moz-pref: con nova spento le variabili non
+   vengono lette e le longhand coincidono con il border-radius, quindi la
+   regola e' innocua in entrambi gli stati e siamo pronti a quando Mozilla
+   togliera' il pref. */
+#sidebar-box,
+#sidebar-box[sidebar-positionend],
+.sidebar-panel {
+	--sidebar-box-start-start-radius: 25px !important;
+	--sidebar-box-start-end-radius: 25px !important;
+	--sidebar-box-end-start-radius: 25px !important;
+	--sidebar-box-end-end-radius: 25px !important;
+
+	border-start-start-radius: 25px !important;
+	border-start-end-radius: 25px !important;
+	border-end-start-radius: 25px !important;
+	border-end-end-radius: 25px !important;
+}
 #sidebar-box:-moz-window-inactive, .sidebar-panel:-moz-window-inactive {
 	background-color: transparent !important;
 	/*background-color: var(--gnome-inactive-sidebar-background) !important;*/
