@@ -117,7 +117,9 @@ html, body, main {
 	left: -288px;
 	top: 50px !important;
 	opacity: 0;
-	bottom: 4px !important;
+	/* Margine inferiore: a 4px la sidebar sembrava appoggiata al bordo della
+	   finestra; a 10px si staccava troppo. */
+	bottom: 6px !important;
 	height: auto !important;
 	max-height: none !important;
 	border-radius: 20px;
@@ -146,7 +148,7 @@ html, body, main {
 }
 
 #sidebar-box:hover {
-	left: 4px;
+	left: 6px;
 	opacity: 1;
 }
 
@@ -188,8 +190,12 @@ html, body, main {
 	border: 1px solid #1b1d1c;
 	border-radius: 25px;
 	z-index: 0;
-	outline: #1b1d1c solid;
-	outline-width: 1px;
+	/* Rimosso l'outline: veniva disegnato FUORI dal border box, quindi si
+	   sommava al border qui sopra dando due tratti da 1px concentrici. Sugli
+	   angoli arrotondati il piu' esterno risultava antialiasato e si leggeva
+	   come un bordo sbiadito attorno a quello scuro: il "doppio bordo".
+	   outline: #1b1d1c solid;
+	   outline-width: 1px; */
 }
 
 #titlebar {
