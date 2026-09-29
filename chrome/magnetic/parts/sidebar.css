@@ -106,17 +106,43 @@ html, body, main {
 
 
 /*ex_sidebar_support.css*/
+/* NB: con nova attivo (FF157) le regole interne di Firefox sovrascrivono la
+   geometria della sidebar se non e' marcata !important — come gia' avveniva
+   per `width`. Senza !important su top/bottom la sidebar si allungava fino al
+   bordo inferiore della finestra, mangiandosi il margine di 4px e nascondendo
+   gli angoli arrotondati in basso. */
 #sidebar-box {
 	position: fixed;
 	z-index: 3;
 	left: -288px;
-	top: 50px;
+	top: 50px !important;
 	opacity: 0;
-	bottom: 4px;
+	bottom: 4px !important;
+	height: auto !important;
+	max-height: none !important;
 	border-radius: 20px;
 	width: 288px !important;
 	transition: all 600ms cubic-bezier(0.77, 0, 0.18, 1);
 	box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* FF157 / nova: #sidebar-box e' posizionato bene (bottom: 4px), ma ha
+   overflow: visible e il browser interno sborda oltre il fondo del box: la
+   sidebar sembra cosi' tagliata dritta sul bordo inferiore della finestra.
+   Non possiamo usare overflow:hidden sul box stesso, perche' ::before/::after
+   sporgono di 12px ai lati e servono come zona di hover per farla scorrere.
+   Ritagliamo quindi il contenuto: min-height:0 consente al flex di
+   restringersi davvero, overflow:hidden + raggio arrotondano anche in basso. */
+#sidebar-box > .sidebar-browser-stack,
+#sidebar-box .sidebar-browser-stack {
+	min-height: 0 !important;
+	overflow: hidden !important;
+	border-radius: 25px !important;
+}
+
+#sidebar-box #sidebar {
+	overflow: hidden !important;
+	border-radius: 25px !important;
 }
 
 #sidebar-box:hover {
