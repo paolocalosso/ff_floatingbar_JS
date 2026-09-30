@@ -149,6 +149,10 @@
         padding: 4px 10px !important;
         min-height: 32px !important;
         background-color: transparent !important;
+        /* min-height da sola non centra nulla: senza questo il testo resta
+           appoggiato in alto nei 32px della voce. */
+        display: flex !important;
+        align-items: center !important;
     }
     [role="menuitem"]:hover {
         border-radius: 30px !important;
