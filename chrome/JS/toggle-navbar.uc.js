@@ -61,6 +61,31 @@
         }
     }
 
+    // Nascondere il toolbox NON chiude il pannello dei risultati: per Firefox
+    // resta logicamente aperto, e da FF157 rimane anche dipinto (fantasma che
+    // non risponde ai click). Va chiuso esplicitamente via API.
+    function urlbarViewIsOpen() {
+        try {
+            return !!(window.gURLBar && window.gURLBar.view && window.gURLBar.view.isOpen);
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function closeUrlbarView() {
+        try {
+            if (!window.gURLBar) return;
+            if (window.gURLBar.view && window.gURLBar.view.isOpen) {
+                window.gURLBar.view.close();
+            }
+            if (window.gURLBar.focused) {
+                window.gURLBar.blur();
+            }
+        } catch (e) {
+            console.error('closeUrlbarView failed:', e);
+        }
+    }
+
     // Mostra esplicitamente all'avvio
     setTimeout(() => {
         showNavbar();
@@ -72,10 +97,21 @@
             e.preventDefault();
             e.stopPropagation();
             toggleNavbar();
-        } else if (e.key === 'Escape' && isVisible) {
-            e.preventDefault();
-            e.stopPropagation();
-            hideNavbar();
+        } else if (e.key === 'Escape') {
+            // Se il pannello risultati e' aperto, la priorita' e' chiuderlo.
+            // NON intercettiamo l'evento (niente preventDefault/stopPropagation),
+            // altrimenti Firefox non lo riceve e il pannello resta aperto:
+            // era questo il motivo per cui Esc nascondeva la barra ma lasciava
+            // il pannello dietro.
+            if (urlbarViewIsOpen()) {
+                closeUrlbarView();
+                return;
+            }
+            if (isVisible) {
+                e.preventDefault();
+                e.stopPropagation();
+                hideNavbar();
+            }
         } else if (e.ctrlKey && e.key === 't') {
             // Ctrl+T - nuova scheda
             console.log('Ctrl+T detected, showing navbar');
@@ -93,10 +129,10 @@
 
     // Listener per click fuori dalla toolbar (con esclusione popup addon)
     document.addEventListener('click', (e) => {
-        if (isVisible) {
+        {
             let target = e.target;
             let isInPopup = false;
-            
+
             // Risali l'albero DOM per vedere se siamo in un elemento da ignorare
             while (target && target !== document.documentElement) {
                 // Popup estensioni (hanno questi attributi)
@@ -132,9 +168,15 @@
                 target = target.parentElement;
             }
             
-            // Chiudi solo se NON sei in un popup E NON sei nel toolbox
+            // Chiudi solo se NON sei in un popup E NON sei nel toolbox.
+            // NB: la chiusura del pannello va fatta SEMPRE, anche a navbar
+            // gia' nascosta: e' il caso in cui prima restava il fantasma
+            // incliccabile, perche' il ramo girava solo con isVisible true.
             if (!isInPopup && !toolbox.contains(e.target)) {
-                hideNavbar();
+                closeUrlbarView();
+                if (isVisible) {
+                    hideNavbar();
+                }
             }
         }
     }, true);
