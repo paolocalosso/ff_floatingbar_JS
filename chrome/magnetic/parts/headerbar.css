@@ -34,5 +34,32 @@
   border-radius: 50px !important;
 }
 
+/* FF157 / nova: Firefox disegna un separatore in fondo alla barra usando
+   --chrome-content-separator-color, che il tema alimenta con
+   --gnome-toolbar-border-color (sidebar.css). Verificato in console: sul
+   #nav-bar tutti i lati sono a 0px tranne quello inferiore, 1px
+   rgba(131,165,152,0.18) — da qui la riga grigia comparsa con FF157.
+   Nel design di nova la barra e' attaccata al contenuto e il separatore ci
+   sta; con la barra flottante e staccata, no. */
+:root[customtitlebar] #nav-bar:not(#hack) {
+  border-block-end: 0 none !important;
+  border-bottom: 0 none !important;
+  --chrome-content-separator-color: transparent !important;
+}
+
+/* FF157 / nova: .browserContainer disegna un bordo su block-start e
+   inline-start, colorato con --chrome-content-separator-color. Con la toolbar
+   flottante quel bordo superiore cade proprio sotto la barra e si legge come
+   una riga grigia che prima non c'era (e sul lato sidebar arrotonda anche
+   l'angolo). Il design di nova lo prevede perche' li' la toolbar e' attaccata
+   al contenuto; qui no, quindi lo togliamo. */
+.browserContainer {
+  border: none !important;
+  border-block-start: none !important;
+  border-inline-start: none !important;
+  border-start-start-radius: 0 !important;
+  --chrome-content-separator-color: transparent !important;
+}
+
 
 
