@@ -2,13 +2,23 @@
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
+/* Sfondo unico di menu e pannelli: modificare SOLO qui l'opacita'.
+   Era scritto a mano (0.75) in nove punti. Finche' nei menu si sommavano due
+   strati a 0.75 (variabile del popup + sfondo dello scrollbox) l'effetto reale
+   era circa 0.94; da FF159 uno strato non viene piu' dipinto e con il solo
+   0.75 il testo diventava difficile da leggere sopra pagine contrastate.
+   Senza un backdrop-filter funzionante (bug 1799334) serve un fondo piu' pieno. */
+:root {
+	--uc-menu-bg: rgba(27, 29, 28, 0.9);
+}
+
 /* Style menus - GLASSMORPHISM
    Firefox 151 fix: in Firefox recenti il rendering dei menupopup usa
    le variabili --panel-* (definite a livello widget) invece del vecchio
    .menupopup-arrowscrollbox. Le impostiamo sia su menupopup che su panel. */
 menupopup,
 panel {
-	--panel-background: rgba(27, 29, 28, 0.75) !important;
+	--panel-background: var(--uc-menu-bg) !important;
 	--panel-border-color: #83A598 !important;
 	--panel-border-radius: 25px !important;
 	--panel-color: rgba(231, 233, 206, 0.95) !important;
@@ -42,7 +52,7 @@ menu menupopup {
 
 .menupopup-arrowscrollbox {
   -moz-appearance: none !important;
-  background-color: rgba(27, 29, 28, 0.75) !important;
+  background-color: var(--uc-menu-bg) !important;
   border: 2px solid transparent !important;
   border-radius: 25px !important;
   box-shadow:
@@ -111,12 +121,12 @@ panel[type=arrow] {
 
 /* Style popovers - GLASSMORPHISM */
 panel:not([remote]) {
-	--arrowpanel-background: rgba(27, 29, 28, 0.75) !important;
+	--arrowpanel-background: var(--uc-menu-bg) !important;
 	/* FF152: il contenuto del panel viene dipinto con --background-color-canvas,
 	   che deriva da --panel-background-color. È QUESTA la variabile giusta
 	   (non --panel-background / --arrowpanel-background). */
-	--panel-background-color: rgba(27, 29, 28, 0.75) !important;
-	--background-color-canvas: rgba(27, 29, 28, 0.75) !important;
+	--panel-background-color: var(--uc-menu-bg) !important;
+	--background-color-canvas: var(--uc-menu-bg) !important;
 	--panel-item-hover-bgcolor: rgba(231, 233, 206, 0.15) !important;
 	box-shadow: none !important;
 	-moz-box-shadow: none !important;
@@ -206,7 +216,7 @@ panelview {
 
 /* Panel arrow - GLASSMORPHISM */
 .panel-arrowcontent {
-	background: rgba(27, 29, 28, 0.75) !important;
+	background: var(--uc-menu-bg) !important;
 	/*backdrop-filter: blur(25px) saturate(150%) !important;
 	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
 	border: 2px solid #83A598 !important;
@@ -216,7 +226,7 @@ panelview {
 }
 
 .panel-arrow {
-	fill: rgba(27, 29, 28, 0.75) !important;
+	fill: var(--uc-menu-bg) !important;
 	stroke: #83A598 !important;
 	stroke-width: 2px !important;
 	display: -moz-inline-box !important;
@@ -252,8 +262,8 @@ panel::part(content),
 	appearance: none !important;
 	-moz-appearance: none !important;
 	-moz-default-appearance: none !important;
-	background: rgba(27, 29, 28, 0.75) !important;
-	background-color: rgba(27, 29, 28, 0.75) !important;
+	background: var(--uc-menu-bg) !important;
+	background-color: var(--uc-menu-bg) !important;
 	border: 2px solid #83A598 !important;
 	border-radius: 25px !important;
 	box-shadow: none !important;
