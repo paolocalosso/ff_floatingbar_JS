@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Toggle Floating Navbar
-// @description    F2 per mostrare/nascondere navbar, click fuori per chiudere
+// @description    Ctrl+F2 per mostrare/nascondere navbar, click fuori per chiudere
 // @author         Paolo
 // ==/UserScript==
 
@@ -91,9 +91,10 @@
         showNavbar();
     }, 100);
 
-    // Listener per F2 ed Esc
+    // Listener per Ctrl+F2 ed Esc
     window.addEventListener('keydown', (e) => {
-        if (e.key === 'F2') {
+        // Solo Ctrl+F2 (senza Shift/Alt/Meta): F2 da solo resta libero
+        if (e.key === 'F2' && e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {
             e.preventDefault();
             e.stopPropagation();
             toggleNavbar();
@@ -226,6 +227,6 @@
         }, true);
     }
 
-    console.log('Toggle Navbar script loaded - Navbar visible at startup, press F2 to toggle, Esc or click outside to close');
+    console.log('Toggle Navbar script loaded - Navbar visible at startup, press Ctrl+F2 to toggle, Esc or click outside to close');
 
 })();
