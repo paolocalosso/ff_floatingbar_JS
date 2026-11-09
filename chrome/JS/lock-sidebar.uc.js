@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Lock Sidebar Toggle
-// @description    F3 per bloccare/sbloccare sidebar, click fuori per sbloccare
+// @description    Blocco sidebar (scorciatoia F3 disattivata: ora e' della navbar), click fuori per sbloccare
 // @author         Paolo
 // ==/UserScript==
 
@@ -38,7 +38,10 @@
         }
     }
 
-    // Listener per F3 - Toggle
+    // Scorciatoia F3 DISATTIVATA: F3 ora mostra/nasconde la navbar
+    // (toggle-navbar.uc.js). Lasciata commentata nel caso serva riassegnarla
+    // a un altro tasto.
+    /*
     window.addEventListener('keydown', (e) => {
         if (e.key === 'F3') {
             e.preventDefault();
@@ -46,6 +49,7 @@
             toggleLock();
         }
     }, true);
+    */
 
     // Click fuori dalla sidebar per sbloccare
     document.addEventListener('click', (e) => {
@@ -58,6 +62,6 @@
         }
     }, true);
 
-    console.log('✓ Sidebar lock script loaded - F3 to toggle, click outside to unlock');
+    console.log('✓ Sidebar lock script loaded - F3 shortcut disabled (used by navbar), click outside to unlock');
 
 })();

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Toggle Floating Navbar
-// @description    Ctrl+F2 per mostrare/nascondere navbar, click fuori per chiudere
+// @description    F3 per mostrare/nascondere navbar, click fuori per chiudere
 // @author         Paolo
 // ==/UserScript==
 
@@ -91,10 +91,11 @@
         showNavbar();
     }, 100);
 
-    // Listener per Ctrl+F2 ed Esc
+    // Listener per F3 ed Esc
     window.addEventListener('keydown', (e) => {
-        // Solo Ctrl+F2 (senza Shift/Alt/Meta): F2 da solo resta libero
-        if (e.key === 'F2' && e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {
+        // Solo F3 senza modificatori: Shift+F3 resta a Firefox ("trova precedente").
+        // NB: F3 da solo sostituisce il "trova successivo" nativo, che resta su Ctrl+G.
+        if (e.key === 'F3' && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {
             e.preventDefault();
             e.stopPropagation();
             toggleNavbar();
@@ -227,6 +228,6 @@
         }, true);
     }
 
-    console.log('Toggle Navbar script loaded - Navbar visible at startup, press Ctrl+F2 to toggle, Esc or click outside to close');
+    console.log('Toggle Navbar script loaded - Navbar visible at startup, press F3 to toggle, Esc or click outside to close');
 
 })();
