@@ -122,6 +122,10 @@ html, body, main {
 	bottom: 6px !important;
 	height: auto !important;
 	max-height: none !important;
+	/* FF160: Firefox aggiunge padding-left: 6px a #sidebar-box (verificato in
+	   console: padL 6px, stack e browser di Sidebery spostati di 6px), che si
+	   vedeva come uno spazio vuoto sul margine sinistro della sidebar. */
+	padding-inline: 0 !important;
 	border-radius: 20px;
 	width: 288px !important;
 	transition: all 600ms cubic-bezier(0.77, 0, 0.18, 1);
