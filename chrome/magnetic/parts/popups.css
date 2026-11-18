@@ -3,13 +3,16 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Sfondo unico di menu e pannelli: modificare SOLO qui l'opacita'.
-   Era scritto a mano (0.75) in nove punti. Finche' nei menu si sommavano due
-   strati a 0.75 (variabile del popup + sfondo dello scrollbox) l'effetto reale
-   era circa 0.94; da FF159 uno strato non viene piu' dipinto e con il solo
-   0.75 il testo diventava difficile da leggere sopra pagine contrastate.
-   Senza un backdrop-filter funzionante (bug 1799334) serve un fondo piu' pieno. */
+   Il backdrop-filter di Firefox non funziona sul chrome (bug 1799334): il
+   vetro sfocato lo fa Blur My Shell, che sfoca a livello di compositor lo
+   sfondo dietro i menu (Applications -> Blur menus, Menu corner radius 25).
+   Per questo il fondo puo' essere cosi' trasparente; SENZA quell'estensione
+   0.6 rende il testo difficile da leggere e conviene tornare a circa 0.9.
+   Perche' il blur cada solo sotto il menu, il riquadro della finestra del
+   menu deve coincidere con il menu visibile: niente margini trasparenti
+   attorno (vedi menupopup e --panel-box-shadow-margin qui sotto). */
 :root {
-	--uc-menu-bg: rgba(27, 29, 28, 0.9);
+	--uc-menu-bg: rgba(27, 29, 28, 0.6);
 }
 
 /* Style menus - GLASSMORPHISM
@@ -23,14 +26,25 @@ panel {
 	--panel-border-radius: 25px !important;
 	--panel-color: rgba(231, 233, 206, 0.95) !important;
 	--panel-shadow-margin: 0 !important;
+	/* FF160: la variabile e' stata rinominata. La regola di Firefox
+	   `&::part(content) { margin: var(--panel-box-shadow-margin) }` (popup.css)
+	   dava 4px di margine trasparente attorno ai pannelli, che Blur My Shell
+	   sfocava come un anello. Le custom properties si ereditano nello shadow
+	   DOM, quindi funziona anche dove la nostra regola su ::part non arriva. */
+	--panel-box-shadow-margin: 0 !important;
 }
 
+/* Niente margine trasparente attorno ai menu: il riquadro della finestra del
+   menu deve coincidere con il menu visibile. Blur My Shell sfoca l'intero
+   riquadro (frame rect), quindi i vecchi 8px di padding, che servivano a far
+   spazio al bagliore esterno, diventavano un anello sfocato attorno al menu.
+   Il contorno verde ora e' un bordo vero (vedi .menupopup-arrowscrollbox). */
 menupopup {
 	background-color: transparent !important;
 	/*backdrop-filter: blur(25px) saturate(150%) !important;
 	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
-	padding: 8px !important;
-	margin: -8px !important;
+	padding: 0 !important;
+	margin: 0 !important;
 	min-width: 30em !important;
 	/* Fallback diretto per versioni che non rispettano --panel-background */
 	border-radius: 25px !important;
@@ -46,18 +60,21 @@ menupopup.in-menulist {
 	max-width: 100vw !important;
 }
 
+/* Era -6px quando il menupopup aveva 8px di padding (spostamento netto di
+   +2px del menu visibile): senza padding, lo stesso spostamento e' 2px. */
 menu menupopup {
-	margin-top: -6px !important;
+	margin-top: 2px !important;
 }
 
 .menupopup-arrowscrollbox {
   -moz-appearance: none !important;
   background-color: var(--uc-menu-bg) !important;
-  border: 2px solid transparent !important;
+  /* Contorno verde come bordo vero e non piu' come box-shadow esterna: senza
+     il padding del menupopup un'ombra esterna finirebbe fuori dalla finestra
+     del menu e verrebbe tagliata. Il bagliore morbido (0 0 8px) e' tolto. */
+  border: 2px solid #83A598 !important;
   border-radius: 25px !important;
-  box-shadow:
-    0 0 0 2px #83A598,
-    0 0 8px 2px #E7E9CE !important;
+  box-shadow: none !important;
   padding: 6px !important;
   margin: 0 !important;
   /* Con -moz-appearance: none si perdono le frecce di scroll native
@@ -115,8 +132,14 @@ menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 }
 
 /* Adjust popovers position */
+/* Il -4px su lati e fondo lo mette Firefox per compensare il margine di 4px
+   di ::part(content) (vedi sotto): azzerato quello, si azzera anche questo,
+   altrimenti il pannello si sposterebbe di 4px. Resta solo lo stacco di 3px
+   dalla barra. */
 panel[type=arrow] {
 	margin-top: 3px !important;
+	margin-inline: 0 !important;
+	margin-bottom: 0 !important;
 }
 
 /* Style popovers - GLASSMORPHISM */
@@ -267,6 +290,20 @@ panel::part(content),
 	border: 2px solid #83A598 !important;
 	border-radius: 25px !important;
 	box-shadow: none !important;
+	/* Solo di riserva: verificato su FF160 che questa regola NON viene
+	   applicata a ::part(content) (vale quella di popup.css di Firefox). Il
+	   margine di 4px si azzera con --panel-box-shadow-margin, in cima al file. */
+	margin: 0 !important;
+}
+
+/* Contorno dei pannelli a 2px come quello dei menu. Firefox lo disegna con
+   `border: 1px` fisso su ::part(content), dove la regola qui sopra non arriva,
+   e non c'e' una variabile per lo spessore. Il secondo pixel e' un'ombra
+   INTERNA sul primo elemento del contenuto, che sta nel DOM normale: resta
+   dentro il pannello e non crea un nuovo anello sotto il blur di BMS. */
+panel > panelmultiview {
+	box-shadow: inset 0 0 0 1px #83A598 !important;
+	border-radius: 24px !important;
 }
 
 .panel-viewstack,
