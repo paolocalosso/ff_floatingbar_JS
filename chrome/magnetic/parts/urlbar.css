@@ -411,3 +411,15 @@ background-color: #1b1d1c !important; /* background (green) */
   -moz-window-dragging: no-drag;
   cursor: auto;
 }
+/* Vetro sotto la tendina dei risultati.
+   backdrop-filter non funziona sul chrome (bug 1799334) e la tendina non e' una
+   finestra a se': sta dentro la finestra di Firefox, sopra la pagina, quindi
+   Blur My Shell (che sfoca dietro le finestre dei menu) non la vede. `filter`
+   invece funziona: mentre la tendina e' aperta si sfoca la pagina sotto, e
+   attraverso il fondo semitrasparente della tendina si vede vetro sfocato. */
+#tabbrowser-tabpanels {
+	transition: filter 120ms ease !important;
+}
+:root:has(#urlbar[open]) #tabbrowser-tabpanels {
+	filter: blur(14px) saturate(140%) !important;
+}
