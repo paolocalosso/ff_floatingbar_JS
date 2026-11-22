@@ -2,11 +2,13 @@
 /* Import theme */
 @import "magnetic/theme.css";
 
-/* Import a custom stylesheet
- * Everything you add in your customChrome.css file (it doesn't exist by
- * default) will be included here and preserved between updates. 
- * You can apply your own custom styles in that file. */
+/* customChrome.css: file personale opzionale del tema originale. Non esiste
+ * e il suo import dava solo un errore nella console: se un giorno serve,
+ * creare chrome/customChrome.css e togliere il commento qui sotto.
 @import "customChrome.css";
+*/
+/* tabcenter.css era importato anche in magnetic/theme.css: tenuto solo qui,
+ * che e' la posizione che gia' vinceva nella cascata. */
 @import "magnetic/parts/tabcenter.css";
 @import "magnetic/parts/bookmarks_toolbar.css";
 @import "magnetic/parts/extensions-menu.css";
@@ -159,16 +161,11 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
   padding: 4px 15px !important;
   background-color: #83A59890 !important;
 }
-/* Set this pref to true in about:config to make statuspanel show at top instead */
-@media (-moz-bool-pref: "userchrome.centered-statuspanel.on-top.enabled"){
-  #statuspanel:not([hidden]){
-    inset-block: 0 auto !important;
-  }
-  #statuspanel-label{
-    border-width: 0 1px 1px 1px !important;
-  }
-}
-@supports -moz-bool-pref("userchrome.centered-statuspanel.on-top.enabled"){
+/* Set this pref to true in about:config to make statuspanel show at top instead.
+   Prima il blocco era scritto due volte, con @media (-moz-bool-pref: ...) e con
+   @supports -moz-bool-pref(...): Firefox non riconosce piu' nessuna delle due,
+   la sintassi attuale e' @media -moz-pref("..."). */
+@media -moz-pref("userchrome.centered-statuspanel.on-top.enabled"){
   #statuspanel:not([hidden]){
     inset-block: 0 auto !important;
   }
