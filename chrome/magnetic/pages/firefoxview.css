@@ -61,16 +61,6 @@
     /*.search-container {border: 1px solid var(--uc-dark) !important; --fxview-border: color-mix(in srgb, var(--uc-cream) 50.2%, transparent) !important; box-shadow: 0 0 0 2px var(--uc-dark) !important; --newtab-background-color: var(--uc-dark) !important; --fxview-sidebar-width: 500px !important; --fxview-element-background-hover: var(--uc-dark) !important; --fxview-element-background-active: var(--uc-accent) !important; border-radius: 40px !important; color: var(--fxview-text-primary-color); display: inline-flex !important; overflow: hidden; position: auto !important; &:focus-within { overflow: hidden; }}*/
 }
 
-/* url-prefix: con url() la regola valeva solo per about:preferences "nudo" e
-   non per about:preferences#privacy, #search, ecc. Tolta anche una
-   dichiarazione background-color scritta fuori da un selettore (ignorata). */
-@-moz-document url-prefix("about:preferences") {
-    button:hover {border-radius: 40px !important;}
-    button[selected] {font: menu !important; background-color: var(--uc-accent) !important; color: var(--uc-dark) !important; border-radius: 40px !important; border-left: solid 3px var(--uc-cream) !important;}
-    button:hover {font: menu !important; border-radius: 40px !important; background-color: color-mix(in srgb, var(--uc-cream) 50.2%, transparent) !important;}
-    button {font: menu !important; border-radius: 40px !important;}
-    body {font: menu !important; background-color: var(--uc-dark) !important;}
-}
 
 /*
 body {
@@ -96,4 +86,3 @@ body {
   --in-content-button-text-color-hover: var(--fxview-text-color-hover);
 }
 */
-

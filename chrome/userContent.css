@@ -7,7 +7,8 @@
 @import "magnetic/pages/firefoxview.css";
 
 @import "magnetic/parts/video-player.css";
-@import "magnetic/parts/bali.css";
+@import "magnetic/pages/preferences.css";
+@import "magnetic/pages/addons.css";
 
 
 /* regexp invece di url-prefix("about:"): about:blank e about:srcdoc sono

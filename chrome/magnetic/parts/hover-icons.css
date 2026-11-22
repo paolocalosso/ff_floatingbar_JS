@@ -1,0 +1,7 @@
+/* Icone di schede e segnalibri visibili solo al passaggio del mouse
+   (prima in parts/bali.css) */
+
+/*  Cool animation on tab/bookmark icons  */
+.tabbrowser-tab:not([pinned]):not([selected]) .tab-icon-image ,.bookmark-item .toolbarbutton-icon{opacity: 0!important; transition: .15s !important; width: 0!important; padding-left: 16px!important}
+.tabbrowser-tab:not([pinned]):hover .tab-icon-image,.bookmark-item:hover .toolbarbutton-icon{opacity: 100!important; transition: .15s !important; display: inline-block!important; width: 16px!important; padding-left: 0!important}
+.tabbrowser-tab:not([hover]) .tab-icon-image,.bookmark-item:not([hover]) .toolbarbutton-icon{padding-left: 0!important}

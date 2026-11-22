@@ -9,7 +9,9 @@
 @import "parts/sidebar.css";
 @import "parts/lists.css";
 
-@import "parts/bali.css";
+@import "parts/hover-icons.css";
+@import "parts/devtools.css";
+@import "parts/fullscreen-warning.css";
 
 @import "parts/buttons.css";
 @import "parts/buttons-fixes.css";

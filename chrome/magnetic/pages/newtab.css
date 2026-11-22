@@ -549,3 +549,224 @@
         border-radius: 15px !important;
     }
 }
+
+
+/* ===== Da parts/bali.css: barra di ricerca, logo e centratura della
+   newtab con il DOM di nova. Prima stava in bali.css, importato dopo
+   newtab.css: messo in fondo mantiene lo stesso ordine nella cascata. ===== */
+
+@-moz-document url(about:newtab), url("about:home") {
+    .search-wrapper {margin-top: 10px !important}
+    .search-handoff-button { 
+        border-radius: 40px 40px 40px 0px  !important;
+        border-color: transparent /*var(--uc-accent)*/ !important;
+        background-color: rgb(40,40,40,0.65) !important;
+        transition: background-color 2s ease !important;
+        transition: width 0.5s ease !important;
+        border-bottom: 1px solid transparent !important;
+        /*transition: border-bottom 0.5s ease !important;*/
+        color: #fff !important;
+        font: menu !important;
+        /*box-shadow: 0 0 0 1px transparent; !important;*/
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+        backdrop-filter: blur(10px) !important;
+        display-inline: flex !important;
+        width: 50% !important;
+        /*transition: width 2s;*/
+        margin-left: auto !important;
+        margin-right: auto !important;
+        /*background-color: var(--uc-accent) !important;
+        color: transparent !important;
+        border-color: transparent !important;
+        border: 5px var(--uc-cream) !important;
+        border-radius: 50px !important;
+        display-inline: flex !important;
+        width: 75% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        --newtab-search-icon: none !important;*/
+    }
+    .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
+        border-radius: 40px 40px 40px 0px  !important;
+        /*border-color: var(--uc-accent) !important;*/
+        /*background-color: #28282885 !important;
+        border: 1px solid transparent !important;*/
+        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent) /*rgb(90,90,90,0.65)*/ !important;
+        border: 1px solid transparent !important;
+        transition: border-bottom 2s ease !important;
+        border-top: 1px solid  transparent !important;
+        border-left: 1px solid  transparent !important;
+        border-right: 1px solid  transparent !important;
+        backdrop-filter: blur(10px) !important;
+        color: transparent !important;
+        font: menu !important;
+        /*box-shadow: 0 0 0 1px transparent !important;*/
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+        display-inline: flex !important;
+        width: 75% !important;
+        transition: width 0.5s ease !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        /*transform: translateY(-20px);*/
+        /*transform: translateX(1);
+        transition: transform 250ms ease-in-out;*/
+    }
+    .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button:hover {
+        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent) /*rgb(90,90,90,0.65)*/ !important;
+        border: 1px solid var(--uc-accent) !important;
+        transition: background-color 1s ease !important;
+        transition: border-bottom 2s ease !important;
+        width: 75% !important;
+        backdrop-filter: blur(10px) !important;
+        transition: width 0.5s ease !important;
+        color: #111111 !important;
+        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+    }
+    .fake-caret {margin-left: 3px !important;}
+    
+    /*.wordmark {
+        height: 0px !important;
+        width: 0px !important;
+        visibility: hidden !important;
+    }*/
+    .logo-and-wordmark{
+        display: none !important;
+        /*flex-direction: row-reverse !important;
+        visibility: hidden !important;*/
+    }
+
+
+/********Bali10050 code for newtab and devtools********/
+body,html{overflow-y: auto}
+
+/*  Newtab  */
+@-moz-document url("about:home"), url("about:newtab"){
+.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 0% !important; inset-inline-start: 48px !important;}
+.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 50px !important; inset-inline-start: 50% !important; /*display-inline: flex !important;*/ }
+.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
+.outer-wrapper.ds-outer-wrapper-breakpoint-override.only-search.visible-logo{display: flex !important; padding-top: 0px !important;vertical-align: middle}
+.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
+.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
+.outer-wrapper .search-wrapper{padding: 0px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; align-content: space-around !important; gap: 20px 10px !important}
+.search-wrapper .logo-and-wordmark .logo{background-size: 60px !important; height: 60px !important; width: 60px !important}
+.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
+.customize-menu{border-radius: 10px 0 0 10px !important}
+/* Firefox 151 fix: nuovo DOM "nova" della newtab.
+   La struttura reale è:
+     body.activity-stream
+       #root
+         .nova-outer-wrapper
+           .container.nova-enabled.logo-in-content   <- GRID 3 colonne
+             aside.sidebar-inline-start              <- sidebar fantasma
+             aside.sidebar-inline-end                <- sidebar fantasma
+             main.content                            <- contenuto vero
+               h1.logo-and-wordmark-wrapper
+               div.search-wrapper                    <- grid subgrid
+               section.top-sites
+   Le due aside vuote prendono colonne nel grid e spingono
+   il contenuto fuori centro. Annulliamo il grid e nascondiamo
+   le sidebar. */
+html, body.activity-stream{
+    height: 100% !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+/* #root e nova-outer-wrapper devono occupare tutta l'altezza per
+   permettere il centraggio verticale del contenuto. */
+#root{
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.nova-outer-wrapper{
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+/* Container principale: forza una sola colonna e si centra
+   verticalmente all'interno del nova-outer-wrapper. */
+.container.nova-enabled,
+.container.nova-enabled.logo-in-content{
+    grid-template-columns: 1fr !important;
+    grid-template-areas: none !important;
+    grid-template-rows: auto !important;
+    column-gap: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-block: auto !important;
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+    justify-items: center !important;
+    place-items: center !important;
+}
+/* Nasconde le sidebar fantasma */
+aside.sidebar-inline-start,
+aside.sidebar-inline-end{
+    display: none !important;
+}
+/* main.content occupa l'intera riga e si centra.
+   FF155: il <main> ha cambiato classe (content-main) ed e' display:contents,
+   quindi non e' piu' lui il grid item: lo diventa il <div class="content">
+   che sta al suo interno. Senza agganciarlo, veniva auto-piazzato in una
+   colonna implicita e finiva tutto spostato a destra. */
+main.content,
+main.content-main > .content{
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-inline: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+/* search-wrapper aveva display:grid + grid-template-columns:subgrid.
+   Trasformiamo in flex centrato. */
+.nova-enabled .search-wrapper,
+.search-wrapper{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-template-columns: none !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-inline: auto !important;
+}
+.search-inner-wrapper{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+/* section.top-sites — si centra ma NON deve diventare colonna:
+   la lista interna è una griglia orizzontale.
+   - La <section> esterna impila titolo + lista in verticale.
+   - I wrapper della lista NON vengono toccati su display/flex-direction,
+     così la griglia di scorciatoie torna a essere orizzontale. */
+section.top-sites,
+.top-sites{
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.top-sites-list-wrapper{
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    /* lasciato il display nativo */
+}
+.top-sites-list{
+    margin-inline: auto !important;
+    justify-content: center !important;
+    /* manteniamo il display grid/flex originale */
+}
+}}

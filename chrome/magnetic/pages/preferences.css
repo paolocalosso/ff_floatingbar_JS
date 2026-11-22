@@ -1,0 +1,115 @@
+/* about:preferences: tutte le regole in un posto solo. Prima erano divise
+   tra pages/firefoxview.css (pulsanti della navigazione) e parts/bali.css;
+   l'ordine fra i due blocchi e' quello di prima */
+
+/* url-prefix: con url() la regola valeva solo per about:preferences "nudo" e
+   non per about:preferences#privacy, #search, ecc. Tolta anche una
+   dichiarazione background-color scritta fuori da un selettore (ignorata). */
+@-moz-document url-prefix("about:preferences") {
+    button:hover {border-radius: 40px !important;}
+    button[selected] {font: menu !important; background-color: var(--uc-accent) !important; color: var(--uc-dark) !important; border-radius: 40px !important; border-left: solid 3px var(--uc-cream) !important;}
+    button:hover {font: menu !important; border-radius: 40px !important; background-color: color-mix(in srgb, var(--uc-cream) 50.2%, transparent) !important;}
+    button {font: menu !important; border-radius: 40px !important;}
+    body {font: menu !important; background-color: var(--uc-dark) !important;}
+}
+
+/*settings pages*/
+@-moz-document url-prefix("about:preferences") {
+    /* Variabili usate qui sotto e in about:addons ma mai definite da nessuna
+       parte (forse in una vecchia versione del tema): con var() non definita
+       le regole con !important diventavano "unset" e colori/sfondi saltavano. */
+    :root {
+        --primary-font-color: color-mix(in srgb, var(--uc-cream) 95%, transparent);
+        --highlighted-font-color: var(--uc-accent);
+        --primary-icon-color: var(--uc-cream);
+        --search-box: rgba(255, 255, 255, 0.08);
+    }
+    h1 {
+        font-size: 1.5em!important;
+        font-weight: 900 !important;
+    }
+    .main-content {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .sticky-container {
+        background-color: #282828 !important;
+    }
+    #categories>.category[selected], #categories>.category.selected {
+        color: var( --highlighted-font-color) !important;
+    }
+    html, h1, #categories {
+        color: var(--primary-font-color) !important;
+    }
+    .navigation, #handersView, #engineShown, #engineName, #engineKeyword, #translations-manage-install-list, .dialogTitleBar {
+        background-color: var(--uc-dark) !important;
+        color: var(--primary-font-color) !important;
+    }
+    #searchInput {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+        border-color: transparent !important;
+        border: 5px var(--uc-cream) !important;
+        border-radius: 40px !important;
+        border-color: var(--uc-cream) !important;
+        box-shadow: 0 0 0 2px var(--uc-cream) !important;        
+    }
+    #migrationWizardDialog {
+        background-color: var(--uc-dark) !important;       
+    }
+    #filter {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #downloadFolder {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #typeColumn {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #actionColumn {
+        background-color: var(--search-box) !important;
+        color: var(--primary-icon-color) !important;
+    }
+    #handlersView {
+        background-color: var(--uc-dark) !important;
+        color: var(--primary-font-color) !important;
+    }
+    #applicationsGroup listheader {
+        background-color: var(--search-box) !important;
+    }
+    #contentBlockingOptionStandard, #contentBlockingOptionStrict, #contentBlockingOptionCustom {
+        background-color: var(--uc-dark) !important;
+        color: var(--primary-font-color) !important;
+        border: 0px  !important;
+    }
+    description {
+        color: var(--primary-font-color) !important;
+    }
+    #engineChildren {
+        background-color: var(--uc-dark) !important;
+        color: var(--primary-font-color) !important;
+    }
+    .content-blocking-warning {
+        background: var(--background-color-box) !important; /* --in-content-box-background-alt non esiste piu' */
+    }
+    .checkbox-check, input[type="checkbox"] {
+        border: 1px dashed var(--uc-cream)  !important;
+        background-color: transparent  !important;
+        -moz-appearance: none  !important;
+        opacity: 0.7 !important;
+    }
+    .checkbox-check[checked] {
+        opacity: 1 !important;
+    }
+    input[type="checkbox"] {
+        border: 1px dashed var(--uc-cream)  !important;
+        background-color: transparent  !important;
+        -moz-appearance: none  !important;
+    }
+    .radio-check {
+        background-color: transparent  !important;
+    }
+}

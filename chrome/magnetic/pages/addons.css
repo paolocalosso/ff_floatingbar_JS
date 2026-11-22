@@ -1,0 +1,40 @@
+/* about:addons (prima in parts/bali.css) */
+
+@-moz-document url-prefix("about:addons") {
+    /* Variabili usate qui sotto e in about:addons ma mai definite da nessuna
+       parte (forse in una vecchia versione del tema): con var() non definita
+       le regole con !important diventavano "unset" e colori/sfondi saltavano. */
+    :root {
+        --primary-font-color: color-mix(in srgb, var(--uc-cream) 95%, transparent);
+        --highlighted-font-color: var(--uc-accent);
+        --primary-icon-color: var(--uc-cream);
+        --search-box: rgba(255, 255, 255, 0.08);
+    }
+    #sidebar {
+        background-color: var(--uc-dark) !important;
+    }
+    #main-content {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .sticky-container {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .main-search {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .main-heading {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    #full {
+        background-color: #282828 !important;
+        color: var(--primary-font-color) !important;
+    }
+    .card {
+        background-color: var(--uc-dark) !important;
+        color: var(--primary-font-color) !important;
+    }
+}
