@@ -76,7 +76,7 @@ See the above repository for updates as well as full license text. */
   pointer-events: none;
   background-size: 20%;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to left,transparent,rgb(231, 233, 206),transparent);
+  background-image: linear-gradient(to left,transparent,var(--uc-cream),transparent);
   animation: statusline-anim 400ms alternate infinite ease-in-out;
 }
 
@@ -153,13 +153,13 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
   min-width: unset !important;
 }
 #statuspanel-label{
-  color: #1b1d1c !important;
+  color: var(--uc-dark) !important;
   /*border-width: 1px 1px 0px 1px !important;*/
   border-radius: 25px /*25px 0 0*/ !important;
-  border: #83A59870  0px solid !important;
+  border: color-mix(in srgb, var(--uc-accent) 43.92%, transparent)  0px solid !important;
   margin-inline: auto !important;
   padding: 4px 15px !important;
-  background-color: #83A59890 !important;
+  background-color: color-mix(in srgb, var(--uc-accent) 56.47%, transparent) !important;
 }
 /* Set this pref to true in about:config to make statuspanel show at top instead.
    Prima il blocco era scritto due volte, con @media (-moz-bool-pref: ...) e con
@@ -178,7 +178,7 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
   border-radius: 500px !important;
 }
 .identity-box-button:hover {
-  background-color: #83A598 !important;
+  background-color: var(--uc-accent) !important;
 }
 
 

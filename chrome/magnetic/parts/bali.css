@@ -3,7 +3,7 @@
     .search-wrapper {margin-top: 10px !important}
     .search-handoff-button { 
         border-radius: 40px 40px 40px 0px  !important;
-        border-color: transparent /*#83A598*/ !important;
+        border-color: transparent /*var(--uc-accent)*/ !important;
         background-color: rgb(40,40,40,0.65) !important;
         transition: background-color 2s ease !important;
         transition: width 0.5s ease !important;
@@ -19,10 +19,10 @@
         /*transition: width 2s;*/
         margin-left: auto !important;
         margin-right: auto !important;
-        /*background-color: #83A598 !important;
+        /*background-color: var(--uc-accent) !important;
         color: transparent !important;
         border-color: transparent !important;
-        border: 5px #E7E9CE !important;
+        border: 5px var(--uc-cream) !important;
         border-radius: 50px !important;
         display-inline: flex !important;
         width: 75% !important;
@@ -32,10 +32,10 @@
     }
     .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
         border-radius: 40px 40px 40px 0px  !important;
-        /*border-color: #83A598 !important;*/
+        /*border-color: var(--uc-accent) !important;*/
         /*background-color: #28282885 !important;
         border: 1px solid transparent !important;*/
-        background-color: rgb(231, 233, 206, 0.51) /*rgb(90,90,90,0.65)*/ !important;
+        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent) /*rgb(90,90,90,0.65)*/ !important;
         border: 1px solid transparent !important;
         transition: border-bottom 2s ease !important;
         border-top: 1px solid  transparent !important;
@@ -56,8 +56,8 @@
         transition: transform 250ms ease-in-out;*/
     }
     .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button:hover {
-        background-color: rgb(231, 233, 206, 0.51) /*rgb(90,90,90,0.65)*/ !important;
-        border: 1px solid #83A598 !important;
+        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent) /*rgb(90,90,90,0.65)*/ !important;
+        border: 1px solid var(--uc-accent) !important;
         transition: background-color 1s ease !important;
         transition: border-bottom 2s ease !important;
         width: 75% !important;
@@ -427,9 +427,9 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
        parte (forse in una vecchia versione del tema): con var() non definita
        le regole con !important diventavano "unset" e colori/sfondi saltavano. */
     :root {
-        --primary-font-color: rgba(231, 233, 206, 0.95);
-        --highlighted-font-color: #83A598;
-        --primary-icon-color: #E7E9CE;
+        --primary-font-color: color-mix(in srgb, var(--uc-cream) 95%, transparent);
+        --highlighted-font-color: var(--uc-accent);
+        --primary-icon-color: var(--uc-cream);
         --search-box: rgba(255, 255, 255, 0.08);
     }
     h1 {
@@ -450,20 +450,20 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
         color: var(--primary-font-color) !important;
     }
     .navigation, #handersView, #engineShown, #engineName, #engineKeyword, #translations-manage-install-list, .dialogTitleBar {
-        background-color: rgb(27,29,28) !important;
+        background-color: var(--uc-dark) !important;
         color: var(--primary-font-color) !important;
     }
     #searchInput {
         background-color: var(--search-box) !important;
         color: var(--primary-icon-color) !important;
         border-color: transparent !important;
-        border: 5px #E7E9CE !important;
+        border: 5px var(--uc-cream) !important;
         border-radius: 40px !important;
-        border-color: #E7E9CE !important;
-        box-shadow: 0 0 0 2px #E7E9CE !important;        
+        border-color: var(--uc-cream) !important;
+        box-shadow: 0 0 0 2px var(--uc-cream) !important;        
     }
     #migrationWizardDialog {
-        background-color: #1B1D1C !important;       
+        background-color: var(--uc-dark) !important;       
     }
     #filter {
         background-color: var(--search-box) !important;
@@ -482,14 +482,14 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
         color: var(--primary-icon-color) !important;
     }
     #handlersView {
-        background-color: rgb(27,29,28) !important;
+        background-color: var(--uc-dark) !important;
         color: var(--primary-font-color) !important;
     }
     #applicationsGroup listheader {
         background-color: var(--search-box) !important;
     }
     #contentBlockingOptionStandard, #contentBlockingOptionStrict, #contentBlockingOptionCustom {
-        background-color: rgb(27,29,28) !important;
+        background-color: var(--uc-dark) !important;
         color: var(--primary-font-color) !important;
         border: 0px  !important;
     }
@@ -497,14 +497,14 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
         color: var(--primary-font-color) !important;
     }
     #engineChildren {
-        background-color: rgb(27,29,28) !important;
+        background-color: var(--uc-dark) !important;
         color: var(--primary-font-color) !important;
     }
     .content-blocking-warning {
         background: var(--background-color-box) !important; /* --in-content-box-background-alt non esiste piu' */
     }
     .checkbox-check, input[type="checkbox"] {
-        border: 1px dashed #E7E9CE  !important;
+        border: 1px dashed var(--uc-cream)  !important;
         background-color: transparent  !important;
         -moz-appearance: none  !important;
         opacity: 0.7 !important;
@@ -513,7 +513,7 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
         opacity: 1 !important;
     }
     input[type="checkbox"] {
-        border: 1px dashed #E7E9CE  !important;
+        border: 1px dashed var(--uc-cream)  !important;
         background-color: transparent  !important;
         -moz-appearance: none  !important;
     }
@@ -527,13 +527,13 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
        parte (forse in una vecchia versione del tema): con var() non definita
        le regole con !important diventavano "unset" e colori/sfondi saltavano. */
     :root {
-        --primary-font-color: rgba(231, 233, 206, 0.95);
-        --highlighted-font-color: #83A598;
-        --primary-icon-color: #E7E9CE;
+        --primary-font-color: color-mix(in srgb, var(--uc-cream) 95%, transparent);
+        --highlighted-font-color: var(--uc-accent);
+        --primary-icon-color: var(--uc-cream);
         --search-box: rgba(255, 255, 255, 0.08);
     }
     #sidebar {
-        background-color: rgb(27,29,28) !important;
+        background-color: var(--uc-dark) !important;
     }
     #main-content {
         background-color: #282828 !important;
@@ -556,7 +556,7 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
         color: var(--primary-font-color) !important;
     }
     .card {
-        background-color: #1B1D1C !important;
+        background-color: var(--uc-dark) !important;
         color: var(--primary-font-color) !important;
     }
 }
@@ -564,7 +564,7 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
 /*custom fullscreen warning*/
 #fullscreen-warning{
     background-color: #282828 !important;
-    border-color: #83A598 !important;
+    border-color: var(--uc-accent) !important;
     max-width: 800px !important;
     max-height: 55px !important;
     border-radius: 55px !important;

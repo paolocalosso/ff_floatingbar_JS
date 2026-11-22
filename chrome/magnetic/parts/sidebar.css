@@ -69,7 +69,7 @@ html, body, main {
 	background-color: transparent !important;
 	/*background-color: var(--gnome-toolbar-background) !important;*/
 	border: 0 !important;
-	border-right: 0px solid #1B1D1C /*var(--gnome-toolbar-border-color)*/ !important;
+	border-right: 0px solid var(--uc-dark) /*var(--gnome-toolbar-border-color)*/ !important;
 	width: 0 !important;
 }
 #sidebar-splitter:-moz-window-inactive {
@@ -171,14 +171,14 @@ html, body, main {
 	right: 0;
 	position: absolute;
 	left: 0;
-	border: 1px solid #1b1d1c;
+	border: 1px solid var(--uc-dark);
 	border-radius: 25px;
 	z-index: 0;
 	/* Rimosso l'outline: veniva disegnato FUORI dal border box, quindi si
 	   sommava al border qui sopra dando due tratti da 1px concentrici. Sugli
 	   angoli arrotondati il piu' esterno risultava antialiasato e si leggeva
 	   come un bordo sbiadito attorno a quello scuro: il "doppio bordo".
-	   outline: #1b1d1c solid;
+	   outline: var(--uc-dark) solid;
 	   outline-width: 1px; */
 }
 

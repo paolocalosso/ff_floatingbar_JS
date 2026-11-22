@@ -15,10 +15,10 @@ findbar{
   /* Stile floating con glassmorphism (FF150: backdrop-filter rotto, fallback solido) */
   background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
   /* backdrop-filter: blur(25px) saturate(150%) !important; FF150 broken */
-  border: 1px solid rgba(131, 165, 152, 0.3) !important;
+  border: 1px solid color-mix(in srgb, var(--uc-accent) 30%, transparent) !important;
   border-radius: 50px !important;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 25px,
-              0 0 15px rgba(27, 29, 28, 0.5),
+              0 0 15px color-mix(in srgb, var(--uc-dark) 50%, transparent),
               inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
   
   padding: 12px 20px !important;
@@ -71,8 +71,8 @@ findbar > .findbar-container{
 /* Textbox più grande */
 input.findbar-textbox {
   background: linear-gradient(135deg, 
-              rgba(231, 233, 206, 0.15),
-              rgba(27, 29, 28, 0.7)) !important;
-  border: 1px solid rgba(231, 233, 206, 0.25) !important;
+              color-mix(in srgb, var(--uc-cream) 15%, transparent),
+              color-mix(in srgb, var(--uc-dark) 70%, transparent)) !important;
+  border: 1px solid color-mix(in srgb, var(--uc-cream) 25%, transparent) !important;
   /* continua qui con il resto del tuo CSS... */
 }

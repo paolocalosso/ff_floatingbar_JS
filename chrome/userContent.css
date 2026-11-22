@@ -1,3 +1,4 @@
+@import "magnetic/colors/palette.css";
 @import "magnetic/colors/light.css";
 @import "magnetic/colors/dark.css";
 
@@ -23,11 +24,11 @@
 	   !important e' necessario: i token di Firefox stanno in @layer e i
 	   nostri, senza !important, perderebbero. */
 	:root {
-		--uc-accent: #83A598;
-		--uc-accent-hover: #9BB8AC;
-		--uc-accent-active: #6E9283;
-		--uc-page-bg: #1b1d1c;
-		--uc-page-text: #E7E9CE;
+		/* --uc-accent, --uc-cream e --uc-dark vengono da colors/palette.css */
+		--uc-accent-hover: color-mix(in srgb, var(--uc-accent) 80%, white);
+		--uc-accent-active: color-mix(in srgb, var(--uc-accent) 85%, black);
+		--uc-page-bg: var(--uc-dark);
+		--uc-page-text: var(--uc-cream);
 
 		--color-accent-primary: var(--uc-accent) !important;
 		--color-accent-primary-hover: var(--uc-accent-hover) !important;
@@ -133,8 +134,8 @@
 
 /*
 @-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html") {
-	body { background-color: #1b1d1c; }
+	body { background-color: var(--uc-dark); }
 	font: menu;
-	.toggle-button[aria-pressed="true"] {background: #83A598 !important;}
+	.toggle-button[aria-pressed="true"] {background: var(--uc-accent) !important;}
 }
 */

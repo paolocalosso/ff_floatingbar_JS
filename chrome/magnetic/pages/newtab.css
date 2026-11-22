@@ -3,7 +3,7 @@
 @-moz-document url("about:newtab"), url("about:home") {
     body {
         /*background: url("../walls/ubuntu-gruvbox.jpg") !important ; background-size: cover !important ;*/
-        --newtab-background-color: #282828 /*#83A598*/ /*#282828*/ /*var(--gnome-browser-before-load-background)*/ !important;
+        --newtab-background-color: #282828 /*var(--uc-accent)*/ /*#282828*/ /*var(--gnome-browser-before-load-background)*/ !important;
         --newtab-background-color-secondary: var(--gnome-menu-background) !important;
         --newtab-primary-action-background: var(--gnome-accent) !important;
     }
@@ -13,7 +13,7 @@
         width: 37px !important;
         min-width: 37px !important;
         border-radius: 500px !important;
-        background-color: #1b1d1c !important;
+        background-color: var(--uc-dark) !important;
         transition: transform 1.5s ease;
     }
     .personalize-button > div > img {
@@ -23,19 +23,19 @@
     .personalize-button:hover {
         width: fit-content !important;
         min-width: var(--button-full-width) !important;
-        background-color: #83A598 !important;
+        background-color: var(--uc-accent) !important;
     }
     .context-menu-button {
         border-radius: 25px !important;
-        border-color: #1b1d1c !important;
-        background-color: #1b1d1c !important;
+        border-color: var(--uc-dark) !important;
+        background-color: var(--uc-dark) !important;
         /*transform: scaleX(1);*/
         transition-delay: 500ms,500ms !important;
     }
     .context-menu-button:hover {
         border-radius: 25px !important;
-        background-color: #83a598 !important;
-        border-color: #83a598 !important;
+        background-color: var(--uc-accent) !important;
+        border-color: var(--uc-accent) !important;
     }
     .section-top-bar {
         display: hidden !important;
@@ -48,7 +48,7 @@
         margin-top: 75px !important;
     }
     .ds-highlights {
-        border-top: 1px solid #E7E9CE  !important;
+        border-top: 1px solid var(--uc-cream)  !important;
     }
     .card {
         border-radius: 25px !important;
@@ -70,19 +70,19 @@
     }*/
     .tile {
         border-radius: 50px 50px 50px 0 !important;
-        background-color: rgb(27,29,28,0.70) /*rgb(131, 165, 152, 0.7)*/ !important;
+        background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent) /*color-mix(in srgb, var(--uc-accent) 70%, transparent)*/ !important;
         backdrop-filter: blur(10px) !important;
         transition: transform .5s ease;
         box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
     }
     .tile:hover {
         transform: scale(0.95) !important;
-        background-color: #83A598 /*rgb(27,29,28,0.70)*/ !important;
-        box-shadow: 0 0 0 10px #1b1d1c85 /*#83a59885*/ !important;
+        background-color: var(--uc-accent) /*color-mix(in srgb, var(--uc-dark) 70%, transparent)*/ !important;
+        box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent) /*color-mix(in srgb, var(--uc-accent) 52.16%, transparent)*/ !important;
     }
     .title-label {
         border-radius: 500px !important;
-        /*color: #83A598  !important;*/
+        /*color: var(--uc-accent)  !important;*/
         font-weight: bold;
         font-size: 1.0em  !important;
     }
@@ -97,7 +97,7 @@
     }
     .top-site-outer:hover {
         border-radius: 20px !important;
-        background-color: /*rgb(27,29,28,0.25)*/ rgb(231, 233, 206, 0.15) !important;
+        background-color: /*color-mix(in srgb, var(--uc-dark) 25%, transparent)*/ color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
         /* backdrop-filter: blur(10px) !important; rimosso: niente blur intorno alle shortcut in hover */
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
@@ -111,7 +111,7 @@
         min-width: 120px !important;
         padding: 4px 4px !important;
         min-height: 32px !important;
-        background-color: rgba(27,29,28, .95);
+        background-color: color-mix(in srgb, var(--uc-dark) 95%, transparent);
     }
     .menuitem {
         border-radius: 30px !important;
@@ -120,7 +120,7 @@
         min-width: 120px !important;
         padding: 4px 4px !important;
         min-height: 32px !important;
-        background-color: #E7E9CE !important;
+        background-color: var(--uc-cream) !important;
     }
     /*.context-menu-item {
         border-radius: 30px !important;
@@ -138,7 +138,7 @@
         min-width: 120px !important;
         padding: 4px 4px !important;
         min-height: 32px !important;
-        background-color: #83A598 !important;
+        background-color: var(--uc-accent) !important;
     }*/
     [role="menuitem"] {
         border-radius: 30px !important;
@@ -159,7 +159,7 @@
         transition: .35s !important;
         padding-left: 16px!important;
         min-height: 32px !important;
-        background-color: #83A598 !important;
+        background-color: var(--uc-accent) !important;
     }
     .separator {
         display: none !important;
@@ -168,13 +168,13 @@
         background-color: #212320  !important;
     }
     .icon-pin-small {
-        fill: #E7E9CE !important;
-        /*border: solid 1px #83A598  !important;
+        fill: var(--uc-cream) !important;
+        /*border: solid 1px var(--uc-accent)  !important;
         border-radius: 50% !important;*/
     }
     .top-site-outer:hover .icon-pin-small {
-        fill: #1b1d1c !important;
-        /*border: solid 1px #E7E9CE !important;*/
+        fill: var(--uc-dark) !important;
+        /*border: solid 1px var(--uc-cream) !important;*/
     }
 
 }
@@ -340,7 +340,7 @@
     .nova-enabled .top-site-outer .tile,
     .top-site-outer .tile {
         border-radius: 50px 50px 50px 0 !important;
-        background-color: rgb(27, 29, 28, 0.70) !important;
+        background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent) !important;
         backdrop-filter: blur(10px) !important;
         transition: transform .5s ease, background-color .5s ease !important;
         box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
@@ -352,9 +352,9 @@
     .nova-enabled .top-site-button:is(:hover, :focus, :focus-visible, :active) .tile,
     .nova-enabled .top-site-outer:is(:hover, :focus-within) .tile {
         transform: scale(0.95) !important;
-        background-color: #83A598 !important;
+        background-color: var(--uc-accent) !important;
         backdrop-filter: blur(10px) !important;
-        box-shadow: 0 0 0 10px #1b1d1c85 !important;
+        box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent) !important;
     }
 
     /* L'icona dentro la tile resta tonda e ruota in hover */
@@ -371,7 +371,7 @@
     /* Titolo sotto la tile — coerente col resto del tema */
     .nova-enabled .top-site-outer .title,
     .top-site-outer .title {
-        color: rgba(231, 233, 206, 0.95) !important;
+        color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
         font-weight: bold !important;
         font-size: 1.0em !important;
         background: transparent !important;
@@ -380,25 +380,25 @@
     /* Pin icon — coerente col tema (beige in normale, scuro in hover) */
     .nova-enabled .icon-pin-small,
     .icon-pin-small {
-        fill: #E7E9CE !important;
+        fill: var(--uc-cream) !important;
     }
     .nova-enabled .top-site-outer:hover .icon-pin-small,
     .top-site-outer:hover .icon-pin-small {
-        fill: #1b1d1c !important;
+        fill: var(--uc-dark) !important;
     }
 
     /* Pulsante menu contestuale (•••) di ogni top-site */
     .nova-enabled .top-site-outer .context-menu-button,
     .top-site-outer .context-menu-button {
         border-radius: 50% !important;
-        border-color: #1b1d1c !important;
-        background-color: #1b1d1c !important;
+        border-color: var(--uc-dark) !important;
+        background-color: var(--uc-dark) !important;
         transition: background-color .35s ease, border-color .35s ease !important;
     }
     .nova-enabled .top-site-outer .context-menu-button:hover,
     .top-site-outer .context-menu-button:hover {
-        background-color: #83A598 !important;
-        border-color: #83A598 !important;
+        background-color: var(--uc-accent) !important;
+        border-color: var(--uc-accent) !important;
     }
 
     /* ---------------------------------------------------------------
@@ -406,7 +406,7 @@
        In nova è diventato un <moz-button class="open-customization-button">
        che è un Web Component con shadow DOM. Il <button> interno espone
        il part="button", quindi lo penetriamo con ::part(button).
-       Colori gruvbox del tema: #1b1d1c di base, #83A598 in hover. */
+       Colori gruvbox del tema: var(--uc-dark) di base, var(--uc-accent) in hover. */
     .personalizeButtonWrapper {
         position: fixed !important;
         bottom: 16px !important;
@@ -420,14 +420,14 @@
     /* Variabili custom di moz-button — settarle sull'host propaga
        i colori nello shadow DOM senza bisogno di ::part */
     moz-button.open-customization-button {
-        --button-background-color: #1b1d1c !important;
-        --button-background-color-hover: #83A598 !important;
-        --button-background-color-active: #83A598 !important;
-        --button-text-color: #83A598 !important;
-        --button-text-color-hover: #1b1d1c !important;
-        --button-text-color-active: #1b1d1c !important;
-        --button-border-color: #83A598 !important;
-        --button-border-color-hover: #83A598 !important;
+        --button-background-color: var(--uc-dark) !important;
+        --button-background-color-hover: var(--uc-accent) !important;
+        --button-background-color-active: var(--uc-accent) !important;
+        --button-text-color: var(--uc-accent) !important;
+        --button-text-color-hover: var(--uc-dark) !important;
+        --button-text-color-active: var(--uc-dark) !important;
+        --button-border-color: var(--uc-accent) !important;
+        --button-border-color-hover: var(--uc-accent) !important;
         --button-border-radius: 500px !important;
         /* svg.context-properties.content.enabled fa sì che fill
            segua "color", così anche l'icona si tinge */
@@ -439,9 +439,9 @@
     /* Fallback diretto sullo shadow part — alcune build di Firefox 151
        non leggono ancora tutte le custom properties */
     moz-button.open-customization-button::part(button) {
-        background-color: #1b1d1c !important;
-        color: #83A598 !important;
-        border: 1px solid #83A598 !important;
+        background-color: var(--uc-dark) !important;
+        color: var(--uc-accent) !important;
+        border: 1px solid var(--uc-accent) !important;
         border-radius: 500px !important;
         padding: 6px 16px !important;
         font-weight: 600 !important;
@@ -453,14 +453,14 @@
 
     moz-button.open-customization-button:hover::part(button),
     moz-button.open-customization-button:focus::part(button) {
-        background-color: #83A598 !important;
-        color: #1b1d1c !important;
-        border-color: #83A598 !important;
+        background-color: var(--uc-accent) !important;
+        color: var(--uc-dark) !important;
+        border-color: var(--uc-accent) !important;
     }
 
     moz-button.open-customization-button:active::part(button) {
-        background-color: #83A598 !important;
-        color: #1b1d1c !important;
+        background-color: var(--uc-accent) !important;
+        color: var(--uc-dark) !important;
         transform: scale(0.96) !important;
     }
 
@@ -470,7 +470,7 @@
     }
 }
 .button-background {
-    border: 1px solid #83a598 !important;
+    border: 1px solid var(--uc-accent) !important;
 }
 .nova-enabled .top-site-outer {
     width: 95px !important;
@@ -494,19 +494,19 @@
        scorciatoia, ecc.): le custom properties ereditano nello shadow DOM,
        dove moz-button.css colora .button-background[type="primary"]. */
     moz-button {
-        --button-background-color: #1b1d1c !important;
-        --button-background-color-hover: #83A598 !important;
-        --button-background-color-active: #83A598 !important;
-        --button-background-color-primary: #1b1d1c !important;
-        --button-background-color-primary-hover: #83A598 !important;
-        --button-background-color-primary-active: #83A598 !important;
-        --button-text-color: #83A598 !important;
-        --button-text-color-hover: #1b1d1c !important;
-        --button-text-color-active: #1b1d1c !important;
-        --button-text-color-primary: #83A598 !important;
-        --button-text-color-primary-hover: #1b1d1c !important;
-        --button-border-color: #83A598 !important;
-        --button-border-color-hover: #83A598 !important;
+        --button-background-color: var(--uc-dark) !important;
+        --button-background-color-hover: var(--uc-accent) !important;
+        --button-background-color-active: var(--uc-accent) !important;
+        --button-background-color-primary: var(--uc-dark) !important;
+        --button-background-color-primary-hover: var(--uc-accent) !important;
+        --button-background-color-primary-active: var(--uc-accent) !important;
+        --button-text-color: var(--uc-accent) !important;
+        --button-text-color-hover: var(--uc-dark) !important;
+        --button-text-color-active: var(--uc-dark) !important;
+        --button-text-color-primary: var(--uc-accent) !important;
+        --button-text-color-primary-hover: var(--uc-dark) !important;
+        --button-border-color: var(--uc-accent) !important;
+        --button-border-color-hover: var(--uc-accent) !important;
         --button-border-radius: 500px !important;
     }
 
@@ -514,19 +514,19 @@
        tutte le custom properties qui sopra. NB: part="button" e' esposto
        dallo <span class="button-background">, non dal <button> interno. */
     moz-button::part(button) {
-        background-color: #1b1d1c !important;
+        background-color: var(--uc-dark) !important;
         background-image: none !important;
-        color: #83A598 !important;
-        border: 1px solid #83A598 !important;
+        color: var(--uc-accent) !important;
+        border: 1px solid var(--uc-accent) !important;
         border-radius: 500px !important;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
         transition: background-color .3s ease, color .3s ease !important;
     }
 
     moz-button:is(:hover, :focus)::part(button) {
-        background-color: #83A598 !important;
-        color: #1b1d1c !important;
-        border-color: #83A598 !important;
+        background-color: var(--uc-accent) !important;
+        color: var(--uc-dark) !important;
+        border-color: var(--uc-accent) !important;
     }
 }
 
@@ -541,11 +541,11 @@
    =========================================================================== */
 @-moz-document url("about:newtab"), url("about:home") {
     panel-list {
-        --panel-background: rgba(27, 29, 28, 0.95) !important;
-        --panel-color: rgba(231, 233, 206, 0.95) !important;
-        --panel-border-color: #83A598 !important;
-        background-color: rgba(27, 29, 28, 0.95) !important;
-        color: rgba(231, 233, 206, 0.95) !important;
+        --panel-background: color-mix(in srgb, var(--uc-dark) 95%, transparent) !important;
+        --panel-color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
+        --panel-border-color: var(--uc-accent) !important;
+        background-color: color-mix(in srgb, var(--uc-dark) 95%, transparent) !important;
+        color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
         border-radius: 15px !important;
     }
 }

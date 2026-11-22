@@ -14,9 +14,9 @@
 :root[customtitlebar] #nav-bar {
   background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
   /* backdrop-filter: blur(25px) saturate(150%) !important; */
-  border: 1px solid rgba(131, 165, 152, 0.3) !important;
+  border: 1px solid color-mix(in srgb, var(--uc-accent) 30%, transparent) !important;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 25px,
-              0 0 15px rgba(27, 29, 28, 0.5),
+              0 0 15px color-mix(in srgb, var(--uc-dark) 50%, transparent),
               inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
   border-radius: 50px !important;
   overflow: visible !important;
@@ -24,7 +24,7 @@
 
 :root[customtitlebar] #nav-bar:-moz-window-inactive {
   background: linear-gradient(rgba(35, 37, 36, 0.9), rgba(20, 22, 21, 0.9)) !important;
-  border: 1px solid rgba(131, 165, 152, 0.18) !important;
+  border: 1px solid color-mix(in srgb, var(--uc-accent) 18%, transparent) !important;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px,
               inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
@@ -38,7 +38,7 @@
    --chrome-content-separator-color, che il tema alimenta con
    --gnome-toolbar-border-color (sidebar.css). Verificato in console: sul
    #nav-bar tutti i lati sono a 0px tranne quello inferiore, 1px
-   rgba(131,165,152,0.18) — da qui la riga grigia comparsa con FF157.
+   color-mix(in srgb, var(--uc-accent) 18%, transparent) — da qui la riga grigia comparsa con FF157.
    Nel design di nova la barra e' attaccata al contenuto e il separatore ci
    sta; con la barra flottante e staccata, no. */
 :root[customtitlebar] #nav-bar:not(#hack) {

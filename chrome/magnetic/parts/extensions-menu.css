@@ -147,8 +147,8 @@
 #unified-extensions-panel vbox#unified-extensions-area:not(:empty),
 #unified-extensions-panel vbox.unified-extensions-list:not(:empty)
 {
-  /*border-bottom: 1px solid #83A598 /*color-mix(in srgb, currentColor 40%, transparent)*/;
-  border-bottom: 0px solid #83A598 /*color-mix(in srgb, currentColor 40%, transparent)*/;
+  /*border-bottom: 1px solid var(--uc-accent) /*color-mix(in srgb, currentColor 40%, transparent)*/;
+  border-bottom: 0px solid var(--uc-accent) /*color-mix(in srgb, currentColor 40%, transparent)*/;
 }
 #overflowed-extensions-list .toolbarbutton-icon,
 #unified-extensions-panel .toolbarbutton-icon,
@@ -186,7 +186,7 @@
     margin-inline-end: initial !important;
     margin-inline-start: -7px !important;
     margin-left: 2px !important;
-    background: #1b1d1c50 !important;
+    background: color-mix(in srgb, var(--uc-dark) 31.37%, transparent) !important;
     opacity: 0.9 !important;
 }
 #unified-extensions-view .unified-extensions-item-menu-button.subviewbutton:not(:hover)

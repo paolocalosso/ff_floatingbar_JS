@@ -12,8 +12,8 @@
    menu deve coincidere con il menu visibile: niente margini trasparenti
    attorno (vedi menupopup e --panel-box-shadow-margin qui sotto). */
 :root {
-	--uc-menu-bg: rgba(27, 29, 28, 0.6);
-	--uc-menu-text: rgba(231, 233, 206, 0.95);
+	--uc-menu-bg: color-mix(in srgb, var(--uc-dark) 60%, transparent);
+	--uc-menu-text: color-mix(in srgb, var(--uc-cream) 95%, transparent);
 	/* Larghezze dei menu, modificare SOLO qui.
 	   - menu contestuali / menu a tendina: larghezza minima e massima.
 	     Prima era min-width: 30em (circa 400-450px): anche il menu della tab
@@ -41,7 +41,7 @@ panel {
 	   con nova lo sfondo e il testo di base dei menu arrivano da qui. */
 	--panel-background-color: var(--uc-menu-bg) !important;
 	--panel-text-color: var(--uc-menu-text) !important;
-	--panel-border-color: #83A598 !important;
+	--panel-border-color: var(--uc-accent) !important;
 	--panel-border-radius: 25px !important;
 	--panel-color: var(--uc-menu-text) !important;
 	--panel-shadow-margin: 0 !important;
@@ -92,7 +92,7 @@ menu menupopup {
   /* Contorno verde come bordo vero e non piu' come box-shadow esterna: senza
      il padding del menupopup un'ombra esterna finirebbe fuori dalla finestra
      del menu e verrebbe tagliata. Il bagliore morbido (0 0 8px) e' tolto. */
-  border: 3px solid #83A598 !important;
+  border: 3px solid var(--uc-accent) !important;
   border-radius: 25px !important;
   box-shadow: none !important;
   padding: 6px !important;
@@ -104,7 +104,7 @@ menu menupopup {
   overflow-x: hidden !important;
   max-height: calc(100vh - 40px) !important;
   scrollbar-width: thin !important;
-  scrollbar-color: #83A598 transparent !important;
+  scrollbar-color: var(--uc-accent) transparent !important;
 }
 
 /* Forziamo la visibilità delle scrollbutton e dello slot scrollbox
@@ -170,7 +170,7 @@ panel:not([remote]) {
 	   (non --panel-background / --arrowpanel-background). */
 	--panel-background-color: var(--uc-menu-bg) !important;
 	--background-color-canvas: var(--uc-menu-bg) !important;
-	--panel-item-hover-bgcolor: rgba(231, 233, 206, 0.15) !important;
+	--panel-item-hover-bgcolor: color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
 	box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	/*backdrop-filter: blur(25px) saturate(150%) !important;
@@ -179,7 +179,7 @@ panel:not([remote]) {
 
 panel {
 	--arrowpanel-padding: 1px !important;
-	--arrowpanel-border-color: #83A598 !important;
+	--arrowpanel-border-color: var(--uc-accent) !important;
 	--arrowpanel-border-radius: 25px !important;
 	--gnome-menu-padding: 6px;
 	box-shadow: none !important;
@@ -262,7 +262,7 @@ panelview {
 	background: var(--uc-menu-bg) !important;
 	/*backdrop-filter: blur(25px) saturate(150%) !important;
 	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
-	border: 3px solid #83A598 !important;
+	border: 3px solid var(--uc-accent) !important;
 	border-radius: 25px !important;
 	color: white !important;
 	box-shadow: none !important;
@@ -270,7 +270,7 @@ panelview {
 
 .panel-arrow {
 	fill: var(--uc-menu-bg) !important;
-	stroke: #83A598 !important;
+	stroke: var(--uc-accent) !important;
 	stroke-width: 2px !important;
 	display: -moz-inline-box !important;
 }
@@ -309,7 +309,7 @@ panel::part(content),
 	-moz-default-appearance: none !important;
 	background: var(--uc-menu-bg) !important;
 	background-color: var(--uc-menu-bg) !important;
-	border: 3px solid #83A598 !important;
+	border: 3px solid var(--uc-accent) !important;
 	border-radius: 25px !important;
 	box-shadow: none !important;
 	/* Solo di riserva: verificato su FF160 che questa regola NON viene
@@ -326,7 +326,7 @@ panel::part(content),
    Spessori interi: Firefox arrotonda i bordi per difetto ai pixel dello
    schermo, quindi a scala 100% un 2,5px sarebbe disegnato come 2px. */
 panel > panelmultiview {
-	box-shadow: inset 0 0 0 2px #83A598 !important;
+	box-shadow: inset 0 0 0 2px var(--uc-accent) !important;
 	border-radius: 24px !important;
 }
 
@@ -410,7 +410,7 @@ menuitem, menupopup menu,
 #PlacesToolbar .bookmark-item {
 	-moz-appearance: none !important;
 	border-radius: 25px !important;
-	color: rgba(231, 233, 206, 0.95) !important;
+	color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
 	padding: 4px 10px !important;
 	min-height: 28px !important;
 }
@@ -427,7 +427,7 @@ menuitem, menupopup menu,
 
 .subviewbutton[shortcut]:after {
 	opacity: 0.5 !important;
-	color: rgba(231, 233, 206, 0.6) !important;
+	color: color-mix(in srgb, var(--uc-cream) 60%, transparent) !important;
 }
 
 .bookmark-item .menu-right {
@@ -456,7 +456,7 @@ menupopup menu:not([disabled="true"]):is(:hover, [_moz-menuactive]),
 .identity-popup-content-blocking-category:not([disabled="true"]):hover,
 #PlacesToolbar .bookmark-item:is(:hover, [open], [_moz-menuactive]),
 #downloadsPanel-mainView .download-state:hover {
-	background: rgba(231, 233, 206, 0.15) !important;
+	background: color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
 	color: white !important;
 	transition: all 0.2s ease !important;
 	/* ANIMAZIONE MOVIMENTO DESTRA: il padding a sinistra cresce di 10px e
@@ -501,7 +501,7 @@ menupopup menu:not([disabled="true"]):is(:hover, [_moz-menuactive]),
 	font-weight: bold !important;
 	padding-block: 0 !important;
 	margin: 0 4px !important;
-	color: rgba(231, 233, 206, 0.95) !important;
+	color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
 }
 
 /* SEPARATOR SOTTILI - UN'UNICA LINEA */
@@ -526,9 +526,9 @@ menuseparator::before {
 	border-top: 1px solid transparent !important;
 	border-image: linear-gradient(to right, 
 		transparent 0%, 
-		rgba(131, 165, 152, 0.7) 15%, 
-		rgba(231, 233, 206, 0.8) 50%, 
-		rgba(131, 165, 152, 0.7) 85%, 
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%, 
+		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%, 
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%, 
 		transparent 100%) 1 !important;
 	padding: 0 !important;
 	margin: 4px 8px !important;
@@ -541,9 +541,9 @@ menupopup menuseparator {
 	border-top: 1px solid transparent !important;
 	border-image: linear-gradient(to right, 
 		transparent 0%, 
-		rgba(131, 165, 152, 0.7) 15%, 
-		rgba(231, 233, 206, 0.8) 50%, 
-		rgba(131, 165, 152, 0.7) 85%, 
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%, 
+		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%, 
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%, 
 		transparent 100%) 1 !important;
 	margin: 4px 8px !important;
 	height: 0 !important;
@@ -556,9 +556,9 @@ toolbarseparator[orient="vertical"] {
 	border-left: 1px solid transparent !important;
 	border-image: linear-gradient(to bottom, 
 		transparent 0%, 
-		rgba(131, 165, 152, 0.7) 15%, 
-		rgba(231, 233, 206, 0.8) 50%, 
-		rgba(131, 165, 152, 0.7) 85%, 
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%, 
+		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%, 
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%, 
 		transparent 100%) 1 !important;
 	margin: 0 6px !important;
 	width: 0 !important;
@@ -585,12 +585,12 @@ menuseparator {
 
 /* Tooltip - GLASSMORPHISM */
 tooltip {
-  background: rgb(27,29,28) !important;
+  background: var(--uc-dark) !important;
   /*backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;*/
-  border: 2px solid #83a598  !important;
+  border: 2px solid var(--uc-accent)  !important;
   border-radius: 25px  !important;
-  color: rgba(231, 233, 206, 0.95) !important;
+  color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
   padding: 6px 10px !important;
   box-shadow: none !important;
 }

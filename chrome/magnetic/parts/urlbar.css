@@ -52,7 +52,7 @@
 		margin: 6px 0 0 0 !important;
 	position: absolute !important;
 	border-radius: 12px !important;
-	border: 1px solid #1B1D1C;
+	border: 1px solid var(--uc-dark);
 		width: 100%;	
 }*/
 
@@ -103,7 +103,7 @@
 }
 .urlbarView-action {
 	font-size: 100% !important;
-	color: #E7E9CE /*#83A598 #E7E9CE*/ !important;
+	color: var(--uc-cream) /*var(--uc-accent) var(--uc-cream)*/ !important;
 }
 /*end customizing*/
 
@@ -260,8 +260,8 @@ border-radius: 50px !important;
   border-radius: 25px !important;
   border: solid 2px transparent !important;
   box-shadow:
-    0 0 0 2px #83A598,
-    0 0 8px 2px #E7E9CE !important;
+    0 0 0 2px var(--uc-accent),
+    0 0 8px 2px var(--uc-cream) !important;
   top: var(--urlbar-container-height);
   color: white !important;
   background-color: var(--toolbar-field-focus-background-color, inherit);
@@ -308,13 +308,13 @@ border-radius: 50px !important;
 
 
 .urlbarView:not(:active):hover {
-	background-color: rgb(27,29,28,0.75) !important;
+	background-color: color-mix(in srgb, var(--uc-dark) 75%, transparent) !important;
 	transition: background-color 1s ease !important;
   /* backdrop-filter: blur(10px) !important; FF150 broken */
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
 }
 .urlbarView:not(:active) {
-	background-color: rgb(27,29,28,0.7) !important;
+	background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent) !important;
 	transition: background-color 1s ease !important;
   /* backdrop-filter: blur(10px) !important; FF150 broken */
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
@@ -358,11 +358,11 @@ border-radius: 50px !important;
 
 #urlbar-input::selection {
 color: white !important; /* text */ 
-background-color: #1b1d1c !important; /* background (green) */
+background-color: var(--uc-dark) !important; /* background (green) */
 }
 .urlbarView-row[selected] .urlbarView-row-inner,
 .urlbarView-row:hover .urlbarView-row-inner { 
- background-color: #83A598 /*#E7E9CE*/ !important; 
+ background-color: var(--uc-accent) /*var(--uc-cream)*/ !important; 
 }
 
 #urlbar > #urlbar-input-container{ padding: 0px !important; width: auto !important; height: auto !important; }

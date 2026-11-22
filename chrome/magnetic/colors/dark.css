@@ -7,29 +7,29 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		/* Browser area before a page starts loading */
-		--gnome-browser-before-load-background: rgb(27, 29, 28, .5);
+		--gnome-browser-before-load-background: color-mix(in srgb, var(--uc-dark) 50%, transparent);
 
 		/* Accent */
-		--gnome-accent-bg: #E7E9CE;
-		--gnome-accent: #E7E9CE;
+		--gnome-accent-bg: var(--uc-cream);
+		--gnome-accent: var(--uc-cream);
 
 		/* Toolbars */
-		--gnome-toolbar-background: rgb(27, 29, 28, .5);
+		--gnome-toolbar-background: color-mix(in srgb, var(--uc-dark) 50%, transparent);
 		--gnome-toolbar-color: #ffffff;
 		--gnome-toolbar-border-color: rgba(44, 44, 44, .15);
 		--gnome-toolbar-icon-fill: #eeeeee;
 		--gnome-inactive-toolbar-color: #919191;
 		--gnome-inactive-toolbar-background: var(--gnome-toolbar-background);
-		--gnome-inactive-toolbar-border-color: #1B1D1C;
+		--gnome-inactive-toolbar-border-color: var(--uc-dark);
 		--gnome-inactive-toolbar-icon-fill: #919191;
 
 		/* Sidebar */
-		--gnome-sidebar-background: rgb(27, 29, 28, .5);
+		--gnome-sidebar-background: color-mix(in srgb, var(--uc-dark) 50%, transparent);
 		--gnome-inactive-sidebar-background: var(--gnome-sidebar-background);
 
 		/* Menus */
-		--gnome-menu-background: rgba(27,29,28, .95);
-		--gnome-menu-border-color: rgba(27,29,28, .65);
+		--gnome-menu-background: color-mix(in srgb, var(--uc-dark) 95%, transparent);
+		--gnome-menu-border-color: color-mix(in srgb, var(--uc-dark) 65%, transparent);
 		/*--gnome-menu-shadow: 0 1px 5px 1px rgba(0,0,0, .09),
 		                     0 2px 14px 3px rgba(0,0,0, .05),
 		                     inset 0 0 0 1px rgba(255, 255, 255, 0.1);*/
@@ -38,9 +38,9 @@
 		--gnome-menu-separator-color: rgba(255, 255, 255, .0);
 
 		/* Header bar */
-		--gnome-headerbar-background: #1B1D1C;
+		--gnome-headerbar-background: var(--uc-dark);
 		--gnome-headerbar-border-color: var(--gnome-toolbar-border-color);
-		--gnome-inactive-headerbar-background: #1B1D1C;
+		--gnome-inactive-headerbar-background: var(--uc-dark);
 		--gnome-inactive-headerbar-border-color: var(--gnome-inactive-toolbar-border-color);
 
 		/* Buttons */
@@ -72,10 +72,10 @@
 		--gnome-entry-color: #ffffff;
 		--gnome-inactive-entry-color: #d6d6d6;
 		--gnome-focused-urlbar-border: 0px !important;
-		--gnome-focused-urlbar-border-color: /*rgb(231, 233, 206) rgb(131, 165, 152)*/ transparent !important; 
-		--gnome-urlbarView-shadow: 0 1px 5px 1px rgba(27,29,28, .2),
-		                           0 2px 14px 3px rgba(27,29,28, .15),
-		                           0 0 0 1px rgba(27,29,28, 0.75);
+		--gnome-focused-urlbar-border-color: /*var(--uc-cream) var(--uc-accent)*/ transparent !important; 
+		--gnome-urlbarView-shadow: 0 1px 5px 1px color-mix(in srgb, var(--uc-dark) 20%, transparent),
+		                           0 2px 14px 3px color-mix(in srgb, var(--uc-dark) 15%, transparent),
+		                           0 0 0 1px color-mix(in srgb, var(--uc-dark) 75%, transparent);
 
 		/* Switch */
 		--gnome-switch-background: rgba(255, 255, 255, .15);
@@ -84,14 +84,14 @@
 		--gnome-switch-active-slider-background: #ffffff;
 
 		/* Tabs */
-		--gnome-tabbar-tab-background: rgb(27, 29, 28, .5);
+		--gnome-tabbar-tab-background: color-mix(in srgb, var(--uc-dark) 50%, transparent);
 		--gnome-tabbar-tab-border-color: var(--gnome-toolbar-border-color);
-		--gnome-tabbar-tab-hover-background: #1B1D1C;
-		--gnome-tabbar-tab-active-background: #1B1D1C;
-		--gnome-tabbar-tab-active-background-contrast: #1B1D1C;
-		--gnome-tabbar-tab-active-hover-background: #1B1D1C;
-		--gnome-inactive-tabbar-tab-background: #1B1D1C;
-		--gnome-inactive-tabbar-tab-active-background: #1B1D1C;
+		--gnome-tabbar-tab-hover-background: var(--uc-dark);
+		--gnome-tabbar-tab-active-background: var(--uc-dark);
+		--gnome-tabbar-tab-active-background-contrast: var(--uc-dark);
+		--gnome-tabbar-tab-active-hover-background: var(--uc-dark);
+		--gnome-inactive-tabbar-tab-background: var(--uc-dark);
+		--gnome-inactive-tabbar-tab-active-background: var(--uc-dark);
 		--gnome-tab-button-background: rgba(0, 0, 0, .5);
 		--gnome-tab-button-hover-background: rgba(0, 0, 0, .6);
 		--gnome-tabbar-tab-identity-base-opacity: 0;
@@ -102,12 +102,12 @@
 		--gnome-private-accent: #71A1DB;
 
 		/* Toolbars */
-		--gnome-private-toolbar-background: #1B1D1C;
+		--gnome-private-toolbar-background: var(--uc-dark);
 		--gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);
 		/* Menus */
-		--gnome-private-menu-background: #1B1D1C;
+		--gnome-private-menu-background: var(--uc-dark);
 		/* Header bar */
-		--gnome-private-headerbar-background: #1B1D1C;
+		--gnome-private-headerbar-background: var(--uc-dark);
 		--gnome-private-inactive-headerbar-background: var(--gnome-private-toolbar-background);
 
 		/* Text color for Firefox Logo in new private tab */

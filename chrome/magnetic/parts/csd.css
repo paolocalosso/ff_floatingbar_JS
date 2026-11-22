@@ -185,7 +185,7 @@
 
 :root[customtitlebar] .titlebar-min:hover,
 :root[customtitlebar] #titlebar-min:hover {
-  background: #83A598 !important;
+  background: var(--uc-accent) !important;
   padding: 2px !important;
   margin: 6px 4px 4px !important;
   width: 22px !important;
@@ -195,7 +195,7 @@
 :root[customtitlebar] .titlebar-restore:hover,
 :root[customtitlebar] .titlebar-max:hover,
 :root[customtitlebar] #titlebar-max:hover {
-  background: #83A598 !important;
+  background: var(--uc-accent) !important;
   padding: 2px !important;
   margin: 6px 4px 4px !important;
   width: 22px !important;
@@ -204,7 +204,7 @@
 
 :root[customtitlebar] .titlebar-close:hover,
 :root[customtitlebar] #titlebar-close:hover {
-  background: #E7E9CE !important;
+  background: var(--uc-cream) !important;
   padding: 2px !important;
   margin: 6px 4px 4px !important;
   width: 22px !important;

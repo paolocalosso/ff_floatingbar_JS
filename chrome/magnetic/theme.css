@@ -23,6 +23,7 @@
 
 @import "parts/remove-white-flash.css";
 
+@import "colors/palette.css";
 @import "colors/light.css";
 @import "colors/dark.css";
 
@@ -38,7 +39,7 @@
 @-moz-document url-prefix("chrome://global/content/print.html") {
     :root {
         --checkmark: #FFFFFF !important;
-        --checkbox-checked-ink: #83A598 !important;
+        --checkbox-checked-ink: var(--uc-accent) !important;
     }
 
     html,
@@ -46,7 +47,7 @@
     .dialogroot {
         appearance: none !important;
         font: menu !important;
-        /*background-color: #1b1d1c50 !important;*/
+        /*background-color: color-mix(in srgb, var(--uc-dark) 31.37%, transparent) !important;*/
         color: #FFFFFF !important;
     }   
 }

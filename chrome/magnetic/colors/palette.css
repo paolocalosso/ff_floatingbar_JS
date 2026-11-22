@@ -1,0 +1,12 @@
+/* Tavolozza del tema: le tre tinte usate ovunque, nel chrome (userChrome.css,
+   tramite magnetic/theme.css) e nelle pagine (userContent.css).
+   Per cambiare tinta al tema basta modificare questi tre valori.
+   Le varianti trasparenti nei file sono scritte come
+   color-mix(in srgb, var(--uc-accent) 70%, transparent), cioe' lo stesso
+   colore con opacita' 0.7.
+   Fuori da @media prefers-color-scheme apposta: devono esistere sempre. */
+:root {
+	--uc-accent: #83A598; /* verde salvia: contorni, selezioni, accento */
+	--uc-cream: #E7E9CE;  /* crema: testo, hover, dettagli chiari */
+	--uc-dark: #1B1D1C;   /* quasi nero: sfondi */
+}

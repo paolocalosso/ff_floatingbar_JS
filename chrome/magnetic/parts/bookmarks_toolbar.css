@@ -139,7 +139,7 @@
     min-width: 278px /*240px*/ !important;
     }
   #personal-bookmarks .bookmark-item:hover{
-    background-color: #83A598 !important;
+    background-color: var(--uc-accent) !important;
     }
   #personal-bookmarks .bookmark-item>.toolbarbutton-text, #import-button>.toolbarbutton-text {
     margin-left: 5px !important;
