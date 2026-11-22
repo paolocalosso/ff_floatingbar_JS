@@ -47,6 +47,57 @@
 		--text-color: var(--uc-page-text) !important;
 		--background-color-canvas: var(--uc-page-bg) !important;
 		--in-content-page-background: var(--uc-page-bg) !important;
+
+		/* Pulsanti al passaggio del mouse e tabelle: nova li colora di viola
+		   (tokens-brand.css) con valori propri, non con --color-accent-primary. */
+		--button-background-color-hover: color-mix(in srgb, var(--uc-accent) 30%, transparent) !important;
+		--button-background-color-active: color-mix(in srgb, var(--uc-accent) 45%, transparent) !important;
+		--table-background-color: color-mix(in srgb, var(--uc-page-text) 4%, var(--uc-page-bg)) !important;
+
+		/* Tavolozze di nova rimappate sui colori del tema. I "grigi" di nova sono
+		   leggermente violacei e il viola compare in decine di token (banner,
+		   schede informative, bordi...): invece di inseguirli uno per uno, ogni
+		   tonalita' diventa un mix crema/scuro (grigi e viola desaturati) o una
+		   sfumatura dell'accento (viola), con la stessa luminosita' circa. */
+		--color-gray-0: color-mix(in srgb, var(--uc-page-text) 100%, var(--uc-page-bg)) !important; /* nova: #fcfbff */
+		--color-gray-05: color-mix(in srgb, var(--uc-page-text) 100%, var(--uc-page-bg)) !important; /* nova: #f7f6fb */
+		--color-gray-10: color-mix(in srgb, var(--uc-page-text) 100%, var(--uc-page-bg)) !important; /* nova: #efedf2 */
+		--color-gray-15: color-mix(in srgb, var(--uc-page-text) 100%, var(--uc-page-bg)) !important; /* nova: #e3e2e7 */
+		--color-gray-20: color-mix(in srgb, var(--uc-page-text) 96%, var(--uc-page-bg)) !important; /* nova: #d6d5da */
+		--color-gray-25: color-mix(in srgb, var(--uc-page-text) 88%, var(--uc-page-bg)) !important; /* nova: #c7c6cb */
+		--color-gray-30: color-mix(in srgb, var(--uc-page-text) 80%, var(--uc-page-bg)) !important; /* nova: #b7b6ba */
+		--color-gray-35: color-mix(in srgb, var(--uc-page-text) 71%, var(--uc-page-bg)) !important; /* nova: #a6a4a9 */
+		--color-gray-40: color-mix(in srgb, var(--uc-page-text) 62%, var(--uc-page-bg)) !important; /* nova: #949297 */
+		--color-gray-45: color-mix(in srgb, var(--uc-page-text) 52%, var(--uc-page-bg)) !important; /* nova: #817f84 */
+		--color-gray-50: color-mix(in srgb, var(--uc-page-text) 39%, var(--uc-page-bg)) !important; /* nova: #67666a */
+		--color-gray-55: color-mix(in srgb, var(--uc-page-text) 27%, var(--uc-page-bg)) !important; /* nova: #515054 */
+		--color-gray-60: color-mix(in srgb, var(--uc-page-text) 18%, var(--uc-page-bg)) !important; /* nova: #3f3e42 */
+		--color-gray-65: color-mix(in srgb, var(--uc-page-text) 11%, var(--uc-page-bg)) !important; /* nova: #312f33 */
+		--color-gray-70: color-mix(in srgb, var(--uc-page-text) 5%, var(--uc-page-bg)) !important; /* nova: #252428 */
+		--color-gray-75: color-mix(in srgb, var(--uc-page-text) 1%, var(--uc-page-bg)) !important; /* nova: #1d1b1f */
+		--color-gray-80: color-mix(in srgb, var(--uc-page-text) 0%, var(--uc-page-bg)) !important; /* nova: #171519 */
+		--color-gray-85: color-mix(in srgb, var(--uc-page-text) 0%, var(--uc-page-bg)) !important; /* nova: #131215 */
+		--color-gray-90: color-mix(in srgb, var(--uc-page-text) 0%, var(--uc-page-bg)) !important; /* nova: #121114 */
+		--color-violet-0: color-mix(in srgb, white 91%, var(--uc-accent)) !important; /* nova: #f5ecff */
+		--color-violet-10: color-mix(in srgb, white 83%, var(--uc-accent)) !important; /* nova: #eaddff */
+		--color-violet-20: color-mix(in srgb, white 67%, var(--uc-accent)) !important; /* nova: #d4c1ff */
+		--color-violet-30: color-mix(in srgb, white 46%, var(--uc-accent)) !important; /* nova: #b89cff */
+		--color-violet-40: color-mix(in srgb, white 23%, var(--uc-accent)) !important; /* nova: #9871ff */
+		--color-violet-50: color-mix(in srgb, black 7%, var(--uc-accent)) !important; /* nova: #764edd */
+		--color-violet-60: color-mix(in srgb, black 30%, var(--uc-accent)) !important; /* nova: #5939a8 */
+		--color-violet-70: color-mix(in srgb, black 51%, var(--uc-accent)) !important; /* nova: #3e2976 */
+		--color-violet-80: color-mix(in srgb, black 69%, var(--uc-accent)) !important; /* nova: #271c48 */
+		--color-violet-90: color-mix(in srgb, black 83%, var(--uc-accent)) !important; /* nova: #161423 */
+		--color-violet-desaturated-0: color-mix(in srgb, var(--uc-page-text) 100%, var(--uc-page-bg)) !important; /* nova: #f2f0f8 */
+		--color-violet-desaturated-10: color-mix(in srgb, var(--uc-page-text) 100%, var(--uc-page-bg)) !important; /* nova: #e7e1f8 */
+		--color-violet-desaturated-20: color-mix(in srgb, var(--uc-page-text) 96%, var(--uc-page-bg)) !important; /* nova: #d2c8ec */
+		--color-violet-desaturated-30: color-mix(in srgb, var(--uc-page-text) 83%, var(--uc-page-bg)) !important; /* nova: #b6aad9 */
+		--color-violet-desaturated-40: color-mix(in srgb, var(--uc-page-text) 67%, var(--uc-page-bg)) !important; /* nova: #9687c0 */
+		--color-violet-desaturated-50: color-mix(in srgb, var(--uc-page-text) 50%, var(--uc-page-bg)) !important; /* nova: #75669f */
+		--color-violet-desaturated-60: color-mix(in srgb, var(--uc-page-text) 35%, var(--uc-page-bg)) !important; /* nova: #584a7d */
+		--color-violet-desaturated-70: color-mix(in srgb, var(--uc-page-text) 21%, var(--uc-page-bg)) !important; /* nova: #3e315f */
+		--color-violet-desaturated-80: color-mix(in srgb, var(--uc-page-text) 9%, var(--uc-page-bg)) !important; /* nova: #281d44 */
+		--color-violet-desaturated-90: color-mix(in srgb, var(--uc-page-text) 0%, var(--uc-page-bg)) !important; /* nova: #180e30 */
 	}
 
 	/* Titoli esclusi: con `*` anche h1/h2 finivano a 13px e le pagine
