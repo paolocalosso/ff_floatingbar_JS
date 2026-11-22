@@ -25,11 +25,7 @@
 	--toolbarbutton-active-background: transparent !important;
 	--toolbarbutton-hover-background: transparent !important;
 }
-/*menupopup menuitem:hover .menu-text{
-	transition: .35s !important;
-    padding-left: 16px!important;
-}
-*/
+
 
 /* Main menu */
 #appMenu-popup .panel-banner-item:after {
@@ -84,7 +80,6 @@
 #editBookmarkPanelBottomContent,
 #editBookmarkPanelRows vbox {
 	margin: 6px 0;
-
 }
 
 /* Downloads popover */

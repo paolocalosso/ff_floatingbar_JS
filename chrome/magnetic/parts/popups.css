@@ -60,8 +60,7 @@ panel {
    Il contorno verde ora e' un bordo vero (vedi .menupopup-arrowscrollbox). */
 menupopup {
 	background-color: transparent !important;
-	/*backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
+
 	padding: 0 !important;
 	margin: 0 !important;
 	min-width: var(--uc-menu-min-width) !important;
@@ -173,8 +172,6 @@ panel:not([remote]) {
 	--panel-item-hover-bgcolor: color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
 	box-shadow: none !important;
 	-moz-box-shadow: none !important;
-	/*backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
 }
 
 panel {
@@ -260,8 +257,7 @@ panelview {
 /* Panel arrow - GLASSMORPHISM */
 .panel-arrowcontent {
 	background: var(--uc-menu-bg) !important;
-	/*backdrop-filter: blur(25px) saturate(150%) !important;
-	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
+
 	border: 3px solid var(--uc-accent) !important;
 	border-radius: 25px !important;
 	color: white !important;
@@ -505,9 +501,7 @@ menupopup menu:not([disabled="true"]):is(:hover, [_moz-menuactive]),
 }
 
 /* SEPARATOR SOTTILI - UN'UNICA LINEA */
-/*toolbarseparator, menuseparator {
-	appearance: none !important;
-}*/
+
 /* SEPARATOR CON LINEAR-GRADIENT - Effetto sfumato VISIBILE */
 toolbarseparator, menuseparator {
 	appearance: none !important;
@@ -524,26 +518,26 @@ menuseparator::before {
 #PlacesToolbar menupopup[placespopup="true"] menuseparator {
 	border: none !important;
 	border-top: 1px solid transparent !important;
-	border-image: linear-gradient(to right, 
-		transparent 0%, 
-		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%, 
-		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%, 
-		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%, 
+	border-image: linear-gradient(to right,
+		transparent 0%,
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%,
+		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%,
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%,
 		transparent 100%) 1 !important;
 	padding: 0 !important;
 	margin: 4px 8px !important;
 	height: 0 !important;
 }
 
-toolbarseparator:not([orient="vertical"]), 
+toolbarseparator:not([orient="vertical"]),
 menupopup menuseparator {
 	border: none !important;
 	border-top: 1px solid transparent !important;
-	border-image: linear-gradient(to right, 
-		transparent 0%, 
-		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%, 
-		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%, 
-		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%, 
+	border-image: linear-gradient(to right,
+		transparent 0%,
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%,
+		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%,
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%,
 		transparent 100%) 1 !important;
 	margin: 4px 8px !important;
 	height: 0 !important;
@@ -554,11 +548,11 @@ menupopup menuseparator {
 toolbarseparator[orient="vertical"] {
 	border: none !important;
 	border-left: 1px solid transparent !important;
-	border-image: linear-gradient(to bottom, 
-		transparent 0%, 
-		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%, 
-		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%, 
-		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%, 
+	border-image: linear-gradient(to bottom,
+		transparent 0%,
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 15%,
+		color-mix(in srgb, var(--uc-cream) 80%, transparent) 50%,
+		color-mix(in srgb, var(--uc-accent) 70%, transparent) 85%,
 		transparent 100%) 1 !important;
 	margin: 0 6px !important;
 	width: 0 !important;
@@ -586,8 +580,7 @@ menuseparator {
 /* Tooltip - GLASSMORPHISM */
 tooltip {
   background: var(--uc-dark) !important;
-  /*backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;*/
+
   border: 2px solid var(--uc-accent)  !important;
   border-radius: 25px  !important;
   color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;

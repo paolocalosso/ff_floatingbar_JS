@@ -52,10 +52,10 @@
         border: 5px var(--uc-cream) !important;
         border-radius: 40px !important;
         border-color: var(--uc-cream) !important;
-        box-shadow: 0 0 0 2px var(--uc-cream) !important;        
+        box-shadow: 0 0 0 2px var(--uc-cream) !important;
     }
     #migrationWizardDialog {
-        background-color: var(--uc-dark) !important;       
+        background-color: var(--uc-dark) !important;
     }
     #filter {
         background-color: var(--search-box) !important;

@@ -72,7 +72,7 @@ radio > .radio-check[selected] {
 	--toggle-dot-height: 22px !important;
 	--toggle-dot-background-color: #FFF !important;
 	--toggle-dot-background-color-on-pressed: #FFF !important;
-	
+
 	border: 0 !important;
 }
 .toggle-button::before {

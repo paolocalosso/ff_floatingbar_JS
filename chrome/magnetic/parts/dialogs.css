@@ -15,7 +15,6 @@ window {
 
 /* Browser dialog prompts center */
 .dialogOverlay[topmost="true"]:not(.dialogOverlay-window-modal-dialog-subdialog), #window-modal-dialog::backdrop {
-	/*background-color: rgba(0, 0, 0, .5) !important;*/
 	background: color-mix(in srgb, var(--uc-dark) 90%, transparent)  !important;
 }
 
@@ -34,7 +33,7 @@ window[role="dialog"] {
 	box-shadow: var(--gnome-menu-shadow) !important;
 	padding: 0 !important;
 }
-dialog {	
+dialog {
 	padding: 0 !important;
 }
 dialog#handling {
@@ -90,7 +89,7 @@ dialog#handling {
 
 /* Hadler dialog */
 #os-default-handler image {
-	display: none !important;	
+	display: none !important;
 }
 #os-default-handler .name {
 	font-weight: normal !important;
@@ -98,7 +97,6 @@ dialog#handling {
 
 /* Fullscreen warning */
 #fullscreen-warning {
-	/*background: rgba(0, 0, 0, 0.7) !important;*/
 	background: color-mix(in srgb, var(--uc-dark) 90%, transparent)  !important;
 	border-radius: 150px !important;
 	border: none !important;

@@ -11,8 +11,6 @@
 .toolbox-panel.theme-toolbar{ background: -moz-Dialog !important;}
 
 @-moz-document url-prefix(chrome:){
-
-
 /*  Notification fix*/
 #toolbox-notificationbox  .notification{ background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; border: none !important; padding: 3px !important; }
 
@@ -196,5 +194,4 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
 /*  Cahnges tab  */
 #sidebar-panel-changes .source .href{background: -moz-Dialog !important; border: none !important}
 #sidebar-panel-changes .changes__rule{border-radius: 10px !important}
-
 }

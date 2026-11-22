@@ -7,9 +7,9 @@
 	--gnome-accent-fg: var(--gnome-private-accent) !important;
 	/* Toolbars */
 	--gnome-toolbar-background: var(--gnome-private-toolbar-background) !important;
-	--gnome-inactive-toolbar-background: var(--gnome-private-inactive-toolbar-background)  !important;		
+	--gnome-inactive-toolbar-background: var(--gnome-private-inactive-toolbar-background)  !important;
 	/* Menus */
-	--gnome-menu-background: var(--gnome-private-menu-background) !important;		
+	--gnome-menu-background: var(--gnome-private-menu-background) !important;
 	/* Change headerbar colors */
 	--gnome-headerbar-background: var(--gnome-private-headerbar-background) !important;
 	--gnome-inactive-headerbar-background: var(--gnome-private-inactive-headerbar-background) !important;
@@ -20,7 +20,7 @@
 	background: url("../icons/eye-not-looking-symbolic.svg") no-repeat;
 	background-size: 64px 64px;
 	content: "";
-	display: block;	
+	display: block;
 	position: absolute;
 	width: 64px;
 	height: 46px;

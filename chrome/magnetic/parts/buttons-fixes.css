@@ -118,7 +118,6 @@
 #library-animatable-box  {
 	--library-button-height: 46px !important;
 	--library-icon-x: 1716px !important;
-	/*--library-icon-x: 1715.9833984375px !important;*/
 }
 #library-button[animate] > .toolbarbutton-icon {
 	fill: transparent !important;
@@ -147,7 +146,7 @@ button.close.ghost-button {
 	}
 }
 
-/* */
+
 #appMenu-popup .panel-banner-item[notificationid="update-restart"]::after {
 	display: none !important;
 }

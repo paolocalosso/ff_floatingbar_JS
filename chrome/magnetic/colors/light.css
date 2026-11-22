@@ -8,7 +8,7 @@
 :root {
 	/* Browser area before a page starts loading */
 	--gnome-browser-before-load-background: #F7F7F7;
-	
+
 	/* Accent */
 	--gnome-accent-bg: #5b9bf8;
 	--gnome-accent: #3c84f7;
@@ -24,8 +24,7 @@
 	--gnome-inactive-toolbar-icon-fill: #929595;
 
 	/* Sidebar */
-	/*--gnome-sidebar-background: var(--gnome-toolbar-background);
-	--gnome-inactive-sidebar-background: var(--gnome-sidebar-background);*/
+
 
 	/* Menu */
 	--gnome-menu-background: #ffffff;
@@ -48,7 +47,7 @@
 	--gnome-button-flat-active-background: rgba(0, 0, 0, .128);
 	--gnome-button-suggested-action-background: var(--gnome-accent-bg);
 	--gnome-button-destructive-action-background: #e01b24;
-	
+
 	--gnome-button-close-background: var(--gnome-button-flat-hover-background);
 	--gnome-button-hover-close-background:var(--gnome-button-hover-background);
 	--gnome-button-active-close-background: var(--gnome-button-active-background);
@@ -96,7 +95,7 @@
 /* Private window colors */
 :root {
 	--gnome-private-accent: #272F42;
-	
+
 	/* Toolbars */
 	--gnome-private-toolbar-background: #EAF0F7;
 	--gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);

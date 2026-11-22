@@ -2,7 +2,6 @@
 
 @-moz-document url("about:newtab"), url("about:home") {
     body {
-        /*background: url("../walls/ubuntu-gruvbox.jpg") !important ; background-size: cover !important ;*/
         --newtab-background-color: #282828 /*var(--uc-accent)*/ /*#282828*/ /*var(--gnome-browser-before-load-background)*/ !important;
         --newtab-background-color-secondary: var(--gnome-menu-background) !important;
         --newtab-primary-action-background: var(--gnome-accent) !important;
@@ -29,7 +28,7 @@
         border-radius: 25px !important;
         border-color: var(--uc-dark) !important;
         background-color: var(--uc-dark) !important;
-        /*transform: scaleX(1);*/
+
         transition-delay: 500ms,500ms !important;
     }
     .context-menu-button:hover {
@@ -65,24 +64,22 @@
     .card-preview-image-outer {
         border-radius: 25px 25px 0 0  !important;
     }
-    /*.card-preview-image {
-        border-radius: 25px 25px 0 0 !important;
-    }*/
+
     .tile {
         border-radius: 50px 50px 50px 0 !important;
-        background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent) /*color-mix(in srgb, var(--uc-accent) 70%, transparent)*/ !important;
+        background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent)  !important;
         backdrop-filter: blur(10px) !important;
         transition: transform .5s ease;
         box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
     }
     .tile:hover {
         transform: scale(0.95) !important;
-        background-color: var(--uc-accent) /*color-mix(in srgb, var(--uc-dark) 70%, transparent)*/ !important;
-        box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent) /*color-mix(in srgb, var(--uc-accent) 52.16%, transparent)*/ !important;
+        background-color: var(--uc-accent)  !important;
+        box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent)  !important;
     }
     .title-label {
         border-radius: 500px !important;
-        /*color: var(--uc-accent)  !important;*/
+
         font-weight: bold;
         font-size: 1.0em  !important;
     }
@@ -97,7 +94,7 @@
     }
     .top-site-outer:hover {
         border-radius: 20px !important;
-        background-color: /*color-mix(in srgb, var(--uc-dark) 25%, transparent)*/ color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
+        background-color:  color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
         /* backdrop-filter: blur(10px) !important; rimosso: niente blur intorno alle shortcut in hover */
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
@@ -122,24 +119,7 @@
         min-height: 32px !important;
         background-color: var(--uc-cream) !important;
     }
-    /*.context-menu-item {
-        border-radius: 30px !important;
-        color: var(--gnome-toolbar-color) !important;
-        font: menu !important;
-        min-width: 120px !important;
-        padding: 4px 4px !important;
-        min-height: 32px !important;
-        background-color: transparent!important;
-    }
-    .context-menu-item:hover {
-        border-radius: 30px !important;
-        color: var(--gnome-toolbar-color) !important;
-        font: menu !important;
-        min-width: 120px !important;
-        padding: 4px 4px !important;
-        min-height: 32px !important;
-        background-color: var(--uc-accent) !important;
-    }*/
+
     [role="menuitem"] {
         border-radius: 30px !important;
         color: var(--gnome-toolbar-color) !important;
@@ -169,14 +149,10 @@
     }
     .icon-pin-small {
         fill: var(--uc-cream) !important;
-        /*border: solid 1px var(--uc-accent)  !important;
-        border-radius: 50% !important;*/
     }
     .top-site-outer:hover .icon-pin-small {
         fill: var(--uc-dark) !important;
-        /*border: solid 1px var(--uc-cream) !important;*/
     }
-
 }
 
 @-moz-document url("about:home"),
@@ -196,30 +172,7 @@
 }
 
 /*increase shortcuts columns*/
-/*
-@-moz-document url("about:home"), url("about:newtab"){
-  @media (min-width: 1378px) {
-    .ds-outer-wrapper-breakpoint-override main {
-      width: 1226px !important;
-    }
-  }
-  @media (min-width: 1636px) {
-    .ds-outer-wrapper-breakpoint-override main {
-      width: 1466px !important;
-    }
-  }
-  @media (min-width: 1892px) {
-    .ds-outer-wrapper-breakpoint-override main {
-      width: 1726px !important;
-    }
-  }
-  @media (min-width: 2148px) {
-    .ds-outer-wrapper-breakpoint-override main {
-      width: 1966px !important;
-    }
-  }
-}
-*/
+
 
 /* ===========================================================================
    Firefox 151 — "nova" design integration per i top-sites.
@@ -237,7 +190,6 @@
    con `.nova-enabled` (stessa o più alta specificità + !important).
    =========================================================================== */
 @-moz-document url("about:newtab"), url("about:home") {
-
     /* Il <li> esterno: trasparente, senza padding aggiuntivo */
     .nova-enabled .top-site-outer,
     .top-site-outer {
@@ -489,7 +441,6 @@
    varianti di classe e le custom properties del tipo "primary".
    =========================================================================== */
 @-moz-document url("about:newtab"), url("about:home") {
-
     /* Vale per tutti i moz-button della new tab (Personalizza, "+" Aggiungi
        scorciatoia, ecc.): le custom properties ereditano nello shadow DOM,
        dove moz-button.css colora .button-background[type="primary"]. */
@@ -557,41 +508,30 @@
 
 @-moz-document url(about:newtab), url("about:home") {
     .search-wrapper {margin-top: 10px !important}
-    .search-handoff-button { 
+    .search-handoff-button {
         border-radius: 40px 40px 40px 0px  !important;
         border-color: transparent /*var(--uc-accent)*/ !important;
         background-color: rgb(40,40,40,0.65) !important;
         transition: background-color 2s ease !important;
         transition: width 0.5s ease !important;
         border-bottom: 1px solid transparent !important;
-        /*transition: border-bottom 0.5s ease !important;*/
+
         color: #fff !important;
         font: menu !important;
-        /*box-shadow: 0 0 0 1px transparent; !important;*/
+
         box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
         backdrop-filter: blur(10px) !important;
         display-inline: flex !important;
         width: 50% !important;
-        /*transition: width 2s;*/
+
         margin-left: auto !important;
         margin-right: auto !important;
-        /*background-color: var(--uc-accent) !important;
-        color: transparent !important;
-        border-color: transparent !important;
-        border: 5px var(--uc-cream) !important;
-        border-radius: 50px !important;
-        display-inline: flex !important;
-        width: 75% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        --newtab-search-icon: none !important;*/
     }
     .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
         border-radius: 40px 40px 40px 0px  !important;
-        /*border-color: var(--uc-accent) !important;*/
-        /*background-color: #28282885 !important;
-        border: 1px solid transparent !important;*/
-        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent) /*rgb(90,90,90,0.65)*/ !important;
+
+
+        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent)  !important;
         border: 1px solid transparent !important;
         transition: border-bottom 2s ease !important;
         border-top: 1px solid  transparent !important;
@@ -600,19 +540,16 @@
         backdrop-filter: blur(10px) !important;
         color: transparent !important;
         font: menu !important;
-        /*box-shadow: 0 0 0 1px transparent !important;*/
+
         box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
         display-inline: flex !important;
         width: 75% !important;
         transition: width 0.5s ease !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        /*transform: translateY(-20px);*/
-        /*transform: translateX(1);
-        transition: transform 250ms ease-in-out;*/
     }
     .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button:hover {
-        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent) /*rgb(90,90,90,0.65)*/ !important;
+        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent)  !important;
         border: 1px solid var(--uc-accent) !important;
         transition: background-color 1s ease !important;
         transition: border-bottom 2s ease !important;
@@ -623,16 +560,10 @@
         box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
     }
     .fake-caret {margin-left: 3px !important;}
-    
-    /*.wordmark {
-        height: 0px !important;
-        width: 0px !important;
-        visibility: hidden !important;
-    }*/
+
+
     .logo-and-wordmark{
         display: none !important;
-        /*flex-direction: row-reverse !important;
-        visibility: hidden !important;*/
     }
 
 
@@ -642,7 +573,7 @@ body,html{overflow-y: auto}
 /*  Newtab  */
 @-moz-document url("about:home"), url("about:newtab"){
 .search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 0% !important; inset-inline-start: 48px !important;}
-.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 50px !important; inset-inline-start: 50% !important; /*display-inline: flex !important;*/ }
+.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 50px !important; inset-inline-start: 50% !important;  }
 .search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
 .outer-wrapper.ds-outer-wrapper-breakpoint-override.only-search.visible-logo{display: flex !important; padding-top: 0px !important;vertical-align: middle}
 .search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}

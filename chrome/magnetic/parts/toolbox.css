@@ -37,22 +37,20 @@
 }
 
 
-
-
 findbar {
 	border-top: 0px solid var(--uc-dark) /*var(--gnome-toolbar-border-color)*/ !important;
 }
 #nav-bar:-moz-window-inactive,
-#PersonalToolbar:-moz-window-inactive, 
-#toolbar-menubar:-moz-window-inactive, 
-#TabsToolbar:-moz-window-inactive, 
+#PersonalToolbar:-moz-window-inactive,
+#toolbar-menubar:-moz-window-inactive,
+#TabsToolbar:-moz-window-inactive,
 findbar:-moz-window-inactive,
 .container.infobar:-moz-window-inactive {
 	background: var(--gnome-inactive-toolbar-background) !important;
 	border-color: var(--gnome-inactive-toolbar-border-color) !important;
 }
 
-#navigator-toolbox:-moz-window-inactive label, #navigator-toolbox:-moz-window-inactive image, 
+#navigator-toolbox:-moz-window-inactive label, #navigator-toolbox:-moz-window-inactive image,
 #downloads-indicator-anchor:-moz-window-inactive,
 findbar:-moz-window-inactive image:not(#hack),
 findbar:-moz-window-inactive label,
@@ -136,7 +134,7 @@ findbar:-moz-window-inactive description,
 	width: 16px !important;
 }
 .notificationbox-stack notification-message[type="warning"] {
-	background: #ffe900 !important;	
+	background: #ffe900 !important;
 }
 .notificationbox-stack notification-message[type="critical"] {
 	background: #d70022 !important;
@@ -157,12 +155,6 @@ findbar:-moz-window-inactive description,
 	width: 670px !important;
 }
 
-.downloadsPanelFooterButton {
-	
-}
-.downloadsPanelFooterButton:hover {
-	
-}
 
 /* Toolbox trasparente per vedere attraverso */
 #navigator-toolbox {

@@ -2,7 +2,6 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 
-
 /* Headerbar */
 #nav-bar {
   padding: 6px 3px !important;
@@ -13,7 +12,7 @@
    FF150: backdrop-filter rotto su chrome XUL. Fallback: sfondo solido frosted. */
 :root[customtitlebar] #nav-bar {
   background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
-  /* backdrop-filter: blur(25px) saturate(150%) !important; */
+
   border: 1px solid color-mix(in srgb, var(--uc-accent) 30%, transparent) !important;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 25px,
               0 0 15px color-mix(in srgb, var(--uc-dark) 50%, transparent),
@@ -60,6 +59,5 @@
   border-start-start-radius: 0 !important;
   --chrome-content-separator-color: transparent !important;
 }
-
 
 

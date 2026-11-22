@@ -346,7 +346,7 @@ tab {
 }
 .tab-background[selected=true]:-moz-window-inactive {
 	background-color: var(--gnome-inactive-tabbar-tab-active-background) !important;
-	border-bottom-color: var(--gnome-tabbar-tab-border-color) !important; 
+	border-bottom-color: var(--gnome-tabbar-tab-border-color) !important;
 }
 
 /* Hover tab */
@@ -360,7 +360,7 @@ tab {
 }
 :root:not(:-moz-window-inactive) .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]) {
 	background-color: transparent !important;
-	/*background-color: var(--gnome-tabbar-tab-hover-background) !important;*/
+
 	border-image: none !important;
 }
 
@@ -385,9 +385,7 @@ tab {
 }
 
 /* Remove container bottom line indicator */
-/*.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
-	display: none;
-}*/
+
 
 /* Create new container tab indicator */
 .tabbrowser-tab[class*="identity-color-"] .tab-background:not(#hack)  { /* Normal */

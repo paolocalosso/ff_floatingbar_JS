@@ -224,14 +224,7 @@ menu[disabled] > .menu-right {
 }
 
 /* Arrow up buttons */
-/*
-.expander-up > .button-box {
-	-moz-appearance: none !important;
-	list-style-image: url("../icons/pan-up-symbolic.svg") !important;
-	width: 16px !important;
-	height: 16px !important;
-}
-*/
+
 .expander-up > .button-box,
 #sidebar-switcher-arrow,
 #viewButton .button-menu-dropmarker,
@@ -383,7 +376,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 #TabsToolbar {
 	list-style-image: url("../icons/tab-new-symbolic.svg") !important;
 }
-/*Home button 
+/*Home button
 #home-button {
 	list-style-image: url("../icons/user-home-symbolic.svg") !important;
 }*/
@@ -698,25 +691,19 @@ treechildren::-moz-tree-image {
 	.identity-popup-content-blocking-category::after,
 	#identity-popup-security-expander .button-icon,
 	.subviewbutton-back .toolbarbutton-icon,
-
 	.menu-right,
-
 	#urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon,
 	.searchbar-search-icon,
 	#search-box .textbox-search-sign,
-
 	.menulist-label-box:after,
 	.expander-down image,
 	.expander-up image,
 	#sidebar-switcher-arrow,
 	#viewButton .button-menu-dropmarker,
-
 	menuitem[type="checkbox"] .menu-iconic-icon,
 	menuitem[type="radio"] .menu-iconic-icon,
-
 	.close-icon:not(.tab-close-button) image,
 	.identity-popup-permission-remove-button .button-icon,
-
 	:root[customtitlebar]  .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
 	:root[customtitlebar]  #titlebar-close .toolbarbutton-icon,
 	:root[customtitlebar]  .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
@@ -730,7 +717,6 @@ treechildren::-moz-tree-image {
 	}
 
 	.popup-notification-icon[popupid="web-notifications"], .desktop-notification-icon,
-
 	#import-button .toolbarbutton-icon,
 	#panic-button .toolbarbutton-icon,
 	#open-file-button .toolbarbutton-icon,
@@ -741,16 +727,11 @@ treechildren::-moz-tree-image {
 	#sidebar-button:-moz-locale-dir(ltr):not([positionend]) .toolbarbutton-icon,
 	#sidebar-button:-moz-locale-dir(rtl)[positionend] .toolbarbutton-icon,
 	#sidebar-button .toolbarbutton-icon,
-/*	#nav-bar #back-button .toolbarbutton-icon,
-	#context-back .menu-iconic-icon,
-	#nav-bar #forward-button .toolbarbutton-icon,
-	#context-forward .menu-iconic-icon,*/
 	#PanelUI-menu-button .toolbarbutton-icon,
 	#new-tab-button .toolbarbutton-icon,
 	.tabs-newtab-button .toolbarbutton-icon,
 	#tabs-newtab-button .toolbarbutton-icon,
 	#TabsToolbar .toolbarbutton-icon,
-/*	#home-button .toolbarbutton-icon,*/
 	#preferences-button .toolbarbutton-icon,
 	#fullscreen-button .toolbarbutton-icon,
 	#appMenu-fullscreen-button .toolbarbutton-icon,
@@ -773,7 +754,6 @@ treechildren::-moz-tree-image {
 	#paste-button .toolbarbutton-icon,
 	#appMenu-paste-button .toolbarbutton-icon,
 	#nav-bar-overflow-button .toolbarbutton-icon,
-/*	#reload-button .toolbarbutton-icon,*/
 	.downloadIconRetry > .button-box > .button-icon,
 	#context-reload,
 	#stop-button .toolbarbutton-icon,
@@ -867,7 +847,6 @@ treechildren::-moz-tree-image {
 	#urlbar-engine-one-off-item-history {
 		list-style-image: url("../icons/preferences-system-time-symbolic-light.svg") !important;
 	}
-
 }
 
 
@@ -978,9 +957,6 @@ toolbarbutton#scrollbutton-down:not([disabled]):hover > .toolbarbutton-icon{tran
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
   padding: var(--toolbarbutton-inner-padding) !important;
 }
-
-
-
 
 
 /* ============================================================

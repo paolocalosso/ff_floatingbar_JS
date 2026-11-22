@@ -57,22 +57,14 @@
 		--gnome-button-active-close-background: var(--gnome-button-active-background);
 
 		/* TitleButtons */
-		/*--gnome-titlebutton-min-background: #fdbe04;
-		--gnome-titlebutton-max-background: #38c76a;
-		--gnome-titlebutton-close-background: #fd5f51;
-		--gnome-titlebutton-min-hover-background: #fdbe04;
-		--gnome-titlebutton-max-hover-background: #38c76a;
-		--gnome-titlebutton-close-hover-background: #fd5f51;
-		--gnome-titlebutton-min-active-background: #fdcd43;
-		--gnome-titlebutton-max-active-background: #6ad48e;
-		--gnome-titlebutton-close-active-background: #fb857c;*/
+
 
 		/* Entries */
 		--gnome-entry-background: rgba(255, 255, 255, .08);
 		--gnome-entry-color: #ffffff;
 		--gnome-inactive-entry-color: #d6d6d6;
 		--gnome-focused-urlbar-border: 0px !important;
-		--gnome-focused-urlbar-border-color: /*var(--uc-cream) var(--uc-accent)*/ transparent !important; 
+		--gnome-focused-urlbar-border-color: /*var(--uc-cream) var(--uc-accent)*/ transparent !important;
 		--gnome-urlbarView-shadow: 0 1px 5px 1px color-mix(in srgb, var(--uc-dark) 20%, transparent),
 		                           0 2px 14px 3px color-mix(in srgb, var(--uc-dark) 15%, transparent),
 		                           0 0 0 1px color-mix(in srgb, var(--uc-dark) 75%, transparent);

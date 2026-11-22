@@ -34,7 +34,7 @@ See the above repository for updates as well as full license text. */
   line-height: 0;
   z-index: 1;
   pointer-events: none;
-  
+
   /* FLOATING BAR - Centratura corretta */
   left: 8px !important;
   right: 34px !important;  /* Compensazione per i pulsanti della finestra */
@@ -56,24 +56,8 @@ See the above repository for updates as well as full license text. */
 }
 
 /* Attiva toolbox quando si passa sopra l'area invisibile */
-/*
-#navigator-toolbox:hover,
-#navigator-toolbox::before:hover {
-  transition-delay: 33ms !important;
-  transform: rotateX(0);
-  opacity: 1;
-  pointer-events: auto !important;
-}
-*/
-/*
-:root[sessionrestored] #urlbar[popover]{
-  pointer-events: none;
-  opacity: 0;
-  transition: transform 82ms linear var(--uc-autohide-toolbox-delay), opacity 0ms calc(var(--uc-autohide-toolbox-delay) + 82ms);
-  transform-origin: 0px calc(0px - var(--tab-min-height) - var(--tab-block-margin) * 2);
-  transform: rotateX(89.9deg);
-}
-*/
+
+
 /*
 #mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ toolbox #urlbar[popover],
 #navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
@@ -101,9 +85,6 @@ See the above repository for updates as well as full license text. */
 }
 
 
-
-
-
 #navigator-toolbox > *{ line-height: normal; pointer-events: auto }
 
 #navigator-toolbox,
@@ -129,10 +110,7 @@ See the above repository for updates as well as full license text. */
 #PersonalToolbar[collapsed="true"]{ display: none }
 
 /* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
-/*#titlebar{ margin-bottom: -9px }*/
+
 
 /* Uncomment the following for compatibility with tabs_on_bottom.css - this isn't well tested though */
-/*
-#navigator-toolbox{ flex-direction: column; display: flex; }
-#titlebar{ order: 2 }
-*/
+

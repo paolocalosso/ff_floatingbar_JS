@@ -27,7 +27,6 @@ html, body, main {
 #sidebar-box, .sidebar-panel {
 	background-color: transparent !important;
 	border-radius: 25px !important;
-	/*padding-top: 10px !important;*/
 }
 
 /* FF157 / design "nova": la sidebar non usa piu' un solo border-radius.
@@ -58,7 +57,6 @@ html, body, main {
 }
 #sidebar-box:-moz-window-inactive, .sidebar-panel:-moz-window-inactive {
 	background-color: transparent !important;
-	/*background-color: var(--gnome-inactive-sidebar-background) !important;*/
 }
 #sidebar-box:-moz-window-inactive label, #sidebar-box:-moz-window-inactive image,
 .sidebar-panel:-moz-window-inactive label, .sidebar-panel:-moz-window-inactive image,
@@ -67,14 +65,14 @@ html, body, main {
 }
 #sidebar-splitter {
 	background-color: transparent !important;
-	/*background-color: var(--gnome-toolbar-background) !important;*/
+
 	border: 0 !important;
 	border-right: 0px solid var(--uc-dark) /*var(--gnome-toolbar-border-color)*/ !important;
 	width: 0 !important;
 }
 #sidebar-splitter:-moz-window-inactive {
 	background-color: transparent !important;
-	/*background-color: var(--gnome-inactive-toolbar-background) !important;*/
+
 	border-color: var(--gnome-inactive-toolbar-border-color) !important;
 }
 
@@ -196,15 +194,7 @@ html, body, main {
 #PanelUI-menu-button {
 	padding-inline-end: 134px !important;
 }
-/*
-#firefox-view-button {
-	position: absolute;
-	top: 0;
-	left: 4;
-	z-index: 1;
-	height: 38px;
-}
-*/
+
 #nav-bar-customization-target {
 	padding-left: 34px !important;
 }

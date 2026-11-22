@@ -7,8 +7,8 @@
         /* Used by headings in promo boxes Firefox shows (like an ad for Firefox Focus) */
         --in-content-text-color: var(--gnome-private-text-primary-color) !important;
     }
-    
-    .search-handoff-button { 
+
+    .search-handoff-button {
         border: 0px solid #ffffff  !important;
         box-shadow: 0 0 0 2px #ffffff !important;
         border-radius: 50px !important;
@@ -24,8 +24,7 @@
         width: 0px !important;
         visibility: hidden !important;
     }
-    
+
     .logo-and-wordmark{ flex-direction: row-reverse !important; }
     .info {display: none !important;}
-
 }

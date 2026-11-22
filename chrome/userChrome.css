@@ -12,29 +12,9 @@
 @import "magnetic/parts/tabcenter.css";
 @import "magnetic/parts/bookmarks_toolbar.css";
 @import "magnetic/parts/extensions-menu.css";
-/*@import "magnetic/parts/sidebar-support.css";*/
+
 @import "magnetic/parts/quietUrlbar.css";
 
-/*.menupopup-arrowscrollbox *{
-display: grid;
-grid-auto-flow: column;
-grid-template-rows: repeat(35, auto);
-}
-*/
-
-/* look at parts > popups.css
-menupopup > menuitem,
-menupopup > menu{
-  min-width: 120px !important;
-}*/
-/*
-#navigator-toolbox:not(:hover) #nav-bar {
-    visibility: collapse !important;
-}
-#navigator-toolbox:not(:hover) {
-    border-bottom: none !important;
-}
-*/
 
 .titlebar-button{
   list-style-image: none !important;
@@ -55,7 +35,6 @@ menupopup > menu{
 }
 
 :root[customtitlebar] #titlebar:-moz-window-inactive { opacity: 100 !important; }
-
 
 
 /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/loading_indicator_bouncing_line.css made available under Mozilla Public License v. 2.0
@@ -141,8 +120,6 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
 }
 
 
-
-
 /*centered statuspanel*/
 #statuspanel:not([hidden]){
   display: flex !important;
@@ -153,8 +130,8 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
 }
 #statuspanel-label{
   color: var(--uc-dark) !important;
-  /*border-width: 1px 1px 0px 1px !important;*/
-  border-radius: 25px /*25px 0 0*/ !important;
+
+  border-radius: 25px  !important;
   border: color-mix(in srgb, var(--uc-accent) 43.92%, transparent)  0px solid !important;
   margin-inline: auto !important;
   padding: 4px 15px !important;
@@ -179,8 +156,6 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
 .identity-box-button:hover {
   background-color: var(--uc-accent) !important;
 }
-
-
 
 
 #nav-bar,

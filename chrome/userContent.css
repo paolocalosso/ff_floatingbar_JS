@@ -132,11 +132,3 @@
 }
 
 
-
-/*
-@-moz-document url-prefix("chrome://mozapps/content/extensions/aboutaddons.html") {
-	body { background-color: var(--uc-dark); }
-	font: menu;
-	.toggle-button[aria-pressed="true"] {background: var(--uc-accent) !important;}
-}
-*/

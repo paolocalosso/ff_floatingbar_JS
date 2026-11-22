@@ -13,7 +13,6 @@
 }
 #identity-box[pageproxystate="valid"].certUserOverridden > #identity-icon,
 .drm-icon {
-  /*display: none !important;*/ 
   margin-right: 5px !important;
   height: 28px !important;
   width: 28px !important;
@@ -28,15 +27,11 @@
 }
 
 
-
-
-
 @-moz-document url(chrome://browser/content/browser.xhtml){
-
   :root:not([inDOMFullscreen]){
     --uc-vertical-toolbar-width: 0px !important;
   }
-    
+
   #navigator-toolbox{ position: relative }
   #PersonalToolbar{
     position: absolute;
@@ -49,49 +44,48 @@
     width: 288px !important;
     transition: all 600ms cubic-bezier(0.77, 0, 0.18, 1);
     box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.4);
-    /*width: var(--uc-vertical-toolbar-width,0);*/
+
     min-width: unset !important;
     /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
     height: 93.5vh; /*92.55vh;*/
-    max-height: 93.5vh /*92.55vh*/ !important; 
-    /*padding-bottom: 15% !important;*/
-    /*padding-top: 15% !important;*/
+    max-height: 93.5vh /*92.55vh*/ !important;
+
+
     padding-inline: 0px !important;
     background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
     /* backdrop-filter: blur(10px) !important; FF150 broken */
     box-shadow: rgba(0, 0, 0, 0.55) -5px 0 15px,
                 inset 1px 0 0 rgba(255, 255, 255, 0.05) !important;
     }
-    
+
   #PersonalToolbar .toolbarbutton-1{
-    /*min-width: var(--uc-vertical-toolbar-width) !important;*/
     --toolbarbutton-inner-padding: 8px !important;
     --toolbarbutton-border-radius: 7px !important;
-  }    
-    
+  }
+
   #PersonalToolbar #PlacesChevron{
     display: none;
   }
-    
+
   #PersonalToolbar > #personal-bookmarks{
     overflow-y: auto;
     scrollbar-width: none;
     height: 100vh;
   }
-  
+
   #PlacesToolbar,
   #PlacesToolbarDropIndicatorHolder{
     -moz-box-orient: vertical !important; /* Can be removed with Firefox 112 */
     flex-direction: column;
   }
-  
+
   #PersonalToolbar #PlacesToolbarItems{
     display: flex !important;
     flex-direction: column;
     overflow-y: auto;
     scrollbar-width: none;
   }
-    
+
   #PersonalToolbar > toolbaritem{
     justify-content: center !important;
   }
@@ -111,7 +105,7 @@
   transition-delay: 230ms,220ms !important;
   width: 288px /*250px*/ !important;
   }
-  
+
   #browser,
   #browser-bottombox,
   #main-window > body::after,
@@ -125,15 +119,15 @@
   :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
     padding-right: 0;
   }
-    
+
   /* You should probably disable this if you have Firefox < 113 */
   #PersonalToolbar #PlacesToolbarItems{
     display: -webkit-box !important;
     -webkit-box-orient: vertical !important;
   }
-  
+
   #personal-bookmarks .bookmark-item{
-    margin: 2.5px 5px /*5px 12px*/ !important;
+    margin: 2.5px 5px  !important;
     padding-left: 15px !important;
     height: /*42px*/ 38px !important;
     min-width: 278px /*240px*/ !important;
@@ -143,7 +137,6 @@
     }
   #personal-bookmarks .bookmark-item>.toolbarbutton-text, #import-button>.toolbarbutton-text {
     margin-left: 5px !important;
-    /*display: none !important;*/
   }
 
   /* FF154: la UA stylesheet (xul.css) ora applica a TUTTI i toolbarbutton
