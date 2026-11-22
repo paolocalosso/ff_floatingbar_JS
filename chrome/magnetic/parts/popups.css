@@ -585,3 +585,12 @@ tooltip {
 	padding: 6px 10px !important;
 	box-shadow: none !important;
 }
+
+/* Menu Aiuto: nova sostituisce la voce "Passare a un nuovo dispositivo" con
+   un banner viola (moz-promo) che pubblicizza Firefox per telefono e che con
+   il tema viene tagliato a sinistra. Lo nascondiamo, insieme al separatore
+   che lo precede, cosi' non restano due separatori di fila. */
+#appMenu-nova-switch-device-promo,
+#PanelUI-helpItems toolbarseparator:has(+ #appMenu-nova-switch-device-promo) {
+	display: none !important;
+}
