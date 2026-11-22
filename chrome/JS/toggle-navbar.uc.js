@@ -6,50 +6,50 @@
 
 (function() {
     'use strict';
-    
+
     const toolbox = document.getElementById('navigator-toolbox');
     const urlbar = document.getElementById('urlbar');
     let isVisible = true;  // Inizia visibile
 
     function showNavbar() {
         isVisible = true;
-        
+
         const transitionSpeed = '0.3s';
         const transitionEasing = 'cubic-bezier(0.77, 0, 0.18, 1)';
-        
+
         toolbox.style.setProperty('transition', `transform ${transitionSpeed} ${transitionEasing}, opacity ${transitionSpeed} ${transitionEasing}`, 'important');
         toolbox.style.setProperty('transform', 'rotateX(0deg)', 'important');
         toolbox.style.setProperty('opacity', '1', 'important');
         toolbox.style.setProperty('pointer-events', 'auto', 'important');
-        
+
         if (urlbar) {
             urlbar.style.setProperty('transition', `transform ${transitionSpeed} ${transitionEasing}, opacity ${transitionSpeed} ${transitionEasing}`, 'important');
             urlbar.style.setProperty('transform', 'rotateX(0deg)', 'important');
             urlbar.style.setProperty('opacity', '1', 'important');
             urlbar.style.setProperty('pointer-events', 'auto', 'important');
         }
-        
+
         console.log('Navbar shown');
     }
 
     function hideNavbar() {
         isVisible = false;
-        
+
         const transitionSpeed = '0.3s';
         const transitionEasing = 'cubic-bezier(0.77, 0, 0.18, 1)';
-        
+
         toolbox.style.setProperty('transition', `transform ${transitionSpeed} ${transitionEasing}, opacity ${transitionSpeed} ${transitionEasing}`, 'important');
         toolbox.style.setProperty('transform', 'rotateX(82deg)', 'important');
         toolbox.style.setProperty('opacity', '0', 'important');
         toolbox.style.setProperty('pointer-events', 'none', 'important');
-        
+
         if (urlbar) {
             urlbar.style.setProperty('transition', `transform ${transitionSpeed} ${transitionEasing}, opacity ${transitionSpeed} ${transitionEasing}`, 'important');
             urlbar.style.setProperty('transform', 'rotateX(89.9deg)', 'important');
             urlbar.style.setProperty('opacity', '0', 'important');
             urlbar.style.setProperty('pointer-events', 'none', 'important');
         }
-        
+
         console.log('Navbar hidden');
     }
 
@@ -146,7 +146,7 @@
                     isInPopup = true;
                     break;
                 }
-                
+
                 // Panel view/popup delle estensioni
                 if (target.tagName && (
                     target.tagName.toLowerCase() === 'panel' ||
@@ -156,7 +156,7 @@
                     isInPopup = true;
                     break;
                 }
-                
+
                 // Class che indica popup estensione
                 if (target.classList && (
                     target.classList.contains('panel-subview-body') ||
@@ -166,10 +166,10 @@
                     isInPopup = true;
                     break;
                 }
-                
+
                 target = target.parentElement;
             }
-            
+
             // Chiudi solo se NON sei in un popup E NON sei nel toolbox.
             // NB: la chiusura del pannello va fatta SEMPRE, anche a navbar
             // gia' nascosta: e' il caso in cui prima restava il fantasma
@@ -205,12 +205,12 @@
                         }
                     });
                 });
-                
+
                 observer.observe(tabBrowser, {
                     childList: true,
                     subtree: true
                 });
-                
+
                 console.log('Tab observer initialized');
             }
         } catch (e) {

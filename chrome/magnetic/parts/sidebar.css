@@ -3,20 +3,20 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 :root {
-  --background-color: transparent !important;
-  /* Also modify the following custom variables if necessary
-  --background-hover-color:
-  --background-hover-shadow:
-  --background-selection-hover-color:
-  */
-  /* Or like this
-  --background-hover-color: var(--background-hover-shadow);
-  --background-selection-hover-color: var(--background-hover-shadow);
-  */
+	--background-color: transparent !important;
+	/* Also modify the following custom variables if necessary
+	--background-hover-color:
+	--background-hover-shadow:
+	--background-selection-hover-color:
+	*/
+	/* Or like this
+	--background-hover-color: var(--background-hover-shadow);
+	--background-selection-hover-color: var(--background-hover-shadow);
+	*/
 }
 /* This can be removed after the fix */
 html, body, main {
-  background-color: var(--background-color);
+	background-color: var(--background-color);
 }
 
 
@@ -217,13 +217,13 @@ html, body, main {
 }
 
 .sidebar-splitter {
-  display: none !important;
+	display: none !important;
 }
 
 /* Forza sidebar visibile durante drag tab o lock manuale */
 :root[tab-dragging="true"] #sidebar-box,
 :root[sidebar-locked="true"] #sidebar-box {
-  left: 4px !important;
-  opacity: 1 !important;
-  transition: none !important;
+	left: 4px !important;
+	opacity: 1 !important;
+	transition: none !important;
 }

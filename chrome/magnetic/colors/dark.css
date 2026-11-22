@@ -66,8 +66,8 @@
 		--gnome-focused-urlbar-border: 0px !important;
 		--gnome-focused-urlbar-border-color: /*var(--uc-cream) var(--uc-accent)*/ transparent !important;
 		--gnome-urlbarView-shadow: 0 1px 5px 1px color-mix(in srgb, var(--uc-dark) 20%, transparent),
-		                           0 2px 14px 3px color-mix(in srgb, var(--uc-dark) 15%, transparent),
-		                           0 0 0 1px color-mix(in srgb, var(--uc-dark) 75%, transparent);
+			0 2px 14px 3px color-mix(in srgb, var(--uc-dark) 15%, transparent),
+			0 0 0 1px color-mix(in srgb, var(--uc-dark) 75%, transparent);
 
 		/* Switch */
 		--gnome-switch-background: rgba(255, 255, 255, .15);

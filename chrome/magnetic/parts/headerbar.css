@@ -4,33 +4,33 @@
 
 /* Headerbar */
 #nav-bar {
-  padding: 6px 3px !important;
-  border-radius: 50px !important;  /* Completamente tondo */
+	padding: 6px 3px !important;
+	border-radius: 50px !important;  /* Completamente tondo */
 }
 
 /* Headerbar CSD colors - GLASSMORPHISM SCURO
    FF150: backdrop-filter rotto su chrome XUL. Fallback: sfondo solido frosted. */
 :root[customtitlebar] #nav-bar {
-  background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
+	background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
 
-  border: 1px solid color-mix(in srgb, var(--uc-accent) 30%, transparent) !important;
-  box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 25px,
-              0 0 15px color-mix(in srgb, var(--uc-dark) 50%, transparent),
-              inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
-  border-radius: 50px !important;
-  overflow: visible !important;
+	border: 1px solid color-mix(in srgb, var(--uc-accent) 30%, transparent) !important;
+	box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 25px,
+		0 0 15px color-mix(in srgb, var(--uc-dark) 50%, transparent),
+		inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+	border-radius: 50px !important;
+	overflow: visible !important;
 }
 
 :root[customtitlebar] #nav-bar:-moz-window-inactive {
-  background: linear-gradient(rgba(35, 37, 36, 0.9), rgba(20, 22, 21, 0.9)) !important;
-  border: 1px solid color-mix(in srgb, var(--uc-accent) 18%, transparent) !important;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px,
-              inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+	background: linear-gradient(rgba(35, 37, 36, 0.9), rgba(20, 22, 21, 0.9)) !important;
+	border: 1px solid color-mix(in srgb, var(--uc-accent) 18%, transparent) !important;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px,
+		inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
 
 /* Assicura bordi arrotondati in tutti gli stati */
 :root[customtitlebar][sizemode="maximized"] #nav-bar {
-  border-radius: 50px !important;
+	border-radius: 50px !important;
 }
 
 /* FF157 / nova: Firefox disegna un separatore in fondo alla barra usando
@@ -41,9 +41,9 @@
    Nel design di nova la barra e' attaccata al contenuto e il separatore ci
    sta; con la barra flottante e staccata, no. */
 :root[customtitlebar] #nav-bar:not(#hack) {
-  border-block-end: 0 none !important;
-  border-bottom: 0 none !important;
-  --chrome-content-separator-color: transparent !important;
+	border-block-end: 0 none !important;
+	border-bottom: 0 none !important;
+	--chrome-content-separator-color: transparent !important;
 }
 
 /* FF157 / nova: .browserContainer disegna un bordo su block-start e
@@ -53,11 +53,11 @@
    l'angolo). Il design di nova lo prevede perche' li' la toolbar e' attaccata
    al contenuto; qui no, quindi lo togliamo. */
 .browserContainer {
-  border: none !important;
-  border-block-start: none !important;
-  border-inline-start: none !important;
-  border-start-start-radius: 0 !important;
-  --chrome-content-separator-color: transparent !important;
+	border: none !important;
+	border-block-start: none !important;
+	border-inline-start: none !important;
+	border-start-start-radius: 0 !important;
+	--chrome-content-separator-color: transparent !important;
 }
 
 

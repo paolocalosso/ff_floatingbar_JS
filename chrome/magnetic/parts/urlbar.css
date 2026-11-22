@@ -72,7 +72,7 @@
 	flex-basis: auto !important;
 }
 .urlbarView-results[wrap] > .urlbarView-row > .urlbarView-row-inner {
-    flex-wrap: nowrap !important;
+	flex-wrap: nowrap !important;
 }
 .urlbarView-row {
 	border-radius: 50px !important;
@@ -84,7 +84,7 @@
 /*end customizing*/
 
 .urlbarView-row:hover {
-border-radius: 50px !important;
+	border-radius: 50px !important;
 }
 
 .urlbarView-row[selected] .urlbarView-row-inner {
@@ -104,7 +104,7 @@ border-radius: 50px !important;
 /* Fix items overflow */
 .urlbarView[actionoverride] .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-no-wrap,
 .urlbarView-row[has-url]:not([type$="tab"]) > .urlbarView-row-inner > .urlbarView-no-wrap, .urlbarView-row[has-url]:is([type="remotetab"],
-[sponsored]):is(:hover, [selected]) > .urlbarView-row-inner > .urlbarView-no-wrap {
+	[sponsored]):is(:hover, [selected]) > .urlbarView-row-inner > .urlbarView-no-wrap {
 	max-width: calc(96% - 2 * (var(--urlbarView-favicon-width) + (6px + 2px))) !important;
 }
 
@@ -214,85 +214,85 @@ border-radius: 50px !important;
 #urlbar #urlbar-input,
 #urlbar .urlbar-input{ text-align: left !important; padding-left: 25px !important; }
 :root{
-  --toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
-  --toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus,Field);
+	--toolbar-field-background-color: var(--toolbar-field-non-lwt-bgcolor);
+	--toolbar-field-focus-background-color: var(--lwt-toolbar-field-focus,Field);
 }
 :root:-moz-lwtheme{
-  --toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
+	--toolbar-field-background-color: var(--lwt-toolbar-field-background-color);
 }
 .urlbarView-row-inner{
-  padding-inline-start: 6px !important;
+	padding-inline-start: 6px !important;
 }
 
 
 #nav-bar toolbarspring {
-    min-width: 5vw !important;
-    max-width: 5vw !important;
+	min-width: 5vw !important;
+	max-width: 5vw !important;
 }
 
 .urlbarView {
 	position: fixed !important;
-  left: 0vw !important;
-  border-radius: 25px !important;
-  border: solid 2px transparent !important;
-  box-shadow:
-    0 0 0 2px var(--uc-accent),
-    0 0 8px 2px var(--uc-cream) !important;
-  top: var(--urlbar-container-height);
-  color: white !important;
-  background-color: var(--toolbar-field-focus-background-color, inherit);
-  z-index: 4;
-  /* backdrop-filter: blur(10px) !important; FF150 broken */
-  filter: contrast(110%) brightness(90%);
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
-  animation: fade .5s forwards ease-in-out;
-  animation: slide .5s forwards ease-in-out;
-  animation-delay: 0s;
-  animation-duration: .5s !important;
+	left: 0vw !important;
+	border-radius: 25px !important;
+	border: solid 2px transparent !important;
+	box-shadow:
+		0 0 0 2px var(--uc-accent),
+		0 0 8px 2px var(--uc-cream) !important;
+	top: var(--urlbar-container-height);
+	color: white !important;
+	background-color: var(--toolbar-field-focus-background-color, inherit);
+	z-index: 4;
+	/* backdrop-filter: blur(10px) !important; FF150 broken */
+	filter: contrast(110%) brightness(90%);
+	box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+	animation: fade .5s forwards ease-in-out;
+	animation: slide .5s forwards ease-in-out;
+	animation-delay: 0s;
+	animation-duration: .5s !important;
 }
 /* FF157 / nova: e' stato introdotto .urlbarView-background, una superficie che
    dipinge il PROPRIO sfondo dietro la view, piu' un'ombra viola presa da
    --chrome-box-shadow. Risultato: due popup sovrapposti, con angoli e ombre
    doppie. Lo rendiamo trasparente, cosi' resta solo lo strato del tema. */
 .urlbarView-background {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  --chrome-box-shadow: none !important;
+	background: transparent !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+	border: none !important;
+	--chrome-box-shadow: none !important;
 }
 
 .urlbarView::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* trasparente: l'opacità la regola ora solo .urlbarView background-color */
-  background: transparent;
-  /* backdrop-filter: blur(15px) !important; FF150 broken */
-  border-radius: 25px;
-  z-index: -1;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* trasparente: l'opacità la regola ora solo .urlbarView background-color */
+	background: transparent;
+	/* backdrop-filter: blur(15px) !important; FF150 broken */
+	border-radius: 25px;
+	z-index: -1;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 :root[sizemode="maximized"] .urlbarView::before {
-  background: transparent;
-  /* backdrop-filter: blur(20px) saturate(180%) !important; FF150 broken */
+	background: transparent;
+	/* backdrop-filter: blur(20px) saturate(180%) !important; FF150 broken */
 }
 
 
 .urlbarView:not(:active):hover {
 	background-color: color-mix(in srgb, var(--uc-dark) 75%, transparent) !important;
 	transition: background-color 1s ease !important;
-  /* backdrop-filter: blur(10px) !important; FF150 broken */
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+	/* backdrop-filter: blur(10px) !important; FF150 broken */
+	box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
 }
 .urlbarView:not(:active) {
 	background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent) !important;
 	transition: background-color 1s ease !important;
-  /* backdrop-filter: blur(10px) !important; FF150 broken */
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+	/* backdrop-filter: blur(10px) !important; FF150 broken */
+	box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
 }
 
 /* FF153: il pannello risultati della urlbar torna opaco ma SOLO a finestra
@@ -317,26 +317,26 @@ border-radius: 50px !important;
 
 
 @keyframes slide {
-    100% { top: 100px; }
+	100% { top: 100px; }
 }
 @keyframes fade {
 	from {
-    transform: translateY(-10%);
-  }
-  to {
-    transform: translateY(-25%);
-  }
-    /*0% { opacity: 0; }
-   	100% { opacity: 1; }*/
+		transform: translateY(-10%);
+	}
+	to {
+		transform: translateY(-25%);
+	}
+	/*0% { opacity: 0; }
+	100% { opacity: 1; }*/
 }
 
 #urlbar-input::selection {
-color: white !important; /* text */
-background-color: var(--uc-dark) !important; /* background (green) */
+	color: white !important; /* text */
+	background-color: var(--uc-dark) !important; /* background (green) */
 }
 .urlbarView-row[selected] .urlbarView-row-inner,
 .urlbarView-row:hover .urlbarView-row-inner {
- background-color: var(--uc-accent) /*var(--uc-cream)*/ !important;
+	background-color: var(--uc-accent) /*var(--uc-cream)*/ !important;
 }
 
 #urlbar > #urlbar-input-container{ padding: 0px !important; width: auto !important; height: auto !important; }
@@ -349,26 +349,26 @@ background-color: var(--uc-dark) !important; /* background (green) */
 .urlbarView-row[selected] .urlbarView-url,
 .urlbarView-row[selected] .urlbarView-title,
 .urlbarView-row[selected] .urlbarView-action {
-  color: white !important;
+	color: white !important;
 }
 /* Colore del testo al hover */
 .urlbarView-row:hover .urlbarView-url,
 .urlbarView-row:hover .urlbarView-title {
-  color: white !important;
+	color: white !important;
 }
 
 
 /* Makes the window draggable from urlbar when urlbar is not focused. This means you can't click the urlbar text to activate it normally. But right-click works to activate urlbar. */
 .urlbar-input-box,.urlbar-input,#urlbar-scheme,#urlbar-container{
-  -moz-window-dragging: drag;
-  cursor: default;
+	-moz-window-dragging: drag;
+	cursor: default;
 }
 .urlbar-input-container > box,
 #page-action-buttons,
 #urlbar-container:focus-within,
 #urlbar-container:focus-within :is(.urlbar-input-box,.urlbar-input,#urlbar-scheme,#urlbar-container){
-  -moz-window-dragging: no-drag;
-  cursor: auto;
+	-moz-window-dragging: no-drag;
+	cursor: auto;
 }
 /* Vetro sotto la tendina dei risultati.
    backdrop-filter non funziona sul chrome (bug 1799334) e la tendina non e' una

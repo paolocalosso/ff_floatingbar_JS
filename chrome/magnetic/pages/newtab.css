@@ -1,174 +1,174 @@
 /* about:newtab */
 
 @-moz-document url("about:newtab"), url("about:home") {
-    body {
-        --newtab-background-color: #282828 /*var(--uc-accent)*/ /*#282828*/ /*var(--gnome-browser-before-load-background)*/ !important;
-        --newtab-background-color-secondary: var(--gnome-menu-background) !important;
-        --newtab-primary-action-background: var(--gnome-accent) !important;
-    }
-    .personalize-button {
-        /*margin-top: 31px !important;
-        margin- right: 31px !important;*/
-        width: 37px !important;
-        min-width: 37px !important;
-        border-radius: 500px !important;
-        background-color: var(--uc-dark) !important;
-        transition: transform 1.5s ease;
-    }
-    .personalize-button > div > img {
-        width: 75% !important;
-    }
+	body {
+		--newtab-background-color: #282828 /*var(--uc-accent)*/ /*#282828*/ /*var(--gnome-browser-before-load-background)*/ !important;
+		--newtab-background-color-secondary: var(--gnome-menu-background) !important;
+		--newtab-primary-action-background: var(--gnome-accent) !important;
+	}
+	.personalize-button {
+		/*margin-top: 31px !important;
+		margin- right: 31px !important;*/
+		width: 37px !important;
+		min-width: 37px !important;
+		border-radius: 500px !important;
+		background-color: var(--uc-dark) !important;
+		transition: transform 1.5s ease;
+	}
+	.personalize-button > div > img {
+		width: 75% !important;
+	}
 
-    .personalize-button:hover {
-        width: fit-content !important;
-        min-width: var(--button-full-width) !important;
-        background-color: var(--uc-accent) !important;
-    }
-    .context-menu-button {
-        border-radius: 25px !important;
-        border-color: var(--uc-dark) !important;
-        background-color: var(--uc-dark) !important;
+	.personalize-button:hover {
+		width: fit-content !important;
+		min-width: var(--button-full-width) !important;
+		background-color: var(--uc-accent) !important;
+	}
+	.context-menu-button {
+		border-radius: 25px !important;
+		border-color: var(--uc-dark) !important;
+		background-color: var(--uc-dark) !important;
 
-        transition-delay: 500ms,500ms !important;
-    }
-    .context-menu-button:hover {
-        border-radius: 25px !important;
-        background-color: var(--uc-accent) !important;
-        border-color: var(--uc-accent) !important;
-    }
-    .section-top-bar {
-        display: hidden !important;
-        margin-top: 0px !important;
-    }
-    .section-title {
-        display: none !important;
-    }
-    .ds-top-sites {
-        margin-top: 75px !important;
-    }
-    .ds-highlights {
-        border-top: 1px solid var(--uc-cream)  !important;
-    }
-    .card {
-        border-radius: 25px !important;
-    }
-    .card-outer {
-        border-radius: 25px !important;
-        transition: all .5s ease !important;
-    }
-    .card-outer:hover {
-        z-index: 15 !important;
-        border-radius: 25px !important;
-        transform: scale(0.95) !important;
-    }
-    .card-preview-image-outer {
-        border-radius: 25px 25px 0 0  !important;
-    }
+		transition-delay: 500ms,500ms !important;
+	}
+	.context-menu-button:hover {
+		border-radius: 25px !important;
+		background-color: var(--uc-accent) !important;
+		border-color: var(--uc-accent) !important;
+	}
+	.section-top-bar {
+		display: hidden !important;
+		margin-top: 0px !important;
+	}
+	.section-title {
+		display: none !important;
+	}
+	.ds-top-sites {
+		margin-top: 75px !important;
+	}
+	.ds-highlights {
+		border-top: 1px solid var(--uc-cream)  !important;
+	}
+	.card {
+		border-radius: 25px !important;
+	}
+	.card-outer {
+		border-radius: 25px !important;
+		transition: all .5s ease !important;
+	}
+	.card-outer:hover {
+		z-index: 15 !important;
+		border-radius: 25px !important;
+		transform: scale(0.95) !important;
+	}
+	.card-preview-image-outer {
+		border-radius: 25px 25px 0 0  !important;
+	}
 
-    .tile {
-        border-radius: 50px 50px 50px 0 !important;
-        background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent)  !important;
-        backdrop-filter: blur(10px) !important;
-        transition: transform .5s ease;
-        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
-    }
-    .tile:hover {
-        transform: scale(0.95) !important;
-        background-color: var(--uc-accent)  !important;
-        box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent)  !important;
-    }
-    .title-label {
-        border-radius: 500px !important;
+	.tile {
+		border-radius: 50px 50px 50px 0 !important;
+		background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent)  !important;
+		backdrop-filter: blur(10px) !important;
+		transition: transform .5s ease;
+		box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+	}
+	.tile:hover {
+		transform: scale(0.95) !important;
+		background-color: var(--uc-accent)  !important;
+		box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent)  !important;
+	}
+	.title-label {
+		border-radius: 500px !important;
 
-        font-weight: bold;
-        font-size: 1.0em  !important;
-    }
+		font-weight: bold;
+		font-size: 1.0em  !important;
+	}
 
-    .top-site-icon {
-        border-radius: 50% !important;
-        transition: transform .5s ease;
-    }
-    .top-site-icon:hover {
-        border-radius: 50% !important;
-        transform: rotate(360deg) !important;
-    }
-    .top-site-outer:hover {
-        border-radius: 20px !important;
-        background-color:  color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
-        /* backdrop-filter: blur(10px) !important; rimosso: niente blur intorno alle shortcut in hover */
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-    }
-    /*.rich-icon*/
-    .context-menu {
-        -moz-appearance: none !important;
-        border-radius: 15px !important;
-        color: var(--gnome-toolbar-color) !important;
-        font: menu !important;
-        min-width: 120px !important;
-        padding: 4px 4px !important;
-        min-height: 32px !important;
-        background-color: color-mix(in srgb, var(--uc-dark) 95%, transparent);
-    }
-    .menuitem {
-        border-radius: 30px !important;
-        color: var(--gnome-toolbar-color) !important;
-        font: menu !important;
-        min-width: 120px !important;
-        padding: 4px 4px !important;
-        min-height: 32px !important;
-        background-color: var(--uc-cream) !important;
-    }
+	.top-site-icon {
+		border-radius: 50% !important;
+		transition: transform .5s ease;
+	}
+	.top-site-icon:hover {
+		border-radius: 50% !important;
+		transform: rotate(360deg) !important;
+	}
+	.top-site-outer:hover {
+		border-radius: 20px !important;
+		background-color:  color-mix(in srgb, var(--uc-cream) 15%, transparent) !important;
+		/* backdrop-filter: blur(10px) !important; rimosso: niente blur intorno alle shortcut in hover */
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+	}
+	/*.rich-icon*/
+	.context-menu {
+		-moz-appearance: none !important;
+		border-radius: 15px !important;
+		color: var(--gnome-toolbar-color) !important;
+		font: menu !important;
+		min-width: 120px !important;
+		padding: 4px 4px !important;
+		min-height: 32px !important;
+		background-color: color-mix(in srgb, var(--uc-dark) 95%, transparent);
+	}
+	.menuitem {
+		border-radius: 30px !important;
+		color: var(--gnome-toolbar-color) !important;
+		font: menu !important;
+		min-width: 120px !important;
+		padding: 4px 4px !important;
+		min-height: 32px !important;
+		background-color: var(--uc-cream) !important;
+	}
 
-    [role="menuitem"] {
-        border-radius: 30px !important;
-        color: var(--gnome-toolbar-color) !important;
-        font: menu !important;
-        font-size: 50% !important;
-        min-width: 270px !important;
-        padding: 4px 10px !important;
-        min-height: 32px !important;
-        background-color: transparent !important;
-        /* min-height da sola non centra nulla: senza questo il testo resta
-           appoggiato in alto nei 32px della voce. */
-        display: flex !important;
-        align-items: center !important;
-    }
-    [role="menuitem"]:hover {
-        border-radius: 30px !important;
-        transition: .35s !important;
-        padding-left: 16px!important;
-        min-height: 32px !important;
-        background-color: var(--uc-accent) !important;
-    }
-    .separator {
-        display: none !important;
-    }
-    .close-button-wrapper {
-        background-color: #212320  !important;
-    }
-    .icon-pin-small {
-        fill: var(--uc-cream) !important;
-    }
-    .top-site-outer:hover .icon-pin-small {
-        fill: var(--uc-dark) !important;
-    }
+	[role="menuitem"] {
+		border-radius: 30px !important;
+		color: var(--gnome-toolbar-color) !important;
+		font: menu !important;
+		font-size: 50% !important;
+		min-width: 270px !important;
+		padding: 4px 10px !important;
+		min-height: 32px !important;
+		background-color: transparent !important;
+		/* min-height da sola non centra nulla: senza questo il testo resta
+		   appoggiato in alto nei 32px della voce. */
+		display: flex !important;
+		align-items: center !important;
+	}
+	[role="menuitem"]:hover {
+		border-radius: 30px !important;
+		transition: .35s !important;
+		padding-left: 16px!important;
+		min-height: 32px !important;
+		background-color: var(--uc-accent) !important;
+	}
+	.separator {
+		display: none !important;
+	}
+	.close-button-wrapper {
+		background-color: #212320  !important;
+	}
+	.icon-pin-small {
+		fill: var(--uc-cream) !important;
+	}
+	.top-site-outer:hover .icon-pin-small {
+		fill: var(--uc-dark) !important;
+	}
 }
 
 @-moz-document url("about:home"),
-               url("about:newtab")
+url("about:newtab")
 {
-  :root[lwt-newtab-brighttext] {
-    --newtab-primary-action-background: transparent !important;
-  }
+	:root[lwt-newtab-brighttext] {
+		--newtab-primary-action-background: transparent !important;
+	}
 }
 
 
 @-moz-document url("about:home"), url("about:newtab"){
-  .search-wrapper input,
-  .top-site-outer .tile{
-    outline: none !important;
-  }
+	.search-wrapper input,
+	.top-site-outer .tile{
+		outline: none !important;
+	}
 }
 
 /*increase shortcuts columns*/
@@ -190,242 +190,242 @@
    con `.nova-enabled` (stessa o più alta specificità + !important).
    =========================================================================== */
 @-moz-document url("about:newtab"), url("about:home") {
-    /* Il <li> esterno: trasparente, senza padding aggiuntivo */
-    .nova-enabled .top-site-outer,
-    .top-site-outer {
-        background-color: transparent !important;
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
+	/* Il <li> esterno: trasparente, senza padding aggiuntivo */
+	.nova-enabled .top-site-outer,
+	.top-site-outer {
+		background-color: transparent !important;
+		background: transparent !important;
+		border: none !important;
+		box-shadow: none !important;
+	}
 
-    /* Il nuovo wrapper interno introdotto da nova */
-    .nova-enabled .top-site-inner,
-    .top-site-inner,
-    .nova-enabled .top-site-inner:is(:hover, :focus, :focus-within, :active),
-    .top-site-inner:is(:hover, :focus, :focus-within, :active) {
-        background-color: transparent !important;
-        background: transparent !important;
-        background-image: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-    }
+	/* Il nuovo wrapper interno introdotto da nova */
+	.nova-enabled .top-site-inner,
+	.top-site-inner,
+	.nova-enabled .top-site-inner:is(:hover, :focus, :focus-within, :active),
+	.top-site-inner:is(:hover, :focus, :focus-within, :active) {
+		background-color: transparent !important;
+		background: transparent !important;
+		background-image: none !important;
+		border: none !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+	}
 
-    /* Annulla anche le variabili nova che potrebbero dipingere
-       un hover translucido su top-site-inner / top-site-button */
-    .nova-enabled .top-site-outer,
-    .nova-enabled .top-site-inner,
-    .nova-enabled .top-site-button {
-        --newtab-element-hover-color: transparent !important;
-        --newtab-element-active-color: transparent !important;
-        --newtab-button-background: transparent !important;
-        --newtab-button-hover-background: transparent !important;
-        --newtab-button-active-background: transparent !important;
-        --background-color-box: transparent !important;
-        --background-color-box-info: transparent !important;
-    }
+	/* Annulla anche le variabili nova che potrebbero dipingere
+	   un hover translucido su top-site-inner / top-site-button */
+	.nova-enabled .top-site-outer,
+	.nova-enabled .top-site-inner,
+	.nova-enabled .top-site-button {
+		--newtab-element-hover-color: transparent !important;
+		--newtab-element-active-color: transparent !important;
+		--newtab-button-background: transparent !important;
+		--newtab-button-hover-background: transparent !important;
+		--newtab-button-active-background: transparent !important;
+		--background-color-box: transparent !important;
+		--background-color-box-info: transparent !important;
+	}
 
-    /* L'<a> top-site-button: di default in nova ha un background scuro
-       a forma di pillola/rettangolo che copre la tile sottostante.
-       Lo rendiamo trasparente così la .tile del tema torna a vedersi. */
-    .nova-enabled .top-site-button,
-    .top-site-button {
-        background-color: transparent !important;
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        color: inherit !important;
-    }
-    .nova-enabled .top-site-button:hover,
-    .top-site-button:hover,
-    .nova-enabled .top-site-button:focus,
-    .top-site-button:focus,
-    .nova-enabled .top-site-button:active,
-    .top-site-button:active {
-        background-color: transparent !important;
-        background: transparent !important;
-        outline: none !important;
-        box-shadow: none !important;
-    }
+	/* L'<a> top-site-button: di default in nova ha un background scuro
+	   a forma di pillola/rettangolo che copre la tile sottostante.
+	   Lo rendiamo trasparente così la .tile del tema torna a vedersi. */
+	.nova-enabled .top-site-button,
+	.top-site-button {
+		background-color: transparent !important;
+		background: transparent !important;
+		border: none !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+		color: inherit !important;
+	}
+	.nova-enabled .top-site-button:hover,
+	.top-site-button:hover,
+	.nova-enabled .top-site-button:focus,
+	.top-site-button:focus,
+	.nova-enabled .top-site-button:active,
+	.top-site-button:active {
+		background-color: transparent !important;
+		background: transparent !important;
+		outline: none !important;
+		box-shadow: none !important;
+	}
 
-    /* Firefox 151 nova mette un hover background CON backdrop-filter
-       direttamente sul .top-site-button usando un selettore tipo
-       `.nova-enabled .top-site-button:is(:hover, :focus-visible)`
-       (specificità 0,4,1). Per vincere usiamo lo stesso pattern :is()
-       più alta specificità + spegnimento esplicito del backdrop-filter. */
-    .nova-enabled .top-site-button:is(:hover, :focus, :focus-visible, :active),
-    .nova-enabled .top-site-inner:is(:hover, :focus-within),
-    .nova-enabled .top-site-outer:is(:hover, :focus-within) .top-site-button,
-    .nova-enabled .top-site-outer:is(:hover, :focus-within) .top-site-inner {
-        background-color: transparent !important;
-        background-image: none !important;
-        background: transparent !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        box-shadow: none !important;
-        outline: none !important;
-    }
+	/* Firefox 151 nova mette un hover background CON backdrop-filter
+	   direttamente sul .top-site-button usando un selettore tipo
+	   `.nova-enabled .top-site-button:is(:hover, :focus-visible)`
+	   (specificità 0,4,1). Per vincere usiamo lo stesso pattern :is()
+	   più alta specificità + spegnimento esplicito del backdrop-filter. */
+	.nova-enabled .top-site-button:is(:hover, :focus, :focus-visible, :active),
+	.nova-enabled .top-site-inner:is(:hover, :focus-within),
+	.nova-enabled .top-site-outer:is(:hover, :focus-within) .top-site-button,
+	.nova-enabled .top-site-outer:is(:hover, :focus-within) .top-site-inner {
+		background-color: transparent !important;
+		background-image: none !important;
+		background: transparent !important;
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+		box-shadow: none !important;
+		outline: none !important;
+	}
 
-    /* Spegniamo eventuali pseudo-elementi ::before/::after che
-       nova potrebbe usare per disegnare il rettangolo blurrato */
-    .nova-enabled .top-site-button::before,
-    .nova-enabled .top-site-button::after,
-    .nova-enabled .top-site-inner::before,
-    .nova-enabled .top-site-inner::after,
-    .top-site-button::before,
-    .top-site-button::after {
-        background: transparent !important;
-        background-color: transparent !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        box-shadow: none !important;
-        content: none !important;
-    }
+	/* Spegniamo eventuali pseudo-elementi ::before/::after che
+	   nova potrebbe usare per disegnare il rettangolo blurrato */
+	.nova-enabled .top-site-button::before,
+	.nova-enabled .top-site-button::after,
+	.nova-enabled .top-site-inner::before,
+	.nova-enabled .top-site-inner::after,
+	.top-site-button::before,
+	.top-site-button::after {
+		background: transparent !important;
+		background-color: transparent !important;
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+		box-shadow: none !important;
+		content: none !important;
+	}
 
-    /* .tile — bumpiamo specificità con .nova-enabled per vincere
-       sulle regole interne di Firefox 151. Stesso look del tema:
-       pillola asimmetrica con blur e ombra. */
-    .nova-enabled .top-site-outer .tile,
-    .top-site-outer .tile {
-        border-radius: 50px 50px 50px 0 !important;
-        background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent) !important;
-        backdrop-filter: blur(10px) !important;
-        transition: transform .5s ease, background-color .5s ease !important;
-        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
-        border: none !important;
-    }
-    .nova-enabled .top-site-outer:hover .tile,
-    .top-site-outer:hover .tile,
-    /* alta specificità per battere `.nova-enabled .top-site-button:is(:hover, :focus-visible) .tile` */
-    .nova-enabled .top-site-button:is(:hover, :focus, :focus-visible, :active) .tile,
-    .nova-enabled .top-site-outer:is(:hover, :focus-within) .tile {
-        transform: scale(0.95) !important;
-        background-color: var(--uc-accent) !important;
-        backdrop-filter: blur(10px) !important;
-        box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent) !important;
-    }
+	/* .tile — bumpiamo specificità con .nova-enabled per vincere
+	   sulle regole interne di Firefox 151. Stesso look del tema:
+	   pillola asimmetrica con blur e ombra. */
+	.nova-enabled .top-site-outer .tile,
+	.top-site-outer .tile {
+		border-radius: 50px 50px 50px 0 !important;
+		background-color: color-mix(in srgb, var(--uc-dark) 70%, transparent) !important;
+		backdrop-filter: blur(10px) !important;
+		transition: transform .5s ease, background-color .5s ease !important;
+		box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+		border: none !important;
+	}
+	.nova-enabled .top-site-outer:hover .tile,
+	.top-site-outer:hover .tile,
+	/* alta specificità per battere `.nova-enabled .top-site-button:is(:hover, :focus-visible) .tile` */
+	.nova-enabled .top-site-button:is(:hover, :focus, :focus-visible, :active) .tile,
+	.nova-enabled .top-site-outer:is(:hover, :focus-within) .tile {
+		transform: scale(0.95) !important;
+		background-color: var(--uc-accent) !important;
+		backdrop-filter: blur(10px) !important;
+		box-shadow: 0 0 0 10px color-mix(in srgb, var(--uc-dark) 52.16%, transparent) !important;
+	}
 
-    /* L'icona dentro la tile resta tonda e ruota in hover */
-    .nova-enabled .top-site-outer .top-site-icon,
-    .top-site-outer .top-site-icon {
-        border-radius: 50% !important;
-        transition: transform .5s ease !important;
-    }
-    .nova-enabled .top-site-outer:hover .top-site-icon,
-    .top-site-outer:hover .top-site-icon {
-        transform: rotate(360deg) !important;
-    }
+	/* L'icona dentro la tile resta tonda e ruota in hover */
+	.nova-enabled .top-site-outer .top-site-icon,
+	.top-site-outer .top-site-icon {
+		border-radius: 50% !important;
+		transition: transform .5s ease !important;
+	}
+	.nova-enabled .top-site-outer:hover .top-site-icon,
+	.top-site-outer:hover .top-site-icon {
+		transform: rotate(360deg) !important;
+	}
 
-    /* Titolo sotto la tile — coerente col resto del tema */
-    .nova-enabled .top-site-outer .title,
-    .top-site-outer .title {
-        color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
-        font-weight: bold !important;
-        font-size: 1.0em !important;
-        background: transparent !important;
-    }
+	/* Titolo sotto la tile — coerente col resto del tema */
+	.nova-enabled .top-site-outer .title,
+	.top-site-outer .title {
+		color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
+		font-weight: bold !important;
+		font-size: 1.0em !important;
+		background: transparent !important;
+	}
 
-    /* Pin icon — coerente col tema (beige in normale, scuro in hover) */
-    .nova-enabled .icon-pin-small,
-    .icon-pin-small {
-        fill: var(--uc-cream) !important;
-    }
-    .nova-enabled .top-site-outer:hover .icon-pin-small,
-    .top-site-outer:hover .icon-pin-small {
-        fill: var(--uc-dark) !important;
-    }
+	/* Pin icon — coerente col tema (beige in normale, scuro in hover) */
+	.nova-enabled .icon-pin-small,
+	.icon-pin-small {
+		fill: var(--uc-cream) !important;
+	}
+	.nova-enabled .top-site-outer:hover .icon-pin-small,
+	.top-site-outer:hover .icon-pin-small {
+		fill: var(--uc-dark) !important;
+	}
 
-    /* Pulsante menu contestuale (•••) di ogni top-site */
-    .nova-enabled .top-site-outer .context-menu-button,
-    .top-site-outer .context-menu-button {
-        border-radius: 50% !important;
-        border-color: var(--uc-dark) !important;
-        background-color: var(--uc-dark) !important;
-        transition: background-color .35s ease, border-color .35s ease !important;
-    }
-    .nova-enabled .top-site-outer .context-menu-button:hover,
-    .top-site-outer .context-menu-button:hover {
-        background-color: var(--uc-accent) !important;
-        border-color: var(--uc-accent) !important;
-    }
+	/* Pulsante menu contestuale (•••) di ogni top-site */
+	.nova-enabled .top-site-outer .context-menu-button,
+	.top-site-outer .context-menu-button {
+		border-radius: 50% !important;
+		border-color: var(--uc-dark) !important;
+		background-color: var(--uc-dark) !important;
+		transition: background-color .35s ease, border-color .35s ease !important;
+	}
+	.nova-enabled .top-site-outer .context-menu-button:hover,
+	.top-site-outer .context-menu-button:hover {
+		background-color: var(--uc-accent) !important;
+		border-color: var(--uc-accent) !important;
+	}
 
-    /* ---------------------------------------------------------------
-       Bottone "Personalizza" (in basso a destra).
-       In nova è diventato un <moz-button class="open-customization-button">
-       che è un Web Component con shadow DOM. Il <button> interno espone
-       il part="button", quindi lo penetriamo con ::part(button).
-       Colori gruvbox del tema: var(--uc-dark) di base, var(--uc-accent) in hover. */
-    .personalizeButtonWrapper {
-        position: fixed !important;
-        bottom: 16px !important;
-        inset-inline-end: 16px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: transparent !important;
-        z-index: 100 !important;
-    }
+	/* ---------------------------------------------------------------
+	   Bottone "Personalizza" (in basso a destra).
+	   In nova è diventato un <moz-button class="open-customization-button">
+	   che è un Web Component con shadow DOM. Il <button> interno espone
+	   il part="button", quindi lo penetriamo con ::part(button).
+	   Colori gruvbox del tema: var(--uc-dark) di base, var(--uc-accent) in hover. */
+	.personalizeButtonWrapper {
+		position: fixed !important;
+		bottom: 16px !important;
+		inset-inline-end: 16px !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		background: transparent !important;
+		z-index: 100 !important;
+	}
 
-    /* Variabili custom di moz-button — settarle sull'host propaga
-       i colori nello shadow DOM senza bisogno di ::part */
-    moz-button.open-customization-button {
-        --button-background-color: var(--uc-dark) !important;
-        --button-background-color-hover: var(--uc-accent) !important;
-        --button-background-color-active: var(--uc-accent) !important;
-        --button-text-color: var(--uc-accent) !important;
-        --button-text-color-hover: var(--uc-dark) !important;
-        --button-text-color-active: var(--uc-dark) !important;
-        --button-border-color: var(--uc-accent) !important;
-        --button-border-color-hover: var(--uc-accent) !important;
-        --button-border-radius: 500px !important;
-        /* svg.context-properties.content.enabled fa sì che fill
-           segua "color", così anche l'icona si tinge */
-        -moz-context-properties: fill !important;
-        fill: currentColor !important;
-        transition: transform .3s ease !important;
-    }
+	/* Variabili custom di moz-button — settarle sull'host propaga
+	   i colori nello shadow DOM senza bisogno di ::part */
+	moz-button.open-customization-button {
+		--button-background-color: var(--uc-dark) !important;
+		--button-background-color-hover: var(--uc-accent) !important;
+		--button-background-color-active: var(--uc-accent) !important;
+		--button-text-color: var(--uc-accent) !important;
+		--button-text-color-hover: var(--uc-dark) !important;
+		--button-text-color-active: var(--uc-dark) !important;
+		--button-border-color: var(--uc-accent) !important;
+		--button-border-color-hover: var(--uc-accent) !important;
+		--button-border-radius: 500px !important;
+		/* svg.context-properties.content.enabled fa sì che fill
+		   segua "color", così anche l'icona si tinge */
+		-moz-context-properties: fill !important;
+		fill: currentColor !important;
+		transition: transform .3s ease !important;
+	}
 
-    /* Fallback diretto sullo shadow part — alcune build di Firefox 151
-       non leggono ancora tutte le custom properties */
-    moz-button.open-customization-button::part(button) {
-        background-color: var(--uc-dark) !important;
-        color: var(--uc-accent) !important;
-        border: 1px solid var(--uc-accent) !important;
-        border-radius: 500px !important;
-        padding: 6px 16px !important;
-        font-weight: 600 !important;
-        transition: background-color .3s ease,
-                    color .3s ease,
-                    border-color .3s ease !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
-    }
+	/* Fallback diretto sullo shadow part — alcune build di Firefox 151
+	   non leggono ancora tutte le custom properties */
+	moz-button.open-customization-button::part(button) {
+		background-color: var(--uc-dark) !important;
+		color: var(--uc-accent) !important;
+		border: 1px solid var(--uc-accent) !important;
+		border-radius: 500px !important;
+		padding: 6px 16px !important;
+		font-weight: 600 !important;
+		transition: background-color .3s ease,
+			color .3s ease,
+			border-color .3s ease !important;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+	}
 
-    moz-button.open-customization-button:hover::part(button),
-    moz-button.open-customization-button:focus::part(button) {
-        background-color: var(--uc-accent) !important;
-        color: var(--uc-dark) !important;
-        border-color: var(--uc-accent) !important;
-    }
+	moz-button.open-customization-button:hover::part(button),
+	moz-button.open-customization-button:focus::part(button) {
+		background-color: var(--uc-accent) !important;
+		color: var(--uc-dark) !important;
+		border-color: var(--uc-accent) !important;
+	}
 
-    moz-button.open-customization-button:active::part(button) {
-        background-color: var(--uc-accent) !important;
-        color: var(--uc-dark) !important;
-        transform: scale(0.96) !important;
-    }
+	moz-button.open-customization-button:active::part(button) {
+		background-color: var(--uc-accent) !important;
+		color: var(--uc-dark) !important;
+		transform: scale(0.96) !important;
+	}
 
-    /* Effetto scale dell'host in hover, coerente con le tile */
-    moz-button.open-customization-button:hover {
-        transform: scale(1.05) !important;
-    }
+	/* Effetto scale dell'host in hover, coerente con le tile */
+	moz-button.open-customization-button:hover {
+		transform: scale(1.05) !important;
+	}
 }
 .button-background {
-    border: 1px solid var(--uc-accent) !important;
+	border: 1px solid var(--uc-accent) !important;
 }
 .nova-enabled .top-site-outer {
-    width: 95px !important;
+	width: 95px !important;
 }
 
 /* NB: fino a FF154 serviva qui un `grid-row: 1 / span 2` su `.nova-enabled
@@ -441,44 +441,44 @@
    varianti di classe e le custom properties del tipo "primary".
    =========================================================================== */
 @-moz-document url("about:newtab"), url("about:home") {
-    /* Vale per tutti i moz-button della new tab (Personalizza, "+" Aggiungi
-       scorciatoia, ecc.): le custom properties ereditano nello shadow DOM,
-       dove moz-button.css colora .button-background[type="primary"]. */
-    moz-button {
-        --button-background-color: var(--uc-dark) !important;
-        --button-background-color-hover: var(--uc-accent) !important;
-        --button-background-color-active: var(--uc-accent) !important;
-        --button-background-color-primary: var(--uc-dark) !important;
-        --button-background-color-primary-hover: var(--uc-accent) !important;
-        --button-background-color-primary-active: var(--uc-accent) !important;
-        --button-text-color: var(--uc-accent) !important;
-        --button-text-color-hover: var(--uc-dark) !important;
-        --button-text-color-active: var(--uc-dark) !important;
-        --button-text-color-primary: var(--uc-accent) !important;
-        --button-text-color-primary-hover: var(--uc-dark) !important;
-        --button-border-color: var(--uc-accent) !important;
-        --button-border-color-hover: var(--uc-accent) !important;
-        --button-border-radius: 500px !important;
-    }
+	/* Vale per tutti i moz-button della new tab (Personalizza, "+" Aggiungi
+	   scorciatoia, ecc.): le custom properties ereditano nello shadow DOM,
+	   dove moz-button.css colora .button-background[type="primary"]. */
+	moz-button {
+		--button-background-color: var(--uc-dark) !important;
+		--button-background-color-hover: var(--uc-accent) !important;
+		--button-background-color-active: var(--uc-accent) !important;
+		--button-background-color-primary: var(--uc-dark) !important;
+		--button-background-color-primary-hover: var(--uc-accent) !important;
+		--button-background-color-primary-active: var(--uc-accent) !important;
+		--button-text-color: var(--uc-accent) !important;
+		--button-text-color-hover: var(--uc-dark) !important;
+		--button-text-color-active: var(--uc-dark) !important;
+		--button-text-color-primary: var(--uc-accent) !important;
+		--button-text-color-primary-hover: var(--uc-dark) !important;
+		--button-border-color: var(--uc-accent) !important;
+		--button-border-color-hover: var(--uc-accent) !important;
+		--button-border-radius: 500px !important;
+	}
 
-    /* Fallback diretto sullo shadow part, per le build che non leggono
-       tutte le custom properties qui sopra. NB: part="button" e' esposto
-       dallo <span class="button-background">, non dal <button> interno. */
-    moz-button::part(button) {
-        background-color: var(--uc-dark) !important;
-        background-image: none !important;
-        color: var(--uc-accent) !important;
-        border: 1px solid var(--uc-accent) !important;
-        border-radius: 500px !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
-        transition: background-color .3s ease, color .3s ease !important;
-    }
+	/* Fallback diretto sullo shadow part, per le build che non leggono
+	   tutte le custom properties qui sopra. NB: part="button" e' esposto
+	   dallo <span class="button-background">, non dal <button> interno. */
+	moz-button::part(button) {
+		background-color: var(--uc-dark) !important;
+		background-image: none !important;
+		color: var(--uc-accent) !important;
+		border: 1px solid var(--uc-accent) !important;
+		border-radius: 500px !important;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45) !important;
+		transition: background-color .3s ease, color .3s ease !important;
+	}
 
-    moz-button:is(:hover, :focus)::part(button) {
-        background-color: var(--uc-accent) !important;
-        color: var(--uc-dark) !important;
-        border-color: var(--uc-accent) !important;
-    }
+	moz-button:is(:hover, :focus)::part(button) {
+		background-color: var(--uc-accent) !important;
+		color: var(--uc-dark) !important;
+		border-color: var(--uc-accent) !important;
+	}
 }
 
 /* ===========================================================================
@@ -491,14 +491,14 @@
    DOM, e il background diretto sull'host batte le regole :host interne.
    =========================================================================== */
 @-moz-document url("about:newtab"), url("about:home") {
-    panel-list {
-        --panel-background: color-mix(in srgb, var(--uc-dark) 95%, transparent) !important;
-        --panel-color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
-        --panel-border-color: var(--uc-accent) !important;
-        background-color: color-mix(in srgb, var(--uc-dark) 95%, transparent) !important;
-        color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
-        border-radius: 15px !important;
-    }
+	panel-list {
+		--panel-background: color-mix(in srgb, var(--uc-dark) 95%, transparent) !important;
+		--panel-color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
+		--panel-border-color: var(--uc-accent) !important;
+		background-color: color-mix(in srgb, var(--uc-dark) 95%, transparent) !important;
+		color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
+		border-radius: 15px !important;
+	}
 }
 
 
@@ -507,197 +507,197 @@
    newtab.css: messo in fondo mantiene lo stesso ordine nella cascata. ===== */
 
 @-moz-document url(about:newtab), url("about:home") {
-    .search-wrapper {margin-top: 10px !important}
-    .search-handoff-button {
-        border-radius: 40px 40px 40px 0px  !important;
-        border-color: transparent /*var(--uc-accent)*/ !important;
-        background-color: rgb(40,40,40,0.65) !important;
-        transition: background-color 2s ease !important;
-        transition: width 0.5s ease !important;
-        border-bottom: 1px solid transparent !important;
+	.search-wrapper {margin-top: 10px !important}
+	.search-handoff-button {
+		border-radius: 40px 40px 40px 0px  !important;
+		border-color: transparent /*var(--uc-accent)*/ !important;
+		background-color: rgb(40,40,40,0.65) !important;
+		transition: background-color 2s ease !important;
+		transition: width 0.5s ease !important;
+		border-bottom: 1px solid transparent !important;
 
-        color: #fff !important;
-        font: menu !important;
+		color: #fff !important;
+		font: menu !important;
 
-        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
-        backdrop-filter: blur(10px) !important;
-        display-inline: flex !important;
-        width: 50% !important;
+		box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+		backdrop-filter: blur(10px) !important;
+		display-inline: flex !important;
+		width: 50% !important;
 
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
-        border-radius: 40px 40px 40px 0px  !important;
-
-
-        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent)  !important;
-        border: 1px solid transparent !important;
-        transition: border-bottom 2s ease !important;
-        border-top: 1px solid  transparent !important;
-        border-left: 1px solid  transparent !important;
-        border-right: 1px solid  transparent !important;
-        backdrop-filter: blur(10px) !important;
-        color: transparent !important;
-        font: menu !important;
-
-        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
-        display-inline: flex !important;
-        width: 75% !important;
-        transition: width 0.5s ease !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button:hover {
-        background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent)  !important;
-        border: 1px solid var(--uc-accent) !important;
-        transition: background-color 1s ease !important;
-        transition: border-bottom 2s ease !important;
-        width: 75% !important;
-        backdrop-filter: blur(10px) !important;
-        transition: width 0.5s ease !important;
-        color: #111111 !important;
-        box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
-    }
-    .fake-caret {margin-left: 3px !important;}
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	.search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
+		border-radius: 40px 40px 40px 0px  !important;
 
 
-    .logo-and-wordmark{
-        display: none !important;
-    }
+		background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent)  !important;
+		border: 1px solid transparent !important;
+		transition: border-bottom 2s ease !important;
+		border-top: 1px solid  transparent !important;
+		border-left: 1px solid  transparent !important;
+		border-right: 1px solid  transparent !important;
+		backdrop-filter: blur(10px) !important;
+		color: transparent !important;
+		font: menu !important;
+
+		box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+		display-inline: flex !important;
+		width: 75% !important;
+		transition: width 0.5s ease !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+	.search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button:hover {
+		background-color: color-mix(in srgb, var(--uc-cream) 51%, transparent)  !important;
+		border: 1px solid var(--uc-accent) !important;
+		transition: background-color 1s ease !important;
+		transition: border-bottom 2s ease !important;
+		width: 75% !important;
+		backdrop-filter: blur(10px) !important;
+		transition: width 0.5s ease !important;
+		color: #111111 !important;
+		box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 20px !important;
+	}
+	.fake-caret {margin-left: 3px !important;}
 
 
-/********Bali10050 code for newtab and devtools********/
-body,html{overflow-y: auto}
+	.logo-and-wordmark{
+		display: none !important;
+	}
 
-/*  Newtab  */
-@-moz-document url("about:home"), url("about:newtab"){
-.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 0% !important; inset-inline-start: 48px !important;}
-.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 50px !important; inset-inline-start: 50% !important;  }
-.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
-.outer-wrapper.ds-outer-wrapper-breakpoint-override.only-search.visible-logo{display: flex !important; padding-top: 0px !important;vertical-align: middle}
-.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
-.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
-.outer-wrapper .search-wrapper{padding: 0px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; align-content: space-around !important; gap: 20px 10px !important}
-.search-wrapper .logo-and-wordmark .logo{background-size: 60px !important; height: 60px !important; width: 60px !important}
-.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
-.customize-menu{border-radius: 10px 0 0 10px !important}
-/* Firefox 151 fix: nuovo DOM "nova" della newtab.
-   La struttura reale è:
-     body.activity-stream
-       #root
-         .nova-outer-wrapper
-           .container.nova-enabled.logo-in-content   <- GRID 3 colonne
-             aside.sidebar-inline-start              <- sidebar fantasma
-             aside.sidebar-inline-end                <- sidebar fantasma
-             main.content                            <- contenuto vero
-               h1.logo-and-wordmark-wrapper
-               div.search-wrapper                    <- grid subgrid
-               section.top-sites
-   Le due aside vuote prendono colonne nel grid e spingono
-   il contenuto fuori centro. Annulliamo il grid e nascondiamo
-   le sidebar. */
-html, body.activity-stream{
-    height: 100% !important;
-    min-height: 100vh !important;
-    width: 100% !important;
-    margin: 0 !important;
-}
-/* #root e nova-outer-wrapper devono occupare tutta l'altezza per
-   permettere il centraggio verticale del contenuto. */
-#root{
-    min-height: 100vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-.nova-outer-wrapper{
-    min-height: 100vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-}
-/* Container principale: forza una sola colonna e si centra
-   verticalmente all'interno del nova-outer-wrapper. */
-.container.nova-enabled,
-.container.nova-enabled.logo-in-content{
-    grid-template-columns: 1fr !important;
-    grid-template-areas: none !important;
-    grid-template-rows: auto !important;
-    column-gap: 0 !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin-block: auto !important;
-    margin-inline: 0 !important;
-    padding-inline: 0 !important;
-    justify-items: center !important;
-    place-items: center !important;
-}
-/* Nasconde le sidebar fantasma */
-aside.sidebar-inline-start,
-aside.sidebar-inline-end{
-    display: none !important;
-}
-/* main.content occupa l'intera riga e si centra.
-   FF155: il <main> ha cambiato classe (content-main) ed e' display:contents,
-   quindi non e' piu' lui il grid item: lo diventa il <div class="content">
-   che sta al suo interno. Senza agganciarlo, veniva auto-piazzato in una
-   colonna implicita e finiva tutto spostato a destra. */
-main.content,
-main.content-main > .content{
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    max-width: 800px !important;
-    margin-inline: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-/* search-wrapper aveva display:grid + grid-template-columns:subgrid.
-   Trasformiamo in flex centrato. */
-.nova-enabled .search-wrapper,
-.search-wrapper{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    grid-template-columns: none !important;
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    max-width: 800px !important;
-    margin-inline: auto !important;
-}
-.search-inner-wrapper{
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-}
-/* section.top-sites — si centra ma NON deve diventare colonna:
-   la lista interna è una griglia orizzontale.
-   - La <section> esterna impila titolo + lista in verticale.
-   - I wrapper della lista NON vengono toccati su display/flex-direction,
-     così la griglia di scorciatoie torna a essere orizzontale. */
-section.top-sites,
-.top-sites{
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    margin-inline: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-.top-sites-list-wrapper{
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    margin-inline: auto !important;
-    /* lasciato il display nativo */
-}
-.top-sites-list{
-    margin-inline: auto !important;
-    justify-content: center !important;
-    /* manteniamo il display grid/flex originale */
-}
+
+	/********Bali10050 code for newtab and devtools********/
+	body,html{overflow-y: auto}
+
+	/*  Newtab  */
+	@-moz-document url("about:home"), url("about:newtab"){
+		.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 0% !important; inset-inline-start: 48px !important;}
+		.search-wrapper .search-handoff-button .fake-caret {top: 13px !important; margin-left: 50px !important; inset-inline-start: 50% !important;  }
+		.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
+		.outer-wrapper.ds-outer-wrapper-breakpoint-override.only-search.visible-logo{display: flex !important; padding-top: 0px !important;vertical-align: middle}
+		.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
+		.search-wrapper .logo-and-wordmark{opacity: 0.9 !important; order: 1 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
+		.outer-wrapper .search-wrapper{padding: 0px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; align-content: space-around !important; gap: 20px 10px !important}
+		.search-wrapper .logo-and-wordmark .logo{background-size: 60px !important; height: 60px !important; width: 60px !important}
+		.search-wrapper .search-inner-wrapper{min-height: 42px !important; order: 2 !important; flex: 3 !important; flex-basis: 60% !important; top: 4px !important}
+		.customize-menu{border-radius: 10px 0 0 10px !important}
+		/* Firefox 151 fix: nuovo DOM "nova" della newtab.
+		   La struttura reale è:
+		     body.activity-stream
+		       #root
+		         .nova-outer-wrapper
+		           .container.nova-enabled.logo-in-content   <- GRID 3 colonne
+		             aside.sidebar-inline-start              <- sidebar fantasma
+		             aside.sidebar-inline-end                <- sidebar fantasma
+		             main.content                            <- contenuto vero
+		               h1.logo-and-wordmark-wrapper
+		               div.search-wrapper                    <- grid subgrid
+		               section.top-sites
+		   Le due aside vuote prendono colonne nel grid e spingono
+		   il contenuto fuori centro. Annulliamo il grid e nascondiamo
+		   le sidebar. */
+		html, body.activity-stream{
+			height: 100% !important;
+			min-height: 100vh !important;
+			width: 100% !important;
+			margin: 0 !important;
+		}
+		/* #root e nova-outer-wrapper devono occupare tutta l'altezza per
+		   permettere il centraggio verticale del contenuto. */
+		#root{
+			min-height: 100vh !important;
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+			align-items: center !important;
+		}
+		.nova-outer-wrapper{
+			min-height: 100vh !important;
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: center !important;
+			align-items: center !important;
+			width: 100% !important;
+		}
+		/* Container principale: forza una sola colonna e si centra
+		   verticalmente all'interno del nova-outer-wrapper. */
+		.container.nova-enabled,
+		.container.nova-enabled.logo-in-content{
+			grid-template-columns: 1fr !important;
+			grid-template-areas: none !important;
+			grid-template-rows: auto !important;
+			column-gap: 0 !important;
+			width: 100% !important;
+			max-width: none !important;
+			margin-block: auto !important;
+			margin-inline: 0 !important;
+			padding-inline: 0 !important;
+			justify-items: center !important;
+			place-items: center !important;
+		}
+		/* Nasconde le sidebar fantasma */
+		aside.sidebar-inline-start,
+		aside.sidebar-inline-end{
+			display: none !important;
+		}
+		/* main.content occupa l'intera riga e si centra.
+		   FF155: il <main> ha cambiato classe (content-main) ed e' display:contents,
+		   quindi non e' piu' lui il grid item: lo diventa il <div class="content">
+		   che sta al suo interno. Senza agganciarlo, veniva auto-piazzato in una
+		   colonna implicita e finiva tutto spostato a destra. */
+		main.content,
+		main.content-main > .content{
+			grid-column: 1 / -1 !important;
+			width: 100% !important;
+			max-width: 800px !important;
+			margin-inline: auto !important;
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+		}
+		/* search-wrapper aveva display:grid + grid-template-columns:subgrid.
+		   Trasformiamo in flex centrato. */
+		.nova-enabled .search-wrapper,
+		.search-wrapper{
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			justify-content: center !important;
+			grid-template-columns: none !important;
+			grid-column: 1 / -1 !important;
+			width: 100% !important;
+			max-width: 800px !important;
+			margin-inline: auto !important;
+		}
+		.search-inner-wrapper{
+			width: 100% !important;
+			display: flex !important;
+			justify-content: center !important;
+		}
+		/* section.top-sites — si centra ma NON deve diventare colonna:
+		   la lista interna è una griglia orizzontale.
+		   - La <section> esterna impila titolo + lista in verticale.
+		   - I wrapper della lista NON vengono toccati su display/flex-direction,
+		     così la griglia di scorciatoie torna a essere orizzontale. */
+		section.top-sites,
+		.top-sites{
+			grid-column: 1 / -1 !important;
+			width: 100% !important;
+			margin-inline: auto !important;
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+		}
+		.top-sites-list-wrapper{
+			grid-column: 1 / -1 !important;
+			width: 100% !important;
+			margin-inline: auto !important;
+			/* lasciato il display nativo */
+		}
+		.top-sites-list{
+			margin-inline: auto !important;
+			justify-content: center !important;
+			/* manteniamo il display grid/flex originale */
+		}
 }}

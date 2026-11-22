@@ -99,21 +99,21 @@ menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 }
 
 /* Window buttons */
-	:root[customtitlebar] .titlebar-buttonbox .titlebar-close .toolbarbutton-icon {
-		list-style-image: url("../icons/window-close-symbolic.svg") !important;
-	}
-	:root[customtitlebar] .titlebar-buttonbox .titlebar-max .toolbarbutton-icon {
-		list-style-image: url("../icons/window-maximize-symbolic.svg") !important;
-	}
-	:root[customtitlebar] .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
-		list-style-image: url("../icons/window-restore-symbolic.svg") !important;
-	}
-	:root[customtitlebar][inFullscreen] .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
-		list-style-image: url("../icons/view-restore-symbolic.svg") !important;
-	}
-	:root[customtitlebar] .titlebar-buttonbox .titlebar-min .toolbarbutton-icon {
-		list-style-image: url("../icons/window-minimize-symbolic.svg") !important;
-	}
+:root[customtitlebar] .titlebar-buttonbox .titlebar-close .toolbarbutton-icon {
+	list-style-image: url("../icons/window-close-symbolic.svg") !important;
+}
+:root[customtitlebar] .titlebar-buttonbox .titlebar-max .toolbarbutton-icon {
+	list-style-image: url("../icons/window-maximize-symbolic.svg") !important;
+}
+:root[customtitlebar] .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
+	list-style-image: url("../icons/window-restore-symbolic.svg") !important;
+}
+:root[customtitlebar][inFullscreen] .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
+	list-style-image: url("../icons/view-restore-symbolic.svg") !important;
+}
+:root[customtitlebar] .titlebar-buttonbox .titlebar-min .toolbarbutton-icon {
+	list-style-image: url("../icons/window-minimize-symbolic.svg") !important;
+}
 
 /* Reload */
 #reload-button,
@@ -378,7 +378,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 }
 /*Home button
 #home-button {
-	list-style-image: url("../icons/user-home-symbolic.svg") !important;
+    list-style-image: url("../icons/user-home-symbolic.svg") !important;
 }*/
 
 /* Preferences button */
@@ -852,31 +852,31 @@ treechildren::-moz-tree-image {
 
 /*custom gruvbox icons*/
 #ublock0_raymondhill_net-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/ublock.svg") !important;
+	list-style-image: url("../ext-icons/ublock.svg") !important;
 }
 #_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/bitwarden.svg") !important;
+	list-style-image: url("../ext-icons/bitwarden.svg") !important;
 }
 #checkerplusforgmail_jasonsavard_com-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/envelope.svg") !important;
+	list-style-image: url("../ext-icons/envelope.svg") !important;
 }
 #checkerplusforgooglecalendar_jasonsavard_com-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/calendar.svg") !important;
+	list-style-image: url("../ext-icons/calendar.svg") !important;
 }
 #tab-session-manager_sienori-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/tabs.svg") !important;
+	list-style-image: url("../ext-icons/tabs.svg") !important;
 }
 #_3579f63b-d8ee-424f-bbb6-6d0ce3285e6a_-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/chamaleon.svg") !important;
+	list-style-image: url("../ext-icons/chamaleon.svg") !important;
 }
 #jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/raindrop.svg") !important;
+	list-style-image: url("../ext-icons/raindrop.svg") !important;
 }
 #_testpilot-containers-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/testpilot.svg") !important;
+	list-style-image: url("../ext-icons/testpilot.svg") !important;
 }
 #unified-extensions-button .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/addons.svg") !important;
+	list-style-image: url("../ext-icons/addons.svg") !important;
 }
 #home-button {
 	list-style-image: url("../ext-icons/home.svg") !important;
@@ -891,13 +891,13 @@ treechildren::-moz-tree-image {
 	list-style-image: url("../ext-icons/view-refresh-symbolic.svg") !important;
 }
 #_bd5cec91-8853-40d9-aa80-8388a4544bd3_-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/search.svg") !important;
+	list-style-image: url("../ext-icons/search.svg") !important;
 }
 #clipper_obsidian_md-browser-action .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/obsidian.svg") !important;
+	list-style-image: url("../ext-icons/obsidian.svg") !important;
 }
 [id*="proton"] .toolbarbutton-icon {
-    list-style-image: url("../ext-icons/protonpass.svg") !important;
+	list-style-image: url("../ext-icons/protonpass.svg") !important;
 }
 
 /* toolbar icons effect */
@@ -909,10 +909,10 @@ treechildren::-moz-tree-image {
 .menuitem-iconic .menu-iconic-icon,
 #downloads-indicator-icon,
 .urlbar-input-container [role="button"] image{
-  transition: transform 83ms linear !important;
+	transition: transform 83ms linear !important;
 }
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
-  transition: padding 83ms linear !important;
+	transition: padding 83ms linear !important;
 }
 .urlbar-input-container [role="button"] image,
 .tab-close-button,
@@ -924,17 +924,17 @@ toolobar .toolbarbutton-1 > .toolbarbutton-icon,
 toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 .menuitem-iconic .menu-iconic-icon,
 .urlbar-icon{
-  transform: scale(0.9) !important;
+	transform: scale(0.9) !important;
 }
 #nav-bar #back-button .toolbarbutton-icon {
-  transform: scale(0.9) !important;
+	transform: scale(0.9) !important;
 }
 #nav-bar #forward-button .toolbarbutton-icon {
-  transform: scale(0.9) !important;
+	transform: scale(0.9) !important;
 }
 toolbarbutton#scrollbutton-down > .toolbarbutton-icon{ transform: scale(-0.9) !important; }
 toolbar .toolbarbutton-1 > .toolbarbutton-icon{
-  padding: calc(var(--toolbarbutton-inner-padding) + 2px) !important;
+	padding: calc(var(--toolbarbutton-inner-padding) + 2px) !important;
 }
 .urlbar-input-container [role="button"]:not([disabled]):hover image,
 .tab-close-button:hover,
@@ -945,17 +945,17 @@ toolbarbutton:not(.toolbarbutton-1):not([disabled]):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-badge-stack > .toolbarbutton-icon,
 .menuitem-iconic:not([disabled]):hover .menu-iconic-icon,
 .urlbar-page-action:hover > .urlbar-icon{
-  transform: none !important;
+	transform: none !important;
 }
 #nav-bar #back-button:not([disabled]):hover .toolbarbutton-icon {
-  transform: none !important;
+	transform: none !important;
 }
 #nav-bar #forward-button:not([disabled]):hover .toolbarbutton-icon {
-  transform: none !important;
+	transform: none !important;
 }
 toolbarbutton#scrollbutton-down:not([disabled]):hover > .toolbarbutton-icon{transform: scale(-1) !important;}
 toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
-  padding: var(--toolbarbutton-inner-padding) !important;
+	padding: var(--toolbarbutton-inner-padding) !important;
 }
 
 
@@ -967,9 +967,9 @@ toolbar .toolbarbutton-1:not([disabled]):hover > .toolbarbutton-icon{
 
 /* Estensioni pinnate in toolbar */
 toolbar .webextension-browser-action .toolbarbutton-icon {
-  fill: unset !important;
-  fill-opacity: unset !important;
-  -moz-context-properties: unset !important;
+	fill: unset !important;
+	fill-opacity: unset !important;
+	-moz-context-properties: unset !important;
 }
 
 /* Estensioni nel pannello */
@@ -977,7 +977,7 @@ toolbar .webextension-browser-action .toolbarbutton-icon {
 #unified-extensions-panel .unified-extensions-item-action-button .toolbarbutton-icon,
 #unified-extensions-view .unified-extensions-item-icon,
 #unified-extensions-view .unified-extensions-item-action-button .toolbarbutton-icon {
-  fill: unset !important;
-  fill-opacity: unset !important;
-  -moz-context-properties: unset !important;
+	fill: unset !important;
+	fill-opacity: unset !important;
+	-moz-context-properties: unset !important;
 }

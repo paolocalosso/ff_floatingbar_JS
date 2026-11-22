@@ -2,100 +2,100 @@
    (Le due varianti alternative, "solo icone" e "compatto", erano qui
    commentate: si recuperano dalla storia git.) */
 #unified-extensions-panel #unified-extensions-view {
-    width: 650px !important;
+	width: 650px !important;
 }
 #unified-extensions-button {
-  list-style-image: url("../icons/library-symbolic-teal.svg") !important;
+	list-style-image: url("../icons/library-symbolic-teal.svg") !important;
 }
 
 #unified-extensions-manage-extensions,
 .subviewbutton,
 .panel-subview-footer-button {
-  text-align-last: start !important;
+	text-align-last: start !important;
 }
 
 #overflowed-extensions-list,
 #unified-extensions-area,
 .unified-extensions-list
 {
-  margin-inline: var(--panel-separator-margin) !important;
-  display: block !important;
-  column-gap: 0 !important;
-  column-count: 2 !important;
+	margin-inline: var(--panel-separator-margin) !important;
+	display: block !important;
+	column-gap: 0 !important;
+	column-count: 2 !important;
 }
 #unified-extensions-view .panel-header,
 #unified-extensions-view toolbarseparator
 {
-  display: none !important;
+	display: none !important;
 }
 #unified-extensions-panel #unified-extensions-view,
 #unified-extensions-manage-extensions
 {
-  margin-top: 0px !important;
+	margin-top: 0px !important;
 }
 #unified-extensions-panel vbox#overflowed-extensions-list:not(:empty),
 #unified-extensions-panel vbox#unified-extensions-area:not(:empty),
 #unified-extensions-panel vbox.unified-extensions-list:not(:empty)
 {
-  border-bottom: 0px solid var(--uc-accent);
+	border-bottom: 0px solid var(--uc-accent);
 }
 #overflowed-extensions-list .toolbarbutton-icon,
 #unified-extensions-panel .toolbarbutton-icon,
 .unified-extensions-item-icon
 {
-  --uei-icon-size: 16px;
+	--uei-icon-size: 16px;
 }
 
 
 .unified-extensions-item-menu-button.subviewbutton > .toolbarbutton-icon{
-  padding: 0px !important;
+	padding: 0px !important;
 }
 
 #unified-extensions-view .unified-extensions-item-menu-button.subviewbutton{
-    visibility: hidden !important;
-    transition: all var(--animation-speed) !important;
-    margin-inline-end: -3.2em !important;
+	visibility: hidden !important;
+	transition: all var(--animation-speed) !important;
+	margin-inline-end: -3.2em !important;
 }
 #unified-extensions-view:hover
 .unified-extensions-item-menu-button.subviewbutton{
-    visibility: visible !important;
-    transition: var(--hovering-speed) !important;
-    margin-inline-end: initial !important;
-    margin-inline-start: -7px !important;
-    margin-left: 2px !important;
-    background: color-mix(in srgb, var(--uc-dark) 31.37%, transparent) !important;
-    opacity: 0.9 !important;
+	visibility: visible !important;
+	transition: var(--hovering-speed) !important;
+	margin-inline-end: initial !important;
+	margin-inline-start: -7px !important;
+	margin-left: 2px !important;
+	background: color-mix(in srgb, var(--uc-dark) 31.37%, transparent) !important;
+	opacity: 0.9 !important;
 }
 #unified-extensions-view .unified-extensions-item-menu-button.subviewbutton:not(:hover)
 {
-  opacity: 0.5 !important;
+	opacity: 0.5 !important;
 }
 
 
 #unified-extensions-view > vbox > vbox > .unified-extensions-item {
-  padding-block: 0px !important;
-  margin-block: 0px !important;
+	padding-block: 0px !important;
+	margin-block: 0px !important;
 }
 #unified-extensions-view .unified-extensions-item-menu-button {
-  margin-inline-end: 0 !important;
+	margin-inline-end: 0 !important;
 }
 #unified-extensions-view .toolbarbutton-icon {
-  padding: 0 !important;
+	padding: 0 !important;
 }
 .unified-extensions-item-contents {
-  margin: auto !important;
-  margin-left: 0px !important;
+	margin: auto !important;
+	margin-left: 0px !important;
 }
 .unified-extensions-item-name {
-  position: inline !important;
-  left: 0 !important;
-  font-size: 100% !important;
-  margin-left: 5px !important;
-  width: 225px !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
- }
+	position: inline !important;
+	left: 0 !important;
+	font-size: 100% !important;
+	margin-left: 5px !important;
+	width: 225px !important;
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
 .unified-extensions-item-message {
-  font-size: 0% !important;
-   }
+	font-size: 0% !important;
+}

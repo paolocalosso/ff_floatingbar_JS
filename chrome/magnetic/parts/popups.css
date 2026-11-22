@@ -86,36 +86,36 @@ menu menupopup {
 }
 
 .menupopup-arrowscrollbox {
-  -moz-appearance: none !important;
-  background-color: var(--uc-menu-bg) !important;
-  /* Contorno verde come bordo vero e non piu' come box-shadow esterna: senza
-     il padding del menupopup un'ombra esterna finirebbe fuori dalla finestra
-     del menu e verrebbe tagliata. Il bagliore morbido (0 0 8px) e' tolto. */
-  border: 3px solid var(--uc-accent) !important;
-  border-radius: 25px !important;
-  box-shadow: none !important;
-  padding: 6px !important;
-  margin: 0 !important;
-  /* Con -moz-appearance: none si perdono le frecce di scroll native
-     e il comportamento di scroll nativo del menupopup. Lo ripristiniamo
-     con CSS standard. */
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  max-height: calc(100vh - 40px) !important;
-  scrollbar-width: thin !important;
-  scrollbar-color: var(--uc-accent) transparent !important;
+	-moz-appearance: none !important;
+	background-color: var(--uc-menu-bg) !important;
+	/* Contorno verde come bordo vero e non piu' come box-shadow esterna: senza
+	   il padding del menupopup un'ombra esterna finirebbe fuori dalla finestra
+	   del menu e verrebbe tagliata. Il bagliore morbido (0 0 8px) e' tolto. */
+	border: 3px solid var(--uc-accent) !important;
+	border-radius: 25px !important;
+	box-shadow: none !important;
+	padding: 6px !important;
+	margin: 0 !important;
+	/* Con -moz-appearance: none si perdono le frecce di scroll native
+	   e il comportamento di scroll nativo del menupopup. Lo ripristiniamo
+	   con CSS standard. */
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	max-height: calc(100vh - 40px) !important;
+	scrollbar-width: thin !important;
+	scrollbar-color: var(--uc-accent) transparent !important;
 }
 
 /* Forziamo la visibilità delle scrollbutton e dello slot scrollbox
    interno nelle build che le rendono ancora come elementi XUL */
 .menupopup-arrowscrollbox > .scrollbutton-up,
 .menupopup-arrowscrollbox > .scrollbutton-down {
-  display: none !important;
+	display: none !important;
 }
 .menupopup-arrowscrollbox > .scrollbox,
 .menupopup-arrowscrollbox > [part="scrollbox"] {
-  overflow-y: auto !important;
-  max-height: calc(100vh - 60px) !important;
+	overflow-y: auto !important;
+	max-height: calc(100vh - 60px) !important;
 }
 
 
@@ -129,7 +129,7 @@ menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 }
 
 .menu-iconic-icon {
-  padding: 0 !important;
+	padding: 0 !important;
 }
 
 /* Larghezza dei pannelli. Prima il massimo era 850px e sovrascriveva i limiti
@@ -221,7 +221,7 @@ panelview {
 	.popup-notification-header-container,
 	.popup-notification-body-container,
 	.popup-notification-footer-container
-):first-child:not(:empty) {
+	):first-child:not(:empty) {
 	padding-top: var(--gnome-menu-padding) !important;
 }
 
@@ -579,11 +579,11 @@ menuseparator {
 
 /* Tooltip - GLASSMORPHISM */
 tooltip {
-  background: var(--uc-dark) !important;
+	background: var(--uc-dark) !important;
 
-  border: 2px solid var(--uc-accent)  !important;
-  border-radius: 25px  !important;
-  color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
-  padding: 6px 10px !important;
-  box-shadow: none !important;
+	border: 2px solid var(--uc-accent)  !important;
+	border-radius: 25px  !important;
+	color: color-mix(in srgb, var(--uc-cream) 95%, transparent) !important;
+	padding: 6px 10px !important;
+	box-shadow: none !important;
 }

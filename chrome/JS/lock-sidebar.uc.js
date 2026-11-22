@@ -6,27 +6,27 @@
 
 (function() {
     'use strict';
-    
+
     const sidebarBox = document.getElementById('sidebar-box');
     const root = document.documentElement;
-    
+
     let isLocked = false;
 
     function lockSidebar() {
         if (!sidebarBox) return;
-        
+
         isLocked = true;
         root.setAttribute('sidebar-locked', 'true');
-        
+
         console.log('✓ Sidebar locked (F3)');
     }
 
     function unlockSidebar() {
         if (!sidebarBox) return;
-        
+
         isLocked = false;
         root.removeAttribute('sidebar-locked');
-        
+
         console.log('✓ Sidebar unlocked');
     }
 

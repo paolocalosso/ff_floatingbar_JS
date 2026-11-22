@@ -34,17 +34,17 @@
 /* Set theme version text in customization panel */
 
 @-moz-document url-prefix("chrome://global/content/print.html") {
-    :root {
-        --checkmark: #FFFFFF !important;
-        --checkbox-checked-ink: var(--uc-accent) !important;
-    }
+	:root {
+		--checkmark: #FFFFFF !important;
+		--checkbox-checked-ink: var(--uc-accent) !important;
+	}
 
-    html,
-    body,
-    .dialogroot {
-        appearance: none !important;
-        font: menu !important;
+	html,
+	body,
+	.dialogroot {
+		appearance: none !important;
+		font: menu !important;
 
-        color: #FFFFFF !important;
-    }
+		color: #FFFFFF !important;
+	}
 }

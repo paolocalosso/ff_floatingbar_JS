@@ -2,17 +2,17 @@
 
 /*custom fullscreen warning*/
 #fullscreen-warning{
-    background-color: #282828 !important;
-    border-color: var(--uc-accent) !important;
-    max-width: 800px !important;
-    max-height: 55px !important;
-    border-radius: 55px !important;
-    font-size: 12px !important;
+	background-color: #282828 !important;
+	border-color: var(--uc-accent) !important;
+	max-width: 800px !important;
+	max-height: 55px !important;
+	border-radius: 55px !important;
+	font-size: 12px !important;
 }
 
 .pointerlockfswarning-generic-text,
 .pointerlockfswarning-domain-text{
-    font-size: 15px !important;
-    color: rgb(200,200,200) !important;
-    text-shadow: none !important;
+	font-size: 15px !important;
+	color: rgb(200,200,200) !important;
+	text-shadow: none !important;
 }

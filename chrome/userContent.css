@@ -69,8 +69,8 @@
 	}
 
 	checkbox:not([disabled="true"]):hover > .checkbox-check,
-	input[type="checkbox"]:not(:disabled):hover,
-	radio:not([disabled="true"]):hover > .radio-check {
+		input[type="checkbox"]:not(:disabled):hover,
+		radio:not([disabled="true"]):hover > .radio-check {
 		color: var(--uc-accent) !important;
 		border-color: var(--uc-accent) !important;
 	}
@@ -110,25 +110,25 @@
    lo sfondo su più candidati (body, root, outer-wrapper) per essere sicuri
    che venga sempre visualizzato. */
 @-moz-document url(about:newtab), url(about:home) {
-    body,
-    html,
-    #root,
-    .newtab-wrapper,
-    .outer-wrapper {
-        background-image: url(wallpaper.jpg) !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-attachment: fixed !important;
-    }
-    /* Forza la trasparenza dei container interni che altrimenti
-       coprirebbero la wallpaper */
-    main,
-    .newtab-wrapper,
-    .outer-wrapper,
-    .body-wrapper {
-        background-color: transparent !important;
-    }
+	body,
+	html,
+	#root,
+	.newtab-wrapper,
+	.outer-wrapper {
+		background-image: url(wallpaper.jpg) !important;
+		background-size: cover !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		background-attachment: fixed !important;
+	}
+	/* Forza la trasparenza dei container interni che altrimenti
+	   coprirebbero la wallpaper */
+	main,
+	.newtab-wrapper,
+	.outer-wrapper,
+	.body-wrapper {
+		background-color: transparent !important;
+	}
 }
 
 

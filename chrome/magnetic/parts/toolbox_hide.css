@@ -6,53 +6,53 @@ See the above repository for updates as well as full license text. */
 */
 
 :root{
-  --uc-autohide-toolbox-delay: 200ms; /* Wait 0.1s before hiding toolbars */
-  --uc-toolbox-rotation: 82deg; /* This may need to be lower on mac - like 75 or so */
+	--uc-autohide-toolbox-delay: 200ms; /* Wait 0.1s before hiding toolbars */
+	--uc-toolbox-rotation: 82deg; /* This may need to be lower on mac - like 75 or so */
 }
 
 :root[sizemode="maximized"]{
-  --uc-toolbox-rotation: 84deg;
-  --uc-autohide-toolbox-delay: 0ms;
+	--uc-toolbox-rotation: 84deg;
+	--uc-autohide-toolbox-delay: 0ms;
 }
 
 @media (-moz-platform: windows){
-  :root:not([lwtheme]) #navigator-toolbox{ background-color: -moz-dialog !important; }
+	:root:not([lwtheme]) #navigator-toolbox{ background-color: -moz-dialog !important; }
 }
 
 :root[sizemode="fullscreen"],
 :root[sizemode="fullscreen"] #navigator-toolbox{ margin-top: 0 !important; }
 
 #navigator-toolbox{
-  --browser-area-z-index-toolbox: 3;
-  position: fixed !important;
-  background-color: transparent !important;
-  transition: transform 82ms linear, opacity 82ms linear !important;
-  transition-delay: var(--uc-autohide-toolbox-delay) !important;
-  transform-origin: top;
-  transform: rotateX(var(--uc-toolbox-rotation));
-  opacity: 0;
-  line-height: 0;
-  z-index: 1;
-  pointer-events: none;
+	--browser-area-z-index-toolbox: 3;
+	position: fixed !important;
+	background-color: transparent !important;
+	transition: transform 82ms linear, opacity 82ms linear !important;
+	transition-delay: var(--uc-autohide-toolbox-delay) !important;
+	transform-origin: top;
+	transform: rotateX(var(--uc-toolbox-rotation));
+	opacity: 0;
+	line-height: 0;
+	z-index: 1;
+	pointer-events: none;
 
-  /* FLOATING BAR - Centratura corretta */
-  left: 8px !important;
-  right: 34px !important;  /* Compensazione per i pulsanti della finestra */
-  width: auto !important;
-  margin-top: 10px !important;
-  overflow: visible !important;
+	/* FLOATING BAR - Centratura corretta */
+	left: 8px !important;
+	right: 34px !important;  /* Compensazione per i pulsanti della finestra */
+	width: auto !important;
+	margin-top: 10px !important;
+	overflow: visible !important;
 }
 
 /* Area invisibile per facilitare l'hover */
 #navigator-toolbox::before {
-  content: "";
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 80px !important;  /* Area sensibile: primi 80px dall'alto */
-  z-index: -1 !important;
-  pointer-events: auto !important;
+	content: "";
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	height: 80px !important;  /* Area sensibile: primi 80px dall'alto */
+	z-index: -1 !important;
+	pointer-events: auto !important;
 }
 
 /* Attiva toolbox quando si passa sopra l'area invisibile */
@@ -81,7 +81,7 @@ See the above repository for updates as well as full license text. */
 
 /* In maximized aumenta l’area sensibile in alto */
 :root[sizemode="maximized"] #navigator-toolbox::before{
-  height: 90px !important;
+	height: 90px !important;
 }
 
 
@@ -89,8 +89,8 @@ See the above repository for updates as well as full license text. */
 
 #navigator-toolbox,
 #navigator-toolbox > *{
-  width: calc(100vw - 45px) !important;
-  -moz-appearance: none !important;
+	width: calc(100vw - 45px) !important;
+	-moz-appearance: none !important;
 }
 
 /* These two exist for oneliner compatibility */
@@ -101,9 +101,9 @@ See the above repository for updates as well as full license text. */
 :root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
 
 :root[customizing] #navigator-toolbox{
-  position: relative !important;
-  transform: none !important;
-  opacity: 1 !important;
+	position: relative !important;
+	transform: none !important;
+	opacity: 1 !important;
 }
 
 #navigator-toolbox[inFullscreen] > #PersonalToolbar,

@@ -9,31 +9,31 @@
 
 /* Toolbox trasparente per vedere attraverso */
 #navigator-toolbox {
-  border: none !important;
-  background: transparent !important;  /* Sfondo trasparente */
-  box-shadow: none !important;  /* Rimuovi ombra dal toolbox */
+	border: none !important;
+	background: transparent !important;  /* Sfondo trasparente */
+	box-shadow: none !important;  /* Rimuovi ombra dal toolbox */
 }
 /* Solo nav-bar ha lo sfondo e l'ombra */
 #nav-bar {
-  border: 0 !important;
-  background: var(--gnome-toolbar-background) !important;
+	border: 0 !important;
+	background: var(--gnome-toolbar-background) !important;
 }
 #navigator-toolbox{
-  --browser-area-z-index-toolbox: 3;
-  position: fixed !important;
-  background-color: var(--lwt-accent-color,black) !important;
-  transition: transform 82ms linear, opacity 82ms linear !important;
-  transition-delay: var(--uc-autohide-toolbox-delay) !important;
-  transform-origin: top;
-  transform: rotateX(var(--uc-toolbox-rotation));
-  opacity: 0;
-  line-height: 0;
-  z-index: 1;
-  pointer-events: none;
-  /* AGGIUNGI QUESTI MARGINI PER FLOATING */
-  margin: 10px 15px 0 15px !important;
-  width: calc(100vw - 30px) !important;  /* Compensa i margini laterali */
-  border-radius: 50px !important;  /* Bordi arrotondati */
+	--browser-area-z-index-toolbox: 3;
+	position: fixed !important;
+	background-color: var(--lwt-accent-color,black) !important;
+	transition: transform 82ms linear, opacity 82ms linear !important;
+	transition-delay: var(--uc-autohide-toolbox-delay) !important;
+	transform-origin: top;
+	transform: rotateX(var(--uc-toolbox-rotation));
+	opacity: 0;
+	line-height: 0;
+	z-index: 1;
+	pointer-events: none;
+	/* AGGIUNGI QUESTI MARGINI PER FLOATING */
+	margin: 10px 15px 0 15px !important;
+	width: calc(100vw - 30px) !important;  /* Compensa i margini laterali */
+	border-radius: 50px !important;  /* Bordi arrotondati */
 }
 
 
@@ -158,12 +158,12 @@ findbar:-moz-window-inactive description,
 
 /* Toolbox trasparente per vedere attraverso */
 #navigator-toolbox {
-  border: none !important;
-  background: transparent !important;  /* Sfondo trasparente */
-  box-shadow: none !important;  /* Rimuovi ombra dal toolbox */
+	border: none !important;
+	background: transparent !important;  /* Sfondo trasparente */
+	box-shadow: none !important;  /* Rimuovi ombra dal toolbox */
 }
 /* Solo nav-bar ha lo sfondo e l'ombra */
 #nav-bar {
-  border: 0 !important;
-  background: var(--gnome-toolbar-background) !important;
+	border: 0 !important;
+	background: var(--gnome-toolbar-background) !important;
 }

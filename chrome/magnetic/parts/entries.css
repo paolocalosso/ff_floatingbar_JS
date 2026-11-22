@@ -6,8 +6,8 @@
 #urlbar {
 	-moz-appearance: none !important;
 	background: linear-gradient(135deg,
-	            color-mix(in srgb, var(--uc-cream) 20%, transparent),
-	            color-mix(in srgb, var(--uc-dark) 85%, transparent)) !important;
+		color-mix(in srgb, var(--uc-cream) 20%, transparent),
+		color-mix(in srgb, var(--uc-dark) 85%, transparent)) !important;
 	border: 0px solid color-mix(in srgb, var(--uc-cream) 35%, transparent) !important;
 	border-radius: 120px !important;
 	box-shadow: 0 0 20px color-mix(in srgb, var(--uc-cream) 25%, transparent) !important;
@@ -22,8 +22,8 @@
 #urlbar[focused=""] {
 	-moz-appearance: none !important;
 	background: linear-gradient(135deg,
-	            color-mix(in srgb, var(--uc-cream) 30%, transparent),
-	            color-mix(in srgb, var(--uc-dark) 95%, transparent)) !important;
+		color-mix(in srgb, var(--uc-cream) 30%, transparent),
+		color-mix(in srgb, var(--uc-dark) 95%, transparent)) !important;
 	box-shadow: 0 0 25px color-mix(in srgb, var(--uc-cream) 5%, transparent) !important;
 	border-color: color-mix(in srgb, var(--uc-cream) 50%, transparent) !important;
 	color: white !important;
@@ -34,8 +34,8 @@
 #urlbar:hover {
 	-moz-appearance: none !important;
 	background: linear-gradient(135deg,
-	            color-mix(in srgb, var(--uc-cream) 25%, transparent),
-	            color-mix(in srgb, var(--uc-dark) 90%, transparent)) !important;
+		color-mix(in srgb, var(--uc-cream) 25%, transparent),
+		color-mix(in srgb, var(--uc-dark) 90%, transparent)) !important;
 	box-shadow: 0 0 22px color-mix(in srgb, var(--uc-dark) 30%, transparent) !important;
 	color: white !important;
 	transition: all 0.3s ease !important;
@@ -133,7 +133,7 @@
 .urlbar-page-action:hover:not([open="true"]),
 .urlbar-page-action:hover:not([open="true"]) .urlbar-icon,
 .urlbar-icon:not([disabled]):hover {
-    background: none !important;
+	background: none !important;
 	fill-opacity: 1 !important;
 }
 

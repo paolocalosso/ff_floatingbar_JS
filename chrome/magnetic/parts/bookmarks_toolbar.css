@@ -1,171 +1,171 @@
 #urlbar, .searchbar-textbox{
-    border-radius: 2em !important;
+	border-radius: 2em !important;
 }
 .tabbrowser-tab .tab-stack {
-    border-radius: 30px;
-    overflow: hidden;
+	border-radius: 30px;
+	overflow: hidden;
 }
 .toolbaritem-combined-buttons,
 .unified-extensions-item,
 .chromeclass-toolbar-additional {
-    border-radius: 100em !important;
-    overflow: hidden;
+	border-radius: 100em !important;
+	overflow: hidden;
 }
 #identity-box[pageproxystate="valid"].certUserOverridden > #identity-icon,
 .drm-icon {
-  margin-right: 5px !important;
-  height: 28px !important;
-  width: 28px !important;
+	margin-right: 5px !important;
+	height: 28px !important;
+	width: 28px !important;
 }
 
 /*hide unsorted bookmarks*/
 #menu_unsortedBookmarks {
-    display: none !important;
+	display: none !important;
 }
 #BMB_unsortedBookmarks {
-    display: none !important;
+	display: none !important;
 }
 
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
-  :root:not([inDOMFullscreen]){
-    --uc-vertical-toolbar-width: 0px !important;
-  }
+	:root:not([inDOMFullscreen]){
+		--uc-vertical-toolbar-width: 0px !important;
+	}
 
-  #navigator-toolbox{ position: relative }
-  #PersonalToolbar{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 50px /*100%*/;
-    right: -14px;
-    margin-bottom: 4px;
-    border-radius: 20px;
-    width: 288px !important;
-    transition: all 600ms cubic-bezier(0.77, 0, 0.18, 1);
-    box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.4);
+	#navigator-toolbox{ position: relative }
+	#PersonalToolbar{
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		top: 50px /*100%*/;
+		right: -14px;
+		margin-bottom: 4px;
+		border-radius: 20px;
+		width: 288px !important;
+		transition: all 600ms cubic-bezier(0.77, 0, 0.18, 1);
+		box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.4);
 
-    min-width: unset !important;
-    /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
-    height: 93.5vh; /*92.55vh;*/
-    max-height: 93.5vh /*92.55vh*/ !important;
+		min-width: unset !important;
+		/* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
+		height: 93.5vh; /*92.55vh;*/
+		max-height: 93.5vh /*92.55vh*/ !important;
 
 
-    padding-inline: 0px !important;
-    background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
-    /* backdrop-filter: blur(10px) !important; FF150 broken */
-    box-shadow: rgba(0, 0, 0, 0.55) -5px 0 15px,
-                inset 1px 0 0 rgba(255, 255, 255, 0.05) !important;
-    }
+		padding-inline: 0px !important;
+		background: linear-gradient(rgba(40, 42, 41, 0.94), rgba(22, 24, 23, 0.94)) !important;
+		/* backdrop-filter: blur(10px) !important; FF150 broken */
+		box-shadow: rgba(0, 0, 0, 0.55) -5px 0 15px,
+			inset 1px 0 0 rgba(255, 255, 255, 0.05) !important;
+	}
 
-  #PersonalToolbar .toolbarbutton-1{
-    --toolbarbutton-inner-padding: 8px !important;
-    --toolbarbutton-border-radius: 7px !important;
-  }
+	#PersonalToolbar .toolbarbutton-1{
+		--toolbarbutton-inner-padding: 8px !important;
+		--toolbarbutton-border-radius: 7px !important;
+	}
 
-  #PersonalToolbar #PlacesChevron{
-    display: none;
-  }
+	#PersonalToolbar #PlacesChevron{
+		display: none;
+	}
 
-  #PersonalToolbar > #personal-bookmarks{
-    overflow-y: auto;
-    scrollbar-width: none;
-    height: 100vh;
-  }
+	#PersonalToolbar > #personal-bookmarks{
+		overflow-y: auto;
+		scrollbar-width: none;
+		height: 100vh;
+	}
 
-  #PlacesToolbar,
-  #PlacesToolbarDropIndicatorHolder{
-    -moz-box-orient: vertical !important; /* Can be removed with Firefox 112 */
-    flex-direction: column;
-  }
+	#PlacesToolbar,
+	#PlacesToolbarDropIndicatorHolder{
+		-moz-box-orient: vertical !important; /* Can be removed with Firefox 112 */
+		flex-direction: column;
+	}
 
-  #PersonalToolbar #PlacesToolbarItems{
-    display: flex !important;
-    flex-direction: column;
-    overflow-y: auto;
-    scrollbar-width: none;
-  }
+	#PersonalToolbar #PlacesToolbarItems{
+		display: flex !important;
+		flex-direction: column;
+		overflow-y: auto;
+		scrollbar-width: none;
+	}
 
-  #PersonalToolbar > toolbaritem{
-    justify-content: center !important;
-  }
+	#PersonalToolbar > toolbaritem{
+		justify-content: center !important;
+	}
 
-/*autohide*/
-  #PersonalToolbar{
-  z-index: 1;
-  transition: transform 100ms ease-out 230ms, opacity 20ms linear 250ms !important;
-  transform: scaleX(0.2);
-  transform-origin: right;
-  opacity: 0;
-  width: 20px /*180px*/ !important;
-  }
-  #PersonalToolbar:hover{
-  opacity: 1;
-  transform: scaleX(1);
-  transition-delay: 230ms,220ms !important;
-  width: 288px /*250px*/ !important;
-  }
+	/*autohide*/
+	#PersonalToolbar{
+		z-index: 1;
+		transition: transform 100ms ease-out 230ms, opacity 20ms linear 250ms !important;
+		transform: scaleX(0.2);
+		transform-origin: right;
+		opacity: 0;
+		width: 20px /*180px*/ !important;
+	}
+	#PersonalToolbar:hover{
+		opacity: 1;
+		transform: scaleX(1);
+		transition-delay: 230ms,220ms !important;
+		width: 288px /*250px*/ !important;
+	}
 
-  #browser,
-  #browser-bottombox,
-  #main-window > body::after,
-  #customization-container{
-    padding-right: calc(var(--uc-vertical-toolbar-width,0) + 0px);
-  }
+	#browser,
+	#browser-bottombox,
+	#main-window > body::after,
+	#customization-container{
+		padding-right: calc(var(--uc-vertical-toolbar-width,0) + 0px);
+	}
 
-  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser,
-  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser-bottombox,
-  #main-window:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body::after,
-  :root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
-    padding-right: 0;
-  }
+	:root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser,
+	:root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #browser-bottombox,
+	#main-window:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body::after,
+	:root:is([chromehidden~="toolbar"],[sizemode="fullscreen"]) > body > #customization-container{
+		padding-right: 0;
+	}
 
-  /* You should probably disable this if you have Firefox < 113 */
-  #PersonalToolbar #PlacesToolbarItems{
-    display: -webkit-box !important;
-    -webkit-box-orient: vertical !important;
-  }
+	/* You should probably disable this if you have Firefox < 113 */
+	#PersonalToolbar #PlacesToolbarItems{
+		display: -webkit-box !important;
+		-webkit-box-orient: vertical !important;
+	}
 
-  #personal-bookmarks .bookmark-item{
-    margin: 2.5px 5px  !important;
-    padding-left: 15px !important;
-    height: /*42px*/ 38px !important;
-    min-width: 278px /*240px*/ !important;
-    }
-  #personal-bookmarks .bookmark-item:hover{
-    background-color: var(--uc-accent) !important;
-    }
-  #personal-bookmarks .bookmark-item>.toolbarbutton-text, #import-button>.toolbarbutton-text {
-    margin-left: 5px !important;
-  }
+	#personal-bookmarks .bookmark-item{
+		margin: 2.5px 5px  !important;
+		padding-left: 15px !important;
+		height: /*42px*/ 38px !important;
+		min-width: 278px /*240px*/ !important;
+	}
+	#personal-bookmarks .bookmark-item:hover{
+		background-color: var(--uc-accent) !important;
+	}
+	#personal-bookmarks .bookmark-item>.toolbarbutton-text, #import-button>.toolbarbutton-text {
+		margin-left: 5px !important;
+	}
 
-  /* FF154: la UA stylesheet (xul.css) ora applica a TUTTI i toolbarbutton
-     `align-items: center; justify-content: center`. Nella barra verticale le
-     voci sono larghe 278px, quindi favicon + titolo finiscono centrati invece
-     che allineati a sinistra (prima il toolbarbutton era un box XUL che di
-     default impaccava a start). Riportiamo l'allineamento a sinistra. */
-  #personal-bookmarks .bookmark-item {
-    justify-content: flex-start !important;
-    align-items: center !important;
-    text-align: start !important;
-  }
+	/* FF154: la UA stylesheet (xul.css) ora applica a TUTTI i toolbarbutton
+	   `align-items: center; justify-content: center`. Nella barra verticale le
+	   voci sono larghe 278px, quindi favicon + titolo finiscono centrati invece
+	   che allineati a sinistra (prima il toolbarbutton era un box XUL che di
+	   default impaccava a start). Riportiamo l'allineamento a sinistra. */
+	#personal-bookmarks .bookmark-item {
+		justify-content: flex-start !important;
+		align-items: center !important;
+		text-align: start !important;
+	}
 
-  /* Non basta il contenitore: la label .toolbarbutton-text ha
-     `text-align: center` dalla UA stylesheet (serve ai pulsanti con testo
-     sotto l'icona) e si espande a tutta larghezza, quindi il titolo resta
-     centrato. Allineiamo il testo a sinistra dentro la label. */
-  #personal-bookmarks .bookmark-item > .toolbarbutton-text {
-    text-align: start !important;
-    flex: 1 1 auto !important;
-  }
+	/* Non basta il contenitore: la label .toolbarbutton-text ha
+	   `text-align: center` dalla UA stylesheet (serve ai pulsanti con testo
+	   sotto l'icona) e si espande a tutta larghezza, quindi il titolo resta
+	   centrato. Allineiamo il testo a sinistra dentro la label. */
+	#personal-bookmarks .bookmark-item > .toolbarbutton-text {
+		text-align: start !important;
+		flex: 1 1 auto !important;
+	}
 
-  /* FF154 marca le voci con `style="visibility: hidden"` inline (logica di
-     overflow della barra segnalibri, che con il layout verticale calcola male
-     lo spazio disponibile): la favicon resta invisibile finché non passi col
-     mouse. Forziamo la visibilità di voce, icona e testo. */
-  #personal-bookmarks .bookmark-item,
-  #personal-bookmarks .bookmark-item > .toolbarbutton-icon,
-  #personal-bookmarks .bookmark-item > .toolbarbutton-text {
-    visibility: visible !important;
-  }
+	/* FF154 marca le voci con `style="visibility: hidden"` inline (logica di
+	   overflow della barra segnalibri, che con il layout verticale calcola male
+	   lo spazio disponibile): la favicon resta invisibile finché non passi col
+	   mouse. Forziamo la visibilità di voce, icona e testo. */
+	#personal-bookmarks .bookmark-item,
+	#personal-bookmarks .bookmark-item > .toolbarbutton-icon,
+	#personal-bookmarks .bookmark-item > .toolbarbutton-text {
+		visibility: visible !important;
+	}
 }
