@@ -19,12 +19,13 @@
 	     30em (circa 400-450px) e' una scelta voluta: menu larghi. Il massimo
 	     evita menu dei segnalibri lunghi quanto lo schermo con titoli molto
 	     lunghi (Firefox tronca comunque le voci a 42em, --menuitem-max-width).
-	   - pannelli (hamburger, cronologia, libreria, overflow): Firefox usa
-	     22.35em / 29em (--menu-panel-width / --menu-panel-width-wide). */
+	   - pannelli (hamburger, cronologia, libreria, overflow, lista schede):
+	     larghi come i menu (30em). Firefox usa 22.35em / 29em; il massimo
+	     di 50em (circa 650-700px) evita i vecchi 850px con titoli lunghi. */
 	--uc-menu-min-width: 30em;
 	--uc-menu-max-width: 42em;
-	--uc-panel-min-width: 325px;
-	--uc-panel-max-width: 35em;
+	--uc-panel-min-width: 30em;
+	--uc-panel-max-width: 50em;
 }
 
 /* Style menus - GLASSMORPHISM
@@ -130,10 +131,9 @@ menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
 	padding: 0 !important;
 }
 
-/* Larghezza dei pannelli. Prima il massimo era 850px e sovrascriveva i limiti
-   di Firefox (35em, e 29em per Libreria/overflow): un sottomenu della
+/* Larghezza dei pannelli. Prima il massimo era 850px: un sottomenu della
    cronologia o dei segnalibri con un titolo lungo si allargava fino a 850px.
-   Ora i pannelli restano nei limiti di Firefox. */
+   Valori in cima al file (--uc-panel-min-width / --uc-panel-max-width). */
 #appMenu-popup panelview,
 .PanelUI-subView {
 	min-width: var(--uc-panel-min-width) !important;
