@@ -58,12 +58,3 @@
 		border-radius: 50px !important;
 	}
 }
-
-
-/*
-body {
-  /* align the base font-size on root element with that of <body>
-     so rem-based layout widths and break-points behave predictably */
-
-/* override --in-content-page-background from common-shared.css */
-
