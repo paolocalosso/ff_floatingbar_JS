@@ -478,7 +478,7 @@
 
 /* NB: fino a FF154 serviva qui un `grid-row: 1 / span 2` su `.nova-enabled
    .content` per eliminare la fascia vuota sopra la barra di ricerca. Da FF155
-   non serve piu' (il posizionamento corretto e' gestito in bali.css, dove il
+   non serve piu' (il posizionamento corretto e' gestito piu' in basso in questo file, dove il
    grid item e' diventato `main.content-main > .content`). Rimosso: se dovesse
    riservire, e' recuperabile dalla storia git. */
 
