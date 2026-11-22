@@ -16,15 +16,13 @@
 	--uc-menu-text: rgba(231, 233, 206, 0.95);
 	/* Larghezze dei menu, modificare SOLO qui.
 	   - menu contestuali / menu a tendina: larghezza minima e massima.
-	     Prima era min-width: 30em (circa 400-450px): anche il menu della tab
-	     o del campo di testo diventavano larghissimi. 16em ~ 210-240px, come
-	     i menu GNOME/libadwaita; il massimo evita menu dei segnalibri lunghi
-	     quanto lo schermo con titoli molto lunghi (Firefox tronca le voci a
-	     42em, --menuitem-max-width).
+	     30em (circa 400-450px) e' una scelta voluta: menu larghi. Il massimo
+	     evita menu dei segnalibri lunghi quanto lo schermo con titoli molto
+	     lunghi (Firefox tronca comunque le voci a 42em, --menuitem-max-width).
 	   - pannelli (hamburger, cronologia, libreria, overflow): Firefox usa
 	     22.35em / 29em (--menu-panel-width / --menu-panel-width-wide). */
-	--uc-menu-min-width: 16em;
-	--uc-menu-max-width: 36em;
+	--uc-menu-min-width: 30em;
+	--uc-menu-max-width: 42em;
 	--uc-panel-min-width: 325px;
 	--uc-panel-max-width: 35em;
 }
