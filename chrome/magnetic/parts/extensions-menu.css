@@ -177,14 +177,14 @@
 #unified-extensions-view .unified-extensions-item-menu-button.subviewbutton{
     visibility: hidden !important;
     transition: all var(--animation-speed) !important;
-    -moz-margin-end: -3.2em !important;
+    margin-inline-end: -3.2em !important;
 }
 #unified-extensions-view:hover 
 .unified-extensions-item-menu-button.subviewbutton{ 
     visibility: visible !important;
     transition: var(--hovering-speed) !important;
-    -moz-margin-end: initial !important;
-    -moz-margin-start: -7px !important;
+    margin-inline-end: initial !important;
+    margin-inline-start: -7px !important;
     margin-left: 2px !important;
     background: #1b1d1c50 !important;
     opacity: 0.9 !important;
@@ -233,10 +233,11 @@
   margin-left: 15px !important; */}
 
 
+/*
 #unified-extensions-panel
   :where(toolbaritem,unified-extensions-item)[attention]
   .unified-extensions-item-action-button
-/*{
+{
   box-shadow:
     1px 1px var(--uei-button-attention-dot-color) inset,
     -1px -1px var(--uei-button-attention-dot-color) inset !important;

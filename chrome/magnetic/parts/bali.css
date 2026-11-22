@@ -423,6 +423,15 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
 
 /*settings pages*/
 @-moz-document url-prefix("about:preferences") {
+    /* Variabili usate qui sotto e in about:addons ma mai definite da nessuna
+       parte (forse in una vecchia versione del tema): con var() non definita
+       le regole con !important diventavano "unset" e colori/sfondi saltavano. */
+    :root {
+        --primary-font-color: rgba(231, 233, 206, 0.95);
+        --highlighted-font-color: #83A598;
+        --primary-icon-color: #E7E9CE;
+        --search-box: rgba(255, 255, 255, 0.08);
+    }
     h1 {
         font-size: 1.5em!important;
         font-weight: 900 !important;
@@ -492,7 +501,7 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
         color: var(--primary-font-color) !important;
     }
     .content-blocking-warning {
-        background: var( --in-content-box-background-alt) !important;
+        background: var(--background-color-box) !important; /* --in-content-box-background-alt non esiste piu' */
     }
     .checkbox-check, input[type="checkbox"] {
         border: 1px dashed #E7E9CE  !important;
@@ -514,6 +523,15 @@ body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.
 }
 
 @-moz-document url-prefix("about:addons") {
+    /* Variabili usate qui sotto e in about:addons ma mai definite da nessuna
+       parte (forse in una vecchia versione del tema): con var() non definita
+       le regole con !important diventavano "unset" e colori/sfondi saltavano. */
+    :root {
+        --primary-font-color: rgba(231, 233, 206, 0.95);
+        --highlighted-font-color: #83A598;
+        --primary-icon-color: #E7E9CE;
+        --search-box: rgba(255, 255, 255, 0.08);
+    }
     #sidebar {
         background-color: rgb(27,29,28) !important;
     }

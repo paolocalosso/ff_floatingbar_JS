@@ -193,6 +193,13 @@ toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 10px !important;
 }
 
+/* Regola incompleta (mancavano le graffe), quindi Firefox la ignorava.
+   Lasciata commentata: un'ombra esterna su menu e pannelli richiede di nuovo
+   il margine trasparente attorno al menu, che Blur My Shell sfoca come un
+   anello (vedi magnetic/parts/popups.css). Il nome attuale della variabile e'
+   --panel-box-shadow.
 menupopup,
-panel
-  --panel-shadow: rgba(0, 0, 0, 0.55) 0px 5px 10px !important;
+panel {
+  --panel-box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 10px !important;
+}
+*/

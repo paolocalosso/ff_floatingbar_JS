@@ -144,10 +144,25 @@
 	color: white !important;
 }
 
-/* URLbar popups */
+/* URLbar popups
+   FF157 / nova: --popup-width non esiste piu', Firefox ora usa
+   --controlcenter-popup-content-width (30.81em, 27.12em per il toast delle
+   protezioni). Con la variabile vecchia i calc() qui sotto erano invalidi e
+   larghezze/minimi saltavano (pannelli che cambiavano larghezza da un sito
+   all'altro). La definiamo come alias, con lo stesso valore di Firefox come
+   riserva. Il pannello identita'/protezioni di nova e' #trustpanel-popup. */
+#identity-popup,
+#permission-popup,
+#protections-popup,
+#trustpanel-popup {
+	--popup-width: var(--controlcenter-popup-content-width, 30.81em);
+}
+
 #identity-popup-mainView,
 #permission-popup-mainView,
 #protections-popup-mainView,
+#trustpanel-popup-mainView,
+#trustpanel-popup-mainView-redesign,
 #identity-popup-mainView-panel-header {
 	max-width: calc(var(--popup-width) + (var(--gnome-menu-padding) * 2)) !important;
 	min-width: calc(var(--popup-width) + (var(--gnome-menu-padding) * 2)) !important;

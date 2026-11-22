@@ -13,6 +13,20 @@
    attorno (vedi menupopup e --panel-box-shadow-margin qui sotto). */
 :root {
 	--uc-menu-bg: rgba(27, 29, 28, 0.6);
+	--uc-menu-text: rgba(231, 233, 206, 0.95);
+	/* Larghezze dei menu, modificare SOLO qui.
+	   - menu contestuali / menu a tendina: larghezza minima e massima.
+	     Prima era min-width: 30em (circa 400-450px): anche il menu della tab
+	     o del campo di testo diventavano larghissimi. 16em ~ 210-240px, come
+	     i menu GNOME/libadwaita; il massimo evita menu dei segnalibri lunghi
+	     quanto lo schermo con titoli molto lunghi (Firefox tronca le voci a
+	     42em, --menuitem-max-width).
+	   - pannelli (hamburger, cronologia, libreria, overflow): Firefox usa
+	     22.35em / 29em (--menu-panel-width / --menu-panel-width-wide). */
+	--uc-menu-min-width: 16em;
+	--uc-menu-max-width: 36em;
+	--uc-panel-min-width: 325px;
+	--uc-panel-max-width: 35em;
 }
 
 /* Style menus - GLASSMORPHISM
@@ -22,9 +36,14 @@
 menupopup,
 panel {
 	--panel-background: var(--uc-menu-bg) !important;
+	/* Nomi reali delle variabili usate da popup.css di Firefox per
+	   ::part(content) (--panel-background e --panel-color non esistono piu'):
+	   con nova lo sfondo e il testo di base dei menu arrivano da qui. */
+	--panel-background-color: var(--uc-menu-bg) !important;
+	--panel-text-color: var(--uc-menu-text) !important;
 	--panel-border-color: #83A598 !important;
 	--panel-border-radius: 25px !important;
-	--panel-color: rgba(231, 233, 206, 0.95) !important;
+	--panel-color: var(--uc-menu-text) !important;
 	--panel-shadow-margin: 0 !important;
 	/* FF160: la variabile e' stata rinominata. La regola di Firefox
 	   `&::part(content) { margin: var(--panel-box-shadow-margin) }` (popup.css)
@@ -45,7 +64,8 @@ menupopup {
 	-webkit-backdrop-filter: blur(25px) saturate(150%) !important;*/
 	padding: 0 !important;
 	margin: 0 !important;
-	min-width: 30em !important;
+	min-width: var(--uc-menu-min-width) !important;
+	max-width: var(--uc-menu-max-width) !important;
 	/* Fallback diretto per versioni che non rispettano --panel-background */
 	border-radius: 25px !important;
 }
@@ -113,22 +133,22 @@ menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
   padding: 0 !important;
 }
 
-#appMenu-popup panelview  {
-  min-width: 325px !important;
-  max-width: 850px !important;
-  box-shadow: none !important;
-}
-
-.webextension-popup-stack {
-	min-width: 325px !important;
-  max-width: 850px !important;
-  box-shadow: none !important;
-}
-
+/* Larghezza dei pannelli. Prima il massimo era 850px e sovrascriveva i limiti
+   di Firefox (35em, e 29em per Libreria/overflow): un sottomenu della
+   cronologia o dei segnalibri con un titolo lungo si allargava fino a 850px.
+   Ora i pannelli restano nei limiti di Firefox. */
+#appMenu-popup panelview,
 .PanelUI-subView {
-  min-width: 325px !important;
-  max-width: 850px !important;
-  box-shadow: none !important;
+	min-width: var(--uc-panel-min-width) !important;
+	max-width: var(--uc-panel-max-width) !important;
+	box-shadow: none !important;
+}
+
+/* Le popup delle estensioni si dimensionano da sole (Firefox le limita a
+   800px): un min-width forzato lasciava una striscia vuota a destra delle
+   popup piccole. */
+.webextension-popup-stack {
+	box-shadow: none !important;
 }
 
 /* Adjust popovers position */
@@ -266,7 +286,8 @@ panel#PanelUI-popup,
 panel#widget-overflow,
 panel#unified-extensions-panel,
 panel#protections-popup,
-panel#identity-popup {
+panel#identity-popup,
+panel#trustpanel-popup {
 	/* spegne l'appearance nativa che dipinge lo sfondo opaco di sistema */
 	appearance: none !important;
 	-moz-appearance: none !important;
@@ -281,7 +302,8 @@ panel::part(content),
 #widget-overflow::part(content),
 #unified-extensions-panel::part(content),
 #protections-popup::part(content),
-#identity-popup::part(content) {
+#identity-popup::part(content),
+#trustpanel-popup::part(content) {
 	appearance: none !important;
 	-moz-appearance: none !important;
 	-moz-default-appearance: none !important;
@@ -378,7 +400,7 @@ menuitem, menupopup menu,
 #downloadsPanel-mainView .download-state {
 	-moz-appearance: none !important;
 	border-radius: 25px !important;
-	color: rgba(231, 233, 206, 0.95) !important;
+	color: var(--uc-menu-text) !important;
 	font: menu !important;
 	padding: 6px 10px !important;
 	min-height: 32px !important;
@@ -437,7 +459,11 @@ menupopup menu:not([disabled="true"]):is(:hover, [_moz-menuactive]),
 	background: rgba(231, 233, 206, 0.15) !important;
 	color: white !important;
 	transition: all 0.2s ease !important;
-	padding-left: 20px !important;  /* ← ANIMAZIONE MOVIMENTO DESTRA */
+	/* ANIMAZIONE MOVIMENTO DESTRA: il padding a sinistra cresce di 10px e
+	   quello a destra cala di altrettanto, cosi' la larghezza della voce non
+	   cambia. Prima cresceva solo il sinistro e, senza il vecchio min-width
+	   di 30em, il menu si allargava/tremolava al passaggio del mouse. */
+	padding-inline: 20px 0 !important;
 }
 
 

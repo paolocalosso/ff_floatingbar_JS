@@ -7,53 +7,100 @@
 
 @import "magnetic/parts/video-player.css";
 @import "magnetic/parts/bali.css";
-@import "magnetic/parts/sidebar-tabs.css";
 
 
-@-moz-document url-prefix("about:") {
-	* { font-size: 13px !important; }
-	body { background-color: #1b1d1c; }
-	.toggle-button[aria-pressed="true"] {background: #83A598 !important;}
-	#categories > .category[selected], #categories > .category.selected {
-    	    color: #83A598 !important;
-    	    background-color: #83a598;
-    	    border-radius: 25px !important;
+/* regexp invece di url-prefix("about:"): about:blank e about:srcdoc sono
+   anche gli iframe vuoti dei siti web (editor di testo come quelli della
+   posta, widget, ecc.) e non devono ricevere sfondo e font delle pagine
+   about:. */
+@-moz-document regexp("about:(?!blank|srcdoc).*") {
+	/* FF157+ / design "nova": le pagine about: (preferences, addons, support,
+	   config, ...) prendono colori e accenti dai design token di Firefox, e
+	   con nova l'accento e' viola. Invece di inseguire ogni singolo widget
+	   (moz-toggle, moz-checkbox, moz-page-nav, pulsanti primari, link,
+	   anello di focus, ecc.) ridefiniamo i token alla radice: tutti i
+	   componenti, anche dentro lo shadow DOM, li ereditano.
+	   !important e' necessario: i token di Firefox stanno in @layer e i
+	   nostri, senza !important, perderebbero. */
+	:root {
+		--uc-accent: #83A598;
+		--uc-accent-hover: #9BB8AC;
+		--uc-accent-active: #6E9283;
+		--uc-page-bg: #1b1d1c;
+		--uc-page-text: #E7E9CE;
+
+		--color-accent-primary: var(--uc-accent) !important;
+		--color-accent-primary-hover: var(--uc-accent-hover) !important;
+		--color-accent-primary-active: var(--uc-accent-active) !important;
+		--button-text-color-primary: var(--uc-page-bg) !important;
+		--button-text-color-primary-hover: var(--uc-page-bg) !important;
+		--button-text-color-primary-active: var(--uc-page-bg) !important;
+		--button-background-color-primary-disabled: color-mix(in srgb, var(--uc-accent) 40%, transparent) !important;
+		--link-color: var(--uc-accent) !important;
+		--link-color-hover: var(--uc-accent-hover) !important;
+		--link-color-active: var(--uc-accent-active) !important;
+		--focus-outline-color: var(--uc-accent) !important;
+		--icon-color-information: var(--uc-accent) !important;
+		--icon-color-accent-primary-desaturated: var(--uc-accent) !important;
+		--background-color-information: color-mix(in srgb, var(--uc-accent) 20%, var(--uc-page-bg)) !important;
+		/* nova tinge di viola anche il testo e lo sfondo della pagina */
+		--text-color: var(--uc-page-text) !important;
+		--background-color-canvas: var(--uc-page-bg) !important;
+		--in-content-page-background: var(--uc-page-bg) !important;
 	}
-	#categories:active {
-    	    color: #83A598 !important;
-    	    background-color: #83a598;
-    	    border-radius: 25px !important;
+
+	/* Titoli esclusi: con `*` anche h1/h2 finivano a 13px e le pagine
+	   (about:support, about:config, about:preferences) perdevano la
+	   gerarchia dei titoli. */
+	*:not(h1, h2, h3) { font-size: 13px !important; }
+	body { background-color: var(--uc-page-bg) !important; }
+
+	.toggle-button[aria-pressed="true"] { background: var(--uc-accent) !important; }
+
+	/* Vecchia navigazione delle impostazioni (prima di moz-page-nav):
+	   il testo era dello stesso colore dello sfondo e risultava invisibile. */
+	#categories > .category[selected],
+	#categories > .category.selected {
+		color: var(--uc-page-bg) !important;
+		background-color: var(--uc-accent) !important;
+		border-radius: 25px !important;
 	}
-	checkbox:not([disabled="true"]):hover > .checkbox-check, input[type="checkbox"]:not(:disabled):hover {
-    	    color: #83A598 !important;
-    	    border-color: #83A598 !important;
-	}
-	checkbox[checked="true"] {
-		color: #83A598 !important;
-    	border-color: #83A598 !important;
-    	fill: #83A598 !important;
-	}
-	radio [checked="true"] {
-		fill: #83A598 !important;
-	}
+
+	checkbox:not([disabled="true"]):hover > .checkbox-check,
+	input[type="checkbox"]:not(:disabled):hover,
 	radio:not([disabled="true"]):hover > .radio-check {
-    	    color: #83A598 !important;
-    	    border-color: #83A598 !important;
+		color: var(--uc-accent) !important;
+		border-color: var(--uc-accent) !important;
+	}
+	checkbox[checked="true"] > .checkbox-check,
+	.checkbox-check[checked] {
+		color: var(--uc-accent) !important;
+		border-color: var(--uc-accent) !important;
+		fill: var(--uc-accent) !important;
+	}
+	radio[selected="true"] > .radio-check,
+	.radio-check[selected] {
+		fill: var(--uc-accent) !important;
 	}
 	.text-link {
-    	    color: #83A598 !important;
+		color: var(--uc-accent) !important;
 	}
 	.content-blocking-category.selected {
-    	    border: 1px solid #83A598 !important;
-	    	background-color: #83A598 !important;
+		border: 1px solid var(--uc-accent) !important;
+		background-color: color-mix(in srgb, var(--uc-accent) 25%, transparent) !important;
 	}
-	checkbox-check{
-		fill: #83A598 !important;
+
+	/* Prima erano fuori da @-moz-document e valevano per TUTTI i siti web:
+	   qualunque sito con una classe .card o un #input veniva modificato. */
+	.card {
+		border: 0px !important;
+		border-radius: 25px !important;
+		margin-bottom: 30px !important;
 	}
-	radio-check{
-		fill: #83A598 !important;
+	#input {
+		border: solid 1px var(--uc-accent) !important;
+		border-radius: 50px !important;
 	}
-	font: menu;
 }
 
 /* Background image for new tab page - Firefox 151 fix:
@@ -82,16 +129,6 @@
     }
 }
 
-.card {
-  border: 0px !important;
-  border-radius: 25px !important;
-  margin-bottom: 30px !important;
-}
-#input {
-  border: solid 1px #83a598 !important;
-  border-radius: 50px !important;
-  /*background-color: #1b1d1c !important;*/
-}
 
 
 /*
@@ -100,3 +137,4 @@
 	font: menu;
 	.toggle-button[aria-pressed="true"] {background: #83A598 !important;}
 }
+*/
