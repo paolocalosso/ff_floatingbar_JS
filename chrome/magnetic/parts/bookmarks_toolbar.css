@@ -29,7 +29,6 @@
 
 
 
-/*@supports not -moz-bool-pref("firefoxone.style_without_rightsidebar") {*/
 
 
 @-moz-document url(chrome://browser/content/browser.xhtml){

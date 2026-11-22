@@ -153,24 +153,6 @@ findbar:-moz-window-inactive description,
 .text-link {
 	color: var(--gnome-accent) !important;
 }
-
-/* OPTIONAL: Hide WebRTC indicator */
-@supports -moz-bool-pref("gnomeTheme.hideWebrtcIndicator") {
-	#webrtcIndicator {
-		display: none;
-	}
-}
-
-/* OPTIONAL: Move Bookmarks toolbar under tabs */
-@supports -moz-bool-pref("gnomeTheme.bookmarksToolbarUnderTabs") {
-	#navigator-toolbox #titlebar {
-		order: 2 !important;
-	}
-	#navigator-toolbox #PersonalToolbar {
-		order: 3 !important;
-	}
-}
-
 #downloadsPanel-mainView{
 	width: 670px !important;
 }

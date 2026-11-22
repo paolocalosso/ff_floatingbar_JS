@@ -176,13 +176,6 @@ border-radius: 50px !important;
 #notification-popup-box {
 	height: 100%  !important;
 }
-
-@media (-moz-bool-pref: "browser.urlbar.richSuggestions.featureGate") {
-	#urlbar:not(.searchButton) > .urlbar-input-container > #identity-box[pageproxystate="invalid"] > .identity-box-button {
-		margin-inline-start: 2px;
-	}
-}
-
 /* Search mode indicator */
 #urlbar-search-mode-indicator,
 #urlbar-label-box,
@@ -238,13 +231,6 @@ border-radius: 50px !important;
 #identity-box[pageproxystate="valid"].extensionPage > .identity-box-button[open=true] {
 	background-color: hsla(0,0%,70%,.3) !important;
 }
-
-@media (-moz-bool-pref: "browser.urlbar.richSuggestions.featureGate") {
-	#identity-box[pageproxystate="invalid"] > .identity-box-button {
-		padding-inline:  var(--urlbar-icon-padding) !important;
-	}
-}
-
 /*experiments*/
 /*text centerd and results wide*/
 #urlbar:not([focused]) #urlbar-input,
