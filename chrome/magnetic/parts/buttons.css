@@ -212,7 +212,7 @@ menulist[open] .menulist-label-box,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not(.titlebar-button):not([disabled="true"])[checked],
 :root[inFullscreen] .titlebar-button.titlebar-restore:active,
 link[href="chrome://global/content/elements/moz-button.css"] + button:is([type~="icon"], :has([type~="icon"])):not([disabled="true"]):active,
-link[href="chrome://global/content/elements/moz-button.css"] + button:has(.button-background:not([type~="ghost"])):not([disabled="true"]),
+link[href="chrome://global/content/elements/moz-button.css"] + button:has(.button-background:not([type~="ghost"])):not([disabled="true"]):active,
 .close-icon:not(.tab-close-button):active,
 button.close:active,
 #protections-popup-info-button:not(#hack):active,
@@ -220,6 +220,16 @@ button.close:active,
 .permission-popup-permission-remove-button:active,
 #item-choose button:active {
 	background: var(--gnome-button-flat-active-background) !important;
+}
+
+/* moz-button: il selettore qui sopra sul `button` interno non aveva :active
+   (presente fin dal primo commit), quindi lo sfondo "premuto" restava sempre
+   acceso. Quel button ha raggio 0 ed e' piu' grande della pillola visibile
+   (.button-background): si vedeva un rettangolo squadrato dietro i pulsanti,
+   evidente da quando le notifiche usano moz-button ("Scarica"/"Chiudi").
+   Anche da premuto, stesso raggio della pillola. */
+link[href="chrome://global/content/elements/moz-button.css"] + button:has(.button-background:not([type~="ghost"])) {
+	border-radius: var(--button-border-radius) !important;
 }
 
 /* Disabled buttons */
@@ -296,6 +306,19 @@ button.popup-notification-primary-button:not(#hack),
 #tracking-action-block,
 .button.connect-device {
 	background-color: var(--gnome-button-suggested-action-background) !important;
+}
+
+/* Pulsanti delle notifiche popup (es. "Aggiornamento disponibile": Scarica e
+   Chiudi). Non sono nella lista dei pulsanti tondi in cima al file e
+   prendevano il raggio predefinito di Firefox, che con nova e' di pochi pixel:
+   angoli squadrati. Anche la variabile di nova, per gli elementi interni. */
+popupnotification {
+	--button-border-radius: 50px !important;
+}
+.popup-notification-primary-button,
+.popup-notification-secondary-button,
+.popup-notification-dropmarker {
+	border-radius: 50px !important;
 }
 
 /* Buttons with destructive action */
